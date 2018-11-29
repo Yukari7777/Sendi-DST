@@ -110,7 +110,7 @@ local function fn()
    --인벤토리 아이템으로 설정됨
    
     MakeHauntableLaunchAndPerish(inst)
-   
+  
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
