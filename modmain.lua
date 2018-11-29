@@ -4,6 +4,7 @@ PrefabFiles = {
 	"sendipack", 	--nanapack
 	"sendisedmask",
 	"sendi_armor_01", --SENDI_ARMOR_01	(SENDI_ARMOR_01)
+	"sendi_rapier", -- sendi_rapier sendi_rapier_01
 		--nanacap
 }
 
@@ -12,6 +13,7 @@ PrefabFiles = {
 GLOBAL.STRINGS.NAMES.SENDIPACK = "센디의 책가방"
 GLOBAL.STRINGS.NAMES.SENDISEDMASK = "센디의 눈물 마스크"
 GLOBAL.STRINGS.NAMES.SENDI_ARMOR_01 = "센디의 니트갑옷"
+GLOBAL.STRINGS.NAMES.SENDI_RAPIER = "센디의 레이피어"
 --캐릭터 아이템의 이름을 지정합니다. 끝 
 
 --STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONPICKUPSENDIARMOR = "이건 나의 물건이 아닌걸?" -- 센디외의 캐릭터가 물건들을 주웠을때 말하는 내용
@@ -67,7 +69,9 @@ Assets = {
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_01.xml"),
 	-------센디의 니트갑옷 [임의 지정]
 	
-	
+	Asset( "IMAGE", "images/inventoryimages/sendi_rapier.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_rapier.xml"),
+	--------센디의 레이피어
 	
 	
 
@@ -112,7 +116,9 @@ local Recipe = GLOBAL.Recipe
 	GLOBAL.STRINGS.NAMES.SENDI_ARMOR_01 = "센디의 니트갑옷" -- STRINGS.NAMES : 지정할 이름 
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "..! 이 머플러, 사실은 옷이야!" --DESCRIBE : 말하게 하는 명령어
 	-- 센디 아머 [임의 추가] 
-
+	GLOBAL.STRINGS.NAMES.SENDI_RAPIER = "센디의 레이피어" -- STRINGS.NAMES : 지정할 이름 
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.rapier = "내가 애용하는 레이피어야! 예쁘지?" --DESCRIBE : 말하게 하는 명령어
+	
 
 	--레시피를 뜻합니다.
 	
@@ -134,13 +140,14 @@ AddRecipe("sendi_armor_01",
 {Ingredient("silk", 6), Ingredient("beefalowool", 4), Ingredient("manrabbit_tail", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
 		STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 니트갑옷 입니다.[매우 따뜻해요.]" 
+
+AddRecipe("sendi_rapier", 
+{Ingredient("silk", 6), Ingredient("beefalowool", 4), Ingredient("manrabbit_tail", 2)}, 
+RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
+		STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
 		
-		--위가 안됄시
-		--local sendi_armor_01 = GLOBAL.Recipe("sendi_armor_01", 
-		--{Ingredient("재료1", 재료1갯수), Ingredient("재료2", 재료2갯수), Ingredient("재료3", 재료3갯수)}, 
-		--RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "아이콘 xml 경로", "아이콘 tex 경로")
-
-
+		
+		
 ---센디 아이템 명령 탬플릿
 
 -- AddRecipe("이름", 
