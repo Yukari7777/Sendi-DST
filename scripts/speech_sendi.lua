@@ -13,2373 +13,1792 @@ return {
 	{
         REPAIR =
         {
-            WRONGPIECE = "I don't think that was right.",
+            WRONGPIECE = "이게 아닌 모양이야",
         },
         BUILD =
         {
-            MOUNTED = "I can't place that from way up here.",
-            HASPET = "I've already got a pet.",
+            MOUNTED = "난 물건을 쌓아올리는 재주는 없어",
+            HASPET = "귀여운 친구를 여러마리 키우면 안돼",
         },
 		SHAVE =
 		{
-			AWAKEBEEFALO = "I'm not going to try that while he's awake.",
-			GENERIC = "I can't shave that!",
-			NOBITS = "There isn't even any stubble left!",
+			AWAKEBEEFALO = "깨어있는 동물한테 칼을 대면 큰일나",
+			GENERIC = "난 이런 털은 모아도 쓸데가 없다고 생각해",
+			NOBITS = "이 이상 털을 밀면 부끄러워 죽어버릴지도 몰라",
 		},
 		STORE =
 		{
-			GENERIC = "It's full.",
-			NOTALLOWED = "That can't go in there.",
-			INUSE = "I should wait my turn.",
+			GENERIC = "으으~ 무거워~ 이제 충분하다구!",
+			NOTALLOWED = "앗.. 이제 손대면 안돼겠다.",
+			INUSE = "차례는 좀 더 기다려야해",
 		},
 		RUMMAGE =
 		{	
-			GENERIC = "I can't do that.",
-			INUSE = "They're elbow deep in junk right now.",
+			GENERIC = "이건 아니야",
+			INUSE = "내가 지금 손을 대도 바뀌는건 없을거야",
 		},
 		USEKLAUSSACKKEY =
         {
-        	WRONGKEY = "Whoops! That wasn't right.",
-        	KLAUS = "I'm a little preoccupied!!",
-			QUAGMIRE_WRONGKEY = "I'll just have to find another key.",
+        	WRONGKEY = "내가 보기엔 다른게 필요해",
+        	KLAUS = "난 제정신으로 돌아왔다!",
+			QUAGMIRE_WRONGKEY = "내가 보기엔 다른게 필요해",
         },
 		ACTIVATE = 
 		{
-			LOCKED_GATE = "The gate is locked.",
+			LOCKED_GATE = "잠겨있어",
 		},
         COOK =
         {
-            GENERIC = "I can't cook right now.",
-            INUSE = "Looks like we had the same idea.",
-            TOOFAR = "It's too far away!",
+            GENERIC = "난 음식은 요리해서 먹는걸 좋아해. 특히 샌드위치가 최고야!",
+            INUSE = "내가 생각하는 그 요리일까?.",
+            TOOFAR = "난 음식은 조리해서 먹는걸 좋아해",
         },
-        GIVE =
+		GIVE =
         {
-            GENERIC = "That doesn't go there.",
-            DEAD = "Maybe I'll just hold on to this.",
-            SLEEPING = "Too unconscious to care.",
-            BUSY = "I'll try again in a second.",
-            ABIGAILHEART = "It was worth a shot.",
-            GHOSTHEART = "Perhaps this is a bad idea.",
-            NOTGEM = "I'm not sticking that in there!",
-            WRONGGEM = "This gem won't work here.",
-            NOTSTAFF = "It's not quite the right shape.",
-            MUSHROOMFARM_NEEDSSHROOM = "A mushroom would probably be of more use.",
-            MUSHROOMFARM_NEEDSLOG = "A living log would probably be of more use.",
-            SLOTFULL = "We already put something there.",
-            FOODFULL = "There's already a meal there.",
-            NOTDISH = "It won't want to eat that.",
-            DUPLICATE = "We already know that one.",
-            NOTSCULPTABLE = "Not even science could make that into a sculpture.",
-            NOTATRIUMKEY = "It's not quite the right shape.",
-            CANTSHADOWREVIVE = "It won't resurrect.",
-            WRONGSHADOWFORM = "It's not put together right.",
+            GENERIC = "난 이걸 어떻게 줘야할 지 모르겠어",
+            DEAD = "받을 손이 없어서 줄 수 없어",
+            SLEEPING = "몰래 가방에 넣는거는 하면 안돼",
+            BUSY = "지금은 받을 수 없는 모양이야",
+            ABIGAILHEART = "이렇게 하는 것 보다 재대로 된 방법이  있을거야",
+            GHOSTHEART = "아무일도 잃어나지 않는걸?",
+            NOTGEM = "아무일도 잃어나지 않는걸?",
+            WRONGGEM = "아무일도 잃어나지 않는걸?",
+            NOTSTAFF = "아무일도 잃어나지 않는걸?",
+            MUSHROOMFARM_NEEDSSHROOM = "우선 버섯을 심어보자",
+            MUSHROOMFARM_NEEDSLOG = "버섯을 심을 통나무가 필요해",
+            SLOTFULL = "넣을 자리가 없어",
+            FOODFULL = "볼도 빵빵하고 배도 빵빵한게 더는 안들어가겠어",
+            NOTDISH = "내도 역시 이건 먹을 수 없을거라고 봐",
+            DUPLICATE = "아무일도 잃어나지 않는걸?",
+            NOTSCULPTABLE = "아무일도 잃어나지 않는걸?",
+            NOTATRIUMKEY = "아무일도 잃어나지 않는걸?",
+            CANTSHADOWREVIVE = "아무일도 잃어나지 않는걸?",
+            WRONGSHADOWFORM = "아무일도 잃어나지 않는걸?",
         },
         GIVETOPLAYER =
         {
-            FULL = "Your pockets are too full!",
-            DEAD = "Maybe I'll just hold on to this.",
-            SLEEPING = "Too unconscious to care.",
-            BUSY = "I'll try again in a second.",
+            FULL = "아무래도 이걸 넣을 만한 빈자리가 보이질 않아",
+            DEAD = "시체엔 아무것도 넣어지지 않아",
+            SLEEPING = "자고있는 동안 아이템을 넣어버리면 일어날 때 깜짝 놀랄거야",
+            BUSY = "불쑥 끼어드는건 좋지 않다고 난 생각해",
         },
         GIVEALLTOPLAYER =
         {
-            FULL = "Your pockets are too full!",
-            DEAD = "Maybe I'll just hold on to this.",
-            SLEEPING = "Too unconscious to care.",
-            BUSY = "I'll try again in a second.",
+            FULL = "아무래도 이걸 넣을 만한 빈자리가 보이질 않아",
+            DEAD = "시체엔 아무것도 넣어지지 않아",
+            SLEEPING = "자고있는 동안 아이템을 넣어버리면 일어날 때 깜짝 놀랄거야",
+            BUSY = "불쑥 끼어드는건 좋지 않다고 난 생각해",
         },
         WRITE =
         {
-            GENERIC = "I think it's fine as is.",
-            INUSE = "There's only room for one scribbler.",
+            GENERIC = "내가 봐도 이건 잘 만든것 같아",
+            INUSE = "덧씌우기 같은건 안돼",
         },
         DRAW =
         {
-            NOIMAGE = "This'd be easier if I had the item in front of me.",
+            NOIMAGE = "뭐가 들었는지 뭐를 준비해두었는지 표시해두면 될거야",
         },
         CHANGEIN =
         {
-            GENERIC = "I don't want to change right now.",
-            BURNING = "It's too dangerous right now!",
-            INUSE = "It can only handle one style change at a time.",
+            GENERIC = "뭔가를 바꾸어보는것도 기분이 날지도 모라",
+            BURNING = "이 상황에서 그럴 여유는 없지 않을까?",
+            INUSE = "먼저 사용중인 상대가 있어서 기다려야해",
         },
         ATTUNE =
         {
-            NOHEALTH = "I don't feel well enough.",
+            NOHEALTH = "내 코가 위험을 알리고있어",
         },
         MOUNT =
         {
-            TARGETINCOMBAT = "I know better than to bother an angry beefalo!",
-            INUSE = "Someone beat me to the saddle!",
+            TARGETINCOMBAT = "무리하게 타려했다간 뒷발로 차여버릴꺼야.",
+            INUSE = "비팔로를 타면 내가 달리는거보다 훨씬 빨라~",
         },
         SADDLE =
         {
-            TARGETINCOMBAT = "It won't let me do that while it's angry.",
+            TARGETINCOMBAT = "난 화난 비팔로를 타는건 하지 않아",
         },
         TEACH =
         {
             --Recipes/Teacher
-            KNOWN = "I already know that one.",
-            CANTLEARN = "I can't learn that one.",
+            KNOWN = "내가 알고 있는 내용과 똑같네",
+            CANTLEARN = "끄우웅... 이거 하나도 모르겠어",
 
             --MapRecorder/MapExplorer
-            WRONGWORLD = "This map was made for some other place.",
+            WRONGWORLD = "이 지도 전혀 안맞잖아!",
         },
         WRAPBUNDLE =
         {
-            EMPTY = "I need to have something to wrap.",
+            EMPTY = "여기에 뭔가 빠져있어",
         },
         PICKUP =
         {
-			RESTRICTION = "I'm not skilled enough to use that.",
-			INUSE = "Science says I have to wait my turn.",
+			RESTRICTION = "내 지식엔 이걸 다루는 방법은 없었어",
+			INUSE = "지금 만지면 안돼. 감이 와!",
         },
         SLAUGHTER =
         {
-            TOOFAR = "It got away.",
+            TOOFAR = "으음.. 놓쳤네",
         },
         REPLATE =
         {
-            MISMATCH = "It needs another type of dish.", 
-            SAMEDISH = "I only need to use one dish.", 
+            MISMATCH = "이 요리에 이 접시는 어울리지 않아", 
+            SAMEDISH = "똑같은 접시니까 접시를 바꿀 필요는 없어", 
         },
 	},
-	ACTIONFAIL_GENERIC = "I can't do that.",
-	ANNOUNCE_DIG_DISEASE_WARNING = "It looks better already.",
-	ANNOUNCE_PICK_DISEASE_WARNING = "Uh, is it supposed to smell like that?",
-	ANNOUNCE_ADVENTUREFAIL = "That didn't go well. I'll have to try again.",
-    ANNOUNCE_MOUNT_LOWHEALTH = "This beast seems to be wounded.",
-	ANNOUNCE_BEES = "BEEEEEEEEEEEEES!!!!",
-	ANNOUNCE_BOOMERANG = "Ow! I should try to catch that!",
-	ANNOUNCE_CHARLIE = "That presence... it's familiar! Hello?",
-	ANNOUNCE_CHARLIE_ATTACK = "OW! Something bit me!",
-	ANNOUNCE_COLD = "So cold!",
-	ANNOUNCE_HOT = "Need... ice... or... shade!",
-	ANNOUNCE_CRAFTING_FAIL = "I'm missing a couple key ingredients.",
-	ANNOUNCE_DEERCLOPS = "That sounded big!",
-	ANNOUNCE_CAVEIN = "The ceiling is destabilizing!",
-	ANNOUNCE_ANTLION_SINKHOLE = 
-	{
-		"The ground is destabilizing!",
-		"A tremor!",
-		"Terrible terralogical waves!",
-	},
-	ANNOUNCE_ANTLION_TRIBUTE =
-	{
-        "Allow me to pay tribute.",
-        "A tribute for you, great Antlion.",
-        "That'll appease it, for now...",
-	},
-	ANNOUNCE_SACREDCHEST_YES = "I guess I'm worthy.",
-	ANNOUNCE_SACREDCHEST_NO = "It didn't like that.",
-	ANNOUNCE_DUSK = "It's getting late. It will be dark soon.",
+	ACTIONFAIL_GENERIC = "무언가 내 생각대로 되지 않았어",
+	ANNOUNCE_DIG_DISEASE_WARNING = "내가 생각했던대로 움직이는게 느껴져?",
+	ANNOUNCE_PICK_DISEASE_WARNING = "내 모험이 다시 움직일거야",
+--adds action end
+	ANNOUNCE_HATEFOOD = "정말 맛없어!",
+	ANNOUNCE_ADVENTUREFAIL = "난 조금만 잘거야. 조금만.",
+	ANNOUNCE_BOOMERANG = "으으!! 그만좀 괴롭혀! 거미같은 나무야!",
+	ANNOUNCE_CHARLIE = "내 뒤에 뭔가 있어!",
+	ANNOUNCE_CHARLIE_ATTACK = "비겁한 녀석, 숨어서 때리지마!",
+	ANNOUNCE_COLD = "내 손가락이 얼었어!",
+	ANNOUNCE_HOT = "이 날씨는 내에겐 너무 더워!",
+	ANNOUNCE_DUSK = "햇살이 지고있어. 난 불을 준비해야해!",
 	ANNOUNCE_EAT =
+      {
+                GENERIC = "냠냠!",
+                PAINFUL = "이건 내 취향이 아냐!",
+                SPOILED = "썩었잖아!",
+                STALE = "시큼하고 물컹한 느낌이야!",
+		YUCKY = "역겨워!",
+	},
+	ANNOUNCE_NOSLEEPONFIRE = "난 여기에서는 잘 수 없어!\n난 불을 먼저 피워야해!",
+	ANNOUNCE_NODANGERSIESTA = "난 이상한 소리를 들었어!\n난 안전을 확인 해야해!",
+	ANNOUNCE_NONIGHTSIESTA = "밤에 여기에서 쉬기에는 너무 추워!",
+	ANNOUNCE_NONIGHTSIESTA_CAVE = "바닥이 너무 차가워!",
+	ANNOUNCE_NOHUNGERSIESTA = "난 쉬는 것보다 먹는 것을 먼저 할거야",
+	ANNOUNCE_SHELTER = "그늘 아래는 편안해.",
+	ANNOUNCE_BURNT = "이 나무의 이 부분은 사람 얼굴같지 않아?",
+	ANNOUNCE_TOOL_SLIP = "미끄러졌어!",
+	ANNOUNCE_DAMP = "비가 와! 빨리 비를 피해야해!",
+	ANNOUNCE_WET = "아아- 머리가 망가지잖아!",
+	ANNOUNCE_WETTER = "옷하고 신발이 모두 축축해",
+	ANNOUNCE_SOAKED = "물에 젖은 가방이 너무 무거워! 쉬고싶어!",
+	ANNOUNCE_HOUNDS = "들었어? 개소리가 들려!",
+	--ANNOUNCE_HUNGRY = "Musha needs meats. Anyone?",
+	ANNOUNCE_HUNGRY = "꼬르르... 달달한게 먹고싶어",
+	ANNOUNCE_HUNT_BEAST_NEARBY = "내가 사냥감을 찾았어! 정말 커!",
+	ANNOUNCE_HUNT_LOST_TRAIL = "난 발자국을 잃어버렸어",
+	ANNOUNCE_HUNT_LOST_TRAIL_SPRING = "진흙이 발자국을 지웠어. 난 진흙이 싫어",
+	ANNOUNCE_ACCOMPLISHMENT= "내와 모험은 언제나 함께야!",
+	ANNOUNCE_ACCOMPLISHMENT_DONE = "내가 해냈어!",
+	ANNOUNCE_LIGHTFIRE =
 	{
-		GENERIC = "Yum!",
-		PAINFUL = "I don't feel so good.",
-		SPOILED = "Yuck! That was terrible!",
-		STALE = "I think that was starting to turn.",
-		INVALID = "I can't eat that!",
-		YUCKY = "Putting that in my mouth would be disgusting!",
+		[1] = "빛이야!",
+		[2] = "불이야!",
+		[3] = "불을 피우면 여러가지를 할 수 있어!",
+		[4] = "불길을 휘둘러 어둠을 내쫒는거야",
+		[5] = "불을 피우면 따뜻해",
+		[6] = "좋아!",
 	},
-    ANNOUNCE_ENCUMBERED =
-    {
-        "Huff... Pant...",
-        "I should have built... a lifting machine...",
-        "Lift... with your back...",
-        "This isn't... gentleman's work...",
-        "For... science... oof!",
-        "Is this... messing up my hair?",
-        "Hngh...!",
-        "Pant... Pant...",
-        "This is the worst... experiment...",
-    },
-    ANNOUNCE_ATRIUM_DESTABILIZING = 
-    {
-		"I think it's time to leave!",
-		"What's that?!",
-		"It's not safe here.",
-	},
-    ANNOUNCE_RUINS_RESET = "All the monsters came back!",
-    ANNOUNCE_SNARED = "Sharp! Sharp bones!!",
-    ANNOUNCE_REPELLED = "It's shielded!",
-	ANNOUNCE_ENTER_DARK = "It's so dark!",
-	ANNOUNCE_ENTER_LIGHT = "I can see again!",
-	ANNOUNCE_FREEDOM = "I'm free! I'm finally free!",
-	ANNOUNCE_HIGHRESEARCH = "I feel so smart now!",
-	ANNOUNCE_HOUNDS = "Did you hear that?",
-	ANNOUNCE_WORMS = "Did you feel that?",
-	ANNOUNCE_HUNGRY = "I'm so hungry!",
-	ANNOUNCE_HUNT_BEAST_NEARBY = "This track is fresh. The beast must be nearby.",
-	ANNOUNCE_HUNT_LOST_TRAIL = "The beast's trail ends here.",
-	ANNOUNCE_HUNT_LOST_TRAIL_SPRING = "This wet soil can't hold a footprint.",
-	ANNOUNCE_INV_FULL = "I can't carry any more stuff!",
-	ANNOUNCE_KNOCKEDOUT = "Ugh, my head!",
-	ANNOUNCE_LOWRESEARCH = "I didn't learn very much from that.",
-	ANNOUNCE_MOSQUITOS = "Aaah! Bug off!",
-    ANNOUNCE_NOWARDROBEONFIRE = "I can't change while it's on fire!",
-    ANNOUNCE_NODANGERGIFT = "I can't open presents with monsters about!",
-    ANNOUNCE_NOMOUNTEDGIFT = "I should get off my beefalo first.",
-	ANNOUNCE_NODANGERSLEEP = "I'm too scared of dying to sleep right now!",
-	ANNOUNCE_NODAYSLEEP = "It's too bright out.",
-	ANNOUNCE_NODAYSLEEP_CAVE = "I'm not tired.",
-	ANNOUNCE_NOHUNGERSLEEP = "I'm too hungry to sleep, my growling tummy will keep me up!",
-	ANNOUNCE_NOSLEEPONFIRE = "I don't exactly have a burning desire to sleep in that.",
-	ANNOUNCE_NODANGERSIESTA = "It's too dangerous to siesta right now!",
-	ANNOUNCE_NONIGHTSIESTA = "Night is for sleeping, not taking siestas.",
-	ANNOUNCE_NONIGHTSIESTA_CAVE = "I don't think I could really relax down here.",
-	ANNOUNCE_NOHUNGERSIESTA = "I'm too hungry for a siesta!",
-	ANNOUNCE_NODANGERAFK = "Now's not the time to flee this fight!",
-	ANNOUNCE_NO_TRAP = "Well, that was easy.",
-	ANNOUNCE_PECKED = "Ow! Quit it!",
-	ANNOUNCE_QUAKE = "That doesn't sound good.",
-	ANNOUNCE_RESEARCH = "Never stop learning!",
-	ANNOUNCE_SHELTER = "Thanks for the protection from the elements, tree!",
-	ANNOUNCE_THORNS = "Ow!",
-	ANNOUNCE_BURNT = "Yikes! That was hot!",
-	ANNOUNCE_TORCH_OUT = "My light just ran out!",
-	ANNOUNCE_THURIBLE_OUT = "It's been thuribly depleted.",
-	ANNOUNCE_FAN_OUT = "My fan is gone with the wind.",
-    ANNOUNCE_COMPASS_OUT = "This compass doesn't point anymore.",
-	ANNOUNCE_TRAP_WENT_OFF = "Oops.",
-	ANNOUNCE_UNIMPLEMENTED = "OW! I don't think it's ready yet.",
-	ANNOUNCE_WORMHOLE = "That was not a sane thing to do.",
-	ANNOUNCE_TOWNPORTALTELEPORT = "I'm not sure that was science.",
-	ANNOUNCE_CANFIX = "\nI think I can fix this!",
-	ANNOUNCE_ACCOMPLISHMENT = "I feel so accomplished!",
-	ANNOUNCE_ACCOMPLISHMENT_DONE = "If only my friends could see me now...",	
-	ANNOUNCE_INSUFFICIENTFERTILIZER = "Are you still hungry, plant?",
-	ANNOUNCE_TOOL_SLIP = "Wow, that tool is slippery!",
-	ANNOUNCE_LIGHTNING_DAMAGE_AVOIDED = "Safe from that frightening lightning!",
-	ANNOUNCE_TOADESCAPING = "The toad is losing interest.",
-	ANNOUNCE_TOADESCAPED = "The toad got away.",
-
-	ANNOUNCE_DAMP = "Oh, H2O.",
-	ANNOUNCE_WET = "My clothes appear to be water permeable.",
-	ANNOUNCE_WETTER = "Water way to go!",
-	ANNOUNCE_SOAKED = "I've nearly reached my saturation point.",
-
-	ANNOUNCE_BECOMEGHOST = "oOooOooo!!",
-	ANNOUNCE_GHOSTDRAIN = "My humanity is about to start slipping away...",
-	ANNOUNCE_PETRIFED_TREES = "Did I just hear trees screaming?",
-	ANNOUNCE_KLAUS_ENRAGE = "There's no way to beat it now!!",
-	ANNOUNCE_KLAUS_UNCHAINED = "Its chains came off!",
-	ANNOUNCE_KLAUS_CALLFORHELP = "It called for help!",
+	ANNOUNCE_PECKED = "나쁜 새!",
+	ANNOUNCE_TORCH_OUT = "빛이 사라졌어!",
+	ANNOUNCE_WORMHOLE = "난 끈적한게 싫어.",
+	ANNOUNCE_TRAP_WENT_OFF = "아! 함정을 보충해야겠어",
+	ANNOUNCE_CRAFTING_FAIL = "어라? 만든게 작동하지 않아",
+    ANNOUNCE_QUAKE = "동굴이 배탈났어!",
+    ANNOUNCE_NODANGERSLEEP = "난 이상한 소리를 들었어!\n난 안전을 확인 해야해",
+    ANNOUNCE_NOHUNGERSLEEP = "난 너무 배고파!\n 난 먼저 뭔가 먹어야 해!",
+    ANNOUNCE_FREEDOM = "프리덤! 아무것도 날 막을 수 없어!",
+    ANNOUNCE_RESEARCH = "난 그걸 알아! 난 이걸 사용할 수 있어!",
+    ANNOUNCE_NO_TRAP = "너무 쉬워!",
+    ANNOUNCE_HIGHRESEARCH = "멋져! 내가 만든거야!",
+    ANNOUNCE_THORNS = "아야! 날카로운 가시가 내 손을 콕 찔렀어!", 
+    ANNOUNCE_NODAYSLEEP_CAVE = "난 더 놀고 싶어!\n난 피곤하지 않아!",
+    ANNOUNCE_BEES = "붕붕붕거리는 소리가 시끄러워",
+    ANNOUNCE_KNOCKEDOUT = "어.. 작은 별들이 보여..",
+    ANNOUNCE_LOWRESEARCH = "난 너무 많이 만들었어",
+    ANNOUNCE_DEERCLOPS = "위험한 소리가 들려, 이건... 날 대려온 나쁜 녀석들중 한놈이야!",
+    ANNOUNCE_MOSQUITOS = "나도 널 물거야! 앙!",
+    ANNOUNCE_NODAYSLEEP = "난 아직 자고싶지 않아!",
+    ANNOUNCE_INSUFFICIENTFERTILIZER = "이건 식물한테 별로 안좋을거야",
+    ANNOUNCE_CANFIX = "난 이걸 고칠 수 있어!",
+    ANNOUNCE_LIGHTNING_DAMAGE_AVOIDED = "난 빛보다 빨라!",
+        BATTLECRY =
+        {
+                GENERIC = "저 녀석을 불로 태워버리는거야!",
+                PIG = "돼지 주제! 태워줄테다!!",
+                PREY = "넌 오늘 내 사냥감이야!",
+                SPIDER = "거미 따위 징그러울 뿐이야!",
+                SPIDER_WARRIOR = "노란색 거미네? 이 세계의 호랑거미는 예쁘지 않은걸?",
+        },
+        COMBAT_QUIT =
+        {
+                GENERIC = "살아남은 자가 강한거야.",
+                PIG = "강한 돼지였어.\n 하지만 다음엔 내 베이컨이 될거야!",
+                PREY = "다음엔 널 잡아먹을거야!",
+                SPIDER = "나도 팔이 많았으면 전부 때릴수 있었어..",
+                SPIDER_WARRIOR = "거미주제 날아다니지 말라구!",
+        },
+		
+--adds 4 start
+	ANNOUNCE_TOADESCAPING = "개구리 머리가 보이지 않게 되기 전에 사냥해야해",
+	ANNOUNCE_TOADESCAPED = "개구리가 보이지 않게 되어버렸어",
+	
+	ANNOUNCE_BECOMEGHOST = "으므므므므므",
+	ANNOUNCE_GHOSTDRAIN = "난 제정신이야!",
+	ANNOUNCE_PETRIFED_TREES = "내가 보기에 이건 정말 특별한 나무야!",
+	ANNOUNCE_KLAUS_ENRAGE = "난 위험을 느꼈어!",
+	ANNOUNCE_KLAUS_UNCHAINED = "내가 보기에도 저건 필요 없어보였어",
+	ANNOUNCE_KLAUS_CALLFORHELP = "조심해! 내 코에 다른게 느껴져!",
 
     --lavaarena event
-    ANNOUNCE_REVIVING_CORPSE = "Let me help you.",
-    ANNOUNCE_REVIVED_OTHER_CORPSE = "Good as new!",
-    ANNOUNCE_REVIVED_FROM_CORPSE = "Much better, thank-you.",
+    ANNOUNCE_REVIVING_CORPSE = "내가 도와줄거야!",
+    ANNOUNCE_REVIVED_OTHER_CORPSE = "내와 함께 모험을 하는거야!",
+    ANNOUNCE_REVIVED_FROM_CORPSE = "내 모험은 아직 끝나지 않았던거야!",
     --quagmire event
-    QUAGMIRE_ANNOUNCE_NOTRECIPE = "Those ingredients didn't make anything.",
-    QUAGMIRE_ANNOUNCE_MEALBURNT = "I left it on too long.",
-    QUAGMIRE_ANNOUNCE_LOSE = "I have a bad feeling about this.",
-    QUAGMIRE_ANNOUNCE_WIN = "Time to go!",
+    QUAGMIRE_ANNOUNCE_NOTRECIPE = "난 새로운 것을 시도하는 모험을 해보았어. 실패했지만",
+    QUAGMIRE_ANNOUNCE_MEALBURNT = "내 코가 느꼈을땐, 이미 늦은 뒤였어",
+    QUAGMIRE_ANNOUNCE_LOSE = "내 모험에 굴곡이 있다는건 알아! 낮을때도 있지!",
+    QUAGMIRE_ANNOUNCE_WIN = "내 모험은 재미있다구!",
 
     ANNOUNCE_ROYALTY =
     {
-        "Your majesty.",
-        "Your highness.",
-        "My liege!",
+        "나와 함께하는거야!",
+        "여고생 센디, 갑니다!",
+        "즐거운일이 가득하길!",
     },
-
-	BATTLECRY =
-	{
-		GENERIC = "Go for the eyes!",
-		PIG = "Here piggy piggy!",
-		PREY = "I will destroy you!",
-		SPIDER = "I'm going to stomp you dead!",
-		SPIDER_WARRIOR = "Better you than me!",
-		DEER = "Die, doe!",
-	},
-	COMBAT_QUIT =
-	{
-		GENERIC = "I sure showed him!",
-		PIG = "I'll let him go. This time.",
-		PREY = "He's too fast!",
-		SPIDER = "He's too gross, anyway.",
-		SPIDER_WARRIOR = "Shoo, you nasty thing!",
-	},
+	
+--adds 4 end	
+		
+	--우와 정말 귀찮다..
 	DESCRIBE =
 	{
-		MULTIPLAYER_PORTAL = "This ought to be a scientific impossibility.",
+
+--adds 5 start (DESCRIBE)
 		ANTLION = 
 		{
-			GENERIC = "It wants something from me.",
-			VERYHAPPY = "I think we're on good terms.",
-			UNHAPPY = "It looks mad.",
+			GENERIC = "나에게 뭘 바라는거야?",
+			VERYHAPPY = "난 잘 하고 있어!",
+			UNHAPPY = "내가 놓친게 있었던걸까?",
 		},
-		ANTLIONTRINKET = "Someone might be interested in this.",
-		SANDSPIKE = "I could've been skewered!",
-        SANDBLOCK = "It's so gritty!",
-        GLASSSPIKE = "Memories of the time I wasn't skewered.",
-        GLASSBLOCK = "That's science for you.",
+		ANTLIONTRINKET = "이거 생긴거 신기해",
+		SANDSPIKE = "무언가 숨겨진게 있을 지도 몰라",
+        SANDBLOCK = "부스스해!",
+        GLASSSPIKE = "무언가 숨겨진게 있을 지도 몰라",
+        GLASSBLOCK = "잘 뭉쳐진 형태야",
 		ABIGAIL_FLOWER = 
 		{ 
-			GENERIC ="It's hauntingly beautiful.",
-			LONG = "It hurts my soul to look at that thing.",
-			MEDIUM = "It's giving me the creeps.",
-			SOON = "Something is up with that flower!",
-			HAUNTED_POCKET = "I don't think I should hang on to this.",
-			HAUNTED_GROUND = "I'd die to find out what it does.",
+			GENERIC ="봉오리만 있는데 시들지 않은건 신기하네",
+			LONG = "주인이 있는 물건이지만 그것 외에 뭔가 있는 모양이야",
+			MEDIUM = "난 누군가의 시선을 느껴",
+			SOON = "꽃봉오리가 시들지도 않고 피어났어!",
+			HAUNTED_POCKET = "웅웅 거리는것도 아닌데 뭔가 느껴져",
+			HAUNTED_GROUND = "금방이라도 이 빛나는게 튀어나올것만같아",
 		},
 
-		BALLOONS_EMPTY = "It looks like clown currency.",
-		BALLOON = "How are they floating?",
+		BALLOONS_EMPTY = "이거 엄청 잘 늘어나",
+		BALLOON = "알록달록한 구름이 떠있는것만 같아",
 
 		BERNIE_INACTIVE =
 		{
-			BROKEN = "It finally fell apart.",
-			GENERIC = "It's all scorched.",
+			BROKEN = "망가진것은 어쩔 수 없는 거야",
+			GENERIC = "무엇을 해볼까?",
 		},
 
-		BERNIE_ACTIVE = "That teddy bear is moving around. Interesting.",
-		
-		BOOK_BIRDS = "No point studying when I can just wing it.",
-		BOOK_TENTACLES = "Someone'll get suckered into reading this.",
-		BOOK_GARDENING = "I see no farm in reading that.",
-		BOOK_SLEEP = "Strange, it's just 500 pages of telegraph codes.",
-		BOOK_BRIMSTONE = "The beginning was dull, but got better near the end.",
+		BERNIE_ACTIVE = "내 친구가 점점 많아져!",
 
         PLAYER =
         {
-            GENERIC = "Greetings, %s!",
-            ATTACKER = "%s looks shifty...",
-            MURDERER = "Murderer!",
-            REVIVER = "%s, friend of ghosts.",
-            GHOST = "%s could use a heart.",
-            FIRESTARTER = "Burning that wasn't very scientific, %s.",
+            GENERIC = "%s와의 모험이 시작되었어!",
+			ATTACKER = "%s의 공격에 어울리는거야!",
+            MURDERER = "%s이 내 모험을 방해하고있어!",
+            REVIVER = "%s가 도움을 줬어",
+            GHOST = "%s의 모험에는 내 도움이 필요해보여",
+            FIRESTARTER = "%s의 불꽃놀이가 시작되었어!",
         },
 		WILSON = 
+		
 		{
-			GENERIC = "Stars and atoms! Are you my doppelganger, %s?",
-			ATTACKER = "Yeesh. Do I always look that creepy?",
-			MURDERER = "Your existence is an affront to the laws of science, %s!",
-			REVIVER = "%s has expertly put our theories into practice.",
-			GHOST = "Better concoct a revival device. Can't leave another man of science floating.",
-			FIRESTARTER = "Burning that wasn't very scientific, %s.",
+			GENERIC = "과학이 얼마나 엄청난건지는 잘 모르지만, 윌슨의 수염이 자라는건 알아",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER = "죽이고 부수는게 과학이 아닌거란건 알아, 그만해!",
+			REVIVER = "%s의 저 행동도 과학을 위해서인거야?",
+			GHOST = "죽었지만 죽지않은 지금 상황을 윌슨은 무슨 기분일까?",
+			FIRESTARTER = "%s의 실험이 시작되는 모양이야",
 		},
 		WOLFGANG = 
 		{
-			GENERIC = "It's good to see you, %s!",
-			ATTACKER = "Let's not start a fight with the strongman...",
-			MURDERER = "Murderer! I can take you!",
-			REVIVER = "%s is just a big teddy bear.",
-			GHOST = "I told you you couldn't deadlift that boulder, %s. The numbers were all wrong.",
-			FIRESTARTER = "You can't actually \"fight\" fire, %s!",
+			GENERIC = "%s의 덩치는 언제봐도 놀라워!",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER = "먹을것을 문제로 죽이는건 오히려 문제야!",
+			REVIVER = "%s의 행동이 도움이 될거야",
+			GHOST = "싸우다 죽거나, 굶어죽거나. %s의 죽는 이유는 대부분 그래",
+			FIRESTARTER = "%s의 불피우는 모습을 볼줄은 몰랐어!",
 		},
 		WAXWELL = 
 		{
-			GENERIC = "Decent day to you, %s!",
-			ATTACKER = "Seems you've gone from \"dapper\" to \"slapper\".",
-			MURDERER = "I'll show you Logic and Reason... those're my fists!",
-			REVIVER = "%s is using his powers for good.",
-			GHOST = "Don't look at me like that, %s! I'm working on it!",
-			FIRESTARTER = "%s's just asking to get roasted.",
+			GENERIC = "어디선가 본적이 었어, %s!",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER =  "난 뺐기는 것을 좋아하지 않아",
+			REVIVER = "%s의 모험엔 여럿이 필요한거야",
+			GHOST = "아무리 꿍꿍이가 있대도 실수는 있는거야",
+			FIRESTARTER = "%s의 불이 더 크거나 하진 않네",
 		},
 		WX78 = 
 		{
-			GENERIC = "Good day to you, %s!",
-			ATTACKER = "I think we need to tweak your primary directive, %s...",
-			MURDERER = "%s! You've violated the first law!",
-			REVIVER = "I guess %s got that empathy module up and running.",
-			GHOST = "I always thought %s could use a heart. Now I'm certain!",
-			FIRESTARTER = "You look like you're gonna melt, %s. What happened?",
+			GENERIC = "헬로우 %s!",
+			ATTACKER = "%s의 공격은 기계적이야! 기계니까?",
+			MURDERER = "%s의 행동은 용서되지 않을거야!",
+			REVIVER = "만든사람은 %s의 이런 상황도 예상했었던걸까?",
+			GHOST = "%s의 영혼이 있다는건 평범하지 않은거 아닐까?",
+			FIRESTARTER = "%s의 불은 무슨 조건이었을까?",
 		},
 		WILLOW = 
 		{
-			GENERIC = "Good day to you, %s!",
-			ATTACKER = "%s is holding that lighter pretty tightly...",
-			MURDERER = "Murderer! Arsonist!",
-			REVIVER = "%s, friend of ghosts.",
-			GHOST = "I bet you're just burning for a heart, %s.",
-			FIRESTARTER = "Again?",
+			GENERIC = "%s? 화방녀? 정말로?",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER = "불을 지르는것도 행동도 용서할 수 없는거야!",
+			REVIVER = "%s의 도움은 포근하기도 한거야",
+			GHOST = "%s의 몸이 사그러들고 혼만 남은거야",
+			FIRESTARTER = "또 %s의 불질이 시작된거야?",
 		},
 		WENDY = 
 		{
-			GENERIC = "Greetings, %s!",
-			ATTACKER = "%s doesn't have any sharp objects, does she?",
-			MURDERER = "Murderer!",
-			REVIVER = "%s treats ghosts like family.",
-			GHOST = "I'm seeing double! I'd better concoct a heart for %s.",
-			FIRESTARTER = "I know you set those flames, %s.",
+			GENERIC = "%s는 친구가 필요한거야? 아니면 자매가 필요한거야?",
+			ATTACKER = "%s의 전투는 평범하지 않아! 혼자가 아니니까! ",
+			MURDERER = "너도, 쟤도 벌을 받아야해!",
+			REVIVER = "%s의 바람은 다른 사람을 부활시키는 거겠지만, 도움을 받고있어",
+			GHOST = "%s의 혼은 하나가 아니야. 정확히는 %s도 아니긴 해",
+			FIRESTARTER = "%s이 불을 피우는건 불꽃에 홀려서가 아닐까",
 		},
 		WOODIE = 
 		{
-			GENERIC = "Greetings, %s!",
-			ATTACKER = "%s has been a bit of a sap lately...",
-			MURDERER = "Murder! Bring me an axe and we'll get in the swing of things!",
-			REVIVER = "%s saved everyone's backbacon.",
-			GHOST = "Does \"universal\" coverage include the void, %s?",
-			BEAVER = "%s's gone on a wood chucking rampage!",
-			BEAVERGHOST = "Will you bea-very mad if I don't revive you, %s?",
-			FIRESTARTER = "Don't burn yourself out, %s.",
+			GENERIC = "%s에게서 낮선 동물의 냄새가 나!",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER = "난 %s의 도끼와 너를 용서하지 않아",
+			REVIVER = "%s의 복장은 거칠어도 모두를 돕는 사람이야",
+			GHOST = "%s의 실수는 무엇이었을까? 과다벌목?",
+			BEAVER = "%s의 모습이 변해버렸어!",
+			BEAVERGHOST = "%s의 영혼마저 이상하게 변해버렸어. 무슨 일이 있던걸까?",
+			FIRESTARTER = "%s의 불을 지르는 모습은 상상밖이야",
 		},
 		WICKERBOTTOM = 
 		{
-			GENERIC = "Good day, %s!",
-			ATTACKER = "I think %s's planning to throw the book at me.",
-			MURDERER = "Here comes my peer review!",
-			REVIVER = "I have deep respect for %s's practical theorems.",
-			GHOST = "This doesn't seem very scientific, does it, %s?",
-			FIRESTARTER = "I'm sure you had a very clever reason for that fire.",
+			GENERIC = "책을 좋아해도 몸을 움직이는 일도 있는거야!",
+			ATTACKER = "%s의 무기는 책 모서리가 아니었어!",
+			MURDERER = "독단은 좋지 않은거야, %s!",
+			REVIVER = "%s의 생각은 잘 모르지만 나를 도와주는거 같아. :)",
+			GHOST = "%s의 목숨을 책 보다 소중히 해 주었으면 좋겠어",
+			FIRESTARTER = "%s의 불을 피우는 모습을 볼 줄은 몰랐어",
 		},
 		WES = 
 		{
-			GENERIC = "Greetings, %s!",
-			ATTACKER = "%s is silent, but deadly...",
-			MURDERER = "Mime this!",
-			REVIVER = "%s thinks outside the invisible box.",
-			GHOST = "How do you say \"I'll concoct a revival device\" in mime?",
-			FIRESTARTER = "Wait, don't tell me. You lit a fire.",
+			GENERIC = "손짓은 잘 모르지만 반가워, %s!",
+			ATTACKER = "%s의 공격은 전혀 아플것 같지 않은데 능숙해",
+			MURDERER = "난 풍선같은걸로 용서하지 않을거야",
+			REVIVER = "%s는 조용히 나를 돕고있어",
+			GHOST = "%s는 살아있을때도 말을 안했는데 죽어서도 조용하네",
+			FIRESTARTER = "%s는 불을 지를때도 조용해서 모를뻔했어",
 		},
 		WEBBER = 
 		{
-			GENERIC = "Good day, %s!",
-			ATTACKER = "I'm gonna roll up a piece of papyrus newspaper, just in case.",
-			MURDERER = "Murderer! I'll squash you, %s!",
-			REVIVER = "%s is playing well with others.",
-			GHOST = "%s is really buggin' me for a heart.",
-			FIRESTARTER = "We need to have a group meeting about fire safety.",
+			GENERIC = "거미는 사냥감이지만 %s는 공격하지 않을거야. 지금은",
+			ATTACKER = "거미가 거미와 싸우는걸 보는 날이 있긴 해.",
+			MURDERER = "역시 거미는 사냥감이야! 거기서, %s!",
+			REVIVER = "거미가 때때론 도움을 준다는걸 %s의 행동을 보고 알게됐어",
+			GHOST = "죽은 뒤 영혼이 나오는 거미는 %s의 경우가 처음이야",
+			FIRESTARTER = "불피우는 거미는 희귀하네",
 		},
 		WATHGRITHR = 
 		{
-			GENERIC = "Good day, %s!",
-			ATTACKER = "I'd like to avoid a punch from %s, if possible.",
-			MURDERER = "%s's gone berserk!",
-			REVIVER = "%s has full command of spirits.",
-			GHOST = "Nice try. You're not escaping to Valhalla yet, %s.",
-			FIRESTARTER = "%s is really heating things up today.",
+			GENERIC = "%s의 모습은 어느 지역의 전사같아! ",
+			ATTACKER = "%s의 싸우는 모습이 저기서 보여",
+			MURDERER = "아무리 내보다 세다 해도 난 %s를 용서하지 않아!",
+			REVIVER = "%s의 도움은 여러가지가 있는거야",
+			GHOST = "%s의 말로는 발할라 라는게 있다고 했는데 아닌가봐",
+			FIRESTARTER = "%s가 너무 불타올랐어",
 		},
         WINONA =
         {
-            GENERIC = "Good day to you, %s!",
-            ATTACKER = "%s is a safety hazard.",
-            MURDERER = "It ends here, %s!",
-            REVIVER = "You're pretty handy to have around, %s.",
-            GHOST = "Looks like someone threw a wrench into your plans.",
-            FIRESTARTER = "Things are burning up at the factory.",
+            GENERIC = "%s와의 모험이 시작되었어!",
+			ATTACKER = "%s의 공격에 어울리는거야!",
+            MURDERER = "%s이 내 모험을 방해하고있어!",
+            REVIVER = "%s가 도움을 줬어",
+            GHOST = "%s의 모험에는 내 도움이 필요해보여",
+            FIRESTARTER = "%s의 불꽃놀이가 시작되었어!",
         },
-        MIGRATION_PORTAL = 
+
+        BOOK_BIRDS = "이게 바로 온 세상의 새들의 말을 적은 책이야",
+        BOOK_TENTACLES = "왕지렁이를 키우는 108가지 방법",
+        BOOK_GARDENING = "이 책을 읽어주면 식물들이 좋아해",
+        BOOK_SLEEP = "아주 지루한 책이야",
+        BOOK_BRIMSTONE = "위험한 느낌이 드는 책이야",
+
+		GLOMMER = "깜찍한 날개 좀 봐! 게다가 날기까지 해!",
+        GLOMMERFLOWER =
         {
-            GENERIC = "If I had any friends, this could take me to them.",
-            OPEN = "If I step through, will I still be me?",
-            FULL = "It seems to be popular over there.",
+        	GENERIC = "거대한 꽃봉오리야! 근데 어떻게 핀 거지?",
+        	DEAD = "꽃잎이 회색이 됐어!\n얼마 전까지만 해도 빨갰는데!",
         },
-		GLOMMER = "It's cute, in a gross kind of way.",
-		GLOMMERFLOWER = 
-		{
-			GENERIC = "The petals shimmer in the light.",
-			DEAD = "The petals droop and shimmer in the light.",
-		},
-		GLOMMERWINGS = "These would look empirically amazing on a helmet!",
-		GLOMMERFUEL = "This goop smells foul.",
-		BELL = "Dingalingaling.",
-		STATUEGLOMMER = 
-		{	
-			GENERIC = "I'm not sure what that's supposed to be.",
-			EMPTY = "I broke it. For science.",
-		},
-
-        LAVA_POND_ROCK = "As gneiss a place as any.",
-
-		WEBBERSKULL = "Poor little guy. He deserves a proper funeral.",
-		WORMLIGHT = "Looks delicious.",
-		WORMLIGHT_LESSER = "Kinda wrinkled.",
-		WORM =
-		{
-		    PLANT = "Seems safe to me.",
-		    DIRT = "Just looks like a pile of dirt.",
-		    WORM = "It's a worm!",
-		},
-        WORMLIGHT_PLANT = "Seems safe to me.",
+        GLOMMERWINGS = "엄청 작아!",
+        GLOMMERFUEL = "이 몽글몽글한 분홍색 좀 봐!\n먹으면 안돼? 왜?",
+        BELL = "디너벨이 왜 여기있지?\n누가 내에게 식사를 가져다주는건데?",
+        STATUEGLOMMER =
+        {
+        	GENERIC = "나 이거 알아! 음, 뭐였지?",
+        	EMPTY = "난 여기에 꽃이 핀 것을 본 적이 있어",
+    	},
+		WEBBERSKULL = "이 해골에는 긴 사연이 있어",
 		MOLE =
 		{
-			HELD = "Nowhere left to dig, my friend.",
-			UNDERGROUND = "Something's under there, searching for minerals.",
-			ABOVEGROUND = "I'd sure like to whack that mole... thing.",
+			HELD = "이것 좀 봐! 코가 재미있게 생겼어!",
+			UNDERGROUND = "뭔가 땅 속에 숨어있나봐!\n쫒아가보자!",
+			ABOVEGROUND = "이 녀석이 내 아이템을 훔쳐갔어!",
 		},
-		MOLEHILL = "What a nice, homey hole in the ground!",
-		MOLEHAT = "A wretched stench, but excellent visibility.",
-
-		EEL = "This will make a delicious meal.",
-		EEL_COOKED = "Smells great!",
-		UNAGI = "I hope this doesn't make anyone eel!",
-		EYETURRET = "I hope it doesn't turn on me.",
-		EYETURRET_ITEM = "I think it's sleeping.",
-		MINOTAURHORN = "Wow! I'm glad that didn't gore me!",
-		MINOTAURCHEST = "It may contain a bigger something fantastic! Or horrible.",
-		THULECITE_PIECES = "It's some smaller chunks of Thulecite.",
-		POND_ALGAE = "Some algae by a pond.",
-		GREENSTAFF = "This will come in handy.",
-		GIFT = "Is that for me?",
-        GIFTWRAP = "That's a wrap!",
-		POTTEDFERN = "A fern in a pot.",
-        SUCCULENT_POTTED = "A succulent in a pot.",
-		SUCCULENT_PLANT = "Aloe there.",
-		SUCCULENT_PICKED = "I could eat that, but I'd rather not.",
-		SENTRYWARD = "That's an entirely scientific mapping tool.",
-        TOWNPORTAL =
-        {
-			GENERIC = "This pyramid controls the sands.",
-			ACTIVE = "Ready for departiculation.",
-		},
-        TOWNPORTALTALISMAN = 
-        {
-			GENERIC = "A mini departiculator.",
-			ACTIVE = "A more sane person would walk.",
-		},
-        WETPAPER = "I hope it dries off soon.",
-        WETPOUCH = "This package is barely holding together.",
-        MOONROCK_PIECES = "I could probably break that.",
-        MOONBASE =
-        {
-            GENERIC = "There's a hole in the middle for something to go in.",
-            BROKEN = "It's all smashed up.",
-            STAFFED = "Now what?",
-            WRONGSTAFF = "I have a distinct feeling this isn't right.",
-            MOONSTAFF = "The stone lit it up somehow.",
-        },
-        MOONDIAL = 
-        {
-			GENERIC = "Water amplifies the science, allowing us to measure the moon.",
-			NIGHT_NEW = "It's a new moon.",
-			NIGHT_WAX = "The moon is waxing.",
-			NIGHT_FULL = "It's a full moon.",
-			NIGHT_WANE = "The moon is waning.",
-			CAVE = "There's no moon down here to measure.",
-        },
- 		--MOWER = "I like the cut of this blade.",
-		--MACHETE = "I like the cut of this blade.",
-		--GOLDENMACHETE = "Hack in style!",
-		--OBSIDIANMACHETE = "It's hot to the touch.",
-		--BOOK_METEOR = "The foreword just says \"Hope you like dragoons.\"",
-		THULECITE = "I wonder where this is from?",
-		ARMORRUINS = "It's oddly light.",
-		ARMORSKELETON = "No bones about it.",
-		SKELETONHAT = "It gives me terrible visions.",
-		RUINS_BAT = "It has quite a heft to it.",
-		RUINSHAT = "How's my hair?",
-		NIGHTMARE_TIMEPIECE =
-		{
-            CALM = "All is well.",
-            WARN = "Getting pretty magical around here.",
-            WAXING = "It's becoming more concentrated!",
-            STEADY = "It seems to be staying steady.",
-            WANING = "Feels like it's receding.",
-            DAWN = "The nightmare is almost gone!",
-            NOMAGIC = "There's no magic around here.",
-		},
-		BISHOP_NIGHTMARE = "It's falling apart!",
-		ROOK_NIGHTMARE = "Terrifying!",
-		KNIGHT_NIGHTMARE = "It's a knightmare!",
-		MINOTAUR = "That thing doesn't look happy.",
-		SPIDER_DROPPER = "Note to self: Don't look up.",
-		NIGHTMARELIGHT = "I wonder what function this served.",
-		NIGHTSTICK = "It's electric!",
-		GREENGEM = "It's green and gemmy.",
-		MULTITOOL_AXE_PICKAXE = "It's brilliant!",
-		ORANGESTAFF = "This beats walking.",
-		YELLOWAMULET = "Warm to the touch.",
-		GREENAMULET = "No base should be without one!",
-		SLURPERPELT = "Doesn't look all that much different dead.",	
-
-		SLURPER = "It's so hairy!",
-		SLURPER_PELT = "Doesn't look all that much different dead.",
-		ARMORSLURPER = "A soggy, sustaining, succulent suit.",
-		ORANGEAMULET = "Teleportation can be so useful.",
-		YELLOWSTAFF = "A genius invention... a gem on a stick.",
-		YELLOWGEM = "This gem is yellow.",
-		ORANGEGEM = "It's an orange gem.",
-        OPALSTAFF = "It's scientifically proven that gems look better on top of sticks.",
-        OPALPRECIOUSGEM = "This gem seems special.",
-        TELEBASE = 
-		{
-			VALID = "It's ready to go.",
-			GEMS = "It needs more purple gems.",
-		},
-		GEMSOCKET = 
-		{
-			VALID = "Looks ready.",
-			GEMS = "It needs a gem.",
-		},
-		STAFFLIGHT = "That seems really dangerous.",
-        STAFFCOLDLIGHT = "Brr! Chilling.",
-
-        ANCIENT_ALTAR = "An ancient and mysterious structure.",
-
-        ANCIENT_ALTAR_BROKEN = "This seems to be broken.",
-
-        ANCIENT_STATUE = "It seems to throb out of tune with the world.",
-
-        LICHEN = "Only a cyanobacteria could grow in this light.",
-		CUTLICHEN = "Nutritious, but it won't last long.",
-
-		CAVE_BANANA = "It's mushy.",
-		CAVE_BANANA_COOKED = "Yum!",
-		CAVE_BANANA_TREE = "It's dubiously photosynthetical.",
-		ROCKY = "It has terrifying claws.",
+		MOLEHILL = "수상한 무더기야. 내 눈은 속일 수 없어",
+		MOLEHAT = "이 모자에서 이상한 냄새가 나는거 같지 않아?",
+		NIGHTSTICK = "이것은 밤에 유용한 반짝이 막대야!",
 		
-		COMPASS =
-		{
-			GENERIC="Which way am I facing?",
-			N = "North.",
-			S = "South.",
-			E = "East.",
-			W = "West.",
-			NE = "Northeast.",
-			SE = "Southeast.",
-			NW = "Northwest.",
-			SW = "Southwest.",
-		},
-
-        HOUNDSTOOTH = "It's sharp!",
-        ARMORSNURTLESHELL = "It sticks to your back when you wear it.",
-        BAT = "Ack! That's terrifying!",
-        BATBAT = "I bet I could fly if I held two of them.",
-        BATWING = "I hate those things, even when they're dead.",
-        BATWING_COOKED = "At least it's not coming back.",
-        BATCAVE = "I don't want to wake them.",
-        BEDROLL_FURRY = "It's so warm and comfy.",
-        BUNNYMAN = "I am filled with an irresistible urge to do science.",
-        FLOWER_CAVE = "Science makes it glow.",
-        GUANO = "Another flavor of poop.",
-        LANTERN = "A more civilized light.",
-        LIGHTBULB = "It's strangely tasty looking.",
-        MANRABBIT_TAIL = "I feel a lil better when I hold one.",
-        MUSHROOMHAT = "Makes the wearer look like a fun guy.",
+--adds 6 start
+	MUSHROOMHAT = "내 머리가 버섯이 되어버리진 않을까?",
         MUSHROOM_LIGHT2 =
         {
-            ON = "Blue is obviously the most scientific color.",
-            OFF = "We could make a prime light source with some primary colors.",
-            BURNT = "I didn't mildew it, I swear.",
+			ON = "난 이런 환상적인 불빛이 나올줄 몰랐어!",
+            OFF = "난 이런 멋진 디자인의 등불이 있는줄 몰랐어!",
+            BURNT = "아무리 멋져도 불타면 아무것도 남지 않네",
         },
         MUSHROOM_LIGHT =
         {
-            ON = "Science makes it light up.",
-            OFF = "It's a big, science-y 'shroom.",
-            BURNT = "Comboletely burnt.",
+			ON = "난 이런 환상적인 불빛이 나올줄 몰랐어!",
+            OFF = "난 이런 멋진 디자인의 등불이 있는줄 몰랐어!",
+            BURNT = "아무리 멋져도 불타면 아무것도 남지 않네",
         },
-        SLEEPBOMB = "It makes snooze circles when I throw it.",
-        MUSHROOMBOMB = "A mushroom cloud in the making!",
-        SHROOM_SKIN = "Warts and all!",
+        SLEEPBOMB = "열면 안돼! 영원히 잠에 들어버릴거야",
+        MUSHROOMBOMB = "가까이 가면 위험해. 저건 쉽게 터져버려",
+        SHROOM_SKIN = "동물에서 떼낸 식물이야!",
         TOADSTOOL_CAP =
         {
-            EMPTY = "Just a hole in the ground.",
-            INGROUND = "There's something poking out.",
-            GENERIC = "That toadstool's just asking to be cut down.",
+            EMPTY = "이거 알아. 이거 지하 동굴로 갈수있는거지?",
+            INGROUND = "이만한 크기면 밖으로 나왔을 때 정말 커다랄거야",
+            GENERIC = "맨손으론 무리고 커다란 도끼가 필요할거야",
         },
         TOADSTOOL =
         {
-            GENERIC = "Yeesh! I'm not kissing that!",
-            RAGE = "He's hopping mad now!",
+            GENERIC = "ㄴ...눈이 3개인 개구리..? 징그러!!!",
+            RAGE = "폴짝폴짝 뛰기 시작했어! 더 징그러!!!!",
         },
         MUSHROOMSPROUT =
         {
-            GENERIC = "How scientific!",
-            BURNT = "How im-morel!",
+            GENERIC = "이게 있으면 공기가 탁해져!",
+            BURNT = "태우기라도 하니 공기가 좀 나아!",
         },
         MUSHTREE_TALL =
         {
-            GENERIC = "That mushroom got too big for its own good.",
-            BLOOM = "You can't tell from far away, but it's quite smelly.",
+            GENERIC = "이 커다란 파란 버섯나무는 키가 아주 크네",
+            BLOOM = "이 버섯나무는 열매가 열리는게 아니라 가루가 날려!",
         },
         MUSHTREE_MEDIUM =
         {
-            GENERIC = "These used to grow in my bathroom.",
-            BLOOM = "I'm mildly offended by this.",
+			GENERIC = "빨간색의 쌍둥이 버섯나무야",
+            BLOOM = "버섯이 웃고있는 것 같아!",
         },
         MUSHTREE_SMALL =
         {
-            GENERIC = "A magic mushroom?",
-            BLOOM = "It's trying to reproduce.",
+            GENERIC = "커다란 녹색우산 같은 버섯나무야",
+            BLOOM = "바람에 뒤집어진 우산같아!",
         },
-        MUSHTREE_TALL_WEBBED = "The spiders thought this one was important.",
+        MUSHTREE_TALL_WEBBED = "거미는 내가 잡아버릴거야!",
         SPORE_TALL =
         {
-            GENERIC = "It's just drifting around.",
-            HELD = "I'll keep a little light in my pocket.",
+            GENERIC = "파란색 버섯 가루가 빛나고있어",
+            HELD = "반짝반짝이는 파란 버섯 가루지만 먹을 순 없어",
         },
         SPORE_MEDIUM =
         {
-            GENERIC = "Hasn't a care in the world.",
-            HELD = "I'll keep a little light in my pocket.",
+            GENERIC = "빨간색 버섯 가루가 빛나고있어",
+            HELD = "반짝반짝이는 빨간 버섯 가루지만 먹을 순 없어",
         },
         SPORE_SMALL =
         {
-            GENERIC = "That's a sight for spore eyes.",
-            HELD = "I'll keep a little light in my pocket.",
+            GENERIC = "초록색 버섯 가루가 빛나고있어",
+            HELD = "반짝반짝이는 초록 버섯 가루지만 먹을 순 없어",
         },
-        RABBITHOUSE =
-        {
-            GENERIC = "That's not a real carrot.",
-            BURNT = "That's not a real roasted carrot.",
-        },
-        SLURTLE = "Ew. Just ew.",
-        SLURTLE_SHELLPIECES = "A puzzle with no solution.",
-        SLURTLEHAT = "That would mess up my hair.",
-        SLURTLEHOLE = "A den of \"ew\".",
-        SLURTLESLIME = "If it wasn't useful, I wouldn't touch it.",
-        SNURTLE = "He's less gross, but still gross.",
-        SPIDER_HIDER = "Gah! More spiders!",
-        SPIDER_SPITTER = "I hate spiders!",
-        SPIDERHOLE = "It's encrusted with old webbing.",
-        SPIDERHOLE_ROCK = "It's encrusted with old webbing.",
-        STALAGMITE = "Looks like a rock to me.",
-        STALAGMITE_TALL = "Rocks, rocks, rocks, rocks...",
-        TREASURECHEST_TRAP = "How convenient!",
-
-        TURF_CARPETFLOOR = "It's surprisingly scratchy.",
-        TURF_CHECKERFLOOR = "These are pretty snazzy.",
-        TURF_DIRT = "A chunk of ground.",
-        TURF_FOREST = "A chunk of ground.",
-        TURF_GRASS = "A chunk of ground.",
-        TURF_MARSH = "A chunk of ground.",
-        TURF_ROAD = "Hastily cobbled stones.",
-        TURF_ROCKY = "A chunk of ground.",
-        TURF_SAVANNA = "A chunk of ground.",
-        TURF_WOODFLOOR = "These are floorboards.",
-
-		TURF_CAVE="Yet another ground type.",
-		TURF_FUNGUS="Yet another ground type.",
-		TURF_SINKHOLE="Yet another ground type.",
-		TURF_UNDERROCK="Yet another ground type.",
-		TURF_MUD="Yet another ground type.",
-
-		TURF_DECIDUOUS = "Yet another ground type.",
-		TURF_SANDY = "Yet another ground type.",
-		TURF_BADLANDS = "Yet another ground type.",
-		TURF_DESERTDIRT = "A chunk of ground.",
-		TURF_FUNGUS_GREEN = "A chunk of ground.",
-		TURF_FUNGUS_RED = "A chunk of ground.",
-		TURF_DRAGONFLY = "Do you want proof that it's fireproof?",
-
-		POWCAKE = "Science help us.",
-        CAVE_ENTRANCE = "I wonder if that rock could be moved.",
-        CAVE_ENTRANCE_RUINS = "It's probably hiding something.",
-       
-       	CAVE_ENTRANCE_OPEN = 
-        {
-            GENERIC = "The earth itself rejects me!",
-            OPEN = "I bet there's all sorts of things to discover down there.",
-            FULL = "I'll have to wait until someone leaves to enter.",
-        },
-        CAVE_EXIT = 
-        {
-            GENERIC = "I'll just stay down here, I suppose.",
-            OPEN = "I've had enough discovery for now.",
-            FULL = "The surface is too crowded!",
-        },
-
-		MAXWELLPHONOGRAPH = "So that's where the music was coming from.",
-		BOOMERANG = "Aerodynamical!",
-		PIGGUARD = "He doesn't look as friendly as the others.",
-		ABIGAIL = "Awww, she has a cute little bow.",
-		ADVENTURE_PORTAL = "I'm not sure I want to fall for that a second time.",
-		AMULET = "I feel so safe when I get to wear it.",
-		ANIMAL_TRACK = "Tracks left by food. I mean... an animal.",
-		ARMORGRASS = "Hopefully there aren't any bugs in it.",
-		ARMORMARBLE = "That looks really heavy.",
-		ARMORWOOD = "That is a perfectly reasonable piece of clothing.",
-		ARMOR_SANITY = "Wearing that makes me feel safe and insecure.",
-		ASH =
-		{
-			GENERIC = "All that's left after the fire has done its job.",
-			REMAINS_GLOMMERFLOWER = "The flower was consumed by fire in the teleportation!",
-			REMAINS_EYE_BONE = "The eyebone was consumed by fire in the teleportation!",
-			REMAINS_THINGIE = "There's a perfectly scientific explanation for that.",
-		},
-		AXE = "A trusty axe.",
-		BABYBEEFALO = 
-		{
-			GENERIC = "Awwww. So cute!",
-		    SLEEPING = "Sweet dreams, smelly.",
-        },
-        BUNDLE = "Our supplies are in there!",
-        BUNDLEWRAP = "Wrapping things up should make them easier to carry.",
-		BACKPACK = "You could fit a whole lot of science in there.",
-		BACONEGGS = "The perfect breakfast for a man of science.",
-		BANDAGE = "Seems sterile enough.",
-		BASALT = "That's too strong to break through!",
-		BEARDHAIR = "It's only gross when they're not your own.",
-		BEARGER = "What a bear of a badger.",
-		BEARGERVEST = "Welcome to the hibernation station!",
-		ICEPACK = "The fur keeps the temperature inside stable.",
-		BEARGER_FUR = "A mat of thick fur.",
-		BEDROLL_STRAW = "Looks comfy, but it smells like mildew.",
-		BEEQUEEN = "Keep that stinger away from me!",
+		
+		BEEQUEEN = "혼자서 덤비라구 비겁한 벌!",
 		BEEQUEENHIVE = 
 		{
-			GENERIC = "It's too sticky to walk on.",
-			GROWING = "Was that there before?",
+			GENERIC = "이 벌통에는 꿀이 어마어마하게 있을 것 같아",
+			GROWING = "이 벌집은 지금 손 대면 안될 것 같아",
 		},
-        BEEQUEENHIVEGROWN = "How in science did it get so big?!",
-        BEEGUARD = "It's guarding the queen.",
-        HIVEHAT = "The world seems less a little crazy when I wear it.",
+        BEEQUEENHIVEGROWN = "이만큼 큰 벌집이면 꿀이 엄청 많을거야!",
+        BEEGUARD = "이 벌들 정말 방해돼!",
+        HIVEHAT = "누군가가 내에게 이런 말을 하는 것 같아 \"마이 프레셔스\"",
         MINISIGN =
         {
-            GENERIC = "I could draw better than that!",
-            UNDRAWN = "We should draw something on there.",
+            GENERIC = "글자 대신 그림을 그려놓은건 좋은 생각이야!",
+            UNDRAWN = "팻말은 있는데 내용이 없네",
         },
-        MINISIGN_ITEM = "It's not much use like this. We should place it.",
-		BEE =
-		{
-			GENERIC = "To bee or not to bee.",
-			HELD = "Careful!",
-		},
-		BEEBOX =
-		{
-			READY = "It's full of honey.",
-			FULLHONEY = "It's full of honey.",
-			GENERIC = "Bees!",
-			NOHONEY = "It's empty.",
-			SOMEHONEY = "Need to wait a bit.",
-			BURNT = "How did it get burned?!!",
-		},
-		MUSHROOM_FARM =
-		{
-			STUFFED = "That's a lot of mushrooms!",
-			LOTS = "The mushrooms have really taken to the log.",
-			SOME = "It should keep growing now.",
-			EMPTY = "It could use a spore. Or a mushroom transplant.",
-			ROTTEN = "The log is dead. We should replace it with a live one.",
-			BURNT = "The power of science compelled it.",
-			SNOWCOVERED = "I don't think it can grow in this cold.",
-		},
-		BEEFALO =
-		{
-			FOLLOWER = "He's coming along peacefully.",
-			GENERIC = "It's a beefalo!",
-			NAKED = "Aww, he's so sad.",
-			SLEEPING = "These guys are really heavy sleepers.",
-            --Domesticated states:
-            DOMESTICATED = "This one is slightly less smelly than the others.",
-            ORNERY = "It looks deeply angry.",
-            RIDER = "This fellow appears quite ridable.",
-            PUDGY = "Hmmm, there may be too much food inside it.",
-		},
-
-		BEEFALOHAT = "That's a case of hat-hair waiting to happen.",
-		BEEFALOWOOL = "It smells like beefalo tears.",
-		BEEHAT = "Protects your skin, but squashes your meticulous coiffure.",
-        BEESWAX = "Beeswax is a scientifically proven preservative!",
-		BEEHIVE = "It's buzzing with activity.",
-		BEEMINE = "It buzzes when shaken.",
-		BEEMINE_MAXWELL = "Bottled mosquito rage!",
-		BERRIES = "Red berries taste the best.",
-		BERRIES_COOKED = "I don't think heat improved them.",
-        BERRIES_JUICY = "Extra tasty, though they won't last long.",
-        BERRIES_JUICY_COOKED = "Better eat them before they spoil!",
-		BERRYBUSH =
-		{
-			BARREN = "I think it needs to be fertilized.",
-			WITHERED = "Nothing will grow in this heat.",
-			GENERIC = "I think those are the edible kind.",
-			PICKED = "Maybe they'll grow back?",
-			DISEASED = "It looks pretty sick.",
-			DISEASING = "Err, something's not right.",
-			BURNING = "It's very much on fire.",
-		},
+        MINISIGN_ITEM = "누가 와도 쉽게 알아볼 수 있을거야",
+		
 		BERRYBUSH_JUICY =
 		{
-			BARREN = "It won't make any berries in this state.",
-			WITHERED = "The heat even dehydrated the juicy berries!",
-			GENERIC = "I should leave them there until it's time to eat.",
-			PICKED = "The bush is working hard on the next batch.",
-			DISEASED = "It looks pretty sick.",
-			DISEASING = "Err, something's not right.",
-			BURNING = "It's very much on fire.",
+			BARREN = "열매를 말리는건 좋은 생각같은데 나무는 아니야",
+			WITHERED = "맛이 간거같아. 열매 말고 나무가.",
+			GENERIC = "신선한 열매가 열려있어!",
+			PICKED = "언제쯤 열매가 다시 열리는걸까?",
+			DISEASED = "풀이 병들어버렸어",
+			DISEASING = "상태가 이상해보이는걸",
+			BURNING = "물기가 많은 풀이어도 불은 붙는구나",
 		},
-		BIGFOOT = "That is one biiig foot.",
-		BIRDCAGE =
+		
+		CANARY =
 		{
-			GENERIC = "Now it just needs a bird.",
-			OCCUPIED = "Who's a good bird?",
-			SLEEPING = "Awwww, he's asleep.",
-			HUNGRY = "He's looking a bit peckish.",
-			STARVING = "Has no one fed you in awhile?",
-			DEAD = "Maybe he's just resting?",
-			SKELETON = "That bird is definitely deceased.",
+			GENERIC = "가슴털이 복실한 노란 새야",
+			HELD = "작은 새이지만 무언가 다른 일에 쓸 수도 있을 것 같아",
 		},
-		BIRDTRAP = "Gives me a net advantage!",
-		CAVE_BANANA_BURNT = "Not my fault!",
-		BIRD_EGG = "A small, normal egg.",
-		BIRD_EGG_COOKED = "Sunny side yum!",
-		BISHOP = "Back off, preacherman!",
-		BLOWDART_FIRE = "This seems fundamentally unsafe.",
-		BLOWDART_SLEEP = "Just don't breathe in.",
-		BLOWDART_PIPE = "Good practice for my birthday cake!",
-		BLOWDART_YELLOW = "It has shocking accuracy.",
-		BLUEAMULET = "Cool as ice!",
-		BLUEGEM = "It sparkles with cold energy.",
-		BLUEPRINT = 
-		{ 
-            COMMON = "It's scientific!",
-            RARE = "It's REALLY scientific!",
-        },
-        SKETCH = "A picture of a sculpture. We'll need somewhere to make it.",
-		--BELL_BLUEPRINT = "There's SCIENCE afoot!",
-		BLUE_CAP = "It's weird and gooey.",
-		BLUE_CAP_COOKED = "It's different now...",
-		BLUE_MUSHROOM =
-		{
-			GENERIC = "It's a mushroom.",
-			INGROUND = "It's sleeping.",
-			PICKED = "I wonder if it will come back?",
-		},
-		BOARDS = "Boards.",
-		BONESHARD = "Bits of bone.",
-		BONESTEW = "A stew to put some meat on your bones.",
-		BUGNET = "For catching bugs.",
-		BUSHHAT = "It's kind of scratchy.",
-		BUTTER = "I can't believe it's butter!",
-		BUTTERFLY =
-		{
-			GENERIC = "Butterfly, flutter by.",
-			HELD = "Now I have you!",
-		},
-		BUTTERFLYMUFFIN = "We threw the recipe away and just kind of winged it.",
-		BUTTERFLYWINGS = "Without these, it's just a butter.",
-		BUZZARD = "What a bizarre buzzard!",
+        CANARY_POISONED = "살아있는 새가 살아있는 맛이 간 새가 되어버렸어",
 
-		SHADOWDIGGER = "Oh good. Now there's more of him.",
-
-		CACTUS = 
-		{
-			GENERIC = "Sharp but delicious.",
-			PICKED = "Deflated, but still spiny.",
-		},
-		CACTUS_MEAT_COOKED = "Grilled fruit of the desert.",
-		CACTUS_MEAT = "There are still some spines between me and a tasty meal.",
-		CACTUS_FLOWER = "A pretty flower from a prickly plant.",
-
-		COLDFIRE =
-		{
-			EMBERS = "That fire needs more fuel or it's going to go out.",
-			GENERIC = "Sure beats darkness.",
-			HIGH = "That fire is getting out of hand!",
-			LOW = "The fire's getting a bit low.",
-			NORMAL = "Nice and comfy.",
-			OUT = "Well, that's over.",
-		},
-		CAMPFIRE =
-		{
-			EMBERS = "That fire needs more fuel or it's going to go out.",
-			GENERIC = "Sure beats darkness.",
-			HIGH = "That fire is getting out of hand!",
-			LOW = "The fire's getting a bit low.",
-			NORMAL = "Nice and comfy.",
-			OUT = "Well, that's over.",
-		},
-		CANE = "Technically walking is just controlled falling.",
-		CATCOON = "A playful little thing.",
-		CATCOONDEN = 
-		{
-			GENERIC = "It's a den in a stump.",
-			EMPTY = "Its owner ran out of lives.",
-		},
-		CATCOONHAT = "Ears hat!",
-		COONTAIL = "I think it's still swishing.",
-		CARROT = "Yuck. This vegetable came out of the dirt.",
-		CARROT_COOKED = "Mushy.",
-		CARROT_PLANTED = "The earth is making plantbabies.",
-		CARROT_SEEDS = "It's a carrot seed.",
-		CARTOGRAPHYDESK =
-		{
-			GENERIC = "Now I can show everyone what I found!",
-			BURNING = "So much for that.",
-			BURNT = "Nothing but ash now.",
-		},
-		WATERMELON_SEEDS = "It's a melon seed.",
-		CAVE_FERN = "It's a fern.",
-		CHARCOAL = "It's small, dark, and smells like burnt wood.",
-        CHESSPIECE_PAWN = "I can relate.",
-        CHESSPIECE_ROOK =
-        {
-            GENERIC = "It's even heavier than it looks.",
-            STRUGGLE = "The chess pieces are moving themselves!",
-        },
-        CHESSPIECE_KNIGHT =
-        {
-            GENERIC = "It's a horse, of course.",
-            STRUGGLE = "The chess pieces are moving themselves!",
-        },
-        CHESSPIECE_BISHOP =
-        {
-            GENERIC = "It's a stone bishop.",
-            STRUGGLE = "The chess pieces are moving themselves!",
-        },
-        CHESSPIECE_MUSE = "Hmm... Looks familiar.",
-        CHESSPIECE_FORMAL = "Doesn't seem very \"kingly\" to me.",
-        CHESSPIECE_HORNUCOPIA = "Makes my stomach rumble just looking at it.",
-        CHESSPIECE_PIPE = "That was never really my thing.",
-        CHESSPIECE_DEERCLOPS = "It feels like its eye follows you.",
-        CHESSPIECE_BEARGER = "It was a lot bigger up close.",
-        CHESSPIECE_MOOSEGOOSE = "Eurgh. It's so lifelike.",
-        CHESSPIECE_DRAGONFLY = "Ah, that brings back memories. Bad ones.",
-        CHESSPIECE_CLAYHOUND = "??",
-        CHESSPIECE_CLAYWARG = "??",
-        CHESSJUNK1 = "A pile of broken chess pieces.",
-        CHESSJUNK2 = "Another pile of broken chess pieces.",
-        CHESSJUNK3 = "Even more broken chess pieces.",
-		CHESTER = "Otto von Chesterfield, Esq.",
-		CHESTER_EYEBONE =
-		{
-			GENERIC = "It's looking at me.",
-			WAITING = "It went to sleep.",
-		},
-		COOKEDMANDRAKE = "Poor little guy.",
-		COOKEDMEAT = "Charbroiled to perfection.",
-		COOKEDMONSTERMEAT = "That's only somewhat more appetizing than when it was raw.",
-		COOKEDSMALLMEAT = "Now there's no reason to worry about getting worms!",
-		COOKPOT =
-		{
-			COOKING_LONG = "This is going to take a while.",
-			COOKING_SHORT = "It's almost done!",
-			DONE = "Mmmmm! It's ready to eat!",
-			EMPTY = "It makes me hungry just to look at it.",
-			BURNT = "The pot got cooked.",
-		},
-		CORN = "High in fructose!",
-		CORN_COOKED = "Cooked and high in fructose!",
-		CORN_SEEDS = "It's a corn seed.",
-        CANARY =
-		{
-			GENERIC = "Some sort of yellow creature made of science.",
-			HELD = "I'm not squishing you, am I?",
-		},
-        CANARY_POISONED = "It's probably fine.",
-
-		CRITTERLAB = "Is there something in there?",
-        CRITTER_GLOMLING = "What an aerodynamical creature!",
-        CRITTER_DRAGONLING = "It's wyrmed its way into my heart.",
-		CRITTER_LAMB = "Much less mucusy than its momma.",
-        CRITTER_PUPPY = "Pretty cute for a lil monster!",
-        CRITTER_KITTEN = "You'd make a good lab assistant.",
-        CRITTER_PERDLING = "My feathered friend.",
-
-		CROW =
-		{
-			GENERIC = "Creepy!",
-			HELD = "He's not very happy in there.",
-		},
-		CUTGRASS = "Cut grass, ready for arts and crafts.",
-		CUTREEDS = "Cut reeds, ready for crafting and hobbying.",
-		CUTSTONE = "Seductively smooth.",
-		DEADLYFEAST = "A most potent dish.",
-		DEER =
-		{
-			GENERIC = "Is it staring at me? ...No, I guess not.",
-			ANTLER = "What an impressive antler!",
-		},
-        DEER_ANTLER = "Was that supposed to come off?",
-        DEER_GEMMED = "It's being controlled by that beast!",
-		DEERCLOPS = "It's enormous!!",
-		DEERCLOPS_EYEBALL = "This is really gross.",
-		EYEBRELLAHAT =	"It watches over the wearer.",
-		DEPLETED_GRASS =
-		{
-			GENERIC = "It's probably a tuft of grass.",
-		},
-        GOGGLESHAT = "What a stylish pair of goggles.",
-        DESERTHAT = "Quality eye protection.",
-		DEVTOOL = "It smells of bacon!",
-		DEVTOOL_NODEV = "I'm not strong enough to wield it.",
-		DIRTPILE = "It's a pile of dirt... or IS it?",
-		DIVININGROD =
-		{
-			COLD = "The signal is very faint.",
-			GENERIC = "It's some kind of homing device.",
-			HOT = "This thing's going crazy!",
-			WARM = "I'm headed in the right direction.",
-			WARMER = "Must be getting pretty close.",
-		},
-		DIVININGRODBASE =
-		{
-			GENERIC = "I wonder what it does.",
-			READY = "It looks like it needs a large key.",
-			UNLOCKED = "Now the machine can work!",
-		},
-		DIVININGRODSTART = "That rod looks useful!",
-		DRAGONFLY = "That's one fly dragon!",
-		ARMORDRAGONFLY = "Hot mail!",
-		DRAGON_SCALES = "They're still warm.",
-		DRAGONFLYCHEST = "Next best thing to a lockbox!",
-		DRAGONFLYFURNACE = 
-		{
-			HAMMERED = "I don't think it's supposed to look like that.",
-			GENERIC = "Produces a lot of heat, but not much light.", --no gems
-			NORMAL = "Is it winking at me?", --one gem
-			HIGH = "It's scalding!", --two gems
-		},
-        
-        HUTCH = "Hutch Danglefish, P.I.",
-        HUTCH_FISHBOWL =
-        {
-            GENERIC = "I always wanted one of these.",
-            WAITING = "Maybe he needs some science?",
-        },
-		LAVASPIT = 
-		{
-			HOT = "Hot spit!",
-			COOL = "I like to call it \"Basaliva\".",
-		},
-		LAVA_POND = "Magmificent!",
-		LAVAE = "Too hot to handle.",
-		LAVAE_COCOON = "Cooled off and chilled out.",
+		CRITTERLAB = "무언가 저 안에 있어!",
+        CRITTER_GLOMLING = "작고 귀여운 동물이 더 작고 귀여워졌어!",
+        CRITTER_DRAGONLING = "내가 구워질 것 같지만 귀여우니까 괜찮아!",
+		CRITTER_LAMB = "좀 털이 많고, 지저분해보이지만 단단하고, 귀여워!",
+        CRITTER_PUPPY = "솟은 코가 위험을 맡고, 목소린 크고, 귀여워!",
+        CRITTER_KITTEN = "큰 귀는 위험을 듣고, 발톱은 날카롭고, 귀여워!",
+        CRITTER_PERDLING = "뾰족뾰족한 털에 큰 눈망울은 정말 완벽해!",
+		
+		LAVA_POND = "이건 용암인가..? 어떻게 옆에있는데 멀쩡할수 있는거지?",
+		LAVAE = "뭐야 저 불덩이들..! 그만 쫓아오라구!",
+		LAVAE_COCOON = "불꽃처럼 살다가 차갑게 식어버렸어. .. ...? 나 좀 멋진 말 한걸지도",
 		LAVAE_PET = 
 		{
-			STARVING = "Poor thing must be starving.",
-			HUNGRY = "I hear a tiny stomach grumbling.",
-			CONTENT = "It seems happy.",
-			GENERIC = "Aww. Who's a good monster?",
+			STARVING = "불꽃을 키우려면 나무를 줄텐데 얘는 어떻하지?",
+			HUNGRY = "뭔가 크기가 작아진거 아닐까?",
+			CONTENT = "몽글몽글 말랑말랑해보여도 사실은 따끈따끈해",
+			GENERIC = "꿈틀꿈틀 거리는게 재미있어!",
 		},
 		LAVAE_EGG = 
 		{
-			GENERIC = "There's a faint warmth coming from inside.",
+			GENERIC = "이게 알은 아니지만 이 안쪽에 무언가 있다는건 알아",
 		},
 		LAVAE_EGG_CRACKED =
 		{
-			COLD = "I don't think that egg is warm enough.",
-			COMFY = "I never thought I would see a happy egg.",
+			COLD = "불덩이였으니까 태어날려면 더 뜨거워야해",
+			COMFY = "안에 있던 무언가가 밖으로 나오려고 하고있어!",
 		},
-		LAVAE_TOOTH = "It's an egg tooth!",
-
-		DRAGONFRUIT = "What a weird fruit.",
-		DRAGONFRUIT_COOKED = "The fruit's still weird.",
-		DRAGONFRUIT_SEEDS = "It's a weird fruit seed.",
-		DRAGONPIE = "The dragonfruit is very filling.",
-		DRUMSTICK = "Ready for gobbling.",
-		DRUMSTICK_COOKED = "Even better for gobbling!",
-		DUG_BERRYBUSH = "Now it can be taken anywhere.",
-		DUG_BERRYBUSH_JUICY = "This could be replanted closer to home.",
-		DUG_GRASS = "It can be planted anywhere now.",
-		DUG_MARSH_BUSH = "This needs to be planted.",
-		DUG_SAPLING = "This needs to be planted.",
-		DURIAN = "Oh, it smells!",
-		DURIAN_COOKED = "Now it smells even worse!",
-		DURIAN_SEEDS = "It's a durian seed.",
-		EARMUFFSHAT = "Makes you warm and fuzzy inside. Outside, too.",
-		EGGPLANT = "It doesn't look like an egg.",
-		EGGPLANT_COOKED = "It's even less eggy.",
-		EGGPLANT_SEEDS = "It's an eggplant seed.",
+		LAVAE_TOOTH = "돌껍질? 파편? 얇은 돌?",
 		
 		ENDTABLE = 
 		{
-			BURNT = "A burnt vase on a burnt table.",
-			GENERIC = "A flower in a vase on a table.",
-			EMPTY = "I should put something in there.",
-			WILTED = "Not looking too fresh.",
-			FRESHLIGHT = "It's nice to have a little light.",
-			OLDLIGHT = "Did we remember to pick up new bulbs?", -- will be wilted soon, light radius will be very small at this point
+			BURNT = "타면 가짜야! 확인은 했지만 못쓰게 되어버렸네",
+			GENERIC = "이 테이블 밑에 깜깜한 녀석이 있을까?",
+			EMPTY = "뭔가 장식하면 좋지 않을까?",
+			WILTED = "영원히 파릇하지는 않아. 평범한거는 말야",
+			FRESHLIGHT = "이 신선한 향기와 빛이 좋은거야",
+			OLDLIGHT = "색이 바랜것도 난 좋아하지만 그래도 처음의 하얀빛이 좋아", 
 		},
-		DECIDUOUSTREE = 
-		{
-			BURNING = "What a waste of wood.",
-			BURNT = "I feel like I could have prevented that.",
-			CHOPPED = "Take that, nature!",
-			POISON = "It looks unhappy about me stealing those birchnuts!",
-			GENERIC = "It's all leafy. Most of the time.",
-		},
-		ACORN = "There's definitely something inside there.",
-        ACORN_SAPLING = "It'll be a tree soon!",
-		ACORN_COOKED = "Roasted to perfection.",
-		BIRCHNUTDRAKE = "A mad little nut.",
-		EVERGREEN =
-		{
-			BURNING = "What a waste of wood.",
-			BURNT = "I feel like I could have prevented that.",
-			CHOPPED = "Take that, nature!",
-			GENERIC = "It's all piney.",
-		},
-		EVERGREEN_SPARSE =
-		{
-			BURNING = "What a waste of wood.",
-			BURNT = "I feel like I could have prevented that.",
-			CHOPPED = "Take that, nature!",
-			GENERIC = "This sad tree has no cones.",
-		},
+		
 		TWIGGYTREE = 
 		{
-			BURNING = "What a waste of wood.",
-			BURNT = "I feel like I could have prevented that.",
-			CHOPPED = "Take that, nature!",
-			GENERIC = "It's all stick-y.",			
-			DISEASED = "It looks sick. More so than usual.",
+			BURNING = "생긴게 달라도 타버리면 결국 다 이렇게 되어버려",
+			BURNT = "이렇게 바짝 마른 나무니까 더 불이 잘 붙는거야!",
+			CHOPPED = "잔가지 정도면 금방 다시 자라지만 베어버리면 이거 밖에 남지 않아",
+			GENERIC = "가지만 잔뜩 나있어, 작은 싹도 보이네!",
+			DISEASED = "잎이 적어서 병에 걸린걸까 아니면 잎이 적어서 병에 잘 안걸린걸까?",
 		},
-		TWIGGY_NUT_SAPLING = "It doesn't need any help to grow.",
-        TWIGGY_OLD = "That tree looks pretty wimpy.",
-		TWIGGY_NUT = "There's a stick-y tree inside it that wants to get out.",
-		EYEPLANT = "I think I'm being watched.",
-		INSPECTSELF = "Am I still in one piece?",
+		TWIGGY_NUT_SAPLING = "\"병충해에 강하고 척박한 땅에서도 잘 자랍니다.\" 라고해",
+        TWIGGY_OLD = "나무 껍질이 두꺼워진것 같지만 금방 털어내고 새로 자랄거야",
+		TWIGGY_NUT = "잔가지만 무성한 나무에도, 열매는 자라나",
+		
+		FLOWER_WITHERED = "꽃이 병들어버렸어! 햇님이 없어서 그런가봐",
+		
+		FOSSIL_PIECE = "뼈가 너무 오랫동안 땅속에 있어서 돌처럼 되어버린거야",
+        FOSSIL_STALKER =
+        {
+			GENERIC = "나쁘지는 않지만 그렇다고 뭔지도 모르겠네",
+			FUNNY = "난 이게 원래 뭐였는지는 모르지만\n수수께끼를 푸는 것 같아서 재미있어!",
+			COMPLETE = "턱이라던지 몇개는 모자르지만 이거면 내도 만족해",
+        },
+        STALKER = "소라고 하기엔 머리가 이상하고 뿔도 이상하고 다 이상해",
+        STALKER_ATRIUM = "소라고 하기엔 머리가 이상하고 뿔도 이상하고 다 이상해",
+        STALKER_MINION = "소라고 하기엔 머리가 이상하고 뿔도 이상하고 다 이상해",
+        THURIBLE = "죽은이들의 소리가 들려. 선명하게",
+        ATRIUM_OVERGROWTH = "무언가가 끌려들어가고, 나오는걸 반복 하고있어",
+		
+		LUCY = "날이 무디어지지 않는 도끼라니, 이거야 말로 마법이야!",
+		
+		MINIFAN = "이걸 들고 달리면 시원한 기분이 들어. 정말 기분뿐이지만.",
+		
+		OASISLAKE = "여러가지가 비치는 물 웅덩이야",
+		
+		PINECONE_SAPLING = "나무는 이 세상을 무서워하지도 않고 마구 자라",
+        LUMPY_SAPLING = "난 나무가 포기하지 않고 자라는것을 보면서 희망을 키워",
+		
+--adds 6 end
+		
+		RABBITHOUSE=
+		{
+			GENERIC = "토끼괴인이 사는 집이야",
+			BURNT = "토끼라서 불에는 익숙하지 않았나봐",
+		},
+		TURF_DECIDUOUS = "썩은잎이 가득한 무더기야",
+		TURF_SANDY = "건조한 모래가 가득한 무더기야",
+		TURF_BADLANDS = "딱딱한 무더기야!",
+		BEARGER = "내도 꿀을 먹으면 키가 커질까?",
+		BEARGERVEST = "복실복실한 옷이야",
+		ICEPACK = "휴대용 냉장고야",
+		BEARGER_FUR = "이 털가죽이 있으면 내가 새로운 것을 만들 수 있어",
+		FURTUFT = "콜록! 내 입에 털뭉치가 들어갔어!",
+		BIGFOOT = "어마어마하게 커다란 발자국이야!",
+		BONESHARD = "뼈 무더기도 쓸데가 있어",
+		BUZZARD = "얘 말고도 하늘에 엄청 많이 있어",
+		CACTUS =
+		{
+			GENERIC = "왜 이 식물엔 이렇게 가시가 많을까?\n먹을 수도 없는데",
+			PICKED = "가시가 많았지만 결국은 채집했어",
+		},
+		CACTUS_MEAT_COOKED = "조금 질겨진거 같아",
+		CACTUS_MEAT = "가시가 없으면 괜찮아. 아마도",
+		CACTUS_FLOWER = "이 삐죽한 식물에는 이쁜 꽃이 피어나네",
+		COLDFIRE =
+		{
+			EMBERS = "뭔가 넣어볼까?",
+			GENERIC = "이 파란 불꽃은 요리를 할 수 없어",
+			HIGH = "엄청난 불꽃인데 차가워!",
+			LOW = "차가운 불꽃이 사그러져가",
+			NORMAL = "파란 불꽃은 엄청 뜨겁다고 들었는데 실제로는 차갑네",
+			OUT = "불꽃이 사그러졌어",
+		},
+		CATCOON = "이 신경질적인 냐옹이는 남을게 없어보여",
+		CATCOONDEN =
+		{
+			GENERIC = "이거 냐옹이의 집인가..? 냐옹이처럼 귀여워!?",
+			EMPTY = "냐옹이.. 더이상 나오지않네.. 그만 괴롭힐게~ 좀 나와줘~",
+		},
+		CATCOONHAT = "도끼를 들어야 할 것 같은 느낌이야",
+		COONTAIL = "냐옹이에게서 건진 유일한 아이템이야",
+		COOKPOT =
+		{
+			COOKING_LONG = "이렇게 오래 걸리는게 맞는거야?",
+			COOKING_SHORT = "소금소금소금♬ 후추후추후추♬\n아앗, 너무 많이넣었나?♬",
+			DONE = "요리가 완성됐어!",
+			EMPTY = "이제 아무도 사용하지 않나봐.\n드디어 내 실력을 발휘할 때야",
+			BURNT = "왜 아무도 신경쓰지 않은거야? 8ㅅ8",
+		},
+		EYEBRELLAHAT =	"비도 막아주고, 열도 막아주고,\n눈도 막아주는데, 무겁네.",
+		ARMORDRAGONFLY = "살짝만 대어봐도 데어버릴 것 같아",
+		DRAGON_SCALES = "멋져! 그리고 화끈해!",
+		DRAGONFLYCHEST = "불보다 더 화끈한 상자야!",
+		DECIDUOUSTREE =
+		{
+			BURNING = "탄다!!",
+			BURNT = "타버렸네",
+			CHOPPED = "여기에 앉아서 쉬면 편할 것 같아",
+			GENERIC = "나무야",
+			POISON = "왕!왕왕!",
+		},
+		ACORN_COOKED = "냄새가 좋아!",
+		BIRCHNUTDRAKE = "창 말고, 도끼로 찍어버려야해!",
 		FARMPLOT =
 		{
-			GENERIC = "I should try planting some crops.",
-			GROWING = "Go plants go!",
-			NEEDSFERTILIZER = "I think it needs to be fertilized.",
-			BURNT = "I don't think anything will grow in a pile of ash.",
-		},
-		FEATHERHAT = "BECOME THE BIRD!",
-		FEATHER_CROW = "A crow feather.",
-		FEATHER_ROBIN = "A redbird feather.",
-		FEATHER_ROBIN_WINTER = "A snowbird feather.",
-		FEATHER_CANARY = "A canary feather.",
-		FEATHERPENCIL = "The feather increases the scientific properties of the writing.",
-		FEM_PUPPET = "She's trapped!",
-		FIREFLIES =
-		{
-			GENERIC = "If only I could catch them!",
-			HELD = "They make my pocket glow!",
-		},
-		FIREHOUND = "That one is glowy.",
-		FIREPIT =
-		{
-			EMBERS = "I should put something on the fire before it goes out.",
-			GENERIC = "Sure beats darkness.",
-			HIGH = "Good thing it's contained!",
-			LOW = "The fire's getting a bit low.",
-			NORMAL = "Nice and comfy.",
-			OUT = "At least I can start it up again.",
+			GENERIC = "씨앗을 심기위해 땅을 골라봤어",
+			GROWING = "빨리빨리 자라라",
+			NEEDSFERTILIZER = "비료를 가져와야겠어",
+			BURNT = "익어버리기도 전에 타버렸네",
 		},
 		COLDFIREPIT =
 		{
-			EMBERS = "I should put something on the fire before it goes out.",
-			GENERIC = "Sure beats darkness.",
-			HIGH = "Good thing it's contained!",
-			LOW = "The fire's getting a bit low.",
-			NORMAL = "Nice and comfy.",
-			OUT = "At least I can start it up again.",
+			EMBERS = "뭔가 넣어볼까?",
+			GENERIC = "이 파란 불꽃은 요리를 할 수 없어",
+			HIGH = "엄청난 불꽃인데 차가워!",
+			LOW = "차가운 불꽃이 사그러져가",
+			NORMAL = "파란 불꽃은 엄청 뜨겁다고 들었는데 실제로는 차갑네",
+			OUT = "불꽃이 사그러졌어",
 		},
-		FIRESTAFF = "I don't want to set the world on fire.",
-		FIRESUPPRESSOR = 
-		{	
-			ON = "Fling on!",
-			OFF = "All quiet on the flinging front.",
-			LOWFUEL = "The fuel tank is getting a bit low.",
-		},
-
-		FISH = "Now I shall eat for a day.",
-		FISHINGROD = "Hook, line and stick!",
-		FISHSTICKS = "Sticks to your ribs.",
-		FISHTACOS = "Crunchy and delicious!",
-		FISH_COOKED = "Grilled to perfection.",
-		FLINT = "It's a very sharp rock.",
-		FLOWER = 
+		FIRESUPPRESSOR =
 		{
-            GENERIC = "It's pretty, but it smells like a common laborer.",
-            ROSE = "To match my rosy cheeks.",
-        },
-        FLOWER_WITHERED = "I don't think it got enough sun.",
-		FLOWERHAT = "It smells like prettiness.",
-		FLOWER_EVIL = "Augh! It's so evil!",
-		FOLIAGE = "Some leafy greens.",
-		FOOTBALLHAT = "I don't like sports.",
-        FOSSIL_PIECE = "Science bones! We should put them back together.",
-        FOSSIL_STALKER =
+			ON = "불이 나지 않게 하려면 태울게 많이 필요해",
+			OFF = "아껴서 사용할 수 있다면 재료를 절약할 수 있을거야",
+			LOWFUEL = "넣은게 거의 바닥났어. 어서 보충해야해",
+		},
+		ICEHAT = "머리가 축축하긴 하지만 지금 시원한건 좋아",
+		LIGHTNINGGOAT =
+		{
+			GENERIC = "베베꼬인 뿔을 가진 염소야",
+			CHARGED = "찌릿한 염소야! 근데 내에게 착할 것 같진 않아",
+		},
+		LIGHTNINGGOATHORN = "기가 드릴 브-\n웅? 안된다구? 왜?",
+		GOATMILK = "염소젖이야!",
+		MEATRACK =
+		{
+			DONE = "언제 회수하는거야? 이미 바싹 마른 것 같은데",
+			DRYING = "난 고기를 더욱 맛있게 만들고 있어",
+			DRYINGINRAIN = "말리다 젖고 다시 마른 고기는 맛이 괜찮을까?",
+			GENERIC = "난 이것으로 육포를 만들거야. 육포는 맛있어.",
+			BURNT = "난 고기를 말리려고 했지 나무를 태울 생각은 없었어",
+		},
+		MERMHEAD =
+		{
+			GENERIC = "물고기괴인을 싫어하는게 내뿐만은 아닌것 같아",
+			BURNT = "얘는 두번 죽었네",
+		},
+		MERMHOUSE =
+		{
+			GENERIC = "늪지에서 사는 괴물이 사는 집이야",
+			BURNT = "늪에서 살아서 불에는 익숙하지 않았나봐",
+		},
+		FLOWERSALAD = "꽃잎을 요리하면 맛있어져",
+        ICECREAM = "처음 만들어봤지만.. 맛있을거같아!",
+        WATERMELONICLE = "과일하고 얼음하고 같이 먹는건 멋진 생각인것 같아!",
+        TRAILMIX = "..먹을..수.. 있지?",
+        HOTCHILI = "화끈한 음식이네!",
+        GUACAMOLE = "먹을 수 있는것과 먹을 수 있는것을 섞었어",
+		MOOSE = "...저..저거.. 너무 크잖아! 오리맞아!?",
+		MOOSEEGG = "저녀석... 이 알을 어떻게 낳은거지?",
+		MOSSLING = "나보다 커다란 병아리야..! 귀여워!",
+		FEATHERFAN = "이 부채는 왜 이렇게 큰거지?",
+		GOOSE_FEATHER = "이 깃털은 깃털펜으로 만들기엔 너무 큰거 같은데",
+		STAFF_TORNADO = "바람이 분다 바람이 불어",
+		PIGHEAD =
+		{
+			GENERIC = "뭘 하고 싶어서 이런걸 만든걸까?",
+			BURNT = "먹을려고 구운건 아닐텐데",
+		},
+		PIGHOUSE =
+		{
+			FULL = "여보세요? 나를 잠깐만 도와줬으면 하는데",
+			GENERIC = "이 세계의 돼지는 두발로 걸어다니네. 고기를 참 좋아해~",
+			LIGHTSOUT = "아, 비었나보네",
+			BURNT = "이 집에 무슨 일이 벌어진거지?",
+		},
+		FERTILIZER = "냄새나지만, 좋은 비료야!",
+		RAINOMETER =
+		{
+			GENERIC = "비가 올 확률은 Soon™ 입니다",
+			BURNT = "비가 올 확률은 N/A 입니- 어?",
+		},
+		RAINCOAT = "휴, 이제 젖지 않을거야, 아마?",
+		RAINHAT = "난 물을 마시는건 좋아하지만\n머리에 붓는게 마시는건 아니잖아",
+		RESEARCHLAB =
+		{
+			GENERIC = "생존기술을 배울 수 있는 기계라고 해",
+			BURNT = "선생님이 타버린거야?",
+		},
+		RESEARCHLAB2 =
+		{
+			GENERIC = "이 세계의 모든 지식의 정수가 담겨있-\n지 않네. 몇갠 없어.",
+			BURNT = "타버린 책은 아무것도 읽을 수 없잖아\n이것도 마찬가지야",
+		},
+		RESEARCHLAB3 =
+		{
+			GENERIC = "내가 마법을 더 잘 쓸 수 있게 해줘. 기적이던가.",
+			BURNT = "마법도 기적도 불 앞에서는 손을 쓸 수 없었어",
+		},
+		RESEARCHLAB4 =
+		{
+			GENERIC = "결론이 나왔어. 모자와 토끼. 이건 마법이야!",
+			BURNT = "마법도 불 앞에서는 손을 쓸 수 없었어",
+		},
+		RESURRECTIONSTATUE =
+		{
+			GENERIC = "이거 낯이 익어. 윌슨?",
+			BURNT = "불타버린 윌슨이야. 뼈도 안남았다구",
+		},
+	--adds 1 start
+		CAVEIN_BOULDER =
         {
-			GENERIC = "Still missing some pieces.",
-			FUNNY = "My scientific instincts say this isn't quite right.",
-			COMPLETE = "It's alive! Oh wait, no, it's not.",
+            GENERIC = "이건 어디서 생겨서 여기에 있는거야? 신기하네",
+            RAISED = "뭔가 알수없게 되어버렸어",
         },
-        STALKER = "The skeleton fused with the shadows!",
-        STALKER_ATRIUM = "Why'd it have to be so big?",
-        STALKER_MINION = "Anklebiters!",
-        THURIBLE = "It smells like chemicals.",
-        ATRIUM_OVERGROWTH = "I don't recognize any of these symbols.",
-		FROG =
+        ROCK = "잔~뜩 캐버리는거야! 돌은 이것저것 많이 쓰이니까!",
+        PETRIFIED_TREE = "... 이 세계는 참 이상하네, 나무가 돌이 되었어.",
+        ROCK_PETRIFIED_TREE = "나무가 왜 돌이 되어버렸을까? 저주?",
+        ROCK_PETRIFIED_TREE_OLD = "..일단 곡괭이로 캐면 되는거지?",
+	--adds 1 end
+		ROCK_ICE =
 		{
-			DEAD = "He's croaked.",
-			GENERIC = "He's so cute!",
-			SLEEPING = "Aww, look at him sleep!",
+			GENERIC = "빙산이 떨어져있.. 솟은걸까?",
+			MELTED = "지금은 이래도 금방 쭉쭉 자랄거야",
 		},
-		FROGGLEBUNWICH = "A very leggy sandwich.",
-		FROGLEGS = "I've heard it's a delicacy.",
-		FROGLEGS_COOKED = "Tastes like chicken.",
-		FRUITMEDLEY = "Fruity.",
-		FURTUFT = "Black and white fur.", 
-		GEARS = "A pile of mechanical parts.",
-		GHOST = "This offends me as a scientist.",
-		GOLDENAXE = "That's one fancy axe.",
-		GOLDENPICKAXE = "Hey, isn't gold really soft?",
-		GOLDENPITCHFORK = "Why did I even make a pitchfork this fancy?",
-		GOLDENSHOVEL = "I can't wait to dig holes.",
-		GOLDNUGGET = "I can't eat it, but it sure is shiny.",
-		GRASS =
+		ROCK_ICE_MELTED = "얼음이 솟기엔 너무 더워!",
+		ICE = "물은 친하지않지만 얼음은 번외지~!",
+        REFLECTIVEVEST = "나도 수영을 할수있을까요!? 네! 있었는데! 없었네요. 그만 알아봅시다.",
+		HAWAIIANSHIRT = "알록 달록한게 조금은 귀엽네~!",
+		TENT =
 		{
-			BARREN = "It needs poop.",
-			WITHERED = "It's not going to grow back while it's so hot.",
-			BURNING = "That's burning fast!",
-			GENERIC = "It's a tuft of grass.",
-			PICKED = "It was cut down in the prime of its life.",
-			DISEASED = "It looks pretty sick.",
-			DISEASING = "Err, something's not right.",
+			GENERIC = "음~ 옛날에.. 아버지와 캠핑을 하던게 떠올라.",
+			BURNT = "타버린 텐트는 로멘틱 하지 않은걸",
 		},
-		GRASSGEKKO = 
+		SIESTAHUT =
 		{
-			GENERIC = "It's an extra leafy lizard.",	
-			DISEASED = "It looks really sick.",
+			GENERIC = "너무 더울땐, 가끔 여기서 쉬는것도 좋지-",
+			BURNT = "너무 뜨거워서 타버렸나봐",
 		},
-		GREEN_CAP = "It seems pretty normal.",
-		GREEN_CAP_COOKED = "It's different now...",
-		GREEN_MUSHROOM =
+		TRANSISTOR = "이거야말로 마법이야!",
+		TREASURECHEST =
 		{
-			GENERIC = "It's a mushroom.",
-			INGROUND = "It's sleeping.",
-			PICKED = "I wonder if it will come back?",
+			GENERIC = "나에겐 많은게 필요하고,\n여기엔 그중에 몇몇개가 들어있어",
+			BURNT = "모두 다 타버렸어!",
 		},
-		GUNPOWDER = "It looks like pepper.",
-		HAMBAT = "This seems unsanitary.",
-		HAMMER = "Stop! It's time! To hammer things!",
-		HEALINGSALVE = "The stinging means that it's working.",
-		HEATROCK =
+		TUMBLEWEED = "멈춰! 그만 좀 굴러가!",
+		GRASS_UMBRELLA = "큐트한 이 우산이, 날 지켜줄거야~",
+		UNIMPLEMENTED = "재대로 작동을 하는거야?",
+		WALL_HAY =
 		{
-			FROZEN = "It's colder than ice.",
-			COLD = "That's a cold stone.",
-			GENERIC = "I could manipulate its temperature.",
-			WARM = "It's quite warm and cuddly... for a rock!",
-			HOT = "Nice and toasty hot!",
+			GENERIC = "간단히 만들수는 있어도 임시니까 조심해야해. 불도 조심해야해",
+			BURNT = "내가 얘기했잖아, 불을 조심해야한다니까",
 		},
-		HOME = "Someone must live here.",
+		WALL_WOOD =
+		{
+			GENERIC = "볏단보단 낫지만 그래도 불에 조심해야해",
+			BURNT = "(한숨) 그래도 난 다시 보강해야해",
+		},
+		WARG = "..저게 검은 강아지들의 우두머리인가? 위험해보여.!",
+		WATERMELON = "이 커다랗고 줄무늬있는 열매는 물이 가득해",
+		WATERMELON_COOKED = "맛있는 꿀차~",
+		WATERMELONHAT = "이걸로 모자를 만들수 있지! 짠! 숨었습니다!",
+		WINTEROMETER =
+		{
+			GENERIC = "내일의 날씨는 SOON™ 입니다",
+			BURNT = "화재 경보 기능은 없었나봐",
+		},
 		HOMESIGN =
 		{
-			GENERIC = "It says \"You are here\".",
-            UNWRITTEN = "The sign is currently blank.",
-			BURNT = "\"Don't play with matches.\"",
+			GENERIC = "여기에 뭔가, 적어볼까?",
+			BURNT = "표지판이면 이대로도 괜찮은거 아닐까?",
 		},
-		ARROWSIGN_POST =
+		BEEBOX =
 		{
-			GENERIC = "It says \"Thataway\".",
-            UNWRITTEN = "The sign is currently blank.",
-			BURNT = "\"Don't play with matches.\"",
+			READY = "이 안에 벌이 잔뜩있으니까, 조심해야해!",
+			FULLHONEY = "상자에 꿀이 가득해! 꿀을 얻을땐, 벌목모자가 필수지~",
+			GENERIC = "벌들이 사방에서 꿀을 모아올거야",
+			NOHONEY = "난 꿀을 기다릴거야",
+			SOMEHONEY = "좋아, 꿀이 잘 모이고 있어",
+			BURNT = "꿀을 상자째로 구워버리는건 좋은 생각이 아니야",
 		},
-		ARROWSIGN_PANEL =
+		LIVINGTREE = "이 나무는 살아있는것같아. 특히 얼굴이 말이야",
+		ICESTAFF = "파란색으로 빛나는 마법의 지팡이야",
+		WORMLIGHT = "밤에 반짝이는 열매야! 먹으면 어떻게 될까?",
+		WORM =
 		{
-			GENERIC = "It says \"Thataway\".",
-            UNWRITTEN = "The sign is currently blank.",
-			BURNT = "\"Don't play with matches.\"",
+		    PLANT = "밤에 반짝이는 열매야! 근데 이게 무슨 냄새지?",
+		    DIRT = "땅속에 뭔가 움직이고있어!",
+		    WORM = "엄청나게 커다란 지렁이야! 이빨까지..!! 너무 징그러워!",
 		},
-		HONEY = "Looks delicious!",
-		HONEYCOMB = "Bees used to live in this.",
-		HONEYHAM = "Sweet and savory.",
-		HONEYNUGGETS = "Tastes like chicken, but I don't think it is.",
-		HORN = "It sounds like a beefalo field in there.",
-		HOUND = "You ain't nothing, hound dog!",
-		HOUNDBONE = "Creepy.",
-		HOUNDMOUND = "I've got no bones to pick with the owner. Really.",
-		ICEBOX = "I have harnessed the power of cold!",
-		ICEHAT = "Stay cool, boy.",
-		ICEHOUND = "Are there hounds for every season?",
+		EEL = "초밥 먹고싶어.",
+		EEL_COOKED = "고소한 냄새하고, 이건 무슨 냄새지?",
+		UNAGI = "솥에 재료를 넣고 흔들었는데 우나기가 완성되었어!",
+		EYETURRET = "이 돌탑이 모든걸 쏴버릴거야",
+		EYETURRET_ITEM = "이건 어렵게 구한거니까.. 신중하게 지어야해",
+		MINOTAURHORN = "이게 바로 내가 위대한 모험을 해냈다는 증거야",
+		MINOTAURCHEST = "이 커다란 보물상자에는 무엇이 들어있을까?",
+		THULECITE_PIECES = "흔하지 않은 재료지만\n난 이걸로 무엇을 만들 수 있는지 알고있어",
+		POND = "낚시를 하자!",
+		POND_ALGAE = "뭔가 이상한게 물속에서 헤엄치고있어",
+		GREENSTAFF = "설명서에 의하면.. 뭐든 분해 합니다..?\n살아있는 것에는 쓰면 안돼겠네.",
+		POTTEDFERN = "뭔가에 써먹을 수는 없겠지만 그래도 괜찮아~",
+
+		THULECITE = "뭔가 의미가 있는것 같은 문양이야",
+		ARMORRUINS = "확실히 단단할것 같지만 매우 무거워",
+		RUINS_BAT = "내가 알고있는 돌망치 가운데는 가장 단단해",
+		RUINSHAT = "이걸 쓰면 나도 강해질수 있을까?",
+		NIGHTMARE_TIMEPIECE = 
+		{
+		CALM = "아무것도 없고, 아무 문제도 없어",	
+		WARN = "조금 더워진거 같아",	
+		WAXING = "내 생각이지만 여긴 더 이상 안전하지 않은 것 같아", 
+		STEADY = "이 이상은 나빠지지 않을 줄 알았는데!",
+		WANING = "여긴 지금 엄청나게 위험해!", 
+		DAWN = "조금만 더 버티면 될것같아!",
+		NOMAGIC = "이런 평화로운 날도 있어야지",
+		},
+		BISHOP_NIGHTMARE = "이 기계들은 왜 나를 쏘는거야?",
+		ROOK_NIGHTMARE = "머리도, 다리도, 눈도 고장났지만 아직 달리고 있어",
+		KNIGHT_NIGHTMARE = "말머리 기계는 박치기를 조심해야해",
+		MINOTAUR = "위험해 보이지만 난 이길 수 있어",	
+		SPIDER_DROPPER = "하얀 거미는 동굴 위쪽에서 살고있어",	
+		NIGHTMARELIGHT = "이 불이 켜져있는건... 좋은 징조는 아니네",	
+		
+
+		GREENGEM = "녹색 보석은 흔히 볼 수 있는게 아니야",
+		RELIC = "이제 작동할거야!",	
+		RUINS_RUBBLE = "뭔가 부품이 비어있어",
+		MULTITOOL_AXE_PICKAXE = "도끼로도 쓸 수 있고 곡괭이로도 쓸 수 있어!",	
+		ORANGESTAFF = "뿅 뿅 하면서 움직일 수 있어!",	
+		YELLOWAMULET = "빨라져!",	
+		GREENAMULET = "반값 세일!",	
+		
+SLURPER = "검정색 팩맨!",
+		SLURPER_PELT = "이것봐! 아직도 살아있는것 처럼 꿈틀거려!",
+		ARMORSLURPER = "이 벨트는 배를 너무 꽉 조여",
+		ORANGEAMULET = "아이템을 쉽게 주을 수 있는 정도의 능력인가..?",
+		YELLOWSTAFF = "빛을 만드는 마법의 지팡이!", 
+		YELLOWGEM = "이 보석은 반짝반짝하네!",
+		ORANGEGEM = "책에서 읽었는데, 이 세계의 주황색 보석은 시간하고 공간을 움직인다는 이야기가 있어",
+		TELEBASE =
+		{
+			VALID = "하늘이 아니라 땅이 움직이는 것 같아",
+			GEMS = "이제 작동하려나?",
+		},
+		GEMSOCKET =
+		{
+			VALID = "여긴 보라색 보석이 필요하겠는걸?",
+			GEMS = "내 모험이 더 넓어질거야",
+		},
+		STAFFLIGHT = "대... 대단해!",
+
+        LIGHTER = "이 작은 물건이 불을 붙일 수 있대",
+
+
+        ANCIENT_ALTAR =
+        {
+        	WORKING = "이것도 우리 세계와 관련이 있는걸까?",
+        	BROKEN = "재대로 움직이게 하려면 뭔가 더 필요할 것 같아",
+        },
+        ANCIENT_ALTAR_BROKEN = "재대로 움직이게 하려면 뭔가 더 필요할 것 같아",
+
+        ANCIENT_STATUE = "이것도 우리 세계와 관련이 있는걸까?",
+
+        LICHEN = "돌덩이?",
+		CUTLICHEN = "뭔가 썩은냄새가 나",
+
+        CAVE_BANANA = "동굴 속에서 이런 샛노란 과일을 발견했어",
+        CAVE_BANANA_COOKED = "익히면 좀 더 달까?",
+        CAVE_BANANA_TREE = "빛이 없는데 어떻게 자라는걸까?",
+        ROCKY = "크-다아!!",
+
+        BLUEAMULET = "차갑고 시원한 목걸이야",
+		PURPLEAMULET = "..오컬트는 취미가 아니지만.. 죽은자가 보여",
+		TELESTAFF = "뿅! 뿅! 뿅!",
+		MINERHAT = "난 광부는 아니지만, 동굴 속에서 이 모자는 유용하네.",
+		MONKEY = "저 망할 녀석이 내 물건을 훔쳐갔어!! 터뜨릴꺼야!!",
+		MONKEYBARREL = "저 속에 희귀한 물건이 숨겨져 있을 지도 몰라",
+
+		HOUNDSTOOTH="저 뼈 무더기에서 사는건 불편해보여",
+		ARMORSNURTLESHELL="투구가 더 낫겠지만 이건 이것대로 좋아",
+		BAT="귀찮게! 괴롭히지마!",
+		BATBAT = "사냥감으로 널 요리해주마!",
+		BATWING="이걸로 난 여러가지를 해볼 수 있을 것 같아",
+		BATWING_COOKED="바삭바삭하고 마시쪙~",
+		BEDROLL_FURRY="이제 편하게 잘 수 있겠어",
+		BUNNYMAN="조심해야해, 쟤들은 고기 냄새를 싫어해",
+		FLOWER_CAVE="햇살 대신 동굴에서 중요한 빛이야",
+		FLOWER_CAVE_DOUBLE="햇살 대신 동굴에서 중요한 빛이야",
+		FLOWER_CAVE_TRIPLE="햇살 대신 동굴에서 중요한 빛이야",
+		GUANO="뭘 먹었길래 이렇게 나오는거야?",
+		LANTERN="손에 들고있어도 빛이 나오고 손에 떼고있어도 빛이 나와!",
+		LIGHTBULB="빛나는 열매야!",
+		MANRABBIT_TAIL="주먹만한 털뭉치야!",
+		MUSHTREE_TALL="파란 버섯나무야",
+		MUSHTREE_MEDIUM="빨간 버섯나무야",
+		MUSHTREE_SMALL="녹색 버섯나무야",
+		SLURTLE="이 단단한 껍질을 짊어지고 다니기엔 너무 작은거 아닐까?",
+		SLURTLE_SHELLPIECES="열번찍으면 부셔지네",
+		SLURTLEHAT="이 모자 나쁘지 않아!",
+		SLURTLEHOLE="커다란 선인장같아",
+		SLURTLESLIME="난 알아. 먹으면 안되는거지?",
+		SNURTLE="갑옷을 입고 있는 것 같아",
+		SPIDER_HIDER="저 거미는 이상한 모자를 쓰고 있어",
+		SPIDER_SPITTER="저 거미는 거미줄 뭉치를 쏘니까 조심해야해!",
+		SPIDERHOLE="저기 거미집이 보여?",
+		STALAGMITE="돌이 하늘로 자라고 있었나봐",
+		STALAGMITE_FULL="돌이 나무처럼 크게크게 자랐어! 그리고 안쪽이 뭔가 있어!",
+		STALAGMITE_LOW="이 돌은 쓸만할 것 같아",
+		STALAGMITE_MED="돌이 하늘로 자라는 것 같아.\n잠깐, 나 전에도 이 말 한 것 같아.",
+		STALAGMITE_TALL="돌이 하늘로 자라고 있었나봐",
+		STALAGMITE_TALL_FULL="돌이 나무처럼 크게 자랐어! 그리고 안쪽에 뭔가 있어!",
+		STALAGMITE_TALL_LOW="이 돌은 쓸만할 것 같아",
+		STALAGMITE_TALL_MED="돌이 하늘로 자라는 것 같아.\n잠깐, 내 전에도 이 말 한 것 같아.",
+
+		TURF_CARPETFLOOR = "푹신푹신해",
+		TURF_CHECKERFLOOR = "알록달록하고 푹신푹신해",
+		TURF_DIRT = "흙무더기야",
+		TURF_FOREST = "이끼가 굉장히 많아",
+		TURF_GRASS = "푸른 초원의 기분을 낼 수 있어",
+		TURF_MARSH = "나뭇잎이 많아!",
+		TURF_ROAD = "바닥이 딱딱하면 난 더 빠르게 달릴 수 있어",
+		TURF_ROCKY = "돌바닥은 쓸모가 있어",
+		TURF_SAVANNA = "이거 무슨 냄새나지 않아? 비팔로의-",
+		TURF_WOODFLOOR = "난 삐걱거리는 소리도 좋아해",
+
+		TURF_CAVE="흰색 바닥",
+		TURF_FUNGUS="얼룩덜룩한게 사방에 퍼져있어",
+		TURF_SINKHOLE="녹색 얼룩이 보여",
+		TURF_UNDERROCK="이 돌은 못쓸거같은데",
+		TURF_MUD="이 진흙 어떻게 사용할 수 없을까?",
+
+		TURKEYDINNER = "칠면조 요리야!",
+		TWIGS = "나뭇가지는 항상 많은게 좋아.\n여러군데 쓸 수 있으니까",
+		POWCAKE = "MSG!",
+        CAVE_ENTRANCE =
+        {
+            GENERIC="이 바위, 모양이 조금 다른걸?",
+            OPEN = "이 아래엔 뭐가 있을까?",
+        },
+        CAVE_EXIT = "지상으로 나가는 로프야!",
+
+		MAXWELLPHONOGRAPH = "이런 취미도 괜찮은것 같아",
+		PIGGUARD = "뭔가를 지키고 있나봐",
+		BOOMERANG = "상대를 멀리서 공격할 수 있는 무기야",
+		ADVENTURE_PORTAL = "여기로 들어가면 어디로 나오는거야?",
+		AMULET = "뭔가 힘이 느껴져! 아닌가?",
+		ANIMAL_TRACK = "좋은 사냥을",
+		ARMORGRASS = "쉽게 만들 수 있어. 없는 것 보단 나아",
+		ARMORMARBLE = "무겁다는 것만 빼면 나쁜건 아닌데, 너무 무겁네",
+		ARMORWOOD = "가장 오랫동안 사용되었던 보호구가 아닐까",
+		ARMOR_SANITY = "살아있는 갑옷인가봐",
+		ASH =
+		{
+			GENERIC = "바람이 불면 타버렸다는 흔적도 사라질거야",
+			REMAINS_GLOMMERFLOWER = "되돌릴 수는 없어도 새로 찾을 수는 있을거야",
+			REMAINS_EYE_BONE = "되돌릴 수는 없어도 새로 찾을 수는 있을거야",
+			REMAINS_THINGIE = "되돌릴 수는 없어도 새로 찾을 수는 있을거야",
+		},
+		AXE = "나무로는 여러가지를 할 수 있어. 나무를 쓸려면 먼저 베어야해",
+		BABYBEEFALO =
+		{
+			GENERIC = "아기는 귀엽다구",
+			SLEEPING = "자고있는 아기는 귀엽다구",
+		},
+		BACKPACK = "가방은 모험하면서 재료를 모을땐 정말 유용해",
+		BACONEGGS = "고기도 있고 후라이도 있다니 정말 좋아!",
+		BANDAGE = "붕대 필요해?",
+		BASALT = "이건 내 힘만으로는 어떻게 할 수 없을 것 같아",
+		BEARDHAIR = "털과 수염은 무슨 차이인거야?",
+		BEDROLL_STRAW = "난 보통 위에서 잠을 자",
+		BEE =
+		{
+			GENERIC = "저 벌들은 일을 하고 있어. 귀엽네~!",
+			HELD = "부웅부웅부우우웅",
+		},
+		BEEFALO =
+		{
+			FOLLOWER = "얘는 왜 날 따라오는거지?",
+			GENERIC = "크고 묵직하고 더럽고 느려보여",
+			NAKED = "다리가 이렇게 가늘 줄은 몰랐어!",
+			SLEEPING = "아무데서나 자는거야?",
+		},
+		BEEFALOHAT = "난 아무것이나 들이받을 준비가 되었어",
+		BEEFALOWOOL = "이걸 덮으면 따뜻할 것 같아",
+		BEEHIVE = "꿀이 잔뜩이야!",
+		BEEMINE = "벌은 화나면 무서워. 지금 엄청 화나있거든?",
+		BEEMINE_MAXWELL = "모기도 화나면 무서울거야. 벌만큼 찔러댈테니까",
+		BEEHAT = "벌에게서 최소한 얼굴은 안전해!",
+		BERRIES = "맛있는 열매야!",
+		BERRIES_COOKED = "구우면 더 맛있는 열매야!",
+		BERRYBUSH =
+		{
+			BARREN = "열매를 말리는건 좋은 생각같은데 나무는 아니야",
+			WITHERED = "맛이 간거같아. 열매 말고 나무가.",
+			GENERIC = "신선한 열매가 열려있어!",
+			PICKED = "언제쯤 열매가 다시 열리는걸까?",
+		},
+		BIRDCAGE =
+		{
+			GENERIC = "새를 위한 집이 준비되었어",
+			OCCUPIED = "이 새는 밖에서 밥을 먹을 수 없으니까 내가 밥을 줘야해",
+			SLEEPING = "새가 자는 동안엔 이 집이 새를 지켜줄거야",
+		},
+		BIRDTRAP = "새를 산채로 잡는 방법 가운데 하나야",
+		BIRD_EGG = "알이 끝없이 나와!",
+		BIRD_EGG_COOKED = "알로 만들 수 있는 요리는 참 많아",
+		BISHOP = "저건 날 쏘니까 조심해야해",
+		BLOWDART_FIRE = "이건 불이 붙으니까 조심해야해",
+		BLOWDART_SLEEP = "이걸 맞으면 잠에 들거야",
+		BLOWDART_PIPE = "이건 좀 따가울 거야",
+		BLUEGEM = "차가운 보석이야",
+		BLUEPRINT = "이걸 읽으면 내 지식이 늘어날거야",
+		BELL_BLUEPRINT = "누군가를 부르는 도구를 만드는 방법이야",
+		BLUE_CAP = "먹으면 힘이 나는 버섯이야",
+		BLUE_CAP_COOKED = "구워서 먹으면 머리가 맑아져",
+		BLUE_MUSHROOM =
+		{
+			GENERIC = "밤하늘을 좋아하는 파란버섯이야",
+			INGROUND = "밤이 온 다음에 다시 와봐야해",
+			PICKED = "기둥만 봐서는 무슨 버섯인지 모르겠어",
+		},
+		BOARDS = "판자로 만들 수 있는건 정말 많아",
+		BONESTEW = "두 유 노 곰탕?",
+		BUGNET = "벌레를 다치지 않게 잡을려면 이게 제일 간단해",
+		BUSHHAT = "기다리게 했군",
+		BUTTER = "버터플라이 - 플라이 = 버터",
+		BUTTERFLY =
+		{
+			GENERIC = "가까이서 보면 징그러워!",
+			HELD = "나비는 먹는게 아니야 땅에 심는거야", --?
+		},
+		BUTTERFLYMUFFIN = "버터머핀이라는게 나비가 꽃혀있는 머핀이었어?",
+		BUTTERFLYWINGS = "나비 몸통이 없어졌어",
+		CAMPFIRE =
+		{
+			EMBERS = "사용하고 싶으면 태울만한걸 넣어야해",
+			GENERIC = "나에게 따뜻한 온기를 나눠줘",
+			HIGH = "불꽃이 하늘로 치솟고있어!",
+			LOW = "불꽃이 사그러들고있어. 새벽이 빨리 온다면 문제는 없을거야",
+			NORMAL = "캠프에 어울리는 밝은 빛이야",
+			OUT = "캠프를 하려면 다시 불을 피워야하는게 아닐까?",
+		},
+		CANE = "난 두발보다 세발로 뛰는걸 더 잘하나봐!",
+		CARROT = "난 당근도 먹을 수 있어",
+		CARROT_COOKED = "이제 당근이 딱딱하지 않아!",
+		CARROT_PLANTED = "이건 당근이야~ 당근은 맛있어! 귀여운 토끼들도 당근을 좋아해!",
+		CARROT_SEEDS = "당근 씨앗이야",
+		CAVE_FERN = "동굴 안에서만 볼 수 있는 보랏빛 잎이야",
+		CHARCOAL = "한번 탄 나무는 또 탈 수 있어",
+        CHESSJUNK1 = "부서진 잔해들이 널려있어",
+        CHESSJUNK2 = "부서진 잔해들이 널려있어",
+        CHESSJUNK3 = "부서진 잔해들이 널려있어",
+		CHESTER = "복실복실해!",
+		CHESTER_EYEBONE =
+		{
+			GENERIC = "뼈 위에 눈이 있을 뿐인데 어떻게 움직이는거지?",
+			WAITING = "X를 눌러 조의를 표하시오? X는 뭐지?",
+		},
+		COOKEDMEAT = "난 날것보다 조리한 쪽이 더 좋아",
+		COOKEDMONSTERMEAT = "조리를 해도 극복할 수 없는 냄새야",
+		COOKEDSMALLMEAT = "고기에는 뭘 넣어도 고기요리가 되어버려. 당연한건가?",
+		CORN = "가루를 내어도 되고 삶아도 되고 구워도 되고 튀겨도 돼!",
+		CORN_COOKED = "냄새가 좋아!",
+		CORN_SEEDS = "옥수수 씨앗이야",
+		CROW =
+		{
+			GENERIC = "저 새는 분명 알을 많이 많이 낳아줄거야~.",
+			HELD = "꺗! 잡았다~! 내가 새를 잡았어! 산채로!",
+		},
+		CUTGRASS = "풀은 벽도지을수있고, 캠프파이어도 만들수 있고, 갑옷도 만들수있고, 밧줄도 만들수 있어!",
+		CUTREEDS = "이건.. 분명 갈대로 종이를 만들 수 있을거야!",
+		CUTSTONE = "이 돌로 뭘 만들어볼까?",
+		DEADLYFEAST = "먹으면 안돼!",
+		DEERCLOPS = "어떻게 눈이 하나일 수 있지? 왜 저렇게 큰거지?",
+		DEERCLOPS_EYEBALL = "하나만 있던거라면 훌륭한 전리품이야",
+		DIRTPILE = "내가 발자국을 찾았어!",
+		DIVININGROD =
+		{
+			COLD = "이게 무슨 소리지? 벌이 있는거야?",
+			GENERIC = "이게 진짜 출구를 찾아주는걸까?",
+			HOT = "뭔가 있는것 같아! 최소한 얘는 그렇게 말하고 있어!",
+			WARM = "뭔가 느껴져. 진동이",
+			WARMER = "뭔가 점점 가까워지는 모양이야. 난 잘 모르겠지만",
+		},
+		DIVININGRODBASE =
+		{
+			GENERIC = "뭔가 꽃혀있어!",
+			READY = "이제 이건 제꺼입니다. 제가 마음대로 할 수 있는겁니다",
+			UNLOCKED = "쓸모가 있을거야. 없을지도 모르지만",
+		},
+		DIVININGRODSTART = "이게 나를 도와줄거야",
+		DRAGONFLY = "잠자리가 아니라 정말로 용-파리잖아!",
+		LAVASPIT =
+		{
+			HOT = "정말 뜨거워!",
+			COOL = "이것도 얼긴 하는구나",
+		},
+		DRAGONFRUIT = "난 이것이 괜찮다고 생각해",
+		DRAGONFRUIT_COOKED = "생긴게 이상해도 속은 괜찮지 않아?",
+		DRAGONFRUIT_SEEDS = "용과 씨앗이야",
+		DRAGONPIE = "파이는 언제나 옳아!",
+		DRUMSTICK = "먹을 수 있는 다리를 구했어!",
+		DRUMSTICK_COOKED = "구운 다리야!",
+		DURIAN = "내에게도 이걸 먹는건 큰 모험이 될거야",
+		DURIAN_COOKED = "내에게 코가 없었다면 이걸 좀 더 쉽게 먹었을지도 몰라",
+		DURIAN_SEEDS = "두리안 씨앗이야",
+		EARMUFFSHAT = "토끼털로 만든 귀마개야",
+		EGGPLANT = "가지 좋아해?",
+		EGGPLANT_COOKED = "더 말랑말랑해졌어",
+		EGGPLANT_SEEDS = "가지 씨앗이야",
+		STUFFEDEGGPLANT = "먹을 수 있는 그릇, 먹을 수 있는 음식, 먹을 수 있는 장식!",
+		DUG_BERRYBUSH = "단 열매는 항상 옳아",
+		DUG_GRASS = "풀은 쓸모가 많으니까 몇개 심어두면 편리해",
+		DUG_MARSH_BUSH = "가시있는 덤불이지만 쓸모있어",
+		DUG_SAPLING = "나뭇가지는 재료로 쓸 수 있고 연료로도 쓸 수 있어",
+		EARMUFFS = "토끼털로 만든 귀마개야",
+		DECIDUOUSTREE =
+		{
+			BURNING = "쉽게 불이 붙고, 쉽게 불이 번져",
+			BURNT = "목탄 덩어리야",
+			CHOPPED = "나무가 밑둥만 남아서 이제 더 이상 크지 않을거야",
+			GENERIC = "나무는 자라고, 시들어! 그리고 또 자라지!",
+		},
+		ACORN =
+		{
+		    GENERIC = "비를 피할 수 있고, 땔감도 되고, 재료도 돼",
+		    PLANTED = "도토리 나무야",
+		},
+		EVERGREEN =
+		{
+			BURNING = "쉽게 불이 붙고, 쉽게 불이 번져",
+			BURNT = "목탄 덩어리야",
+			CHOPPED = "나무가 밑둥만 남아서 이제 더 이상 크지 않을거야",
+			GENERIC = "비를 피할 수 있고, 땔감도 되고, 재료도 돼",
+		},
+		EVERGREEN_SPARSE =
+		{
+			BURNING = "쉽게 불이 붙고, 쉽게 불이 번져",
+			BURNT = "목탄 덩어리야",
+			CHOPPED = "나무가 밑둥만 남아서 이제 더 이상 크지 않을거야",
+			GENERIC = "비를 피할 수 있고, 땔감도 되고, 재료도 돼",
+		},
+		EYEPLANT = "뭐든지 먹어버리는 괴물이야",
+		FEATHERHAT = "춤을 춰야만 할것 같은 모자야",
+		FEATHER_CROW = "까만새 깃털이야",
+		FEATHER_ROBIN = "빨간새 깃털이야",
+		FEATHER_ROBIN_WINTER = "하얀새 깃털이야",
+		FEM_PUPPET = "어디에 쓰는거지?",
+		FIREFLIES =
+		{
+			GENERIC = "밤에 빛나는 벌레야",
+			HELD = "반짝일때는 몰랐는데 이거 이상하게 생겼어",
+		},
+		FIREHOUND = "절대로 집 안에 들어오게 하면 안돼! 다 타버릴거야!",
+		FIREPIT =
+		{
+			EMBERS = "사용하고 싶으면 태울만한걸 넣어야해",
+			GENERIC = "나에게 따뜻한 온기를 나눠줘",
+			HIGH = "불꽃이 하늘로 치솟고있어!",
+			LOW = "불꽃이 사그러들고있어. 새벽이 빨리 온다면 문제는 없을거야",
+			NORMAL = "캠핑에 어울리는 밝은 빛이야",
+			OUT = "캠핑을 하려면 다시 불을 피워야 할거같아.",
+		},
+		FIRESTAFF = "불을 쏘는 물건은 뭐든지 위험해",
+		FISH = "이곳의 물고기는 연못에만 있어",
+		FISHINGROD = "물고기를 먹으려면 물고기를 잡아야지",
+		FISHSTICKS = "가시 걱정만 없다면 더 맛있게 먹을 수 있어",
+		FISHTACOS = "물고기와 옥수수 가루만 있으면 만들 수 있어!",
+		FISH_COOKED = "가장 간단한 물고기 요리야. 소금이 있으면 좋겠네!",
+		FLINT = "불꽃이 튀는 돌이지만 도구를 만드는 데도 쓸 수 있어",
+		FLOWER = "색도 곱고, 냄새도 좋고, 맛은-",
+		FLOWERHAT = "화환은 색도 곱고, 냄새도 좋고, 맛은-",
+		FLOWER_EVIL = "화환의 냄새가 이상해졌어. 내 머리에서도 이상한 냄새가 밴것같아",
+		FOLIAGE = "그냥은 먹을 수 없겠어",
+		FOOTBALLHAT = "튼튼하고 앞이 잘 보여",
+		FROG =
+		{
+			DEAD = "좋은 개구리는 죽은 개구리뿐이야",
+			GENERIC = "이 세계의 개구리는 하늘에서 내려와.",
+			SLEEPING = "쉬잇, 개구리가 자고있어",
+		},
+		FROGGLEBUNWICH = "바삭한 다리로 만든 샌드위치야",
+		FROGLEGS = "몸통엔 뭐가 들었을지 모르니까.. 다리는 닭고기 맛이나서 맛있어!",
+		FROGLEGS_COOKED = "잘 구워졌나?",
+		FRUITMEDLEY = "과일을 잔뜩 섞은거야",
+		GEARS = "메탈 기어!",
+		GHOST = "오, 오컬트라도... 지.. 지지 않을거니까!",
+		GOLDENAXE = "이 금도끼는 나의 금도끼야",
+		GOLDENPICKAXE = "돌 곡괭이보다는 금으로 만든게 더 튼튼해",
+		GOLDENPITCHFORK = "눈부셔!",
+		GOLDENSHOVEL = "이걸로 땅을 파서 이거보다 값진게 나올까?",
+		GOLDNUGGET = "난 금덩이를 유용하게 사용할 줄 알아. 원래 세계로 돌아갈때 꼭 다섯뭉치는 챙겨둬야지!",
+		GRASS =
+		{
+			BARREN = "비료가 필요해보여",
+			WITHERED = "이대로 놔두면 말라 죽을지도 몰라",
+			BURNING = "불이야!",
+			GENERIC = "풀은 여러모로 쓸모가 많아",
+			PICKED = "풀은 놔둬도 잘 자라",
+		},
+		GREEN_CAP = "책에서 읽었는데, 이 세계의 녹색 버섯은 환각버섯이랬지..?",
+		GREEN_CAP_COOKED = "구워 먹으면 정신이 또렷해진댔어. 여차하면 구워먹자.",
+		GREEN_MUSHROOM =
+		{
+			GENERIC = "녹색 버섯이야",
+			INGROUND = "해가 질 무렵에 오면 버섯을 얻을 수 있을거야",
+			PICKED = "기둥만 봐서는 무슨 버섯인지 모르겠어",
+		},
+		GUNPOWDER = "이게 있으면 뭐든지 터트릴 수 있어!",
+		HAMBAT = "먹을것 가지고 장난치지 말라는 이야기는 있지만\n이건 장난이 아니니까 괜찮아",
+		HAMMER = "망치가 있으면 뭐든지 부술 수 있는거야",
+		HEALINGSALVE = "아플때 연고를 바르면 아픈게 사라져",
+		HEATROCK =
+		{
+			FROZEN = "꽁꽁 얼었어 조금 한기가 도는걸?",
+			COLD = "살짝 언것 같아",
+			GENERIC = "이 돌은 여름 겨울 가리지 않고 유용해",
+			WARM = "따뜻한 돌이야",
+			HOT = "돌이 불덩이처럼 뜨거워!",
+		},
+		HONEY = "꿀이야!",
+		HONEYCOMB = "벌집이 있으면 벌통을 만들 수 있어",
+		HONEYHAM = "입 속이 단맛으로 꽉 차고 배는 고기로 꽉 차는 요리야",
+		HONEYNUGGETS = "꿀하고 고기를 같이 먹는거 난 괜찮다고 생각해",
+		HORN = "웅웅 거리는 소리가 날거야",
+		HOUND = "이곳의 늑대하고 내하고는 아무런 관련이 없어. 진짜야",
+		HOUNDMOUND = "어떻게 이 좁은 무더기에서 늑대들이 끊임없이 나오는거야?",
+		HOUNDBONE = "이 상황이 되면 이건 그냥 뼈야",
+		ICEBOX = "여기에 넣으면 음식을 오래 보관할 수 있어",
+		ICEHOUND = "하얀 늑대야! 아니, 강아지인가!..",
 		INSANITYROCK =
 		{
-			ACTIVE = "TAKE THAT, SANE SELF!",
-			INACTIVE = "It's more of a pyramid than an obelisk.",
+			ACTIVE = "이게 열리려면 무슨 조건이 필요한 모양이야",
+			INACTIVE = "열렸어!",
 		},
-		JAMMYPRESERVES = "Probably should have made a jar.",
-
-		KABOBS = "Lunch on a stick.",
-		KILLERBEE =
-		{
-			GENERIC = "Oh no! It's a killer bee!",
-			HELD = "This seems dangerous.",
-		},
-		KNIGHT = "Check it out!",
-		KOALEFANT_SUMMER = "Adorably delicious.",
-		KOALEFANT_WINTER = "It looks warm and full of meat.",
-		KRAMPUS = "He's going after my stuff!",
-		KRAMPUS_SACK = "Ew. It has Krampus slime all over it.",
-		LEIF = "He's huge!",
-		LEIF_SPARSE = "He's huge!",
-		LIGHTER  = "It's her lucky lighter.",
-		LIGHTNING_ROD =
-		{
-			CHARGED = "The power is mine!",
-			GENERIC = "To harness the heavens!",
-		},
-		LIGHTNINGGOAT = 
-		{
-			GENERIC = "\"Baaaah\" yourself!",
-			CHARGED = "I don't think it liked being struck by lightning.",
-		},
-		LIGHTNINGGOATHORN = "It's like a miniature lightning rod.",
-		GOATMILK = "It's buzzing with tastiness!",
-		LITTLE_WALRUS = "He won't be cute and cuddly forever.",
-		LIVINGLOG = "It looks worried.",
-		LOG =
-		{
-			BURNING = "That's some hot wood!",
-			GENERIC = "It's big, it's heavy, and it's wood.",
-		},
-		LUCY = "That's a prettier axe than I'm used to.",
-		LUREPLANT = "It's so alluring.",
-		LUREPLANTBULB = "Now I can start my very own meat farm.",
-		MALE_PUPPET = "He's trapped!",
-
-		MANDRAKE_ACTIVE = "Cut it out!",
-		MANDRAKE_PLANTED = "I've heard strange things about those plants.",
-		MANDRAKE = "Mandrake roots have strange properties.",
-
-        MANDRAKESOUP = "Well, he won't be waking up again.",
-        MANDRAKE_COOKED = "It doesn't seem so strange anymore.",
-        MAPSCROLL = "A blank map. Doesn't seem very useful.",
-        MARBLE = "Fancy!",
-        MARBLEBEAN = "I traded the old family cow for it.",
-        MARBLEBEAN_SAPLING = "It looks carved.",
-        MARBLESHRUB = "Makes sense to me.",
-        MARBLEPILLAR = "I think I could use that.",
-        MARBLETREE = "I don't think an axe will cut it.",
-        MARSH_BUSH =
-        {
-            BURNING = "That's burning fast!",
-            GENERIC = "It looks thorny.",
-            PICKED = "Ouch.",
-        },
-        BURNT_MARSH_BUSH = "It's all burnt up.",
-        MARSH_PLANT = "It's a plant.",
-        MARSH_TREE =
-        {
-            BURNING = "Spikes and fire!",
-            BURNT = "Now it's burnt and spiky.",
-            CHOPPED = "Not so spiky now!",
-            GENERIC = "Those spikes look sharp!",
-        },
-        MAXWELL = "I hate that guy.",
-        MAXWELLHEAD = "I can see into his pores.",
-        MAXWELLLIGHT = "I wonder how they work.",
-        MAXWELLLOCK = "Looks almost like a key hole.",
-        MAXWELLTHRONE = "That doesn't look very comfortable.",
-        MEAT = "It's a bit gamey, but it'll do.",
-        MEATBALLS = "It's just a big wad of meat.",
-        MEATRACK =
-        {
-            DONE = "Jerky time!",
-            DRYING = "Meat takes a while to dry.",
-            DRYINGINRAIN = "Meat takes even longer to dry in rain.",
-            GENERIC = "I should dry some meats.",
-            BURNT = "The rack got dried.",
-        },
-        MEAT_DRIED = "Just jerky enough.",
-        MERM = "Smells fishy!",
-        MERMHEAD =
-        {
-            GENERIC = "The stinkiest thing I'll smell all day.",
-            BURNT = "Burnt merm flesh somehow smells even worse.",
-        },
-        MERMHOUSE =
-        {
-            GENERIC = "Who would live here?",
-            BURNT = "Nothing to live in, now.",
-        },
-        MINERHAT = "A hands-free way to brighten your day.",
-        MONKEY = "Curious little guy.",
-        MONKEYBARREL = "Did that just move?",
-        MONSTERLASAGNA = "It's an affront to science.",
-        FLOWERSALAD = "A bowl of foliage.",
-        ICECREAM = "I scream for ice cream!",
-        WATERMELONICLE = "Cryogenic watermelon.",
-        TRAILMIX = "A healthy, natural snack.",
-        HOTCHILI = "Five alarm!",
-        GUACAMOLE = "Avogadro's favorite dish.",
-        MONSTERMEAT = "Ugh. I don't think I should eat that.",
-        MONSTERMEAT_DRIED = "Strange-smelling jerky.",
-        MOOSE = "I don't exactly know what that thing is.",
-        MOOSE_NESTING_GROUND = "It puts its babies there.",
-        MOOSEEGG = "The babies are like excited electrons trying to escape.",
-        MOSSLING = "Aaah! You are definitely not an electron!",
-        FEATHERFAN = "Down, to bring the temperature down.",
-        MINIFAN = "Somehow the breeze comes out the back twice as fast.",
-        GOOSE_FEATHER = "Fluffy!",
-        STAFF_TORNADO = "Spinning doom.",
-        MOSQUITO =
-        {
-            GENERIC = "Disgusting little bloodsucker.",
-            HELD = "Hey, is that my blood?",
-        },
-        MOSQUITOSACK = "It's probably someone else's blood...",
-        MOUND =
-        {
-            DUG = "He probably deserved it.",
-            GENERIC = "I bet there's all sorts of good stuff down there!",
-        },
-        NIGHTLIGHT = "It gives off a spooky light.",
-        NIGHTMAREFUEL = "This stuff is crazy!",
-        NIGHTSWORD = "Why would anyone make this? It's terrifying.",
-        NITRE = "I'm not a geologist.",
-        ONEMANBAND = "We should add a beefalo bell.",
-        OASISLAKE = "Is that a mirage?",
-        PANDORASCHEST = "It may contain something fantastic! Or horrible.",
-        PANFLUTE = "To serenade the animals.",
-        PAPYRUS = "Some sheets of paper.",
-        WAXPAPER = "Some sheets of wax paper.",
-        PENGUIN = "Must be breeding season.",
-        PERD = "Stupid bird! Stay away from those berries!",
-        PEROGIES = "These turned out pretty good.",
-        PETALS = "Sure showed those flowers who's boss!",
-        PETALS_EVIL = "I'm not sure I want to hold those.",
-        PHLEGM = "It's thick and pliable. And salty.",
-        PICKAXE = "Iconic, isn't it?",
-        PIGGYBACK = "This little piggy's gone... \"home\".",
-        PIGHEAD =
-        {
-            GENERIC = "Looks like an offering to the beast.",
-            BURNT = "Crispy.",
-        },
-        PIGHOUSE =
-        {
-            FULL = "I can see a snout pressed up against the window.",
-            GENERIC = "These pigs have pretty fancy houses.",
-            LIGHTSOUT = "Come ON! I know you're home!",
-            BURNT = "Not so fancy now, pig!",
-        },
-        PIGKING = "Ewwww, he smells!",
-        PIGMAN =
-        {
-            DEAD = "Someone should tell its family.",
-            FOLLOWER = "You're part of my entourage.",
-            GENERIC = "They kind of creep me out.",
-            GUARD = "Looks serious.",
-            WEREPIG = "Not a friendly pig!!",
-        },
-        PIGSKIN = "It still has the tail on it.",
-        PIGTENT = "Smells like bacon.",
-        PIGTORCH = "Sure looks cozy.",
-        PINECONE = "I can hear a tiny tree inside it, trying to get out.",
-        PINECONE_SAPLING = "It'll be a tree soon!",
-        LUMPY_SAPLING = "How did this tree even reproduce?",
-        PITCHFORK = "Now I just need an angry mob to join.",
-        PLANTMEAT = "That doesn't look very appealing.",
-        PLANTMEAT_COOKED = "At least it's warm now.",
-        PLANT_NORMAL =
-        {
-            GENERIC = "Leafy!",
-            GROWING = "Guh! It's growing so slowly!",
-            READY = "Mmmm. Ready to harvest.",
-            WITHERED = "The heat killed it.",
-        },
-        POMEGRANATE = "It looks like the inside of an alien's brain.",
-        POMEGRANATE_COOKED = "Haute Cuisine!",
-        POMEGRANATE_SEEDS = "It's a pome-whatsit seed.",
-        POND = "I can't see the bottom!",
-        POOP = "I should fill my pockets!",
-        --PORTABLECOOKPOT_ITEM = "Now we're cookin'!",
-        FERTILIZER = "That is definitely a bucket full of poop.",
-        PUMPKIN = "It's as big as my head!",
-        PUMPKINCOOKIE = "That's a pretty gourd cookie!",
-        PUMPKIN_COOKED = "How did it not turn into a pie?",
-        PUMPKIN_LANTERN = "Spooky!",
-        PUMPKIN_SEEDS = "It's a pumpkin seed.",
-        PURPLEAMULET = "It's whispering to me.",
-        PURPLEGEM = "It contains the mysteries of the universe.",
-        RABBIT =
-        {
-            GENERIC = "He's looking for carrots.",
-            HELD = "Do you like science?",
-        },
-        RABBITHOLE =
-        {
-            GENERIC = "That must lead to the Kingdom of the Bunnymen.",
-            SPRING = "The Kingdom of the Bunnymen is closed for the season.",
-        },
-        RAINOMETER =
-        {
-            GENERIC = "It measures cloudiness.",
-            BURNT = "The measuring parts went up in a cloud of smoke.",
-        },
-        RAINCOAT = "Keeps the rain where it ought to be. Outside your body.",
-        RAINHAT = "Messy hair... the terrible price of dryness.",
-        RATATOUILLE = "An excellent source of fiber.",
-        RAZOR = "A sharpened rock tied to a stick. For hygiene!",
-        REDGEM = "It sparkles with inner warmth.",
-        RED_CAP = "It smells funny.",
-        RED_CAP_COOKED = "It's different now...",
-        RED_MUSHROOM =
-        {
-            GENERIC = "It's a mushroom.",
-            INGROUND = "It's sleeping.",
-            PICKED = "I wonder if it will come back?",
-        },
-        REEDS =
-        {
-            BURNING = "That's really burning!",
-            GENERIC = "It's a clump of reeds.",
-            PICKED = "All the useful reeds have already been picked.",
-        },
-        RELIC = "Ancient household goods.",
-        RUINS_RUBBLE = "This can be fixed.",
-        RUBBLE = "Just bits and pieces of rock.",
-        --RUINSRELIC_PLATE = "I find the shards get in my food.",
-        RESEARCHLAB =
-        {
-            GENERIC = "It breaks down objects into their scientific components.",
-            BURNT = "It won't be doing much science now.",
-        },
-        RESEARCHLAB2 =
-        {
-            GENERIC = "It's even more science-y than the last one!",
-            BURNT = "The extra science didn't keep it alive.",
-        },
-        RESEARCHLAB3 =
-        {
-            GENERIC = "What have I created?",
-            BURNT = "Whatever it was, it's burnt now.",
-        },
-        RESEARCHLAB4 =
-        {
-            GENERIC = "Who would name something that?",
-            BURNT = "Fire doesn't really solve naming issues...",
-        },
-        RESURRECTIONSTATUE =
-        {
-            GENERIC = "What a handsome devil!",
-            BURNT = "Not much use anymore.",
-        },
-        RESURRECTIONSTONE = "It's always a good idea to touch base.",
-        ROBIN =
-        {
-            GENERIC = "Does that mean winter is gone?",
-            HELD = "He likes my pocket.",
-        },
-        ROBIN_WINTER =
-        {
-            GENERIC = "Life in the frozen wastes.",
-            HELD = "It's so soft.",
-        },
-        ROBOT_PUPPET = "They're trapped!",
-        ROCK_LIGHT =
-        {
-            GENERIC = "A crusted over lava pit.",
-            OUT = "Looks fragile.",
-            LOW = "The lava's crusting over.",
-            NORMAL = "Nice and comfy.",
-        },
-        CAVEIN_BOULDER =
-        {
-            GENERIC = "I think I can lift this one.",
-            RAISED = "It's out of reach.",
-        },
-        ROCK = "It wouldn't fit in my pocket.",
-        PETRIFIED_TREE = "It looks scared stiff.",
-        ROCK_PETRIFIED_TREE = "It looks scared stiff.",
-        ROCK_PETRIFIED_TREE_OLD = "It looks scared stiff.",
-        ROCK_ICE =
-        {
-            GENERIC = "Ice to meet you.",
-            MELTED = "Won't be useful until it freezes again.",
-        },
-        ROCK_ICE_MELTED = "Won't be useful until it freezes again.",
-        ICE = "Ice to meet you.",
-        ROCKS = "We could make stuff with these.",
-        ROOK = "Storm the castle!",
-        ROPE = "Some short lengths of rope.",
-        ROTTENEGG = "Ew! It stinks!",
-        ROYAL_JELLY = "It infuses the eater with the power of science!",
-        JELLYBEAN = "One part jelly, one part bean.",
-        SADDLE_BASIC = "That'll allow the mounting of some smelly animal.",
-        SADDLE_RACE = "This saddle really flies!",
-        SADDLE_WAR = "The only problem is the saddle sores.",
-        SADDLEHORN = "This could take a saddle off.",
-        SALTLICK = "How many licks does it take to get to the center?",
-        BRUSH = "I bet the beefalo really like this.",
-		SANITYROCK =
-		{
-			ACTIVE = "That's a CRAZY looking rock!",
-			INACTIVE = "Where did the rest of it go?",
-		},
-		SAPLING =
-		{
-			BURNING = "That's burning fast!",
-			WITHERED = "It might be okay if it cooled down.",
-			GENERIC = "Baby trees are so cute!",
-			PICKED = "That'll teach him.",
-			DISEASED = "It looks pretty sick.",
-			DISEASING = "Err, something's not right.",
-		},
-   		SCARECROW = 
+	--adds 2 start
+		SCARECROW = 
    		{
-			GENERIC = "All dressed up and no where to crow.",
-			BURNING = "Someone made that strawman eat crow.",
-			BURNT = "Someone MURDERed that scarecrow!",
+			GENERIC = "내가 새를 쫒아낼 수 없다면, 새가 싫어할 만한걸 만들어버리는거야",
+			BURNING = "와, 정말로 새가 싫어할만하게 되어버렸어",
+			BURNT = "새까만 뼈만 남아버렸네",
    		},
    		SCULPTINGTABLE=
    		{
-			EMPTY = "We can make stone sculptures with this.",
-			BLOCK = "Ready for sculpting.",
-			SCULPTURE = "A masterpiece!",
-			BURNT = "Burnt right down.",
+			EMPTY = "장식할 물건을 만들 수 있대. 대리석으로",
+			BLOCK = "여기에 돌이 있어. 난 마음대로 만들어도 돼",
+			SCULPTURE = "내 자신작이야!",
+			BURNT = "새하얗게 불태운게 아니라 까맣게 타버렸네",
    		},
-        SCULPTURE_KNIGHTHEAD = "Where's the rest of it?",
+        SCULPTURE_KNIGHTHEAD = "말 모양 같긴한데 너무 장난감같아",
 		SCULPTURE_KNIGHTBODY = 
 		{
-			COVERED = "It's an odd marble statue.",
-			UNCOVERED = "I guess he cracked under the pressure.",
-			FINISHED = "At least it's back in one piece now.",
-			READY = "Something's moving inside.",
+			COVERED = "뭔가 조각한 흔적이 보여.",
+			UNCOVERED = "몸통에 무언가 머리카락같은게 있어. 근데 머리는?",
+			FINISHED = "말머리 석상이야! 근데 몸통이 이상해!",
+			READY = "난 이 석상에서 수상한 기운을 느껴",
 		},
-        SCULPTURE_BISHOPHEAD = "Is that a head?",
+        SCULPTURE_BISHOPHEAD = "빵모자를 쓴 머리 조각이야",
 		SCULPTURE_BISHOPBODY = 
 		{
-			COVERED = "It looks old, but it feels new.",
-			UNCOVERED = "There's a big piece missing.",
-			FINISHED = "Now what?",
-			READY = "Something's moving inside.",
-		},
-        SCULPTURE_ROOKNOSE = "Where did this come from?",
+			COVERED = "돌로 만든 테엽도 작동할까?",
+			UNCOVERED = "이 물병 조각은 뭔가 부족해 보이는걸",
+			FINISHED = "말머리 석상이야! 근데 몸통이 이상해!",
+			READY = "난 이 석상에서 수상한 기운을 느껴"
+			},
+        SCULPTURE_ROOKNOSE = "어떤 건물의 기둥이었던 것 같아",
 		SCULPTURE_ROOKBODY = 
 		{
-			COVERED = "It's some sort of marble statue.",
-			UNCOVERED = "It's not in the best shape.",
-			FINISHED = "All patched up.",
-			READY = "Something's moving inside.",
+			COVERED = "커다란 머리의 모양은 있지만 이걸론 부족해",
+			UNCOVERED = "거대한 돌덩이야",
+			FINISHED = "빨갛게 칠해도 움직이진 않을거야. 다리가 없으니까",
+			READY = "난 이 석상에서 수상한 기운을 느껴"
 		},
-        GARGOYLE_HOUND = "I don't like how it's looking at me.",
-        GARGOYLE_WEREPIG = "It looks very lifelike.",
-		SEEDS = "Each one is a tiny mystery.",
-		SEEDS_COOKED = "That cooked the life right out of 'em!",
-		SEWING_KIT = "Darn it! Darn it all to heck!",
-		SEWING_TAPE = "Good for mending.",
-		SHOVEL = "There's a lot going on underground.",
-		SILK = "It comes from a spider's butt.",
-		SKELETON = "Better you than me.",
-		SCORCHED_SKELETON = "Spooky.",
-		SKULLCHEST = "I'm not sure if I want to open it.",
+        GARGOYLE_HOUND = "늑대 모양 석상을 만들 여유가 있었던걸까? 위험하지 않아?",
+        GARGOYLE_WEREPIG = "좀더 다른걸 만들었으면 좋았을걸. 얌체라든지",
+	--adds 2 end	
+	
+		JAMMYPRESERVES = "슬로우푸드!",
+		KABOBS = "꼬치구이!",
+		KILLERBEE =
+		{
+			GENERIC = "일하지 않는 싸움꾼 벌이야!",
+			HELD = "나쁜 벌!",
+		},
+		KNIGHT = "박치기 하는 말 동상... 말박이?",
+		KOALEFANT_SUMMER = "빨간 코끼리야",
+		KOALEFANT_WINTER = "파란 코끼리야",
+		KRAMPUS = "악마가 나타났어!",
+		KRAMPUS_SACK = "산타의 선물꾸러미가 이것보다 클까?",
+		LAVAE = "이 불덩이는 나를 좋아하는건지 싫어하는건지 모르겠어",
+		LEIF = "나무 거인이야!",
+		LEIF_SPARSE = "나무 거인이야!",
+		LIGHTNING_ROD =
+		{
+			CHARGED = "막대가 번쩍번쩍해!",
+			GENERIC = "이게 있으면 번개에 안맞게된대",
+		},
+		LITTLE_WALRUS = "거슬리긴 하지만 신경쓰진 않아도 돼",
+		LIVINGLOG = "통나무에 얼굴이 생기는거야?",
+		LOCKEDWES = "누군가 같혀있어!",
+		LOG =
+		{
+			BURNING = "모닥불을 피우는게 나았겠지만 급하면 어쩔수없지",
+			GENERIC = "통나무야! 예쁘게 잘랐어.",
+		},
+		LUREPLANT = "이 식물엔 아이템이 끝없이 들어가는거 같아",
+		LUREPLANTBULB = "이 식물은 이제 제꺼입니다.\n제 마음대로 할 수 있는겁니다",
+		MALE_PUPPET = "윌슨을 기리는 동상...인건가?",
+		MANDRAKE =
+		{
+			DEAD = "머리같아",
+			GENERIC = "당근이나 무라고 하기엔 뭔가 이상하게 생겼어",
+			PICKED = "머리같은 뿌리에 머리카락같은 잎사귀.. 인걸?",
+		},
+		COOKEDMANDRAKE = "이 얼굴을 통째로 씹어먹는건 좋지 않은 생각같아",
+		MANDRAKESOUP = "이게 그렇게 몸에 좋대",
+		MARBLE = "진짜 무거운 돌이야",
+		MARBLEPILLAR = "정말로 멋져",
+		MARBLETREE = "이 나무는 어떻게 해서 생긴걸까?",
+		MARSH_BUSH =
+		{
+			BURNING = "가질 필요가 없다면 태워버리면 돼",
+			GENERIC = "가시가 많은 덤불이야",
+			PICKED = "덤불도 어찌어찌 쓸모는 있어",
+		},
+		MARSH_PLANT = "이 풀은 너무 거칠어서 못 써먹어",
+		MARSH_TREE =
+		{
+			BURNING = "잎이 없어도 잘 타는건 마찬가지네",
+			BURNT = "모든 불탄 나무는 결국 목탄이 돼",
+			CHOPPED = "나무는 나무니까 통나무는 있었지",
+			GENERIC = "잎 대신 가시만 무성한 나무네",
+		},
+		MAXWELL = "키가 커!",
+		MAXWELLHEAD = "난 이 얼굴을 본 적이 있는 것 같아",
+		MAXWELLLIGHT = "뭔가 불을 붙일 수 있을 것 같은데.",
+		MAXWELLLOCK = "여기에 꼭 맞는 뭔가 있을 것 같은데",
+		MAXWELLTHRONE = "이게 재대로 된 게 아니라는건 알겠어",
+		MEAT = "고기는 말야, 굽고, 삶고, 튀기고, 말리고, 태울 수 있어",
+		MEATBALLS = "미트볼이야!",
+		MEAT_DRIED = "육포도 물에 불리면 다시 고기잖아?",
+		MERM = "쟤들은 나를 별로 좋아하는 것 같지 않은데",
+		MONSTERLASAGNA = "음식이긴 한데, 난 먹고싶진 않아",
+		MONSTERMEAT = "내 입에 모래가 들어가도 이건 먹고 싶지 않아",
+		MONSTERMEAT_DRIED = "말리면 나아질 줄 알았는데 아직 아니야",
+		MOSQUITO =
+		{
+			GENERIC = "내 피는 맛이 없다구",
+			HELD = "살아있는 모기를 써먹을 상황이 있을까?",
+		},
+		MOSQUITOSACK = "말랑말랑해!",
+		MOUND =
+		{
+			DUG = "주인이 없어져버린 무덤이야",
+			GENERIC = "누군가의 무덤이야",
+		},
+		MULTIPLAYER_PORTAL = "이곳에서 시작하고 이곳에서 끝이 날거야",
+		NIGHTLIGHT = "이 불은 신기하네.. 분명 새까만데도 밤엔 확실하게 빛을 내고 있어.",
+		NIGHTMAREFUEL = "이 작은 검은 덩어리는 아직도 꿈틀꿈틀 뽀글뽀글거려!",
+		NIGHTSWORD = "이건 날카롭다기보단.. 응... 기분나쁜 칼이야",
+		NITRE = "이걸로 화약을 만들 수 있어",
+		ONEMANBAND = "신나게 달려보자구!",
+		PANDORASCHEST = "보물상자야!",
+		PANFLUTE = "난 이거 불줄알아!",
+		PAPYRUS = "갈대로 만든 종이도 책은 만들 수 있어",
+		PENGUIN = "땅에서 헤엄치는 새네, 잠깐, 새?...",
+		PERD = "덤불속에서 숨어있어서 몰랐지만 저거 칠면조야!",
+		PEROGIES = "고기만두!",
+		PETALS = "꽃 뭉치 먹을래?",
+		PETALS_EVIL = "갈색에 검정색이긴 해도 썩은건 아니니까 괜찮아",
+		PHLEGM = "이걸 어떻게 해야하는거야?",
+		PICKAXE = "이것저것 할려면 우선 돌을 캐야해",
+		PIGGYBACK = "이게 좀 더 큰 가방이야",
+		PIGKING = "책에 의하면 저 돼지 왕은 기분이 좋으면 마음대로 금덩이를 뿌린다고해",
+		PIGMAN =
+		{
+			DEAD = "죽고나면 결국 돼지야",
+			FOLLOWER = "가자구! 가서 내랑 같이 거미를 잡자!",
+			GENERIC = "저 돼지들은 나를 싫어하지 않는 것 같아",
+			GUARD = "저 돼지들은 신경이 날카로워보여",
+			WEREPIG = "털난 맷돼지같아! 게다가 사납구!",
+		},
+		PIGSKIN = "삼겹살 구울때 살짝 잘라서 먹으면 맛있어! 그런데.. 너무 크니까 먹지 않을거야.",
+		PIGTORCH = "기둥이 멋진 횃불이야",
+		PINECONE =
+		{
+		    GENERIC = "솔방울 인가?",
+		    PLANTED = "소나무 묘목... 우리 세계에서 비싸게 팔리겠다!",
+		},
+		PITCHFORK = "이걸로 땅을 뜯어서, 저쪽에 옮겨심을수있어!",
+		PLANTMEAT = "내가 보기에 이건 녹아내리고있는 것 같아",
+		PLANTMEAT_COOKED = "냄새는 고기같아!",
+		PLANT_NORMAL =
+		{
+			GENERIC = "채소나 과일을 기르려면 필요해",
+			GROWING = "Let it grow~ Let it grow~",
+			READY = "이제 수확해도 돼!",
+			WITHERED = "물기가 너무 없어. 완전히 바싹 말라버렸어",
+		},
+		POMEGRANATE = "미녀는 석뉴를 좋아해~",
+		POMEGRANATE_COOKED = "열매 안쪽에 또 열매가 있어 근데 대부분 씨야.",
+		POMEGRANATE_SEEDS = "석류 씨앗이야",
+		POOP = "너무 큰... 똥이야. 하지만 쓸 구석은 많아",
+		PUMPKIN = "호박이야! 난 잭-오-랜턴의 이야기를 좋아해!",
+		PUMPKINCOOKIE = "호박과자!",
+		PUMPKIN_COOKED = "호박은 말이지~ 한번 찌면 자르기 쉬워",
+		PUMPKIN_LANTERN = "이렇게 놓고 보니까 늑대 얼굴같아",
+		PUMPKIN_SEEDS = "호박 씨앗이야",
+		PURPLEGEM = "이 보라색 보석 속에 뭔가 보이는 것 같아",
+		RABBIT =
+		{
+			GENERIC = "귀엽지만, 살아남으려면..",
+			HELD = "토끼야 미아내.. 미아내.. 미아냉.. 8ㅁ8",
+		},
+		RABBITHOLE =
+		{
+			GENERIC = " 귀여운 토끼가 숨어있는 구멍이야! 토끼는 귀여워~ 꺄아~ ",
+			SPRING = "이제는 사용하지 않는 구멍같아.\n하지만 조사해보면 뭔가 있을지도 몰라",
+		},
+		RATATOUILLE = "알록달록한 음식이야! 고기는 하나도 없어",
+		RAZOR = "내가 네 털을 몽땅 밀어버릴거야!",
+		REDGEM = "책에 의하면 말이지-. 빨간 보석은 생명과 불을 상징한다고 해",
+		RED_CAP = "책에 의하면 빨간 버섯은 독버섯이라던데",
+		RED_CAP_COOKED = "구워도 빨간 버섯이야",
+		RED_MUSHROOM =
+		{
+			GENERIC = "책에 의하면 빨간 버섯은 독이 있다고 해",
+			INGROUND = "낮에 다시 오면 확인할 수 있을거야",
+			PICKED = "기둥만 봐서는 무슨 버섯인지 모르겠어",
+		},
+		REEDS =
+		{
+			BURNING = "늪지여도 불은 붙어!",
+			GENERIC = "갈대는 용도가 참 많아. 특히 종이랑 다트",
+			PICKED = "시간이 지나면 다시 자랄거야",
+		},
+        RELIC =
+        {
+            GENERIC = "주인이 없다면 이제 내가 써도 되겠지?",
+            BROKEN = "쓸려면 수리를 해야할 거 같아",
+        },
+        RUBBLE = "이걸 어디에 쓰지?",
+		RESURRECTIONSTONE = "죽어도 부활한다니.. 정말일까? 하지만, 무서우니까 시도해보고 싶진 않아.",
+		ROBIN =
+		{
+			GENERIC = "앵무새 인가?",
+			HELD = "하앗..! 아! 내가 빨간새를 잡았어!",
+		},
+		ROBIN_WINTER =
+		{
+			GENERIC = "푹신푹신한 하얀 돼지새야",
+			HELD = "내가 하얀새를 잡았어! 산채로!",
+		},
+		ROBOT_PUPPET = "결국은 모두 죽기마련",
+		ROCK_LIGHT =-- what the flame blast?
+		{
+			GENERIC = "이게 무슨일이 벌어지는거야?",
+			OUT = "불이 나갔어",
+			LOW = "무슨 일이 벌어질거야",
+			NORMAL = "확실히 이건 뜨거워",
+		},
+		ROCKS = "돌이 있으면 여러가지를 할 수 있어",
+        ROOK = "강철로 된 코뿔소야!",
+        ROPE = "묶는데 쓸 수 있을까?",
+		ROTTENEGG = "상한 알 냄새는 정말 구려",
+		SANITYROCK =
+		{
+			ACTIVE = "이게 열리려면 무슨 조건이 필요한 모양이야",
+			INACTIVE = "열렸어!",
+		},
+		SAPLING =
+		{
+			BURNING = "아무데서나 잘 자라지만 그렇다고 막 태워도 되는건 아니야",
+			WITHERED = "물이 필요한 것 같아",
+			GENERIC = "나뭇가지가 필요하면 꺾으면 되잖아",
+			PICKED = "몇일 있으면 다시 자랄거야",
+		},
+		SEEDS = "심으면, 귀여운 싹이 날까?",
+		SEEDS_COOKED = "배고프면 씨낱알도 먹어야지",
+		SEWING_KIT = "옷을 수선하는데는 쓸 수 있지만 난 다른것도 쓸 수 있어",
+		SHOVEL = "삽질하는데는 삽이 필요해",
+		SILK = "거미를 계속 사냥하다보면 가장 많이 쌓이는것 같아",
+		SKELETON = "먼저 왔던 누군가의 시체인 모양이야",
+		--SKELETON_PLAYER = "That gives me the willies.",
+
+		SKELETON_PLAYER =
+		{
+			MALE = "여기 %s의 시체는 %s 때문에 죽었어",
+			FEMALE = "여기 %s의 시체는 %s 때문에 죽었어",
+			ROBOT = "여기 %s의 시체는 %s 때문에 죽었어",
+			DEFAULT = "여기 %s의 시체는 %s 때문에 죽었어",
+		},
+
+		SKULLCHEST = "뭐가 들어있을까?", 
 		SMALLBIRD =
 		{
-			GENERIC = "That's a rather small bird.",
-			HUNGRY = "It looks hungry.",
-			STARVING = "It must be starving.",
+			GENERIC = "아주 작은 새야",
+			HUNGRY = "이 새는 지금 배고픈가봐",
+			STARVING = "잠깐만 기다려봐! 내도 네가 배고픈거 알고있어",
 		},
-		SMALLMEAT = "A tiny chunk of dead animal.",
-		SMALLMEAT_DRIED = "A little jerky.",
-		SPAT = "What a crusty looking animal.",
-		SPEAR = "That's one pointy stick.",
-		SPEAR_WATHGRITHR = "It feels very stabby.",
-		WATHGRITHRHAT = "Pretty fancy hat, that.",
+		SMALLMEAT = "다리일 수도 있고, 팔일 수도 있고, 날개일 수도 있고",
+		SMALLMEAT_DRIED = "마르니까 더 작아졌어! 하지만 먹는데는 문제없어",
+		SPAT = "양도 아니고 코뿔소도 아니고 저건 대체 무슨 생물이야?",
+		SPEAR = "찌르는것 보다 때리는데 더 유용한 창이야!",
 		SPIDER =
 		{
-			DEAD = "Ewwww!",
-			GENERIC = "I hate spiders.",
-			SLEEPING = "I'd better not be here when he wakes up.",
+			DEAD = "내가 강해지는 가장 빠른 방법이 거미를 끝없이 사냥하는거야",
+			GENERIC = "이 세계의 모든 거미는 내 사냥감이야",
+			SLEEPING = "거미가 자고있어",
 		},
-		SPIDERDEN = "Sticky!",
-		SPIDEREGGSACK = "I hope these don't hatch. Period.",
-		SPIDERGLAND = "It has a tangy, antiseptic smell.",
-		SPIDERHAT = "I hope I got all of the spider goo out of it.",
-		SPIDERQUEEN = "AHHHHHHHH! That spider is huge!",
+		SPIDERDEN = "난 거미집을 무서워하지 않아",
+		SPIDEREGGSACK = "내 뒷마당에 꽃아놓으면 거미가 계속 나올거야",
+		SPIDERGLAND = "이걸 상처난 곳에 바르면 회복이 빨라져",
+		SPIDERHAT = "내가 모든 거미를 사냥해버렸어! 여왕거미까지 모두 다!",
+		SPIDERQUEEN = "여왕거미는 거미를 계속 낳아대니까.. 마법과 검술을 적절하게 사용해 사냥해야해.",
 		SPIDER_WARRIOR =
 		{
-			DEAD = "Good riddance!",
-			GENERIC = "Looks even meaner than usual.",
-			SLEEPING = "I should keep my distance.",
+			DEAD = "병정거미여도 결국은 죽기마련",
+			GENERIC = "폴짝뛰어 깨물어대니까 거리를 잘 조절해야해",
+			SLEEPING = "거미는 낮이 되면 잠을 자. 굳이 깨울 필요는 없지 않아?",
 		},
-		SPOILED_FOOD = "It's a furry ball of rotten food.",
-        STAGEHAND =
-        {
-			AWAKE = "Just keep your hand to yourself, alright?",
-			HIDING = "Something's odd here, but I can't put my finger on it.",
-        },
-        STATUE_MARBLE = 
-        {
-            GENERIC = "It's a fancy marble statue.",
-            TYPE1 = "Don't lose your head now!",
-            TYPE2 = "Statuesque.",
-        },
-		STATUEHARP = "What happened to the head?",
-		STATUEMAXWELL = "He's a lot shorter in person.",
-		STEELWOOL = "Scratchy metal fibers.",
-		STINGER = "Looks sharp!",
-		STRAWHAT = "Hats always ruin my hair.",
-		STUFFEDEGGPLANT = "It's really stuffing!",
-		--SUNKBOAT = "It's no use out there!",
-		SWEATERVEST = "This vest is dapper as all get-out.",
-		REFLECTIVEVEST = "Keep off, evil sun!",
-		HAWAIIANSHIRT = "It's not lab-safe!",
-		TAFFY = "If I had a dentist they'd be mad I ate stuff like that.",
-		TALLBIRD = "That's a tall bird!",
-		TALLBIRDEGG = "Will it hatch?",
-		TALLBIRDEGG_COOKED = "Delicious and nutritious.",
+		SPOILED_FOOD = "완전히 썩었어!",
+		STATUEHARP = "왜 돌로 연주도 할 수 없는 하프를 만든걸까?",
+		STATUEMAXWELL = "분명히 이 녀석이 나를 여기에 끌어들인걸거야..!",
+		STEELWOOL = "굉장히 지저분해보여",
+		STINGER = "벌침이야",
+		STRAWHAT = "밀집모자로도 비는 막을 수 있고 더위도 막을 수 있어",
+		SUNKBOAT = "무슨 일이 있었던걸까?",
+		SWEATERVEST = "얼룩무늬 상의야",
+		TAFFY = "입속이 단맛으로 가득해져!",
+		TALLBIRD = "정말 키가 큰 새야. 정확히는 다리가 긴 새야",
+		TALLBIRDEGG = "키큰 새의 커다란 알이야.",
+		TALLBIRDEGG_COOKED = "정말 커다란 알이지만 난 다 먹을 수 있어",
 		TALLBIRDEGG_CRACKED =
 		{
-			COLD = "Is it shivering or am I?",
-			GENERIC = "Looks like it's hatching!",
-			HOT = "Are eggs supposed to sweat?",
-			LONG = "I have a feeling this is going to take a while...",
-			SHORT = "It should hatch any time now.",
+			COLD = "부화할려면 따뜻한 곳에 놓아야 할 것 같아",
+			GENERIC = "아기새가 태어날려나봐",
+			HOT = "이대로 놔두면 알이 익어버릴거야!",
+			LONG = "언제 부화하는거지?",
+			SHORT = "난 이 알을 부화시켜볼거야",
 		},
 		TALLBIRDNEST =
 		{
-			GENERIC = "That's quite an egg!",
-			PICKED = "The nest is empty.",
+			GENERIC = "다른 알 보다 5배는 커보여",
+			PICKED = "알이 있었는데요 없었습니다",
 		},
 		TEENBIRD =
 		{
-			GENERIC = "Not a very tall bird.",
-			HUNGRY = "You need some food and quick, huh?",
-			STARVING = "It has a dangerous look in its eye.",
+			GENERIC = "이 새는 날를 따르기는 하는데 뒤가 근질거려",
+			HUNGRY = "아직도 이 새의 밥은 내가 챙겨줘야해",
+			STARVING = "난 네가 배가 고픈걸 알고있으니까 잠깐만 기다려",
 		},
 		TELEPORTATO_BASE =
 		{
-			ACTIVE = "With this I can surely pass through space and time!",
-			GENERIC = "This appears to be a nexus to another world!",
-			LOCKED = "There's still something missing.",
-			PARTIAL = "Soon, the invention will be complete!",
+			ACTIVE = "내가 너를 만나러 갈거야",
+			GENERIC = "여기서 멀리서 단숨에 이동할 수 있대. 웜홀이네!",
+			LOCKED = "작동시키려면 뭔가가 필요해",
+			PARTIAL = "다음 모험으로!",
 		},
-		TELEPORTATO_BOX = "This may control the polarity of the whole universe.",
-		TELEPORTATO_CRANK = "Tough enough to handle the most intense experiments.",
-		TELEPORTATO_POTATO = "This metal potato contains great and fearful power...",
-		TELEPORTATO_RING = "A ring that could focus dimensional energies.",
-		TELESTAFF = "That could reveal the world.",
-		TENT = 
-		{
-			GENERIC = "I get sort of crazy when I don't sleep.",
-			BURNT = "Nothing left to sleep in.",
-		},
-		SIESTAHUT = 
-		{
-			GENERIC = "A nice place for an afternoon rest, safely out of the heat.",
-			BURNT = "It won't provide much shade now.",
-		},
-		TENTACLE = "That looks dangerous.",
-		TENTACLESPIKE = "It's pointy and slimy.",
-		TENTACLESPOTS = "I think these were its genitalia.",
-		TENTACLE_PILLAR = "A slimy pole.",
-        TENTACLE_PILLAR_HOLE = "Seems stinky, but worth exploring.",
-		TENTACLE_PILLAR_ARM = "Little slippery arms.",
-		TENTACLE_GARDEN = "Yet another slimy pole.",
-		TOPHAT = "What a nice hat.",
-		TORCH = "Something to hold back the night.",
-		TRANSISTOR = "It's whirring with electricity.",
-		TRAP = "I wove it real tight.",
-		TRAP_TEETH = "This is a nasty surprise.",
-		TRAP_TEETH_MAXWELL = "I'll want to avoid stepping on that!",
-		TREASURECHEST = 
-		{
-			GENERIC = "It's a tickle trunk!",
-			BURNT = "That trunk was truncated.",
-		},
-		TREASURECHEST_TRAP = "How convenient!",
-		SACRED_CHEST = 
-		{
-			GENERIC = "I hear whispers. It wants something.",
-			LOCKED = "It's passing its judgment.",
-		},
-		TREECLUMP = "It's almost like someone is trying to prevent me from going somewhere.",
+		TELEPORTATO_BOX = "서프라이즈 박스!",
+		TELEPORTATO_CRANK = "이 손잡이는 원래 어디 있던거지?",
+		TELEPORTATO_POTATO = "감자처럼 생겼는데 감자가 아니야",
+		TELEPORTATO_RING = "커다란 링이야",
+		TENTACLE = "다리? 그러면 몸통은 땅속에 있는거야?",
+		TENTACLESPOTS = "땅이 보글보글 거리고있어! 땅 속에 뭔가 있나봐!",
+		TENTACLESPIKE = "이 가시는 좀 따가울거같아",
+		TENTACLE_PILLAR = "땅 밑바닥엔 뭐가 있는걸까! 모험이 기대돼!",
+		TENTACLE_PILLAR_ARM = "촉수가 잔뜩 있어!",
+		TENTACLE_GARDEN = "뭔가 땅속을 움직이고있어",
+		TOPHAT = "신사적인 모자야",
+		TORCH = "깜깜하지 않다면, 내에게 무서울 건 없어!",
+		TRAP = "작은 사냥감은 이걸로 잡을 수 있어",
+		TRAP_TEETH = "좀 큰 사냥감은 이걸로 잡을 수 있어",
+		TRAP_TEETH_MAXWELL = "손대면 펑 하고 터질것만 같아",
+		TRINKET_1 = "몇번 씹었다가 뱉은 젤리같아.",
+		TRINKET_10 = "입을 왜 이렇게 해놓은거야? 고약하네",
+		TRINKET_11 = "네모네모한 기계야! 움직이진 않지만",
+		TRINKET_12 = "이건 먹고싶지 않아",
+		TRINKET_13 = "누군가는 좋아할지도 모르지만, 난 아니야",
+		TRINKET_2 = "바람의 오카리나.. 전혀 모르겠네!",
+		TRINKET_3 = "호루라기를 불면 누군가 나타난대. 그러니까 이름이.. 포돌이?",
+		TRINKET_4 = "꼬마 요정이 있다면 이렇게 생겼을까?",
+		TRINKET_5 = "이 신발의 주인은 엄청난 모험을 했었을거야!", 
+		TRINKET_6 = "와이어로 암살하는 108가지 방법? 내에겐 필요없어",
+		TRINKET_7 = "난 이걸 어떻게 쓰는지 깨달았어! 전혀 쓸모없네!",
+		TRINKET_8 = "뭔가를 막는데 쓰는것 같아. 자국이 있으나까 알 수 있어",
+		TRINKET_9 = "색이 너무 제각각이라 어디에 붙여야할지 모르겠네!",
+	--adds 3 start
+		TRINKET_14 = "요즘 난 잔보다는 컵이 더 편해", 
+		TRINKET_15 = "뭔가 도구인 것 같진 않은데. 뭘까?",
+		TRINKET_16 = "뭔가 도구인 것 같진 않은데. 뭘까?", 
+		TRINKET_17 = "이 수저는 밥을 먹는데도 쓸 수 있고 찌르는 데도 쓸 수 있겠네",
+		TRINKET_18 = "실제 말을 타는것과 방법이야 다르겠지만 분위기는 낼 수 있겠네",
+		TRINKET_19 = "난 이게 잘 돌아간다는 것 외엔 아무것도 알아내지 못했어",
+		TRINKET_20 = "어딘가를 긁는데는 쓸 수 있겠네", --Backscratcher
+		TRINKET_21 = "손잡이를 잡고 가운데 손잡이를 빙빙 돌리면 아래가 빙빙 돌아가", 
+		TRINKET_22 = "이 실뭉치로 만들면 추울 걱정은 없겠어",
+		TRINKET_23 = "이게 안쪽으로 휘어있는 이유는 뭘까?",
+		TRINKET_24 = "안에 무언가 들어있었을거야", 
+		TRINKET_25 = "네모나지 않은 공책은 신기하네",
+		TRINKET_26 = "컵을 만든다면 이것보다 더 좋은 재료가 많잖아?", 
+		TRINKET_27 = "너무 잘 휘고 단단하지도 않아!", 
+		TRINKET_28 = "뭔가 도구인 것 같진 않은데. 뭘까?", 
+        TRINKET_29 = "뭔가 도구인 것 같진 않은데. 뭘까?", 
+        TRINKET_30 = "뭔가 도구인 것 같진 않은데. 뭘까?",
+        TRINKET_31 = "뭔가 도구인 것 같진 않은데. 뭘까?",
+        TRINKET_32 = "이것도 등불이야? 아니야?", 
+        TRINKET_33 = "이건 대체 어느 손가락에 끼워야 하는거야?", 
+        TRINKET_34 = "난 이런걸 모으는 취미는 없는걸", 
+        TRINKET_35 = "무언가를 담았던 병이야. 난 희미하지만 냄새가 나는걸 느끼니까 알아", 
+        TRINKET_36 = "이건 이빨 모양 같은데 다물어지지가 않아", 
+        TRINKET_37 = "말뚝을 반으로 쪼개놓은건 무슨 이유일까?", 
+        TRINKET_38 = "난 망원경을 좋아해. 냄새가 나는 방향의 먼 곳까지 볼 수 있거든",
+        TRINKET_39 = "장갑은 장갑인데 손등에 철판이 붙어있어. 때리기용일까? 손등으로?",
+        TRINKET_40 = "위의 접시를 누르면 아래에 있는 바늘이 막 돌아가!",
+        TRINKET_41 = "뭔가를 담았었어. 담았었어?",
+        TRINKET_42 = "머리는 남아있는데 몸통이 많이 망가진 모양이야", 
+        TRINKET_43= "바퀴에, 모자에, 커다란 입에, 날카로운 이빨까지 있으니 내가 좋아할 건 전혀 없네!", 
+        TRINKET_44 = "깨지지 않았다면 좀 더 예쁜 모습이었을까?",
+        TRINKET_45 = "난 이게 뭔지 전혀 모르겠어. 눌러도 아무것도 변화가 없는걸", 
+        TRINKET_46 = "이건 어떻게 사용하는 도구지?", 
 		
-		TRINKET_1 = "Melted. Maybe Willow had some fun with them?", --Melted Marbles
-		TRINKET_2 = "What's kazoo with you?", --Fake Kazoo
-		TRINKET_3 = "The knot is stuck. Forever.", --Gord's Knot
-		TRINKET_4 = "It must be some kind of religious artifact.", --Gnome
-		TRINKET_5 = "Sadly it's too small for me to escape on.", --Toy Rocketship
-		TRINKET_6 = "Their electricity carrying days are over.", --Frazzled Wires
-		TRINKET_7 = "There's no time for fun and games!", --Ball and Cup
-		TRINKET_8 = "Great. All of my tub stopping needs are met.", --Rubber Bung
-		TRINKET_9 = "I'm more of a zipper person, myself.", --Mismatched Buttons
-		TRINKET_10 = "They've quickly become Wes' favorite prop.", --Dentures
-		TRINKET_11 = "Hal whispers beautiful lies to me.", --Lying Robot
-		TRINKET_12 = "That's just asking to be experimented on.", --Dessicated Tentacle
-		TRINKET_13 = "It must be some kind of religious artifact.", --Gnomette
-		TRINKET_14 = "Now if I only had some tea...", --Leaky Teacup
-		TRINKET_15 = "...Maxwell left his stuff out again.", --Pawn
-		TRINKET_16 = "...Maxwell left his stuff out again.", --Pawn
-		TRINKET_17 = "A horrifying utensil fusion. Maybe science *can* go too far.", --Bent Spork
-		TRINKET_18 = "I wonder what it's hiding?", --Trojan Horse
-		TRINKET_19 = "It doesn't spin very well.", --Unbalanced Top
-		TRINKET_20 = "Wigfrid keeps jumping out and hitting me with it?!", --Backscratcher
-		TRINKET_21 = "This egg beater is all bent out of shape.", --Egg Beater
-		TRINKET_22 = "I have a few theories about this string.", --Frayed Yarn
-		TRINKET_23 = "I can put my shoes on without help, thanks.", --Shoehorn
-		TRINKET_24 = "I think Wickerbottom had a cat.", --Lucky Cat Jar
-		TRINKET_25 = "It smells kind of stale.", --Air Unfreshener
-		TRINKET_26 = "Food and a cup! The ultimate survival container.", --Potato Cup
-		TRINKET_27 = "If you unwound it you could poke someone from really far away.", --Coat Hanger
-		TRINKET_28 = "How Machiavellian.", --Rook
-        TRINKET_29 = "How Machiavellian.", --Rook
-        TRINKET_30 = "Honestly, he just leaves them out wherever.", --Knight
-        TRINKET_31 = "Honestly, he just leaves them out wherever.", --Knight
-        TRINKET_32 = "I know someone who'd have a ball with this!", --Cubic Zirconia Ball
-        TRINKET_33 = "I hope this doesn't attract spiders.", --Spider Ring
-        TRINKET_34 = "Let's make a wish. For science.", --Monkey Paw
-        TRINKET_35 = "Hard to find a good flask around here.", --Empty Elixir
-        TRINKET_36 = "I might need these after all that candy.", --Faux fangs
-        TRINKET_37 = "I don't believe in the supernatural.", --Broken Stake
-        TRINKET_38 = "I think it came from another world. One with grifts.", -- Binoculars Griftlands trinket
-        TRINKET_39 = "I wonder where the other one is?", -- Lone Glove Griftlands trinket
-        TRINKET_40 = "Holding it makes me feel like bartering.", -- Snail Scale Griftlands trinket
-        TRINKET_41 = "It's a little warm to the touch.", -- Goop Canister Hot Lava trinket
-        TRINKET_42 = "It's full of someone's childhood memories.", -- Toy Cobra Hot Lava trinket
-        TRINKET_43= "It's not very good at jumping.", -- Crocodile Toy Hot Lava trinket
-        TRINKET_44 = "It's some sort of plant specimen.", -- Broken Terrarium ONI trinket
-        TRINKET_45 = "It's picking up frequencies from another world.", -- Odd Radio ONI trinket
-        TRINKET_46 = "Maybe a tool for testing aerodynamics?", -- Hairdryer ONI trinket
-        
-        HALLOWEENCANDY_1 = "The cavities are probably worth it, right?",
-        HALLOWEENCANDY_2 = "What corruption of science grew these?",
-        HALLOWEENCANDY_3 = "It's... corn.",
-        HALLOWEENCANDY_4 = "They wriggle on the way down.",
-        HALLOWEENCANDY_5 = "My teeth are going to have something to say about this tomorrow.",
-        HALLOWEENCANDY_6 = "I... don't think I'll be eating those.",
-        HALLOWEENCANDY_7 = "Everyone'll be raisin' a fuss over these.",
-        HALLOWEENCANDY_8 = "Only a sucker wouldn't love this.",
-        HALLOWEENCANDY_9 = "Sticks to your teeth.",
-        HALLOWEENCANDY_10 = "Only a sucker wouldn't love this.",
-        HALLOWEENCANDY_11 = "Much better tasting than the real thing.",
-        HALLOWEENCANDY_12 = "Did that candy just move?", --ONI meal lice candy
-        HALLOWEENCANDY_13 = "Oh, my poor jaw.", --Griftlands themed candy
-        HALLOWEENCANDY_14 = "I don't do well with spice.", --Hot Lava pepper candy
-        CANDYBAG = "It's some sort of delicious pocket dimension for sugary treats.",
+		HALLOWEENCANDY_1 = "단걸 좋아해도 매 식사를 사탕으로 한다는건 무리야",
+        HALLOWEENCANDY_2 = "나도 단건 좋아해",
+        HALLOWEENCANDY_3 = "먹는거를 먹는걸로 만든거니까 아무문제 없어",
+        HALLOWEENCANDY_4 = "생긴게 재미있으면 먹는것도 재미있어져",
+        HALLOWEENCANDY_5 = "사탕을 잔뜩 먹었으면 입을 잘 헹궈야해",
+        HALLOWEENCANDY_6 = "뭐든지 과식하는건 안좋지만, 간식은 과식하기 힘들어",
+        HALLOWEENCANDY_7 = "말린게 안말린 것 보다 맛있으니까 말렸을거야. 아마도",
+        HALLOWEENCANDY_8 = "배부르는데는 별로 도움은 되지 않아. 맛은 좋지만",
+        HALLOWEENCANDY_9 = "딱딱한걸 먹으면 일단 씹고 싶어져",
+        HALLOWEENCANDY_10 = "단맛은 일단 좋아",
+        HALLOWEENCANDY_11 = "뭐든지 사탕으로 만들면 맛있을거라는 생각은 하지 말았으면 해",
+        HALLOWEENCANDY_12 = "이거 벌레는 아닌거지?",
+        HALLOWEENCANDY_13 = "이 돌기나 색은 전혀 평범하지 않네", 
+        HALLOWEENCANDY_14 = "아무리 봐도 이걸 사탕으로 만든다고 달 것 같진 않아", 
+        CANDYBAG = "달그락 달그락 거리는 소리가 들려",
 
-        DRAGONHEADHAT = "So who gets to be the head?",
-        DRAGONBODYHAT = "I'm middling on this middle piece.",
-        DRAGONTAILHAT = "Someone has to bring up the rear.",
+        DRAGONHEADHAT = "이 머리는 끔찍하게 생겼는걸",
+        DRAGONBODYHAT = "다리 두개와 등이 있는건 알겠어. 근데 나머지는?",
+        DRAGONTAILHAT = "이 삐죽 나온 가죽은 꼬리인거야?",
         PERDSHRINE =
         {
-            GENERIC = "I feel like it wants something.",
-            EMPTY = "I've got to plant something there.",
-            BURNT = "That won't do at all.",
+            GENERIC = "이 멍청하고 뭐든지 먹어댈거같은 새의 모습을 난 알고있어",
+            EMPTY = "이것도 쓸모가 있는걸까?",
+            BURNT = "응. 타버리면 결국 이렇게 되어버리는거야",
         },
-        REDLANTERN = "This lantern feels more special than the others.",
-        LUCKY_GOLDNUGGET = "What a lucky find!",
-        FIRECRACKERS = "Filled with explosion science!",
-        PERDFAN = "It's inordinately large.",
-        REDPOUCH = "Is there something inside?",
+        REDLANTERN = "이런 모양의 랜턴도 나쁘지 않은것 같아!",
+        LUCKY_GOLDNUGGET = "금덩이를 신기한 모양으로 만들었네!",
+        FIRECRACKERS = "번쩍번쩍 펑펑 할거야! 엄청 신날거야!",
+        PERDFAN = "날카로운 바람이 불거야. 그런 부채니까",
+        REDPOUCH = "이 작은 주머니에 뭐가 들어있을까",
         WARGSHRINE = 
         {
-            GENERIC = "I should make something fun.",
-            EMPTY = "I need to put a torch in it.",
-            BURNT = "It burned down.",
+            GENERIC = "금으로 만든 동상이라면 좀 더 멋진걸 만들었으면 해",
+            EMPTY = "난 여기에 뭔갈 더 추가하고 싶어",
+            BURNT = "다 타버리면 결국 이런거 밖에 안남아",
         },
         CLAYWARG = 
         {
-        	GENERIC = "A terror cotta monster!",
-        	STATUE = "Did it just move?",
+        	GENERIC = "흙덩이라고 해도 내에게 예외는 아니야!",
+        	STATUE = "움직이거나 그러는거 아니지?",
         },
         CLAYHOUND = 
         {
-        	GENERIC = "It's been unleashed!",
-        	STATUE = "It looks so real.",
+        	GENERIC = "일단 부수면 안심이야!",
+        	STATUE = "금방이라도 움직일거 같아서.. 긴장돼",
         },
-        HOUNDWHISTLE = "This'd stop a dog in its tracks.",
-        CHESSPIECE_CLAYHOUND = "That thing's the leashed of my worries.",
-        CHESSPIECE_CLAYWARG = "And I didn't even get eaten!",
+        HOUNDWHISTLE = "내가 이걸 불면 어떻게 될까?",
+        CHESSPIECE_CLAYHOUND = "진짜도 흙덩이고 가짜도 흙덩이니 구분을 할 수가 없어",
+        CHESSPIECE_CLAYWARG = "진짜도 흙덩이고 가짜도 흙덩이니 구분을 할 수가 없어",
 
-		BISHOP_CHARGE_HIT = "Ow!",
-		TRUNKVEST_SUMMER = "Wilderness casual.",
-		TRUNKVEST_WINTER = "Winter survival gear.",
-		TRUNK_COOKED = "Somehow even more nasal than before.",
-		TRUNK_SUMMER = "A light breezy trunk.",
-		TRUNK_WINTER = "A thick, hairy trunk.",
-		TUMBLEWEED = "Who knows what that tumbleweed has picked up.",
-		TURKEYDINNER = "Mmmm.",
-		TWIGS = "It's a bunch of small twigs.",
-		UMBRELLA = "I always hate when my hair gets wet and poofy.",
-		GRASS_UMBRELLA = "My hair looks good wet... it's when it dries that's the problem.",
-		UNIMPLEMENTED = "It doesn't look finished! It could be dangerous.",
-		WAFFLES = "I'm waffling on whether it needs more syrup.",
-		WALL_HAY = 
-		{	
-			GENERIC = "Hmmmm. I guess that'll have to do.",
-			BURNT = "That won't do at all.",
-		},
-		WALL_HAY_ITEM = "This seems like a bad idea.",
-		WALL_STONE = "That's a nice wall.",
-		WALL_STONE_ITEM = "They make me feel so safe.",
-		WALL_RUINS = "An ancient piece of wall.",
-		WALL_RUINS_ITEM = "A solid piece of history.",
-		WALL_WOOD = 
-		{
-			GENERIC = "Pointy!",
-			BURNT = "Burnt!",
-		},
-		WALL_WOOD_ITEM = "Pickets!",
-		WALL_MOONROCK = "Spacey and smooth!",
-		WALL_MOONROCK_ITEM = "Very light, but surprisingly tough.",
-		FENCE = "It's just a wood fence.",
-        FENCE_ITEM = "All we need to build a nice, sturdy fence.",
-        FENCE_GATE = "It opens. And closes sometimes, too.",
-        FENCE_GATE_ITEM = "All we need to build a nice, sturdy gate.",
-		WALRUS = "Walruses are natural predators.",
-		WALRUSHAT = "It's covered with walrus hairs.",
+		BISHOP_CHARGE_HIT = "으앗!",
+	--adds 3 end	
+		TRUNKVEST_SUMMER = "방수가 되는 옷이야!",
+		TRUNKVEST_WINTER = "이 옷이 겨울에 그렇게 따뜻하대",
+		TRUNK_COOKED = "한입에 들어갈 것 같진 않아. 근데 이거 먹어도 되는거야?",
+		TRUNK_SUMMER = "안이 뻥 뚫려있어!",
+		TRUNK_WINTER = "안이 뻥 뚫려있어!",
+		UMBRELLA = "난 이 색깔이 맘에 들어! 펼쳤을 때 모양도 맘에 들어!",
+		WAFFLES = "와플의 바삭함이 딱 좋은 상태로 요리가 됐어",
+		WALL_HAY_ITEM = "바람이 분다고 날아가지 않으면 좋겠어",
+		WALL_STONE = "이 벽이 있으면 잠깐 시간을 벌 수 있어",--0
+		WALL_STONE_ITEM = "돌을 구하는건 어렵지 않고, 나름 튼튼해",
+		WALL_RUINS = "이걸 부수고 들어올려면 시간이 오래걸릴거야",--0
+		WALL_RUINS_ITEM = "시간을 벌어준다면 이건 낭비가 아니야",
+		WALL_WOOD_ITEM = "통나무를 순식간에 부수고 들어올 순 없을거야",
+		WALRUS = "저게 쏠 틈을 주면 안돼!",
+		WALRUSHAT = "완벽하게 멋져",
 		WALRUS_CAMP =
 		{
-			EMPTY = "Looks like somebody was camping here.",
-			GENERIC = "It looks warm and cozy inside.",
+			EMPTY = "이 바닥은 누군가 만들어서 생긴거야",
+			GENERIC = "얼음집이라니 엄청나게 추워보여",
 		},
-		WALRUS_TUSK = "I'm sure I'll find a use for it eventually.",
-		WARDROBE = 
-		{
-			GENERIC = "It holds dark, forbidden secrets...",
-            BURNING = "That's burning fast!",
-			BURNT = "It's outta style now.",
-		},
-		WARG = "You might be something to reckon with, big dog.",
-		WASPHIVE = "I think those bees are mad.",
-		WATERBALLOON = "What a scientific marvel!",
-		WATERMELON = "Sticky sweet.",
-		WATERMELON_COOKED = "Juicy and warm.",
-		WATERMELONHAT = "Let the juice run down your face.",
-		WAXWELLJOURNAL = "Spooky.",
-		WETGOOP = "It tastes like nothing.",
-        WHIP = "Nothing like loud noises to help keep the peace.",
-		WINTERHAT = "It'll be good for when winter comes.",
-		WINTEROMETER = 
-		{
-			GENERIC = "Mercurial.",
-			BURNT = "Its measuring days are over.",
-		},
-
-        WINTER_TREE =
-        {
-            BURNT = "That puts a damper on the festivities.",
-            BURNING = "That was a mistake, I think.",
-            CANDECORATE = "Happy Winter's Feast!",
-            YOUNG = "It's almost Winter's Feast!",
-        },
-		WINTER_TREESTAND = 
-		{
-			GENERIC = "I need a pine cone for that.",
-            BURNT = "That puts a damper on the festivities.",
-		},
-        WINTER_ORNAMENT = "Every scientist appreciates a good bauble.",
-        WINTER_ORNAMENTLIGHT = "A tree's not complete without some electricity.",
-        WINTER_ORNAMENTBOSS = "This one is especially impressive.",
-
-        WINTER_FOOD1 = "The anatomy's not right, but I'll overlook it.", --gingerbread cookie
-        WINTER_FOOD2 = "I'm going to eat forty. For science.", --sugar cookie
-        WINTER_FOOD3 = "A Yuletide toothache waiting to happen.", --candy cane
-        WINTER_FOOD4 = "That experiment may have been a tiny bit unethical.", --fruitcake
-        WINTER_FOOD5 = "It's nice to eat something other than berries for once.", --yule log cake
-        WINTER_FOOD6 = "I'm puddin' that straight in my mouth!", --plum pudding
-        WINTER_FOOD7 = "It's a hollowed apple filled with yummy juice.", --apple cider
-        WINTER_FOOD8 = "How does it stay warm? A thermodynamical mug?", --hot cocoa
-        WINTER_FOOD9 = "Can science explain why it tastes so good?", --eggnog
-
-        KLAUS = "What on earth is that thing!",
-        KLAUS_SACK = "We should definitely open that.",
-		KLAUSSACKKEY = "It's really fancy for a deer antler.",
+		WALRUS_TUSK = "이 이빨에 물렸다면 엄청 아팠을거야",
+		WARG = "떼거리로 몰려오기 전에 때려잡으면 돼",
+		WASPHIVE = "전리품을 얻으려면 모험이 필요한거야",
+		WETGOOP = "원형이 남지 않을정도로 이상한게 되어버렸어",
+		WINTERHAT = "겨울을 나려면 이정도는 준비해야지",
 		WORMHOLE =
 		{
-			GENERIC = "Soft and undulating.",
-			OPEN = "Science compels me to jump in.",
+			GENERIC = "징그럽지만.. 어디론가 이어져 있어.",
+			OPEN = "이거 안전한거 맞지? 난 매우 의심스러운데",
 		},
-		WORMHOLE_LIMITED = "Guh, that thing looks worse off than usual.",
-		ACCOMPLISHMENT_SHRINE = "I want to use it, and I want the world to know that I did.",        
-		LIVINGTREE = "Is it watching me?",
-		ICESTAFF = "It's cold to the touch.",
-		REVIVER = "The beating of this hideous heart will bring a ghost back to life!",
-		SHADOWHEART = "The power of science must have reanimated it...",
-        ATRIUM_RUBBLE = 
-        {
-			LINE_1 = "It depicts an old civilization. The people look hungry and scared.",
-			LINE_2 = "This tablet is too worn to make out.",
-			LINE_3 = "Something dark creeps over the city and its people.",
-			LINE_4 = "The people are shedding their skins. They look different underneath.",
-			LINE_5 = "It shows a massive, technologically advanced city.",
-		},
-        ATRIUM_STATUE = "It doesn't seem fully real.",
-        ATRIUM_LIGHT = 
-        {
-			ON = "A truly unsettling light.",
-			OFF = "Something must power it.",
-		},
-        ATRIUM_GATE =
-        {
-			ON = "Back in working order.",
-			OFF = "The essential components are still intact.",
-			CHARGING = "It's gaining power.",
-			DESTABILIZING = "The gateway is destabilizing.",
-			COOLDOWN = "It needs time to recover. Me too.",
-        },
-        ATRIUM_KEY = "There is power emanating from it.",
-		LIFEINJECTOR = "A scientific breakthrough! The cure!",
-		SKELETON_PLAYER =
-		{
-			MALE = "%s must've died performing an experiment with %s.",
-			FEMALE = "%s must've died performing an experiment with %s.",
-			ROBOT = "%s must've died performing an experiment with %s.",
-			DEFAULT = "%s must've died performing an experiment with %s.",
-		},
-		HUMANMEAT = "Flesh is flesh. Where do I draw the line?",
-		HUMANMEAT_COOKED = "Cooked nice and pink, but still morally gray.",
-		HUMANMEAT_DRIED = "Letting it dry makes it not come from a human, right?",
-		ROCK_MOON = "That rock came from the moon.",
-		MOONROCKNUGGET = "That rock came from the moon.",
-		MOONROCKCRATER = "I should stick something shiny in it. For research.",
-
-        REDMOONEYE = "It can see and be seen for miles!",
-        PURPLEMOONEYE = "Makes a good marker, but I wish it'd stop looking at me.",
-        GREENMOONEYE = "That'll keep a watchful eye on the place.",
-        ORANGEMOONEYE = "No one could get lost with that thing looking out for them.",
-        YELLOWMOONEYE = "That ought to show everyone the way.",
-        BLUEMOONEYE = "It's always smart to keep an eye out.",
-
-        --Arena Event
-        LAVAARENA_BOARLORD = "That's the guy in charge here.",
-        BOARRIOR = "You sure are big!",
-        BOARON = "I can take him!",
-        PEGHOOK = "That spit is corrosive!",
-        TRAILS = "He's got a strong arm on him.",
-        TURTILLUS = "Its shell is so spiky!",
-        SNAPPER = "This one's got bite.",
-        
-        LAVAARENA_PORTAL = 
-        {
-            ON = "I'll just be going now.",
-            GENERIC = "That's how we got here. Hopefully how we get back, too.",
-        },
-        LAVAARENA_KEYHOLE = "It needs a key.",
-		LAVAARENA_KEYHOLE_FULL = "That should do it.",
-        LAVAARENA_BATTLESTANDARD = "Everyone, break the Battle Standard!",
-        LAVAARENA_SPAWNER = "This is where those enemies are coming from.",
-
-        HEALINGSTAFF = "It conducts regenerative energy.",
-        FIREBALLSTAFF = "It calls a meteor from above.",
-        HAMMER_MJOLNIR = "It's a heavy hammer for hitting things.",
-        SPEAR_GUNGNIR = "I could do a quick charge with that.",
-        BLOWDART_LAVA = "That's a weapon I could use from range.",
-        BLOWDART_LAVA2 = "It uses a strong blast of air to propel a projectile.",
-        LAVAARENA_LUCY = "That weapon's for throwing.",
-        WEBBER_SPIDER_MINION = "I guess they're fighting for us.",
-        BOOK_FOSSIL = "This'll keep those monsters held for a little while.",
-		LAVAARENA_BERNIE = "He might make a good distraction for us.",
-		SPEAR_LANCE = "It gets to the point.",
-		BOOK_ELEMENTAL = "I can't make out the text.",
-		LAVAARENA_ELEMENTAL = "It's a rock monster!",
-
-   		LAVAARENA_ARMORLIGHT = "Light, but not very durable.",
-		LAVAARENA_ARMORLIGHTSPEED = "Lightweight and designed for mobility.",
-		LAVAARENA_ARMORMEDIUM = "It offers a decent amount of protection.",
-		LAVAARENA_ARMORMEDIUMDAMAGER = "That could help me hit a little harder.",
-		LAVAARENA_ARMORMEDIUMRECHARGER = "I'd have energy for a few more stunts wearing that.",
-		LAVAARENA_ARMORHEAVY = "That's as good as it gets.",
-		LAVAARENA_ARMOREXTRAHEAVY = "This armor has been petrified for maximum protection.",
-
-		LAVAARENA_FEATHERCROWNHAT = "Those fluffy feathers make me want to run!",
-        LAVAARENA_HEALINGFLOWERHAT = "The blossom interacts well with healing magic.",
-        LAVAARENA_LIGHTDAMAGERHAT = "My strikes would hurt a little more wearing that.",
-        LAVAARENA_STRONGDAMAGERHAT = "It looks like it packs a wallop.",
-        LAVAARENA_TIARAFLOWERPETALSHAT = "Looks like it amplifies healing expertise.",
-        LAVAARENA_EYECIRCLETHAT = "It has a gaze full of science.",
-        LAVAARENA_RECHARGERHAT = "Those crystals will quickened my abilities.",
-        LAVAARENA_HEALINGGARLANDHAT = "This garland will restore a bit of my vitality.",
-        LAVAARENA_CROWNDAMAGERHAT = "That could cause some major destruction.",
-
-        --Quagmire
-        QUAGMIRE_ALTAR = 
-        {
-        	GENERIC = "We'd better start cooking some offerings.",
-        	FULL = "It's in the process of digestinating.",
-    	},
-		QUAGMIRE_ALTAR_STATUE1 = "It's an old statue.",
-		QUAGMIRE_PARK_FOUNTAIN = "Been a long time since it was hooked up to water.",
-		--
-        QUAGMIRE_HOE = "It's a farming instrument.",
-        --
-        QUAGMIRE_TURNIP = "It's a raw turnip.",
-        QUAGMIRE_TURNIP_COOKED = "Cooking is science in practice.",
-        QUAGMIRE_TURNIP_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_GARLIC = "The number one breath enhancer.",
-        QUAGMIRE_GARLIC_COOKED = "Perfectly browned.",
-        QUAGMIRE_GARLIC_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_ONION = "Looks crunchy.",
-        QUAGMIRE_ONION_COOKED = "A successful chemical reaction.",
-        QUAGMIRE_ONION_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_POTATO = "The apples of the earth.",
-        QUAGMIRE_POTATO_COOKED = "A successful temperature experiment.",
-        QUAGMIRE_POTATO_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_TOMATO = "It's red because it's full of science.",
-        QUAGMIRE_TOMATO_COOKED = "Cooking's easy if you understand chemistry.",
-        QUAGMIRE_TOMATO_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_FLOUR = "Ready for baking.",
-        QUAGMIRE_WHEAT = "It looks a bit grainy.",
-        QUAGMIRE_WHEAT_SEEDS = "A handful of odd seeds.",
-        --NOTE: raw/cooked carrot uses regular carrot strings
-        QUAGMIRE_CARROT_SEEDS = "A handful of odd seeds.",
-        --
-        QUAGMIRE_ROTTEN_CROP = "I don't think the altar will want that.",
-        --
-		QUAGMIRE_SALMON = "Mm, fresh fish.",
-		QUAGMIRE_SALMON_COOKED = "Ready for the dinner table.",
-		QUAGMIRE_CRABMEAT = "No imitations here.",
-		QUAGMIRE_CRABMEAT_COOKED = "I can put a meal together in a pinch.",
-        QUAGMIRE_POT = "This one holds more ingredients.",
-        QUAGMIRE_POT_SMALL = "Let's get cooking!",
-        QUAGMIRE_POT_HANGER_ITEM = "For suspension-based cookery.",
-		QUAGMIRE_SUGARWOODTREE = 
-		{
-			GENERIC = "It's full of delicious, delicious sap.",
-			STUMP = "Where'd the tree go? I'm stumped.",
-			TAPPED_EMPTY = "Here sappy, sappy, sap.",
-			TAPPED_READY = "Sweet golden sap.",
-			TAPPED_BUGS = "That's how you get ants.",
-			WOUNDED = "It looks ill.",
-		},
-		QUAGMIRE_SPOTSPICE_SHRUB = 
-		{
-			GENERIC = "It reminds me of those tentacle monsters.",
-			PICKED = "I can't get anymore out of that shrub.",
-		},
-		QUAGMIRE_SPOTSPICE_SPRIG = "I could grind it up to make a spice.",
-		QUAGMIRE_SPOTSPICE_GROUND = "Flavorful.",
-		QUAGMIRE_SAPBUCKET = "We can use it to gather sap from the trees.",
-		QUAGMIRE_SAP = "It tastes sweet.",
-		QUAGMIRE_SALT_RACK =
-		{
-			READY = "Salt has gathered on the rope.",
-			GENERIC = "Science takes time.",
-		},
-		
-		QUAGMIRE_POND_SALT = "A little salty spring.",
-		QUAGMIRE_SALT_RACK_ITEM = "For harvesting salt from the pond.",
-
-		QUAGMIRE_SAFE = 
-		{
-			GENERIC = "It's a safe. For keeping things safe.",
-			LOCKED = "It won't open without the key.",
-		},
-
-		QUAGMIRE_KEY = "Safe bet this'll come in handy.",
-		QUAGMIRE_KEY_PARK = "I'll park it in my pocket until I get to the park.",
-        QUAGMIRE_PORTAL_KEY = "This looks science-y.",
-
-		
-		QUAGMIRE_MUSHROOMSTUMP =
-		{
-			GENERIC = "Are those mushrooms? I'm stumped.",
-			PICKED = "I don't think it's growing back.",
-		},
-		QUAGMIRE_MUSHROOMS = "These are edible mushrooms.",
-        QUAGMIRE_MEALINGSTONE = "The daily grind.",
-		QUAGMIRE_PEBBLECRAB = "That rock's alive!",
-
-		--
-		QUAGMIRE_RUBBLE_CARRIAGE = "On the road to nowhere.",
-        QUAGMIRE_RUBBLE_CLOCK = "Someone beat the clock. Literally.",
-        QUAGMIRE_RUBBLE_CATHEDRAL = "Preyed upon.",
-        QUAGMIRE_RUBBLE_PUBDOOR = "No longer a-door-able.",
-        QUAGMIRE_RUBBLE_ROOF = "Someone hit the roof.",
-        QUAGMIRE_RUBBLE_CLOCKTOWER = "That clock's been punched.",
-        QUAGMIRE_RUBBLE_BIKE = "Must have mis-spoke.",
-        QUAGMIRE_RUBBLE_HOUSE = {"No one's here.", "Something destroyed this town.", "I wonder who they angered.",},
-        QUAGMIRE_RUBBLE_CHIMNEY = "Something put a damper on that chimney.",
-        QUAGMIRE_RUBBLE_CHIMNEY2 = "Something put a damper on that chimney.",
-        QUAGMIRE_MERMHOUSE = "What an ugly little house.",
-        QUAGMIRE_SWAMPIG_HOUSE = "It's seen better days.",
-        QUAGMIRE_SWAMPIG_HOUSE_RUBBLE = "Some pig's house was ruined.",
-        QUAGMIRE_SWAMPIGELDER =
-        {
-            GENERIC = "I guess you're in charge around here?",
-            SLEEPING = "It's sleeping, for now.",
-        },
-        QUAGMIRE_SWAMPIG = "It's a super hairy pig.",
-        --
-        QUAGMIRE_PORTAL = "Another dead end.",
-        QUAGMIRE_SALTROCK = "Salt. The tastiest mineral.",
-        QUAGMIRE_SALT = "It's full of salt.",
-        --food--
-        QUAGMIRE_FOOD_BURNT = "That one was an experiment.",
-        --QUAGMIRE_FOOD_PLATE = "It has a lot on its plate.",
-        --QUAGMIRE_FOOD_BOWL = "Well bowl me over.",
-        --QUAGMIRE_FOOD_SOUP = "Soup's on!",
-        --QUAGMIRE_FOOD_SNACK = "This should tide me over.",
-        --QUAGMIRE_FOOD_BREAD = "That's what all the wheat is for.",
-        --QUAGMIRE_FOOD_PASTA = "I've masta-d this pasta.",
-        --QUAGMIRE_FOOD_VEGGIE = "Full of fresh vegetables.",
-        --QUAGMIRE_FOOD_MEAT = "I'm pro-protein.",
-        --QUAGMIRE_FOOD_FISH = "Science says fatty acids are good for me.",
-        --QUAGMIRE_FOOD_CRAB = "Not as crabby as I thought.",
-        --QUAGMIRE_FOOD_CHEESE = "Cheese it!",
-        --QUAGMIRE_FOOD_SWEET = "This dessert won't desert you.",
-        QUAGMIRE_FOOD =
-        {
-        	GENERIC = "I should offer it on the Altar of Gnaw.",
-            MISMATCH = "That's not what it wants.",
-            MATCH = "Science says this will appease the sky God.",
-            MATCH_BUT_SNACK = "It's more of a light snack, really.",
-        },
-        --
-        QUAGMIRE_FERN = "Probably chock full of vitamins.",
-        QUAGMIRE_FOLIAGE_COOKED = "We cooked the foliage.",
-        QUAGMIRE_COIN1 = "I'd like more than a penny for my thoughts.",
-        QUAGMIRE_COIN2 = "A decent amount of coin.",
-        QUAGMIRE_COIN3 = "Seems valuable.",
-        QUAGMIRE_COIN4 = "We can use these to reopen the Gateway.",
-        QUAGMIRE_GOATMILK = "Good if you don't think about where it came from.",
-        QUAGMIRE_SYRUP = "Adds sweetness to the mixture.",
-        QUAGMIRE_SAP_SPOILED = "Might as well toss it on the fire.",
-        --QUAGMIRE_SEEDPACKET = "It's a packet of seeds.",
-        QUAGMIRE_SEEDPACKET = "Sow what?",
-        --QUAGMIRE_SEEDPACKET_MEDIUM = "Gone to seed.",
-        --QUAGMIRE_SEEDPACKET_LARGE = "I think someone planted this on me.",
-        --QUAGMIRE_SEEDPACKET_MIX_SMALL = "A little seedy.",
-        --QUAGMIRE_SEEDPACKET_MIX_MEDIUM = "A mixed bag.",
-        --QUAGMIRE_SEEDPACKET_MIX_LARGE = "A packet packed with seeds.",
-        ---
-        QUAGMIRE_POT = "This pot holds more ingredients.",
-        QUAGMIRE_POT_SMALL = "Let's get cooking!",
-        QUAGMIRE_POT_SYRUP = "I need to sweeten this pot.",
-        QUAGMIRE_POT_HANGER = "It has hang-ups.",
-        QUAGMIRE_POT_HANGER_ITEM = "For suspension-based cookery.",
-        QUAGMIRE_GRILL = "Now all I need is a backyard to put it in.",
-        QUAGMIRE_GRILL_ITEM = "I'll have to grill someone about this.",
-        QUAGMIRE_GRILL_SMALL = "Barbecurious.",
-        QUAGMIRE_GRILL_SMALL_ITEM = "For grilling small meats.",
-        QUAGMIRE_OVEN = "It needs ingredients to make the science work.",
-        QUAGMIRE_OVEN_ITEM = "For scientifically burning things.",
-        QUAGMIRE_CASSEROLEDISH = "A dish for all seasonings.",
-        QUAGMIRE_CASSEROLEDISH_SMALL = "For making minuscule motleys.",
-        QUAGMIRE_PLATE_SILVER = "A silver plated plate.",
-        QUAGMIRE_BOWL_SILVER = "A bright bowl.",
-        QUAGMIRE_CRATE = "Kitchen stuff.",
-        ---
-        QUAGMIRE_MERM_CART1 = "Any science in there?", --sammy's wagon
-        QUAGMIRE_MERM_CART2 = "I could use some stuff.", --pipton's cart
-        QUAGMIRE_PARK_ANGEL = "Take that, creature!",
-        QUAGMIRE_PARK_ANGEL2 = "So lifelike.",
-        QUAGMIRE_PARK_URN = "Ashes to ashes.",
-        QUAGMIRE_PARK_OBELISK = "A monumental monument.",
-        QUAGMIRE_PARK_GATE =
-        {
-            GENERIC = "Turns out a key was the key to getting in.",
-            LOCKED = "Locked tight.",
-        },
-        QUAGMIRE_PARKSPIKE = "The scientific term is: \"Sharp pointy thing\".",
-        QUAGMIRE_CRABTRAP = "A crabby trap.",
-        QUAGMIRE_TRADER_MERM = "Maybe they'd be willing to trade.",
-        QUAGMIRE_TRADER_MERM2 = "Maybe they'd be willing to trade.",
-        --
-        QUAGMIRE_GOATMUM = "Reminds me of my old nanny.",
-        QUAGMIRE_GOATKID = "This goat's much smaller.",
-        QUAGMIRE_PIGEON =
-        {
-            DEAD = "They're dead.",
-            GENERIC = "He's just winging it.",
-            SLEEPING = "It's sleeping, for now.",
-        },
-        QUAGMIRE_LAMP_POST = "Huh. Reminds me of home.",
-
-        QUAGMIRE_BEEFALO = "Science says it should have died by now.",
-        QUAGMIRE_SLAUGHTERTOOL = "Laboratory tools for surgical butchery.",
-
-        QUAGMIRE_SAPLING = "I can't get anything else out of that.",
-        QUAGMIRE_BERRYBUSH = "Those berries are all gone.",
-
-        QUAGMIRE_ALTAR_STATUE2 = "What are you looking at?",
-        QUAGMIRE_ALTAR_QUEEN = "A monumental monument.",
-        QUAGMIRE_ALTAR_BOLLARD = "As far as posts go, this one is adequate.",
-        QUAGMIRE_ALTAR_IVY = "Kind of clingy.",
-
-        QUAGMIRE_LAMP_SHORT = "Enlightening.",
-
-    },
-    DESCRIBE_GENERIC = "It's a... thing.",
-    DESCRIBE_TOODARK = "It's too dark to see!",
-    DESCRIBE_SMOLDERING = "That thing is about to catch fire.",
-    EAT_FOOD =
-    {
-        TALLBIRDEGG_CRACKED = "Mmm. Beaky.",
+		ACCOMPLISHMENT_SHRINE = "엄청난 사치품이야. 정말로",
+	},
+	DESCRIBE_TOODARK = "아무것도 보이지 않아! 정말로 위험해!",
+	DESCRIBE_SMOLDERING = "으아아아앙그아아아아!!",
+	EAT_FOOD =
+	{
+		TALLBIRDEGG_CRACKED = "알도 고기야",
     },
 }
