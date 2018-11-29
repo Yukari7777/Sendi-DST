@@ -117,10 +117,11 @@ end
 local function RegisterKeyEvent(inst)
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function() 
 		if inst == ThePlayer and not inst:HasTag("doing") then 
-			inst.Physics:Stop()
-			inst.Physics:SetMotorVel(0, 0, 0)
-			inst.AnimState:PlayAnimation("jumpout")
+			--inst.Physics:Stop()
+			--inst.Physics:SetMotorVel(0, 0, 0)
+			--inst.AnimState:PlayAnimation("jumpout")
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
+			inst.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
 		end 
 	end) 
 end

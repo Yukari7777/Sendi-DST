@@ -24,17 +24,17 @@ end
 local function onequip(inst, owner)
 
    
-    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
+	owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
 
-    owner.AnimState:Show("ARM_carry")
-    owner.AnimState:Hide("ARM_normal")
+	owner.AnimState:Show("ARM_carry")
+	owner.AnimState:Hide("ARM_normal")
 	
 	-- 장착 시 설정.
 	-- owner.AnimState:OverrideSymbol("애니메이션 뱅크명", "빌드명", "빌드 폴더명")
 	-- 그 아래 2줄은 물건을 들고 있는 팔 모습을 활성화하고, 빈 팔 모습을 비활성화.
 
 
-   end
+end
 
    
 local function onunequip(inst, owner)
