@@ -42,3 +42,4 @@ luac.out
  
 exported/
 .vs/Sendi-DST/v15/.suo
+*.sqlite
