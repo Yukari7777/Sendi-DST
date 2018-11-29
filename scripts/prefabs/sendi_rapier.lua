@@ -111,6 +111,7 @@ local function fn()
    
     MakeHauntableLaunchAndPerish(inst)
    
+   
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
