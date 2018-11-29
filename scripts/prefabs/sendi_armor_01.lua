@@ -75,4 +75,4 @@ end
 	
 end
 
-return Prefab("common/inventory/sendi_armor_01", fn, assets)
+return Prefab("common/inventory/sendi_armor", fn, assets)
