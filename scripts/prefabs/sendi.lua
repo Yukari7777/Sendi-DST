@@ -16,7 +16,7 @@ local prefabs = {
 
 local start_inv = {
 -- 맞춤시작 인벤토리 시작 
-"sendipack"
+	"sendipack"
 }
 
 local function onbecamehuman(inst)
@@ -113,35 +113,94 @@ local Light = inst.entity:AddLight()
 end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
+local function SendiOnSetOwner(inst)
+	if TheWorld.ismastersim then
+        inst.sendi_classified.Network:SetClassifiedTarget(inst)
+    end
+end
+
+local function AttachClassified(inst, classified)
+	inst.sendi_classified = classified
+    inst.ondetachsendiclassified = function() inst:DetachSendiClassified() end
+    inst:ListenForEvent("onremove", inst.ondetachsendiclassified, classified)
+end
+
+local function DetachClassified(inst)
+	inst.sendi_classified = nil
+    inst.ondetachsendiclassified = nil
+end
+
+local function OverrideOnRemoveEntity(inst)
+	inst.OnRemoveSendi = inst.OnRemoveEntity
+	function inst.OnRemoveEntity(inst)
+		if inst.jointask ~= nil then
+			inst.jointask:Cancel()
+		end
+
+		if inst.sendi_classified ~= nil then
+			if TheWorld.ismastersim then
+				inst.sendi_classified:Remove()
+				inst.sendi_classified = nil
+			else
+				inst:RemoveEventCallback("onremove", inst.ondetachsendiclassified, inst.sendi_classified)
+				inst:DetachSendiClassified()
+			end
+		end
+		return inst:OnRemoveSendi()
+	end
+end
+
 
 local function RegisterKeyEvent(inst)
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function() 
-		if inst == ThePlayer and not inst:HasTag("doing") then 
-			--inst.Physics:Stop()
-			--inst.Physics:SetMotorVel(0, 0, 0)
-			--inst.AnimState:PlayAnimation("jumpout")
+		--if inst == ThePlayer and not inst:HasTag("inskill") and not inst.HUD:IsConsoleScreenOpen() then
+			-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
+			-- And SG utils will handle both cases, I think?
+--			local Action = BufferedAction(inst, nil, ACTIONS.RAPIER)
+--			inst.components.playercontroller:RemotePausePrediction()
+--			if inst.sg ~= nil then	
+--				inst.Physics:SetMotorVel(0, 0, 0)
+--				inst.Physics:Stop()
+--				inst.components.playercontroller:Enable(false)
+--				inst:ClearBufferedAction()
+--				inst.components.locomotor:Clear()
+--				if inst.sg.currentstate.name ~= "idle" then
+--					
+--				end
+--
+--				--inst.components.locomotor:PreviewAction(Action, true)
+--			end
+			--inst.components.playercontroller:DoAction(Action)
+			
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
-			inst.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
-		end 
+			--inst.sendi_classified.rapier:set(false)
+		--end
 	end) 
 end
 
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 
-   inst.MiniMapEntity:SetIcon( "sendi.tex" )
-   -- 위커바컴의 책을 제조합니다.
-   inst:AddTag("bookbuilder")
-   inst:AddTag("reader")
-   --MH
-   inst:AddTag("sendicraft")
-   --MH
-   -- 사용가능 레시피를 추가 합니다.
-   
-   inst:DoTaskInTime(0, RegisterKeyEvent)
+	inst.MiniMapEntity:SetIcon( "sendi.tex" )
+	-- 위커바컴의 책을 제조합니다.
+	inst:AddTag("bookbuilder")
+	inst:AddTag("reader")
+	--MH
+	inst:AddTag("sendicraft")
+	--MH
+	-- 사용가능 레시피를 추가 합니다.
+
+	inst:DoTaskInTime(0, RegisterKeyEvent)
+
+	inst:ListenForEvent("setowner", SendiOnSetOwner)
+
+	OverrideOnRemoveEntity(inst)
+	inst.AttachSendiClassified = AttachClassified
+	inst.DetachSendiClassified = DetachClassified
 end
 
 local master_postinit = function(inst)
-   
+	inst.sendi_classified = SpawnPrefab("sendi_classified")
+    inst.sendi_classified.entity:SetParent(inst.entity)
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 

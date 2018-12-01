@@ -1,10 +1,12 @@
 PrefabFiles = {
+	"sendi_classified",
 	"sendi",
 	"sendi_none",
 	"sendipack", 	--nanapack
 	"sendisedmask",
 	"sendi_armor_01", --SENDI_ARMOR_01	(SENDI_ARMOR_01)
 	"sendi_rapier",
+
 		--nanacap
 }
 
@@ -162,11 +164,13 @@ AddModCharacter("sendi", "FEMALE")
 
 ------------- skills --------------
 function rapier(inst)
-	if not inst:HasTag("inskill") and not inst.sg:HasStateTag("doing") then
+	--if not inst:HasTag("inskill") and not inst.sg:HasStateTag("doing") then
 		-- 랙걸리는 이유 : 액션이 실패하면 움직여선 안되니까?
 		-- 점프아웃 커스텀 액션(실패시 physics stop을 위해서)
-		
-	end
+	local var = inst.sendi_classified.rapier:value() or true
+	inst.sendi_classified.rapier:set(var)
+		--inst.components.locomotor:PushAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
+	--end
 end
 AddModRPCHandler("sendi", "rapier", rapier)
 
@@ -180,12 +184,11 @@ local state_rapier = State {
 	tags = { "doing", "attack", "skill" },
 
 	onenter = function(inst)
-		print("onenter")
 		inst:AddTag("inskill")
 		inst.components.locomotor:Stop()
 		if inst.components.playercontroller ~= nil then
-            inst.components.playercontroller:Enable(false)
-        end
+			inst.components.playercontroller:Enable(false)
+		end
 		inst.AnimState:PlayAnimation("jump_pre")
 		inst.AnimState:PlayAnimation("jumpout")
 		inst.Physics:SetMotorVel(0, 0, 0)
@@ -193,7 +196,6 @@ local state_rapier = State {
 		inst.sg.statemem.action = inst.bufferedaction
 		inst.sg:SetTimeout(2)
 		if inst.HUD ~= nil then	
-			print("is client")
 			inst:PerformPreviewBufferedAction()
 		end
 		
@@ -211,6 +213,7 @@ local state_rapier = State {
 			
 		end),
 		TimeEvent(15.2 * FRAMES, function(inst)
+			
 			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
 		end),
 		TimeEvent(18 * FRAMES, function(inst)
