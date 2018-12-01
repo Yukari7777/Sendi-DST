@@ -1,11 +1,14 @@
 PrefabFiles = {
 	"sendi",
 	"sendi_none",
-	"sendipack", 	--nanapack
+	"sendipack", 
 	"sendisedmask",
-	"sendi_armor_01", --SENDI_ARMOR_01	(SENDI_ARMOR_01)
-	"sendi_rapier", -- sendi_rapier sendi_rapier_01
-		--nanacap
+	"sendi_armor_01",
+	"sendi_rapier", 
+	"sendi_rapier_wood",
+
+
+	--nanacap
 }
 
 --캐릭터 아이템의 이름을 지정합니다. 
@@ -14,10 +17,10 @@ GLOBAL.STRINGS.NAMES.SENDIPACK = "센디의 책가방"
 GLOBAL.STRINGS.NAMES.SENDISEDMASK = "센디의 눈물 마스크"
 GLOBAL.STRINGS.NAMES.SENDI_ARMOR_01 = "센디의 니트갑옷"
 GLOBAL.STRINGS.NAMES.SENDI_RAPIER = "센디의 레이피어"
+GLOBAL.STRINGS.NAMES.SENDI_RAPIER_WOOD = "연습용 목재 레이피어"
 --캐릭터 아이템의 이름을 지정합니다. 끝 
 
---STRINGS.CHARACTERS.GENERIC.DESCRIBE.ONPICKUPSENDIARMOR = "이건 나의 물건이 아닌걸?" -- 센디외의 캐릭터가 물건들을 주웠을때 말하는 내용
---STRING.CHARACTERS.WX78.DESCRIBE.ONPICKUPSENDIARMOR = "이건 내것이 아님. 주인을 찾아줘야함." -- 캐릭터 설정이 가능. CENERIC를 캐릭터이름으로 바꾸자.
+
 
 
 
@@ -73,6 +76,9 @@ Assets = {
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier.xml"),
 	--------센디의 레이피어
 	
+	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
+	--------연습용 목재 레이피어
 	
 
 }
@@ -111,16 +117,20 @@ local resolvefilepath = GLOBAL.resolvefilepath
 local Recipe = GLOBAL.Recipe
 
 	GLOBAL.STRINGS.NAMES.SENDISEDMASK = "센디의 눈물 마스크"
-	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "이건 많은 사연이 있어. 음.. 알려주지 않을래."
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "이 마스크엔 많은 사연이 있어."
 	-- 센디 마스크
 	GLOBAL.STRINGS.NAMES.SENDI_ARMOR_01 = "센디의 니트갑옷" -- STRINGS.NAMES : 지정할 이름 
-	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "..! 이 머플러, 사실은 옷이야!" --DESCRIBE : 말하게 하는 명령어
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "이 머플러, 사실은 내 옷이야!" --DESCRIBE : 말하게 하는 명령어
 	-- 센디 아머 [임의 추가] 
 	GLOBAL.STRINGS.NAMES.SENDI_RAPIER = "센디의 레이피어" -- STRINGS.NAMES : 지정할 이름 
-	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.rapier = "내가 애용하는 레이피어야! 예쁘지?" --DESCRIBE : 말하게 하는 명령어
-	
-
-	--레시피를 뜻합니다.
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER = "내가 애용하던것과 닮은 레이피어야! 수제지만 예쁘지?" --DESCRIBE : 말하게 하는 명령어
+	--센디 레이피어
+	GLOBAL.STRINGS.NAMES.SENDI_RAPIER_WOOD = "연습용 목재 레이피어" -- STRINGS.NAMES : 지정할 이름 
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_WOOD = "연습할때 쓰던걸 본따 만들었어. 그래도 쓸만 하다구!" --DESCRIBE : 말하게 하는 명령어	
+	--센디 연습용 목재 레이피어
+	GLOBAL.STRINGS.NAMES.SENDIPACK = "센디의 책가방" -- STRINGS.NAMES : 지정할 이름 
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIPACK = "귀여운 가방이야. 냉장고 기능도 있어! 과학은 정말 대단해!" --DESCRIBE : 말하게 하는 명령어	
+	--센디팩
 	
 local sendipack = GLOBAL.Recipe("sendipack", {Ingredient("gears", 2), Ingredient("piggyback", 1)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendipack.xml", "sendipack.tex")
@@ -137,14 +147,19 @@ RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/invent
 
 -- AddRecipe 
 AddRecipe("sendi_armor_01", 
-{Ingredient("silk", 6), Ingredient("beefalowool", 4), Ingredient("manrabbit_tail", 2)}, 
+{Ingredient("silk", 6), Ingredient("rabbit", 4), Ingredient("heatrock", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
-		STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 니트갑옷 입니다.[매우 따뜻해요.]" 
+		STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 갑옷 입니다.[보온+이속]" 
 
 AddRecipe("sendi_rapier", 
-{Ingredient("silk", 6), Ingredient("beefalowool", 4), Ingredient("manrabbit_tail", 2)}, 
+{Ingredient("sendi_rapier_wood", 1), Ingredient("tentaclespike", 1), Ingredient("flint", 12)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
 		STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
+		
+AddRecipe("sendi_rapier_wood", 
+{Ingredient("twigs", 2), Ingredient("log", 8), Ingredient("rope", 2)}, 
+RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_wood.xml", "sendi_rapier_wood.tex")
+		STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
 		
 		
 		
