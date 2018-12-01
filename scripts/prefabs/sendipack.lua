@@ -85,6 +85,7 @@ local function fn(Sim)
     inst.components.inventoryitem.keepondeath = true
     inst.components.inventoryitem.imagename = "sendipack"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendipack.xml"
+
     inst:AddComponent("inspectable")
     
     inst.components.container.onopenfn = onopen

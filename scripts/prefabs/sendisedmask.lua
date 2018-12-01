@@ -60,10 +60,10 @@ local function fn(Sim)
         return inst
     end
     
-	
+
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendisedmask.xml"
-	inst:AddComponent("inspectable")
+	
 	
  
     --inst:AddComponent("armor")
@@ -71,7 +71,7 @@ local function fn(Sim)
 	--방어율 수치 : 나무 갑옷 여기서 TUNING.ARMORWOOD_ABSORPTION를 0.9로 바꿔주면 90%의 방어율을 가진다. 
 
     inst:AddComponent("armor")
-	inst.components.armor:InitCondition(1000, 0.45)    
+	inst.components.armor:InitCondition(9999999999999999999999999999999999999999999, 0.45)    
 	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
 	
     inst:AddComponent("equippable")
