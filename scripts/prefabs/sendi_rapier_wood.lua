@@ -2,11 +2,11 @@
 -- 그래픽 자원 설정. 예시엔 드랍 이미지, 장착 이미지, 인벤토리 이미지, 인벤토리 이미지 xml이 설정됨.
 
 local assets ={
-    Asset("ANIM", "anim/sendi_rapier.zip"),
-    Asset("ANIM", "anim/swap_sendi_rapier.zip"),
-   
-   Asset("ATLAS", "images/inventoryimages/sendi_rapier.xml"),
-   Asset("IMAGE", "images/inventoryimages/sendi_rapier.tex"),
+    Asset("ANIM", "anim/sendi_rapier_wood.zip"),
+    Asset("ANIM", "anim/swap_sendi_rapier_wood.zip"),
+   --swap
+   Asset("ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
+   Asset("IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
 }
 
 local function UpdateDamage(inst)
@@ -24,8 +24,8 @@ end
 local function onequip(inst, owner)
 
    
-    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
-									--"?? " "네임" "애니메이션 경로"
+    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_wood", "swap")
+								--..들려있는 장비 제작시 그냥.. scml 변환하지말고 png변환만하자.(ㅍ_ㅍ)
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
 	
@@ -64,8 +64,8 @@ local function fn()
 
 
    
-    inst.AnimState:SetBank("sendi_rapier")
-    inst.AnimState:SetBuild("sendi_rapier")
+    inst.AnimState:SetBank("sendi_rapier_wood")
+    inst.AnimState:SetBuild("sendi_rapier_wood")
     inst.AnimState:PlayAnimation("idle")
    --떨군 이미지추가 
    
@@ -83,11 +83,11 @@ local function fn()
   --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
    -- inst.components.perishable:StartPerishing()
   --  inst.components.perishable.onperishreplacement = "spoiled_food"
-   --유통기한
+		--유통기한
    
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(50)
-   -- 무기로 설정. 아래는 피해 설정
+	inst.components.weapon:SetDamage(35)
+		--무기로 설정. 아래는 피해 설정
     inst.OnLoad = OnLoad
 
     -------
@@ -98,16 +98,15 @@ local function fn()
     inst.components.edible.hungervalue = TUNING.CALORIES_MED
     inst.components.edible.sanityvalue = -TUNING.SANITY_MED
     --]]
-	-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
-  
+		-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
    
     inst:AddComponent("inspectable")
-	--조사 가능하도록 설정
+		--조사 가능하도록 설정
 	
     inst:AddComponent("inventoryitem")
-   inst.components.inventoryitem.imagename = "sendi_rapier"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier.xml"
-   --인벤토리 아이템으로 설정됨
+   inst.components.inventoryitem.imagename = "sendi_rapier_wood"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_wood.xml"
+		--인벤토리 아이템으로 설정됨
    
     MakeHauntableLaunchAndPerish(inst)
    
@@ -121,4 +120,4 @@ local function fn()
     return inst
 end
 
-return Prefab("sendi_rapier", fn, assets) 
+return Prefab("sendi_rapier_wood", fn, assets) 
