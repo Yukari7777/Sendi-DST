@@ -253,9 +253,10 @@ local rapier_client = State { --버벅거림 이슈
 	tags = { "doing", "attack", "skill" },
 
 	onenter = function(inst)
-		inst.entity:SetIsPredictingMovement(false)
-        inst.components.locomotor:Stop()
+		inst.components.locomotor:Stop()
         inst.components.locomotor:Clear()
+		inst.entity:SetIsPredictingMovement(false)
+		inst.entity:FlattenMovementPrediction()
 		inst.AnimState:PlayAnimation("whip_pre")
 		inst.AnimState:PushAnimation("whip", false)
 		inst:PerformPreviewBufferedAction()

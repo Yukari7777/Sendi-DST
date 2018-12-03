@@ -16,9 +16,11 @@ end
 local function Rapier(inst)
 	local shouldtrigger = inst.rapier:value()
 	if shouldtrigger then
-		inst._parent.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
+		if TheWorld ~= nil and TheWorld.ismastersim then
+			inst._parent.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
+		end
 	elseif inst._parent.components.playercontroller ~= nil then	
-        inst._parent.components.playercontroller:Enable(true)
+		inst._parent.components.playercontroller:Enable(true)
 	end
 	
 end
