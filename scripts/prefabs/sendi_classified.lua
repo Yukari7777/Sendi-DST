@@ -14,21 +14,22 @@ local function OnEntityReplicated(inst)
 end
 
 local function Rapier(inst)
-	print("rapier called")
 	local shouldtrigger = inst.rapier:value()
 	if shouldtrigger then
-		print("should trigger")
 		inst._parent.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
-		
+	elseif inst._parent.components.playercontroller ~= nil then	
+        inst._parent.components.playercontroller:Enable(true)
 	end
+	
 end
 
 local function RegisterNetListeners(inst)
 	if TheWorld.ismastersim then
 		inst._parent = inst.entity:GetParent()
 	else
-		inst:ListenForEvent("onrapierdirty", Rapier)
+		
 	end
+	inst:ListenForEvent("onrapierdirty", Rapier)
 end
 
 local function fn()

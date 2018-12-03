@@ -55,49 +55,34 @@ local function sendi_light(inst, data)
 
 if not inst:HasTag("playerghost") then
 --MH 플레이어가 유령이 아니라면 * 아래 적용시 위에 주석 
-
 		--if not inst:HasTag("playerghost") and modoption == "3" then
 		--MH 플레이어가 유령이아니라면, MH 모드옵션 불러오기 * 위에 사용시 아래 주석
 		
 		
 local Light = inst.entity:AddLight()
 -- MH 지역변수 설정 - Ligh=inst.entity:AddLight()
-
 	if (TheWorld.state.isnight or TheWorld:HasTag("cave")) and not TheWorld.state.isfullmoon then
 	--M(월드가 밤 또는 동굴) 이고, 보름달이 아니라면
-	
 		if inst.components.hunger:GetPercent() <= .47 then
 		--M포만도가 80% 이하라면
-		
-
-		
 			Light:Enable(false)
 			--M빛 해제
-			
 			 inst.components.health:StartRegen(0.2, 1)
 			--체력리젠
-			
 			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1)
 			--M포만도 감소속도를 윌슨의 1배로 설정(기본값)
-			
 		elseif inst.components.hunger:GetPercent() > .47 then
 		--M혹은 포만도가 80% 초과라면
-		
 			inst.entity:AddLight()
 			--M엔티티에게 빛 추가
-		
 			inst.Light:SetRadius(0.4)
 			--M범위 반경 설정
-			
 			inst.Light:SetFalloff(1)
 			--M빛의 감퇴량 설정
-			
 			inst.Light:SetIntensity(0.5)
 			--M빛의 강도 설정
-			
 			inst.Light:SetColour(255, 255, 20/255, 25, 255)
 			--M빛의 색 설정
-			
 			inst.Light:Enable(true)
 			--Minst.Light:Enable값을 true로 설정?
 			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 2)
@@ -153,28 +138,11 @@ end
 
 local function RegisterKeyEvent(inst)
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function() 
-		--if inst == ThePlayer and not inst:HasTag("inskill") and not inst.HUD:IsConsoleScreenOpen() then
+		if inst == ThePlayer and not inst:HasTag("inskill") and not inst.HUD:IsConsoleScreenOpen() then
 			-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
 			-- And SG utils will handle both cases, I think?
---			local Action = BufferedAction(inst, nil, ACTIONS.RAPIER)
---			inst.components.playercontroller:RemotePausePrediction()
---			if inst.sg ~= nil then	
---				inst.Physics:SetMotorVel(0, 0, 0)
---				inst.Physics:Stop()
---				inst.components.playercontroller:Enable(false)
---				inst:ClearBufferedAction()
---				inst.components.locomotor:Clear()
---				if inst.sg.currentstate.name ~= "idle" then
---					
---				end
---
---				--inst.components.locomotor:PreviewAction(Action, true)
---			end
-			--inst.components.playercontroller:DoAction(Action)
-			
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
-			--inst.sendi_classified.rapier:set(false)
-		--end
+		end
 	end) 
 end
 
@@ -188,7 +156,6 @@ local common_postinit = function(inst)
 	inst:AddTag("sendicraft")
 	--MH
 	-- 사용가능 레시피를 추가 합니다.
-
 	inst:DoTaskInTime(0, RegisterKeyEvent)
 
 	inst:ListenForEvent("setowner", SendiOnSetOwner)
@@ -205,7 +172,7 @@ local master_postinit = function(inst)
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 
 	inst:AddComponent("reader")
-
+	inst:AddComponent("sendiskill")
 	--------MH 혼돈의카오스 패시브 시작 
 	  --local function MishellTrig1(inst, data)
 	--if not inst:HasTag("playerghost") then
@@ -217,21 +184,16 @@ local master_postinit = function(inst)
 	-- end
 	--end
 	----------------MH 혼돈의카오스 패시브 종료 
-
 	-- Uncomment if "wathgrithr"(Wigfrid) or "webber" voice is used
 	--inst.talker_path_override = "dontstarve_DLC001/characters/"
-
-
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 	inst:WatchWorldState("phase", sendi_light)
 	inst:ListenForEvent("hungerdelta", sendi_light)
-			
 			-- 트리거
 			--MH 혼돈 마침
 			---inst:ListenForEvent("hungerdelta", MishellTrig1)
 			--HJ 혼돈 마침
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
-
 
 	-- Stats   
 	inst.components.health:SetMaxHealth(90) -- 피
@@ -241,20 +203,13 @@ local master_postinit = function(inst)
 
 
 	inst.components.health.fire_damage_scale = 0.5
-	
 	inst.components.combat.damagemultiplier = 0.85
 	-- Damage multiplier (optional) 데미지를 나타냅니다.
-
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.5)
 	--허기 주기를 나타냅니다.
-
-
 	inst.components.combat.min_attack_period = 0.01
 	--0.?초마다 때리는걸 의미합니다.
-
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
-
-
 
 	-- 배고파지는 속도
 	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE

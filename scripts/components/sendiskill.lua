@@ -3,8 +3,8 @@ local SendiSkill = Class(function(self, inst)
 	
 end)
 
-function SendiSkill:Rapier(inst)
-	inst.components.talker:Say("rapier!")
+function SendiSkill:OnStartRapier(inst, charge)
+	
 end
 
 return SendiSkill

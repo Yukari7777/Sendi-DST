@@ -137,10 +137,10 @@ AddRecipe("sendi_armor_01",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
 STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 니트갑옷 입니다.[매우 따뜻해요.]" 
 		
-		--위가 안됄시
-		--local sendi_armor_01 = Recipe("sendi_armor_01", 
-		--{Ingredient("재료1", 재료1갯수), Ingredient("재료2", 재료2갯수), Ingredient("재료3", 재료3갯수)}, 
-		--RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "아이콘 xml 경로", "아이콘 tex 경로")
+--위가 안됄시
+--local sendi_armor_01 = Recipe("sendi_armor_01", 
+--{Ingredient("재료1", 재료1갯수), Ingredient("재료2", 재료2갯수), Ingredient("재료3", 재료3갯수)}, 
+--RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "아이콘 xml 경로", "아이콘 tex 경로")
 
 
 ---센디 아이템 명령 탬플릿
@@ -163,45 +163,46 @@ AddModCharacter("sendi", "FEMALE")
 
 
 ------------- skills --------------
+
 function rapier(inst)
-	--if not inst:HasTag("inskill") and not inst.sg:HasStateTag("doing") then
-		-- 랙걸리는 이유 : 액션이 실패하면 움직여선 안되니까?
-		-- 점프아웃 커스텀 액션(실패시 physics stop을 위해서)
-	local var = inst.sendi_classified.rapier:value() or true
-	inst.sendi_classified.rapier:set(var)
-		--inst.components.locomotor:PushAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
-	--end
+	inst.sendi_classified.rapier:set(true) 
 end
 AddModRPCHandler("sendi", "rapier", rapier)
+
+local function ForceStopHeavyLifting(inst) 
+    if inst.components.inventory:IsHeavyLifting() then
+        inst.components.inventory:DropItem(
+            inst.components.inventory:Unequip(EQUIPSLOTS.BODY),
+            true,
+            true
+        )
+    end
+end
 
 local RAPIER = AddAction("RAPIER", "rapier", function(act)
 	return true
 end)
 RAPIER.canforce = true
 
-local state_rapier = State { 
+local rapier_server = State { 
 	name = "rapier",
-	tags = { "doing", "attack", "skill" },
+	tags = { "busy", "doing", "attack", "skill", "pausepredict"},
 
 	onenter = function(inst)
 		inst:AddTag("inskill")
 		inst.components.locomotor:Stop()
+		inst.components.locomotor:Clear()
+        inst:ClearBufferedAction()
+		ForceStopHeavyLifting(inst)
 		if inst.components.playercontroller ~= nil then
+			inst.components.playercontroller:RemotePausePrediction()
 			inst.components.playercontroller:Enable(false)
 		end
-		inst.AnimState:PlayAnimation("jump_pre")
-		inst.AnimState:PlayAnimation("jumpout")
-		inst.Physics:SetMotorVel(0, 0, 0)
-		
-		inst.sg.statemem.action = inst.bufferedaction
-		inst.sg:SetTimeout(2)
-		if inst.HUD ~= nil then	
-			inst:PerformPreviewBufferedAction()
-		end
-		
-		if TheWorld ~= nil and TheWorld.ismastersim then
-			inst:PerformBufferedAction()
-		end
+		inst.AnimState:PlayAnimation("whip_pre")
+        inst.AnimState:PushAnimation("whip", false)
+		inst.sg:SetTimeout(1)
+		inst.components.sendiskill:OnStartRapier()
+		inst:PerformBufferedAction()
 	end,
 
 	timeline =
@@ -213,7 +214,6 @@ local state_rapier = State {
 			
 		end),
 		TimeEvent(15.2 * FRAMES, function(inst)
-			
 			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
 		end),
 		TimeEvent(18 * FRAMES, function(inst)
@@ -230,38 +230,55 @@ local state_rapier = State {
     },
 	
 	onupdate = function(inst)
-		if inst.HUD ~= nil then
-			if inst:HasTag("doing") then
-				if inst.entity:FlattenMovementPrediction() then
-					inst.sg:GoToState("idle", "noanim")
-				end
-			elseif inst.bufferedaction == nil then
-				inst.sg:GoToState("idle", true)
-			end
+		
+	end,
+	
+	ontimeout = function(inst)
+		inst:RemoveTag("inskill")
+		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
+		inst.sendi_classified.rapier:set(false)
+--		if inst.components.playercontroller ~= nil then
+--            inst.components.playercontroller:Enable(true)
+--        end
+	end,
+	
+	onexit = function(inst)	
+		inst:RemoveTag("inskill")
+		inst.sendi_classified.rapier:set(false)
+	end,
+}
+
+local rapier_client = State { --버벅거림 이슈
+	name = "rapier",
+	tags = { "doing", "attack", "skill" },
+
+	onenter = function(inst)
+		inst.entity:SetIsPredictingMovement(false)
+        inst.components.locomotor:Stop()
+        inst.components.locomotor:Clear()
+		inst.AnimState:PlayAnimation("whip_pre")
+		inst.AnimState:PushAnimation("whip", false)
+		inst:PerformPreviewBufferedAction()
+		inst.sg:SetTimeout(1)
+	end,
+	
+	onupdate = function(inst)
+		if inst.bufferedaction == nil then
+			inst.sg:GoToState("idle", true)
 		end
 	end,
 	
 	ontimeout = function(inst)
-		if inst.HUD ~= nil then
-			inst:ClearBufferedAction()
-		end
-		inst.sg:GoToState("idle")
-		inst.Physics:Stop()
-		inst.Physics:SetMotorVel(0, 0, 0)
+		inst:ClearBufferedAction()
+		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
 	end,
 	
-	onexit = function(inst)
-		inst:RemoveTag("inskill")
-		if inst.components.playercontroller ~= nil then
-            inst.components.playercontroller:Enable(true)
-        end
-		if inst.bufferedaction == inst.sg.statemem.action then
-			inst:ClearBufferedAction()
-		end
-		inst.sg.statemem.action = nil
+	onexit = function(inst)	
+		inst.entity:SetIsPredictingMovement(true)
 	end,
 }
-AddStategraphState("wilson", state_rapier)
-AddStategraphState("wilson_client", state_rapier)
+
+AddStategraphState("wilson", rapier_server)
+AddStategraphState("wilson_client", rapier_client)
 AddStategraphActionHandler("wilson", ActionHandler(ACTIONS.RAPIER, "rapier"))
 AddStategraphActionHandler("wilson_client", ActionHandler(ACTIONS.RAPIER, "rapier"))
