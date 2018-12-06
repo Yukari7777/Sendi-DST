@@ -105,7 +105,7 @@ end
 					inst.entity:AddLight()
 					--M엔티티에게 빛 추가
 				
-					inst.Light:SetRadius(0.4)
+					inst.Light:SetRadius(1)
 					--M범위 반경 설정
 					
 					inst.Light:SetFalloff(1)

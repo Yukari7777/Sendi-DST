@@ -1,5 +1,6 @@
 
 -- 그래픽 자원 설정. 예시엔 드랍 이미지, 장착 이미지, 인벤토리 이미지, 인벤토리 이미지 xml이 설정됨.
+--MH: 미쉘이추가한 코드. 미쉘 추가한거 바로 보시려면 컨 + F MH검색.
 
 local assets ={
     Asset("ANIM", "anim/sendi_rapier.zip"),
@@ -48,6 +49,16 @@ local function onunequip(inst, owner)
 end
 
 
+local function onattack(inst, attacker, target)
+   local fx = SpawnPrefab("firesplash_fx")
+      fx.Transform:SetScale(0.5, 0.5, 0.5)
+      fx.Transform:SetPosition(target:GetPosition():Get())
+   if target.components.burnable then
+   target.components.burnable:Ignite()
+   end
+end--MH불꽃데미지
+
+
 local function fn()
 
     local inst = CreateEntity()
@@ -79,27 +90,13 @@ local function fn()
         return inst
     end
 
-    --inst:AddComponent("perishable")
-  --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
-   -- inst.components.perishable:StartPerishing()
-  --  inst.components.perishable.onperishreplacement = "spoiled_food"
-   --유통기한
    
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(50)
    -- 무기로 설정. 아래는 피해 설정
     inst.OnLoad = OnLoad
-
-    -------
-    --[[
-    inst:AddComponent("edible")
-    inst.components.edible.foodtype = FOODTYPE.MEAT
-    inst.components.edible.healthvalue = -TUNING.HEALING_MEDSMALL
-    inst.components.edible.hungervalue = TUNING.CALORIES_MED
-    inst.components.edible.sanityvalue = -TUNING.SANITY_MED
-    --]]
-	-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
-  
+	inst.components.weapon:SetRange(1.2)
+	--공격범위
    
     inst:AddComponent("inspectable")
 	--조사 가능하도록 설정
@@ -118,6 +115,7 @@ local function fn()
     inst.components.equippable:SetOnUnequip(onunequip)
 	--장착 가능하도록, 장착밑 해제시의 위의 두 펑션을 작동
 	
+	inst.components.weapon:SetOnAttack(onattack)--MH불꽃데미지 
     return inst
 end
 
