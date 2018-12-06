@@ -147,34 +147,38 @@ RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/invent
 STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다. [냉장고]"
 				-- nil, nil, nil, nil, "sendicraft" 여기서 "sendicraft"는 센디의 전용탭을 뜻한다.
 
-
+--이름, 재료, 탭, 기술 수준, 설치자, min_spacing, nounlock, 제작 시 주는 갯수, [ 재료란 builder_tag, atlas, image, testfn, product]
 local sendisedmask = GLOBAL.Recipe("sendisedmask", 
 { Ingredient("cutstone", 4), Ingredient("marble", 4)}, 
-					--이름, 재료, 탭, 기술 수준, 설치자, min_spacing, nounlock, 제작 시 주는 갯수, [ 재료란 builder_tag, atlas, image, testfn, product]
+			
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendisedmask.xml", "sendisedmask.tex")	
-		STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
+STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
 -- SURVIVAL[생존] DRESS[ 드레스 ]
 
 -- AddRecipe 
 AddRecipe("sendi_armor_01", 
 {Ingredient("silk", 6), Ingredient("rabbit", 4), Ingredient("heatrock", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
-		STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 갑옷 입니다.[보온+이속]" 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 갑옷 입니다.[보온+이속]" 
+
+local sendirapierwood = Ingredient( "sendi_rapier_wood", 1) -- 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
+sendirapierwood.atlas ="images/inventoryimages/sendi_rapier_wood.xml"
 
 AddRecipe("sendi_rapier", 
-{Ingredient("sendi_rapier_wood", 1), Ingredient("tentaclespike", 1), Ingredient("flint", 12)}, 
+{sendirapierwood, Ingredient("tentaclespike", 1), Ingredient("flint", 12)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
-		STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
-		
+STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
+
 AddRecipe("sendi_rapier_wood", 
 {Ingredient("twigs", 2), Ingredient("log", 8), Ingredient("rope", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_wood.xml", "sendi_rapier_wood.tex")
-		STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
+STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
+
 
 AddRecipe("sendi_armor_02", 
 {Ingredient("silk", 6), Ingredient("icehat", 2), Ingredient("heatrock", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_02.xml", "sendi_armor_02.tex")
-		STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "센디의 여름갑옷 입니다.[시원함+이속]" 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "센디의 여름갑옷 입니다.[시원함+이속]" 
 		
 		
 ---센디 아이템 명령 탬플릿
