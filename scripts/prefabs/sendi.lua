@@ -137,10 +137,10 @@ end
 
 
 local function RegisterKeyEvent(inst)
+	-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
+	-- And SG utils will handle both cases, I think?
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function() 
 		if inst == ThePlayer and not inst:HasTag("inskill") and not inst.HUD:IsConsoleScreenOpen() then
-			-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
-			-- And SG utils will handle both cases, I think?
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 

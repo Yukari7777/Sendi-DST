@@ -208,7 +208,7 @@ local rapier_server = State {
 	timeline =
 	{
 		TimeEvent(4 * FRAMES, function(inst)
-			inst.sg:RemoveStateTag("busy")
+
 		end),
 		TimeEvent(9 * FRAMES, function(inst)
 			
@@ -217,16 +217,20 @@ local rapier_server = State {
 			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
 		end),
 		TimeEvent(18 * FRAMES, function(inst)
-			--inst.Physics:Stop()
+
 		end),
 	},
 	
 	events = {
         EventHandler("animqueueover", function(inst)
             if inst.AnimState:AnimDone() then
+				print("gotoidle")
                 inst.sg:GoToState("idle")
             end
         end),
+		EventHandler("animover", function(inst)
+
+		end),
     },
 	
 	onupdate = function(inst)
@@ -237,14 +241,14 @@ local rapier_server = State {
 		inst:RemoveTag("inskill")
 		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
 		inst.sendi_classified.rapier:set(false)
---		if inst.components.playercontroller ~= nil then
---            inst.components.playercontroller:Enable(true)
---        end
+		
 	end,
 	
 	onexit = function(inst)	
+		print("onexit")
 		inst:RemoveTag("inskill")
 		inst.sendi_classified.rapier:set(false)
+		inst.AnimState:PlayAnimation("run_pst")
 	end,
 }
 
@@ -269,6 +273,18 @@ local rapier_client = State { --버벅거림 이슈
 		end
 	end,
 	
+	events = {
+		EventHandler("animqueueover", function(inst)
+			print("animqueueover cl")
+            if inst.AnimState:AnimDone() then
+                inst.sg:GoToState("idle")
+            end
+        end),
+		EventHandler("animover", function(inst)
+			print("animover cl")
+		end),
+	},
+
 	ontimeout = function(inst)
 		inst:ClearBufferedAction()
 		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
@@ -276,6 +292,7 @@ local rapier_client = State { --버벅거림 이슈
 	
 	onexit = function(inst)	
 		inst.entity:SetIsPredictingMovement(true)
+		inst.AnimState:PlayAnimation("run_pst")
 	end,
 }
 
