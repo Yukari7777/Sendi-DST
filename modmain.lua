@@ -246,7 +246,6 @@ local rapier_server = State {
 	end,
 	
 	onexit = function(inst)	
-		print("onexit")
 		inst:RemoveTag("inskill")
 		inst.AnimState:PlayAnimation("run_pst")
 		if inst.components.playercontroller ~= nil then	

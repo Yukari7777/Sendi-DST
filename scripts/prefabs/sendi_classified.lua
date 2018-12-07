@@ -35,6 +35,10 @@ local function fn()
     inst.entity:Hide()
     inst:AddTag("CLASSIFIED")
 
+	inst.pointx = net_shortint(inst.GUID, "onpointx", "onpointdirty")
+	inst.pointy = net_shortint(inst.GUID, "onpointy", "onpointdirty")
+	inst.pointz = net_shortint(inst.GUID, "onpointz", "onpointdirty")
+
 	inst.rapier = net_bool(inst.GUID, "onrapier", "onrapierdirty")
 	inst.rapier:set(false)
 
