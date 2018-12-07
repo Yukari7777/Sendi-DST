@@ -7,7 +7,7 @@
 
 local assets ={
     Asset("ANIM", "anim/sendi_rapier_ignia.zip"),
-    Asset("ANIM", "anim/sendi_rapier_ignia.zip"),
+    Asset("ANIM", "anim/swap_sendi_rapier_ignia.zip"), --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< swap파일을 로드 하지 않았습니다. 쥐님.
    
    Asset("ATLAS", "images/inventoryimages/sendi_rapier_ignia.xml"),
    Asset("IMAGE", "images/inventoryimages/sendi_rapier_ignia.tex"),
