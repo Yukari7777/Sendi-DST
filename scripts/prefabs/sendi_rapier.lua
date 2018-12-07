@@ -22,18 +22,13 @@ local function OnLoad(inst, data)
 end
             --onunequip
 local function onequip(inst, owner)
-
-   
 	owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
 
 	owner.AnimState:Show("ARM_carry")
 	owner.AnimState:Hide("ARM_normal")
-	
 	-- 장착 시 설정.
 	-- owner.AnimState:OverrideSymbol("애니메이션 뱅크명", "빌드명", "빌드 폴더명")
 	-- 그 아래 2줄은 물건을 들고 있는 팔 모습을 활성화하고, 빈 팔 모습을 비활성화.
-
-
 end
 
    
@@ -62,8 +57,6 @@ local function fn()
  
     MakeInventoryPhysics(inst)
 
-
-   
     inst.AnimState:SetBank("sendi_rapier")
     inst.AnimState:SetBuild("sendi_rapier")
     inst.AnimState:PlayAnimation("idle")
@@ -100,7 +93,6 @@ local function fn()
     --]]
 	-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
   
-   
     inst:AddComponent("inspectable")
 	--조사 가능하도록 설정
 	

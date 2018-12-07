@@ -165,7 +165,8 @@ AddModCharacter("sendi", "FEMALE")
 ------------- skills --------------
 
 function rapier(inst)
-	inst.sendi_classified.rapier:set(true) 
+	inst:PushEvent("onrapier")
+	
 end
 AddModRPCHandler("sendi", "rapier", rapier)
 
@@ -224,7 +225,6 @@ local rapier_server = State {
 	events = {
         EventHandler("animqueueover", function(inst)
             if inst.AnimState:AnimDone() then
-				print("gotoidle")
                 inst.sg:GoToState("idle")
             end
         end),
@@ -240,15 +240,18 @@ local rapier_server = State {
 	ontimeout = function(inst)
 		inst:RemoveTag("inskill")
 		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
-		inst.sendi_classified.rapier:set(false)
-		
+		if inst.components.playercontroller ~= nil then	
+			inst.components.playercontroller:Enable(true)
+		end
 	end,
 	
 	onexit = function(inst)	
 		print("onexit")
 		inst:RemoveTag("inskill")
-		inst.sendi_classified.rapier:set(false)
 		inst.AnimState:PlayAnimation("run_pst")
+		if parent.components.playercontroller ~= nil then	
+			parent.components.playercontroller:Enable(true)
+		end
 	end,
 }
 
@@ -272,18 +275,6 @@ local rapier_client = State { --버벅거림 이슈
 			inst.sg:GoToState("idle", true)
 		end
 	end,
-	
-	events = {
-		EventHandler("animqueueover", function(inst)
-			print("animqueueover cl")
-            if inst.AnimState:AnimDone() then
-                inst.sg:GoToState("idle")
-            end
-        end),
-		EventHandler("animover", function(inst)
-			print("animover cl")
-		end),
-	},
 
 	ontimeout = function(inst)
 		inst:ClearBufferedAction()

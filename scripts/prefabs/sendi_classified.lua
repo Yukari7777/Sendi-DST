@@ -4,7 +4,8 @@ local function SetDirty(netvar, val)
     netvar:set(val)
 end
 
-local function OnEntityReplicated(inst)
+local function OnEntityReplicated(inst)	
+	print("OnEntityReplicated")	
     inst._parent = inst.entity:GetParent()
     if inst._parent == nil then
         print("Unable to initialize classified data for player Sendi")
@@ -13,25 +14,17 @@ local function OnEntityReplicated(inst)
     end
 end
 
-local function Rapier(inst)
-	local shouldtrigger = inst.rapier:value()
-	if shouldtrigger then
-		if TheWorld ~= nil and TheWorld.ismastersim then
-			inst._parent.components.playercontroller:DoAction(BufferedAction(inst, nil, ACTIONS.RAPIER))
-		end
-	elseif inst._parent.components.playercontroller ~= nil then	
-		inst._parent.components.playercontroller:Enable(true)
-	end
-	
+local function OnRapier(parent)
+	parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS.RAPIER))
 end
 
 local function RegisterNetListeners(inst)
 	if TheWorld.ismastersim then
 		inst._parent = inst.entity:GetParent()
+		inst:ListenForEvent("onrapier", OnRapier, inst._parent)
 	else
 		
 	end
-	inst:ListenForEvent("onrapierdirty", Rapier)
 end
 
 local function fn()

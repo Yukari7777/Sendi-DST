@@ -105,6 +105,7 @@ local function SendiOnSetOwner(inst)
 end
 
 local function AttachClassified(inst, classified)
+	print("attach sendi classified called")
 	inst.sendi_classified = classified
     inst.ondetachsendiclassified = function() inst:DetachSendiClassified() end
     inst:ListenForEvent("onremove", inst.ondetachsendiclassified, classified)
@@ -167,7 +168,8 @@ end
 
 local master_postinit = function(inst)
 	inst.sendi_classified = SpawnPrefab("sendi_classified")
-    inst.sendi_classified.entity:SetParent(inst.entity)
+	inst:AddChild(inst.sendi_classified)
+    --inst.sendi_classified.entity:SetParent(inst.entity)
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 

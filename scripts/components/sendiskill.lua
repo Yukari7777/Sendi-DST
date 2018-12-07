@@ -3,7 +3,7 @@ local SendiSkill = Class(function(self, inst)
 	
 end)
 
-function SendiSkill:OnStartRapier(inst, charge)
+function SendiSkill:OnStartRapier()
 	
 end
 
