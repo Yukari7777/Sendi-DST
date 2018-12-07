@@ -1,13 +1,16 @@
 
+--  sendi_rapier_ignia
+
+
 -- 그래픽 자원 설정. 예시엔 드랍 이미지, 장착 이미지, 인벤토리 이미지, 인벤토리 이미지 xml이 설정됨.
 --MH: 미쉘이추가한 코드. 미쉘 추가한거 바로 보시려면 컨 + F MH검색.
 
 local assets ={
-    Asset("ANIM", "anim/sendi_rapier_01_01.zip"),
-    Asset("ANIM", "anim/sendi_rapier_01_01.zip"),
+    Asset("ANIM", "anim/sendi_rapier_ignia.zip"),
+    Asset("ANIM", "anim/sendi_rapier_ignia.zip"),
    
-   Asset("ATLAS", "images/inventoryimages/sendi_rapier_01_01.xml"),
-   Asset("IMAGE", "images/inventoryimages/sendi_rapier_01_01.tex"),
+   Asset("ATLAS", "images/inventoryimages/sendi_rapier_ignia.xml"),
+   Asset("IMAGE", "images/inventoryimages/sendi_rapier_ignia.tex"),
 }
 
 local prefabs = {
@@ -27,7 +30,7 @@ local function OnLoad(inst, data)
 end
             --onunequip
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01_01", "swap")
+    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_ignia", "swap")
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
 	-- 장착 시 설정.
@@ -91,8 +94,8 @@ local function fn()
 
 
    
-    inst.AnimState:SetBank("sendi_rapier_01")
-    inst.AnimState:SetBuild("sendi_rapier_01")
+    inst.AnimState:SetBank("sendi_rapier_ignia")
+    inst.AnimState:SetBuild("sendi_rapier_ignia")
     inst.AnimState:PlayAnimation("idle")
    --떨군 이미지추가 
    
@@ -117,8 +120,8 @@ local function fn()
 	--조사 가능하도록 설정
 	
     inst:AddComponent("inventoryitem")
-   inst.components.inventoryitem.imagename = "sendi_rapier_01"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_01.xml"
+   inst.components.inventoryitem.imagename = "sendi_rapier_ignia"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_ignia.xml"
    --인벤토리 아이템으로 설정됨
    
     MakeHauntableLaunchAndPerish(inst)
@@ -138,4 +141,4 @@ local function fn()
     return inst
 end
 
-return Prefab("sendi_rapier_01", fn, assets, prefabs) --YUKARI : prefab 어규먼트
+return Prefab("sendi_rapier_ignia", fn, assets, prefabs) --YUKARI : prefab 어규먼트
