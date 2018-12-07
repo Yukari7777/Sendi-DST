@@ -105,7 +105,6 @@ local function SendiOnSetOwner(inst)
 end
 
 local function AttachClassified(inst, classified)
-	print("attach sendi classified called")
 	inst.sendi_classified = classified
     inst.ondetachsendiclassified = function() inst:DetachSendiClassified() end
     inst:ListenForEvent("onremove", inst.ondetachsendiclassified, classified)
@@ -141,7 +140,7 @@ local function RegisterKeyEvent(inst)
 	-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
 	-- And SG utils will handle both cases, I think?
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function() 
-		if inst == ThePlayer and not inst:HasTag("inskill") and not inst.HUD:IsConsoleScreenOpen() then
+		if inst == ThePlayer and not inst:HasTag("inskill") and TheFrontEnd:GetActiveScreen().name == "HUD" then
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 
