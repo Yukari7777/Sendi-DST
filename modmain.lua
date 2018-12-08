@@ -164,18 +164,18 @@ STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25
 
 -- AddRecipe 
 AddRecipe("sendi_armor_01", 
-{Ingredient("silk", 6), Ingredient("rabbit", 4), Ingredient("heatrock", 2)}, 
+{Ingredient("silk", 6), Ingredient("rabbit", 1), Ingredient("heatrock", 1)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
 STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "센디의 갑옷 입니다.[보온+이속]" 
 
-----------------------------------
+---------------------------------- 머플러 아머
 
 AddRecipe("sendi_rapier_wood", 
-{Ingredient("twigs", 2), Ingredient("log", 8), Ingredient("rope", 2)}, 
+{Ingredient("twigs", 6), Ingredient("log", 8), Ingredient("rope", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_wood.xml", "sendi_rapier_wood.tex")
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
 
-----------------------------------
+---------------------------------- 목재 레이피어 
 
 local sendirapierwood = Ingredient( "sendi_rapier_wood", 1) 
 sendirapierwood.atlas ="images/inventoryimages/sendi_rapier_wood.xml"
@@ -185,7 +185,7 @@ AddRecipe("sendi_rapier",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
 
-----------------------------------
+----------------------------------  레이피어 
 local sendiarmor = Ingredient( "sendi_armor_01", 1) 
 sendiarmor.atlas ="images/inventoryimages/sendi_armor_01.xml"
 
@@ -194,7 +194,7 @@ AddRecipe("sendi_armor_02",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_02.xml", "sendi_armor_02.tex")
 STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "센디의 라이프아머 입니다.[따뜻,시원+이속]" 
 		
-----------------------------------
+---------------------------------- 라이프아머 
 		
 local sendirapier = Ingredient( "sendi_rapier", 1) -- 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
 sendirapier.atlas ="images/inventoryimages/sendi_rapier.xml"
@@ -203,7 +203,7 @@ AddRecipe("sendi_rapier_ignia",
 {sendirapier, Ingredient("tentaclespike", 1), Ingredient("redgem", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
 STRINGS.RECIPE_DESC.sendi_rapier_ignia = "불타는 레이피어 입니다.[불꽃지속딜]"
-----------------------------------
+---------------------------------- 이그니아 레이피어
 		
 		
 ---센디 아이템 명령 탬플릿
