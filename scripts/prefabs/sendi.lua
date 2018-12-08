@@ -10,7 +10,12 @@ local prefabs = {
 --센디의 제작ㄹ목록을 추가합니다
 "sendipack",
 "sendisedmask",
-
+"sendi_armor_01",
+"sendi_armor_02",
+"sendi_rapier",
+"sendi_rapier_ignia",
+"sendi_rapier_wood",
+"sendipack",
 }
 
 
@@ -21,7 +26,7 @@ local start_inv = {
 
 local function onbecamehuman(inst)
 -- 인물이 인간에게서 부활 할때
-   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.4)
+   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.3)
    -- 유령이 아닌경우 속도 설정.
 end
 
@@ -105,7 +110,7 @@ end
 					inst.entity:AddLight()
 					--M엔티티에게 빛 추가
 				
-					inst.Light:SetRadius(0.4)
+					inst.Light:SetRadius(1)
 					--M범위 반경 설정
 					
 					inst.Light:SetFalloff(1)
@@ -176,11 +181,11 @@ local master_postinit = function(inst)
    -- 최대피, 허기, 체력을 표시합니다.
    
    
-   inst.components.health.fire_damage_scale = 0.5
-  
+   inst.components.health.fire_damage_scale = 0.2
+	--화염데미지
   
 
-    inst.components.combat.damagemultiplier = 0.85
+    inst.components.combat.damagemultiplier = 0.6
    -- Damage multiplier (optional) 데미지를 나타냅니다.
    
     inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.5)
