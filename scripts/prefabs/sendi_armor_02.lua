@@ -51,7 +51,7 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-	inst.components.equippable.dapperness = 1
+	inst.components.equippable.dapperness = 0.25 --초당 정신력 회복 
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable.walkspeedmult = TUNING.CANE_SPEED_MULT
