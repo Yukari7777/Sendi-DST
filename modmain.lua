@@ -112,10 +112,10 @@ end
 -- The character select screen lines
 -- 센디가 만들수있는 레시피를 뜻하는듯합니다. 
 
-STRINGS.CHARACTER_TITLES.sendi = "The Sample Character"
-STRINGS.CHARACTER_NAMES.sendi = "Esc"
-STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*Perk 1\n*Perk 2\n*Perk 3"
-STRINGS.CHARACTER_QUOTES.sendi = "\"Quote\""
+STRINGS.CHARACTER_TITLES.sendi = "센디"
+STRINGS.CHARACTER_NAMES.sendi = "센디"
+STRINGS.CHARACTER_DESCRIPTIONS.sendi = "배부르면 몸에서 빛을 냅니다. [허기 빨리감소]\n낮에 채력이 빠르게오릅니다\n이동속도가 빠르지만, 데미지와 체력이 약합니다."
+STRINGS.CHARACTER_QUOTES.sendi = "\"원래 세계로 돌아갈 때까지, 저는 멈추지 않을거에요!\""
 
 ---센디의 커스텀을 만듭니다 시작 
 local require = GLOBAL.require
@@ -224,3 +224,4 @@ STRINGS.NAMES.SENDI = "sendi"
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("sendi", "FEMALE")
 
+modimport "scripts/action_sendi.lua"
