@@ -412,13 +412,11 @@ return {
             GHOST = "%s의 모험에는 내 도움이 필요해보여",
             FIRESTARTER = "%s의 불꽃놀이가 시작되었어!",
         },
-
-        BOOK_BIRDS = "이게 바로 온 세상의 새들의 말을 적은 책이야",
+    BOOK_BIRDS = "이게 바로 온 세상의 새들의 말을 적은 책이야",
         BOOK_TENTACLES = "왕지렁이를 키우는 108가지 방법",
         BOOK_GARDENING = "이 책을 읽어주면 식물들이 좋아해",
         BOOK_SLEEP = "아주 지루한 책이야",
         BOOK_BRIMSTONE = "위험한 느낌이 드는 책이야",
-
 		GLOMMER = "깜찍한 날개 좀 봐! 게다가 날기까지 해!",
         GLOMMERFLOWER =
         {
@@ -511,7 +509,7 @@ return {
 		
 		BEEQUEEN = "혼자서 덤비라구 비겁한 벌!",
 		BEEQUEENHIVE = 
-		{
+    {
 			GENERIC = "이 벌통에는 꿀이 어마어마하게 있을 것 같아",
 			GROWING = "이 벌집은 지금 손 대면 안될 것 같아",
 		},
@@ -685,32 +683,11 @@ return {
 		BIRCHNUTDRAKE = "창 말고, 도끼로 찍어버려야해!",
 		FARMPLOT =
 		{
-      GENERIC = "씨앗을 심기위해 땅을 골라봤어",
+			GENERIC = "씨앗을 심기위해 땅을 골라봤어",
 			GROWING = "빨리빨리 자라라",
 			NEEDSFERTILIZER = "비료를 가져와야겠어",
 			BURNT = "익어버리기도 전에 타버렸네",
 		},
-		{
-			COOKING_LONG = "이렇게 오래 걸리는게 맞는거야?",
-			COOKING_SHORT = "소금소금소금♬ 후추후추후추♬\n아앗, 너무 많이넣었나?♬",
-			DONE = "요리가 완성됐어!",
-			EMPTY = "이제 아무도 사용하지 않나봐.\n드디어 내 실력을 발휘할 때야",
-			BURNT = "왜 아무도 신경쓰지 않은거야? 8ㅅ8",
-		},
-		EYEBRELLAHAT =	"비도 막아주고, 열도 막아주고,\n눈도 막아주는데, 무겁네.",
-		ARMORDRAGONFLY = "살짝만 대어봐도 데어버릴 것 같아",
-		DRAGON_SCALES = "멋져! 그리고 화끈해!",
-		DRAGONFLYCHEST = "불보다 더 화끈한 상자야!",
-		DECIDUOUSTREE =
-		{
-			BURNING = "탄다!!",
-			BURNT = "타버렸네",
-			CHOPPED = "여기에 앉아서 쉬면 편할 것 같아",
-			GENERIC = "나무야",
-			POISON = "왕!왕왕!",
-		},
-		ACORN_COOKED = "냄새가 좋아!",
-		BIRCHNUTDRAKE = "창 말고, 도끼로 찍어버려야해!",
 		COLDFIREPIT =
 		{
 			EMBERS = "뭔가 넣어볼까?",
@@ -902,7 +879,8 @@ return {
 		POND_ALGAE = "뭔가 이상한게 물속에서 헤엄치고있어",
 		GREENSTAFF = "설명서에 의하면.. 뭐든 분해 합니다..?\n살아있는 것에는 쓰면 안돼겠네.",
 		POTTEDFERN = "뭔가에 써먹을 수는 없겠지만 그래도 괜찮아~",
-    THULECITE = "뭔가 의미가 있는것 같은 문양이야",
+
+		THULECITE = "뭔가 의미가 있는것 같은 문양이야",
 		ARMORRUINS = "확실히 단단할것 같지만 매우 무거워",
 		RUINS_BAT = "내가 알고있는 돌망치 가운데는 가장 단단해",
 		RUINSHAT = "이걸 쓰면 나도 강해질수 있을까?",
@@ -922,6 +900,8 @@ return {
 		MINOTAUR = "위험해 보이지만 난 이길 수 있어",	
 		SPIDER_DROPPER = "하얀 거미는 동굴 위쪽에서 살고있어",	
 		NIGHTMARELIGHT = "이 불이 켜져있는건... 좋은 징조는 아니네",	
+		
+
 		GREENGEM = "녹색 보석은 흔히 볼 수 있는게 아니야",
 		RELIC = "이제 작동할거야!",	
 		RUINS_RUBBLE = "뭔가 부품이 비어있어",
@@ -1074,7 +1054,7 @@ SLURPER = "검정색 팩맨!",
 			HELD = "부웅부웅부우우웅",
 		},
 		BEEFALO =
-		{
+    {
 			FOLLOWER = "얘는 왜 날 따라오는거지?",
 			GENERIC = "크고 묵직하고 더럽고 느려보여",
 			NAKED = "다리가 이렇게 가늘 줄은 몰랐어!",

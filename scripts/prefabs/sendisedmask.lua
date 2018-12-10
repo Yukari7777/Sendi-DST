@@ -60,10 +60,10 @@ local function fn(Sim)
         return inst
     end
     
-
+	
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendisedmask.xml"
-	
+	inst:AddComponent("inspectable")
 	
  
     --inst:AddComponent("armor")
@@ -71,7 +71,7 @@ local function fn(Sim)
 	--방어율 수치 : 나무 갑옷 여기서 TUNING.ARMORWOOD_ABSORPTION를 0.9로 바꿔주면 90%의 방어율을 가진다. 
 
     inst:AddComponent("armor")
-	inst.components.armor:InitCondition(9999999999999999999999999999999999999999999, 0.45)    
+	inst.components.armor:InitCondition(1000, 0.45)    
 	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
 	
     inst:AddComponent("equippable")
@@ -87,19 +87,27 @@ local function fn(Sim)
     --inst.components.insulator:SetInsulation(100)
 	-- 보온율을 뜻합니다. 보온율은 100단위 입니다.
 	
-
+			--시원함을 설정 18.12.05
+		--inst:AddComponent("insulator")
+        --inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
+		--시원함을 설정. 18.12.05
+	
+	--수리 12.05 .. 모드오류도 없지만 실패 ㅠㅠ 
+	--inst:AddComponent("repairable")
+	--inst.components.repairable.repairmaterial = MATERIALS.ROCKS 	--돌
+	--inst.components.repairable.repairmaterial = MATERIALS.FLINT 	--부싯돌
+	--inst.components.repairable.repairmaterial = MATERIALS.STINGER 	--벌침
+	--inst.components.repairable.announcecanfix = false
+	-- 수리 12.05
 	
 	if not inst.components.sendispecific then
 	inst:AddComponent("sendispecific")
 	end
 	
 	
-	
- 
 	inst.components.sendispecific:SetOwner("sendi")
 	inst.components.sendispecific:SetStorable(true)
-
-
+	
     return inst
 end
 

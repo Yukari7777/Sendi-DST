@@ -49,11 +49,11 @@ local function fn()
 	--이동속도 : 케인
 	
 	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(9999999999999999999999999999999999999999999, 0.55)   
+	inst.components.armor:InitCondition(1000, 0.55)   
 	--내구도,방여력
 	
 	inst:AddComponent("insulator")
-    inst.components.insulator:SetInsulation(400)
+    inst.components.insulator:SetInsulation(200)
 	--보온률 400
 	
 	local function sanityability(inst)
