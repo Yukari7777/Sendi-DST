@@ -135,18 +135,15 @@ local function OverrideOnRemoveEntity(inst)
 	end
 end
 
+local function KeyCheckCommon(inst)
+	return inst == ThePlayer and TheFrontEnd:GetActiveScreen() ~= nil and TheFrontEnd:GetActiveScreen().name == "HUD"
+end
 
 local function RegisterKeyEvent(inst)
 	-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
 	-- And SG utils will handle both cases, I think?
 	TheInput:AddKeyDownHandler(_G["KEY_R"], function()
-		local x, y, z = ConsoleWorldPosition():Get()
-		if inst == ThePlayer and not inst:HasTag("inskill") and TheFrontEnd:GetActiveScreen().name == "HUD" then
-			if x ~= nil and y ~= nil and z ~= nil then
-				inst.sendi_classified.pointx:set(x)
-				inst.sendi_classified.pointy:set(y)
-				inst.sendi_classified.pointz:set(z)
-			end
+		if KeyCheckCommon(inst) then
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 
