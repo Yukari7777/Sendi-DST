@@ -7,9 +7,8 @@ local assets = {
 
 
 local prefabs = {
---센디의 제작ㄹ목록을 추가합니다
-	"sendipack",
-	"sendisedmask",
+--외부에있는것을 불러옴
+
 
 }
 
@@ -21,7 +20,7 @@ local start_inv = {
 
 local function onbecamehuman(inst)
 -- 인물이 인간에게서 부활 할때
-   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.4)
+   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.2)
    -- 유령이 아닌경우 속도 설정.
 end
 
@@ -75,7 +74,7 @@ local Light = inst.entity:AddLight()
 		--M혹은 포만도가 80% 초과라면
 			inst.entity:AddLight()
 			--M엔티티에게 빛 추가
-			inst.Light:SetRadius(0.4)
+			inst.Light:SetRadius(0.6)
 			--M범위 반경 설정
 			inst.Light:SetFalloff(1)
 			--M빛의 감퇴량 설정
@@ -171,32 +170,16 @@ end
 local master_postinit = function(inst)
 	inst.sendi_classified = SpawnPrefab("sendi_classified")
 	inst:AddChild(inst.sendi_classified)
-    --inst.sendi_classified.entity:SetParent(inst.entity)
+	
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 
 	inst:AddComponent("reader")
 	inst:AddComponent("sendiskill")
-	--------MH 혼돈의카오스 패시브 시작 
-	  --local function MishellTrig1(inst, data)
-	--if not inst:HasTag("playerghost") then
-	 -- if inst.components.health:GetPercent() >= .5 then
-	 --    inst.components.health:DoDelta(-10)
-	 -- else
-	 --    inst.components.health:DoDelta(10)
-	 -- end
-	-- end
-	--end
-	----------------MH 혼돈의카오스 패시브 종료 
-	-- Uncomment if "wathgrithr"(Wigfrid) or "webber" voice is used
-	--inst.talker_path_override = "dontstarve_DLC001/characters/"
+
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 	inst:WatchWorldState("phase", sendi_light)
 	inst:ListenForEvent("hungerdelta", sendi_light)
-			-- 트리거
-			--MH 혼돈 마침
-			---inst:ListenForEvent("hungerdelta", MishellTrig1)
-			--HJ 혼돈 마침
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 
 	-- Stats   
@@ -206,13 +189,18 @@ local master_postinit = function(inst)
 	-- 최대피, 허기, 체력을 표시합니다.
 
 
-	inst.components.health.fire_damage_scale = 0.5
-	inst.components.combat.damagemultiplier = 0.85
+	inst.components.health.fire_damage_scale = 0.1
+	--불꽃 데미지를 지정합니다
+	
+	inst.components.combat.damagemultiplier = 0.6
 	-- Damage multiplier (optional) 데미지를 나타냅니다.
+	
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.5)
 	--허기 주기를 나타냅니다.
+	
 	inst.components.combat.min_attack_period = 0.01
 	--0.?초마다 때리는걸 의미합니다.
+	
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
 
 	-- 배고파지는 속도
