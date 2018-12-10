@@ -685,11 +685,32 @@ return {
 		BIRCHNUTDRAKE = "창 말고, 도끼로 찍어버려야해!",
 		FARMPLOT =
 		{
-			GENERIC = "씨앗을 심기위해 땅을 골라봤어",
+      GENERIC = "씨앗을 심기위해 땅을 골라봤어",
 			GROWING = "빨리빨리 자라라",
 			NEEDSFERTILIZER = "비료를 가져와야겠어",
 			BURNT = "익어버리기도 전에 타버렸네",
 		},
+		{
+			COOKING_LONG = "이렇게 오래 걸리는게 맞는거야?",
+			COOKING_SHORT = "소금소금소금♬ 후추후추후추♬\n아앗, 너무 많이넣었나?♬",
+			DONE = "요리가 완성됐어!",
+			EMPTY = "이제 아무도 사용하지 않나봐.\n드디어 내 실력을 발휘할 때야",
+			BURNT = "왜 아무도 신경쓰지 않은거야? 8ㅅ8",
+		},
+		EYEBRELLAHAT =	"비도 막아주고, 열도 막아주고,\n눈도 막아주는데, 무겁네.",
+		ARMORDRAGONFLY = "살짝만 대어봐도 데어버릴 것 같아",
+		DRAGON_SCALES = "멋져! 그리고 화끈해!",
+		DRAGONFLYCHEST = "불보다 더 화끈한 상자야!",
+		DECIDUOUSTREE =
+		{
+			BURNING = "탄다!!",
+			BURNT = "타버렸네",
+			CHOPPED = "여기에 앉아서 쉬면 편할 것 같아",
+			GENERIC = "나무야",
+			POISON = "왕!왕왕!",
+		},
+		ACORN_COOKED = "냄새가 좋아!",
+		BIRCHNUTDRAKE = "창 말고, 도끼로 찍어버려야해!",
 		COLDFIREPIT =
 		{
 			EMBERS = "뭔가 넣어볼까?",
@@ -881,8 +902,7 @@ return {
 		POND_ALGAE = "뭔가 이상한게 물속에서 헤엄치고있어",
 		GREENSTAFF = "설명서에 의하면.. 뭐든 분해 합니다..?\n살아있는 것에는 쓰면 안돼겠네.",
 		POTTEDFERN = "뭔가에 써먹을 수는 없겠지만 그래도 괜찮아~",
-
-		THULECITE = "뭔가 의미가 있는것 같은 문양이야",
+    THULECITE = "뭔가 의미가 있는것 같은 문양이야",
 		ARMORRUINS = "확실히 단단할것 같지만 매우 무거워",
 		RUINS_BAT = "내가 알고있는 돌망치 가운데는 가장 단단해",
 		RUINSHAT = "이걸 쓰면 나도 강해질수 있을까?",
@@ -902,8 +922,6 @@ return {
 		MINOTAUR = "위험해 보이지만 난 이길 수 있어",	
 		SPIDER_DROPPER = "하얀 거미는 동굴 위쪽에서 살고있어",	
 		NIGHTMARELIGHT = "이 불이 켜져있는건... 좋은 징조는 아니네",	
-		
-
 		GREENGEM = "녹색 보석은 흔히 볼 수 있는게 아니야",
 		RELIC = "이제 작동할거야!",	
 		RUINS_RUBBLE = "뭔가 부품이 비어있어",
@@ -1078,7 +1096,7 @@ SLURPER = "검정색 팩맨!",
 			PICKED = "언제쯤 열매가 다시 열리는걸까?",
 		},
 		BIRDCAGE =
-		{
+    {
 			GENERIC = "새를 위한 집이 준비되었어",
 			OCCUPIED = "이 새는 밖에서 밥을 먹을 수 없으니까 내가 밥을 줘야해",
 			SLEEPING = "새가 자는 동안엔 이 집이 새를 지켜줄거야",
@@ -1114,7 +1132,7 @@ SLURPER = "검정색 팩맨!",
 		BUTTERFLYMUFFIN = "버터머핀이라는게 나비가 꽃혀있는 머핀이었어?",
 		BUTTERFLYWINGS = "나비 몸통이 없어졌어",
 		CAMPFIRE =
-		{
+    {
 			EMBERS = "사용하고 싶으면 태울만한걸 넣어야해",
 			GENERIC = "나에게 따뜻한 온기를 나눠줘",
 			HIGH = "불꽃이 하늘로 치솟고있어!",
@@ -1216,7 +1234,7 @@ SLURPER = "검정색 팩맨!",
 			GENERIC = "비를 피할 수 있고, 땔감도 되고, 재료도 돼",
 		},
 		EVERGREEN_SPARSE =
-		{
+    {
 			BURNING = "쉽게 불이 붙고, 쉽게 불이 번져",
 			BURNT = "목탄 덩어리야",
 			CHOPPED = "나무가 밑둥만 남아서 이제 더 이상 크지 않을거야",
@@ -1273,7 +1291,7 @@ SLURPER = "검정색 팩맨!",
 		GOLDENSHOVEL = "이걸로 땅을 파서 이거보다 값진게 나올까?",
 		GOLDNUGGET = "난 금덩이를 유용하게 사용할 줄 알아. 원래 세계로 돌아갈때 꼭 다섯뭉치는 챙겨둬야지!",
 		GRASS =
-		{
+    {
 			BARREN = "비료가 필요해보여",
 			WITHERED = "이대로 놔두면 말라 죽을지도 몰라",
 			BURNING = "불이야!",
