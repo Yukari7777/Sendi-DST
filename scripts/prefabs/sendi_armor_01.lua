@@ -53,7 +53,7 @@ local function fn()
 	--내구도,방여력
 	
 	inst:AddComponent("insulator")
-    inst.components.insulator:SetInsulation(400)
+    inst.components.insulator:SetInsulation(200)
 	--보온률 400
 
 	
