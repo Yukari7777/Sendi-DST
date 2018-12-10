@@ -1,63 +1,27 @@
-name = "Yakumo Yukari"
-author = "Yakumo Yukari"
-version = "0.10.8"
-description = "Yakumo Yukari comes from unknown world to manipulate Don't Starve Together world!\n\nVersion : "..version.."\nPress [B] to show status."
+name = "[DST]Sendi"
+author = "doftksxk@naver.com"
+version = "1.3" -- This is the version of the template. Change it to your own number.
+description = "[DST] 센디(Sendi) :)~~~\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVersion : "..version.." "
 forumthread = ""
-api_version = 6
-api_version_dst = 10
+api_version = 10
 
+-- Compatible with Don't Starve Together
 dst_compatible = true
+
+-- Not compatible with Don't Starve
 dont_starve_compatible = false
 reign_of_giants_compatible = false
+shipwrecked_compatible = false
+
+-- Character mods are required by all clients
 all_clients_require_mod = true 
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
+-- The mod's tags displayed on the server list
 server_filter_tags = {
 	"character",
 }
 
-local inspectflag = {}
-for i = 1, 7 do inspectflag[i] = { description = "", data = i } end
-inspectflag[1].description = "character"
-inspectflag[2].description = "console"
-inspectflag[3].description = "console, character"
-inspectflag[4].description = "chat"
-inspectflag[5].description = "chat, character"
-inspectflag[6].description = "chat, console"
-inspectflag[7].description = "everywhere"
-
-configuration_options = {
-	{
-		name = "language",
-		label = "Language",
-		options = {
-			{ description = "english", data = "en" },
-			{ description = "chinese", data = "ch" },
-		},
-		default = "en",
-	},
-
-	{
-		name = "difficulty",
-		label = "Play Style",
-		options =
-		{
-			{ description = "PVP", data = "easy" },
-			{ description = "Standard", data = "default" },
-			{ description = "Farmer", data = "hard" },
-		},
-		default = "default",
-	},
-
-	{
-		name = "skill",
-		label = "Print status info in",
-		hover = "Set where to show the status info should display in.",
-		options = inspectflag,
-		default = 1,
-	},
-
-
-}
+--configuration_options = {}
