@@ -16,14 +16,14 @@ local function DoRapierCharge(inst)
 	if charge then
 		local VELOCITY = 0.3
 		local RADIUS = 2
-		local DAMAGE = 20
+		local DAMAGE = 10
 
 		local fx = SpawnPrefab("firesplash_fx")
 		fx.Transform:SetScale(0.4, 0.4, 0.4)
 		fx.Transform:SetPosition(inst:GetPosition():Get())
 
 		self.tickaftercharge = self.tickaftercharge + 1
-		inst.Physics:SetMotorVel(25, 0, 0)
+		inst.Physics:SetMotorVel(35, 0, 0)
 
 		local playerpos = inst:GetPosition()
 		local ents = TheSim:FindEntities(playerpos.x + math.sin(angle), 0, playerpos.z + math.cos(angle), RADIUS, nil, { "INLIMBO" })
@@ -53,13 +53,17 @@ end
 
 function SendiSkill:Explode(inst)
 	self.shouldcharge = true
+	if inst.components.hunger ~= nil then
+		inst.components.hunger:DoDelta(-3)
+	end
+
 	local x, y, z = inst.Transform:GetWorldPosition()
 
 	local fx = SpawnPrefab("explode_small")
 	fx.Transform:SetScale(1.4, 1.4, 1.4)
 	fx.Transform:SetPosition(x, y, z)
 
-	local ents = TheSim:FindEntities(x, y, z, 4, nil, { "INLIMBO" })
+	local ents = TheSim:FindEntities(x, y, z, 5, nil, { "INLIMBO" })
 	for k,v in pairs(ents) do 
 		if v.components.health and not v:HasTag("companion") and v ~= inst and (TheNet:GetPVPEnabled() or not v:HasTag("player")) then
 			v.components.combat:GetAttacked(inst, 30)
@@ -68,6 +72,9 @@ function SendiSkill:Explode(inst)
 end
 
 function SendiSkill:OnFinishRapier(inst)
+	inst.Physics:Stop()
+    inst.Physics:SetMotorVel(0, 0, 0)
+
 	self.shouldcharge = false
 	self.tickaftercharge = 0
 	if inst.SkillTask ~= nil then 
