@@ -52,7 +52,7 @@ local function GetPlayerAngle(inst)
     local zdiff = mousepos.z - playerpos.z
     local angle = -math.atan2(zdiff, xdiff) + (90 / 180 * math.pi)
 
-	return angle
+	return inst.Transform:GetRotation() 
 end
 
 local function nullfn()  -- AddAction's third argument type must be function. And I won't use action.fn at all.
@@ -67,7 +67,7 @@ local rapier_server = State {
 
 	onenter = function(inst)
 		OnStartSkillGeneral(inst)
-		inst.sg:SetTimeout(1)
+		inst.sg:SetTimeout(14*FRAMES)
 		inst.AnimState:PlayAnimation("whip_pre")
         inst.AnimState:PushAnimation("whip", false)
 
@@ -78,14 +78,12 @@ local rapier_server = State {
 	timeline =
 	{
 		TimeEvent(4 * FRAMES, function(inst)
-			inst.Physics:SetMotorVel(15, 0, 0)
-			inst.components.sendiskill.shouldcharge = true
-			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt") -- 트리가드 때리는 소리
+			inst.components.sendiskill:Explode(inst)
+			inst.SoundEmitter:PlaySound("dontstarve/creatures/leif/swipe") -- YUKARI : 좀더 날카롭게 찌르는 소리 같은거 없나?
 		end),
-		TimeEvent(19 * FRAMES, function(inst)
+		TimeEvent(14 * FRAMES, function(inst)
 			inst.Physics:Stop()
             inst.Physics:SetMotorVel(0, 0, 0)
-			inst.components.sendiskill.shouldcharge = false
 		end),
 	},
 	
@@ -105,8 +103,6 @@ local rapier_server = State {
 	end,
 	
 	onexit = function(inst)	
-		inst.Physics:Stop()
-        inst.Physics:SetMotorVel(0, 0, 0)
 		inst.components.sendiskill:OnFinishRapier(inst)
 		OnFinishSkillGeneral(inst)
 	end,
