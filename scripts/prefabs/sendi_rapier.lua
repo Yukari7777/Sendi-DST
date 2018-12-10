@@ -1,5 +1,4 @@
-
--- ±×·¡ÇÈ ÀÚ¿ø ¼³Á¤. ¿¹½Ã¿£ µå¶ø ÀÌ¹ÌÁö, ÀåÂø ÀÌ¹ÌÁö, ÀÎº¥Åä¸® ÀÌ¹ÌÁö, ÀÎº¥Åä¸® ÀÌ¹ÌÁö xmlÀÌ ¼³Á¤µÊ.
+-- ê·¸ë˜í”½ ìì› ì„¤ì •. ì˜ˆì‹œì—” ë“œë ì´ë¯¸ì§€, ì¥ì°© ì´ë¯¸ì§€, ì¸ë²¤í† ë¦¬ ì´ë¯¸ì§€, ì¸ë²¤í† ë¦¬ ì´ë¯¸ì§€ xmlì´ ì„¤ì •ë¨.
 
 local assets ={
     Asset("ANIM", "anim/sendi_rapier.zip"),
@@ -22,14 +21,19 @@ local function OnLoad(inst, data)
 end
             --onunequip
 local function onequip(inst, owner)
-	owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
 
-	owner.AnimState:Show("ARM_carry")
-	owner.AnimState:Hide("ARM_normal")
-	-- ÀåÂø ½Ã ¼³Á¤.
-	-- owner.AnimState:OverrideSymbol("¾Ö´Ï¸ŞÀÌ¼Ç ¹ğÅ©¸í", "ºôµå¸í", "ºôµå Æú´õ¸í")
-	-- ±× ¾Æ·¡ 2ÁÙÀº ¹°°ÇÀ» µé°í ÀÖ´Â ÆÈ ¸ğ½ÀÀ» È°¼ºÈ­ÇÏ°í, ºó ÆÈ ¸ğ½ÀÀ» ºñÈ°¼ºÈ­.
-end
+   
+    owner.AnimState:OverrideSymbol("swap_object", "swap_sendi_rapier_01", "swap")
+									--"?? " "ë„¤ì„" "ì• ë‹ˆë©”ì´ì…˜ ê²½ë¡œ"
+    owner.AnimState:Show("ARM_carry")
+    owner.AnimState:Hide("ARM_normal")
+	
+	-- ì¥ì°© ì‹œ ì„¤ì •.
+	-- owner.AnimState:OverrideSymbol("ì• ë‹ˆë©”ì´ì…˜ ë±…í¬ëª…", "ë¹Œë“œëª…", "ë¹Œë“œ í´ë”ëª…")
+	-- ê·¸ ì•„ë˜ 2ì¤„ì€ ë¬¼ê±´ì„ ë“¤ê³  ìˆëŠ” íŒ” ëª¨ìŠµì„ í™œì„±í™”í•˜ê³ , ë¹ˆ íŒ” ëª¨ìŠµì„ ë¹„í™œì„±í™”.
+
+
+   end
 
    
 local function onunequip(inst, owner)
@@ -51,20 +55,22 @@ local function fn()
    local inst = CreateEntity()
     local trans = inst.entity:AddTransform()
     local anim = inst.entity:AddAnimState()
-   -- ¾Æ±âÁã Ãß°¡   
+   -- ì•„ê¸°ì¥ ì¶”ê°€   
    
     inst.entity:AddNetwork()
  
     MakeInventoryPhysics(inst)
 
+
+   
     inst.AnimState:SetBank("sendi_rapier")
     inst.AnimState:SetBuild("sendi_rapier")
     inst.AnimState:PlayAnimation("idle")
-   --¶³±º ÀÌ¹ÌÁöÃß°¡ 
+   --ë–¨êµ° ì´ë¯¸ì§€ì¶”ê°€ 
    
     inst:AddTag("sharp") 
     inst:AddTag("pointy") 
-	-- ÅÂ±× ¼³Á¤, ÀÌ µÎ ÅÂ±×´Â ¾ø¾îµµ µÊ(½ÇÇà È®ÀÎ)
+	-- íƒœê·¸ ì„¤ì •, ì´ ë‘ íƒœê·¸ëŠ” ì—†ì–´ë„ ë¨(ì‹¤í–‰ í™•ì¸)
 
     inst.entity:SetPristine()
 
@@ -76,11 +82,11 @@ local function fn()
   --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
    -- inst.components.perishable:StartPerishing()
   --  inst.components.perishable.onperishreplacement = "spoiled_food"
-   --À¯Åë±âÇÑ
+   --ìœ í†µê¸°í•œ
    
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(40)
-   -- ¹«±â·Î ¼³Á¤. ¾Æ·¡´Â ÇÇÇØ ¼³Á¤
+    inst.components.weapon:SetDamage(50)
+   -- ë¬´ê¸°ë¡œ ì„¤ì •. ì•„ë˜ëŠ” í”¼í•´ ì„¤ì •
     inst.OnLoad = OnLoad
 
     -------
@@ -91,23 +97,25 @@ local function fn()
     inst.components.edible.hungervalue = TUNING.CALORIES_MED
     inst.components.edible.sanityvalue = -TUNING.SANITY_MED
     --]]
-	-- ³»±¸µµ ¼³Á¤. ÀÌ ±¸°£À» Áö¿ö¹ö¸®¸é ¹«ÇÑ ³»±¸µµ°¡ µÉ °ÍÀÌ¶ó ÃßÁ¤. a´Â ÃÖ´ë ³»±¸µµ, b´Â Á¦ÀÛ ¿Ï·á ½Ã ³»±¸µµ. ´ëºÎºĞ a = b.
+	-- ë‚´êµ¬ë„ ì„¤ì •. ì´ êµ¬ê°„ì„ ì§€ì›Œë²„ë¦¬ë©´ ë¬´í•œ ë‚´êµ¬ë„ê°€ ë  ê²ƒì´ë¼ ì¶”ì •. aëŠ” ìµœëŒ€ ë‚´êµ¬ë„, bëŠ” ì œì‘ ì™„ë£Œ ì‹œ ë‚´êµ¬ë„. ëŒ€ë¶€ë¶„ a = b.
   
+   
     inst:AddComponent("inspectable")
-	--Á¶»ç °¡´ÉÇÏµµ·Ï ¼³Á¤
+	--ì¡°ì‚¬ ê°€ëŠ¥í•˜ë„ë¡ ì„¤ì •
 	
     inst:AddComponent("inventoryitem")
    inst.components.inventoryitem.imagename = "sendi_rapier"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier.xml"
-   --ÀÎº¥Åä¸® ¾ÆÀÌÅÛÀ¸·Î ¼³Á¤µÊ
+   --ì¸ë²¤í† ë¦¬ ì•„ì´í…œìœ¼ë¡œ ì„¤ì •ë¨
    
     MakeHauntableLaunchAndPerish(inst)
-  
+   
+   
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
-	--ÀåÂø °¡´ÉÇÏµµ·Ï, ÀåÂø¹Ø ÇØÁ¦½ÃÀÇ À§ÀÇ µÎ Æã¼ÇÀ» ÀÛµ¿
+	--ì¥ì°© ê°€ëŠ¥í•˜ë„ë¡, ì¥ì°©ë°‘ í•´ì œì‹œì˜ ìœ„ì˜ ë‘ í‘ì…˜ì„ ì‘ë™
 	
     return inst
 end
