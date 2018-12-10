@@ -36,17 +36,13 @@ local function OnStartSkillGeneral(inst)
 		inst.components.playercontroller:Enable(false)
 	end
 	inst:PerformBufferedAction()
-	inst.IsMovementPrediction = Profile:GetMovementPredictionEnabled()
-	inst:EnableMovementPrediction(false)
 end
 
 local function OnFinishSkillGeneral(inst)
 	inst:RemoveTag("inskill")
-	inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
 	if inst.components.playercontroller ~= nil then	
 		inst.components.playercontroller:Enable(true)
 	end
-	inst:EnableMovementPrediction(inst.IsMovementPrediction ~= nil and inst.IsMovementPrediction or true)
 end
 
 local function GetPlayerAngle(inst)
@@ -55,6 +51,8 @@ local function GetPlayerAngle(inst)
     local xdiff = mousepos.x - playerpos.x
     local zdiff = mousepos.z - playerpos.z
     local angle = -math.atan2(zdiff, xdiff) + (90 / 180 * math.pi)
+
+	return angle
 end
 
 local function nullfn()  -- AddAction's third argument type must be function. And I won't use action.fn at all.
@@ -80,11 +78,11 @@ local rapier_server = State {
 	timeline =
 	{
 		TimeEvent(4 * FRAMES, function(inst)
-			inst.Physics:SetMotorVel(10, 0, 0)
+			inst.Physics:SetMotorVel(15, 0, 0)
 			inst.components.sendiskill.shouldcharge = true
 			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt") -- 트리가드 때리는 소리
 		end),
-		TimeEvent(30 * FRAMES, function(inst)
+		TimeEvent(19 * FRAMES, function(inst)
 			inst.Physics:Stop()
             inst.Physics:SetMotorVel(0, 0, 0)
 			inst.components.sendiskill.shouldcharge = false
@@ -107,6 +105,8 @@ local rapier_server = State {
 	end,
 	
 	onexit = function(inst)	
+		inst.Physics:Stop()
+        inst.Physics:SetMotorVel(0, 0, 0)
 		inst.components.sendiskill:OnFinishRapier(inst)
 		OnFinishSkillGeneral(inst)
 	end,

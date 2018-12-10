@@ -2,10 +2,15 @@ local SendiSkill = Class(function(self, inst)
     self.inst = inst
 
 	self.shouldcharge = false
+	self.angle = 0
 end)
 
-local function InRapier(inst, angle)
-	local docharge = inst.components.sendiskill.shouldcharge
+local function InRapier(inst)
+	local self = inst.components.sendiskill
+	local docharge = self.shouldcharge
+	local angle = self.angle
+
+	print(docharge, inst, angle)
 	if docharge then
 		local SPEED = 1
 		local RADIUS = 2
@@ -28,8 +33,8 @@ end
 
 function SendiSkill:OnStartRapier(inst, angle)
 	if inst.SkillTask == nil then 
-		
-		inst.SkillTask = inst.DoPeriodicTask(inst, FRAMES, InRapier(inst, angle))
+		self.angle = angle
+		inst.SkillTask = inst:DoPeriodicTask(0, InRapier) -- 0초마다 반복 = 1프레임(0.033초)마다 반복
 		inst.components.talker:Say(GetString(inst.prefab, "RAPIER"))
 	end
 end
