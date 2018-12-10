@@ -1,4 +1,5 @@
 PrefabFiles = {
+	"sendi_classified",
 	"sendi",
 	"sendi_none",
 	"sendipack", 
@@ -7,8 +8,7 @@ PrefabFiles = {
 	"sendi_rapier", -- SENDI_RAPIER
 	"sendi_rapier_wood", 
 	"sendi_armor_02", --센디의 여름용 갑옷
-	"sendi_rapier_ignia"--이그니아 레이피어 SENDI_RAPIER_IGNIA		
-	
+	"sendi_rapier_ignia",--이그니아 레이피어 SENDI_RAPIER_IGNIA		
 	--nanacap
 }
 
