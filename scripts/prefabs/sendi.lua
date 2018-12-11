@@ -74,9 +74,9 @@ local Light = inst.entity:AddLight()
 		--M혹은 포만도가 80% 초과라면
 			inst.entity:AddLight()
 			--M엔티티에게 빛 추가
-			inst.Light:SetRadius(0.6)
+			inst.Light:SetRadius(1.1)	-- 빛 범위
 			--M범위 반경 설정
-			inst.Light:SetFalloff(1)
+			inst.Light:SetFalloff(1.2)
 			--M빛의 감퇴량 설정
 			inst.Light:SetIntensity(0.5)
 			--M빛의 강도 설정
@@ -84,7 +84,7 @@ local Light = inst.entity:AddLight()
 			--M빛의 색 설정
 			inst.Light:Enable(true)
 			--Minst.Light:Enable값을 true로 설정?
-			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 2)
+			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 3)
 			--M포만도 감소량 증폭
 		end
 		else
@@ -195,7 +195,7 @@ local master_postinit = function(inst)
 	inst.components.combat.damagemultiplier = 0.6
 	-- Damage multiplier (optional) 데미지를 나타냅니다.
 	
-	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.5)
+	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 2.5)
 	--허기 주기를 나타냅니다.
 	
 	inst.components.combat.min_attack_period = 0.01

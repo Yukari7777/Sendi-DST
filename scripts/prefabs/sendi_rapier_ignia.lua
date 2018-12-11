@@ -50,8 +50,8 @@ local function onunequip(inst, owner)
    -- end
 end
 
-local DEFAULTBURNTIME = 3
-local BURNDAMAGE = 3
+local DEFAULTBURNTIME = 3 
+local BURNDAMAGE = 6 -- 데미지
 local BURNADDTIME = 2
 local BURNPERIOD = 1
 
@@ -102,7 +102,8 @@ local function onattack(inst, attacker, target)
 	if target.DotDamageTask ~= nil then 
 		target.burntime = target.burntime + BURNADDTIME
 	else 
-		local BurnTime = target.components.burnable ~= nil and target.components.burnable.burntime or nil -- 해당 개체의 불탈 시간이 존재한다면 그 값을 가져옴
+		local BurnTime = target.components.burnable ~= nil and target.components.burnable.burntime or nil 
+		-- 해당 개체의 불탈 시간이 존재한다면 그 값을 가져옴
 		local function OnIgnite(target)
 			target.AnimState:SetMultColour(0.8, 0.5, 0.5, 1)
 			if target.components.health ~= nil then
@@ -110,14 +111,19 @@ local function onattack(inst, attacker, target)
 			end
 		end
 		OnIgnite(target)
-		target.burntime = BurnTime ~= nil and (BurnTime / 3) or DEFAULTBURNTIME -- BurnTime이 nil이면 3 대입 (불타던 시간 / 3 만큼 타거나, 3초동안 탐)
-		target.DotDamageTask = target.DoPeriodicTask(target, BURNPERIOD, function() -- 함수를 실행하고 그 참조값을 해당 개체에 남긴다. (외부에서 참조할 수 있게됨)
+		target.burntime = BurnTime ~= nil and (BurnTime / 3) or DEFAULTBURNTIME 
+		-- BurnTime이 nil이면 3 대입 (불타던 시간 / 3 만큼 타거나, 3초동안 탐)
+		
+		target.DotDamageTask = target.DoPeriodicTask(target, BURNPERIOD, function() 
+		-- 함수를 실행하고 그 참조값을 해당 개체에 남긴다. (외부에서 참조할 수 있게됨)
 			if target.burntime > 0 then
 				OnIgnite(target)
 				target.burntime = target.burntime - 1
 			else
-				target.AnimState:SetMultColour(1, 1, 1, 1) --원래 색깔로
-				target.burntime = 0 -- burntime은 위의 연산에서 음수일 수도 있음
+				target.AnimState:SetMultColour(1, 1, 1, 1) 
+				--원래 색깔로
+				target.burntime = 0 
+				-- burntime은 위의 연산에서 음수일 수도 있음
 			end
 		end)
 	end -- Yukari : 커스텀 도트데미지 함수 작성함.
@@ -158,7 +164,7 @@ local function fn()
 
    
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(60)
+    inst.components.weapon:SetDamage(50) 
    -- 무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2)
 	--공격범위

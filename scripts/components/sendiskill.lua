@@ -16,7 +16,7 @@ local function DoRapierCharge(inst)
 	if charge then
 		local VELOCITY = 0.3
 		local RADIUS = 2
-		local DAMAGE = 10
+		local DAMAGE = 10 -- 데미지 1
 
 		local fx = SpawnPrefab("firesplash_fx")
 		fx.Transform:SetScale(0.4, 0.4, 0.4)
@@ -66,7 +66,7 @@ function SendiSkill:Explode(inst)
 	local ents = TheSim:FindEntities(x, y, z, 5, nil, { "INLIMBO" })
 	for k,v in pairs(ents) do 
 		if v.components.health and not v:HasTag("companion") and v ~= inst and (TheNet:GetPVPEnabled() or not v:HasTag("player")) then
-			v.components.combat:GetAttacked(inst, 30)
+			v.components.combat:GetAttacked(inst, 15) -- 데미지2
 		end
 	end
 end

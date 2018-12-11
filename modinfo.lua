@@ -1,7 +1,7 @@
 name = "[DST]Sendi"
 author = "doftksxk@naver.com"
-version = "1.3" -- This is the version of the template. Change it to your own number.
-description = "[DST] 센디(Sendi) :)~~~\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVersion : "..version.." "
+version = "1.3.3" 
+description = "[DST] Sendi :)~~~\n\nWhen [R] key is pressed\n[IGNIA RUN] is activated.\n\n\n\n\n[DST]센디 :)~~\n\n[R]키 입력시 [이그니아 런] 이 발동합니다.\n\n\n\n\nVersion : "..version.." "
 forumthread = ""
 api_version = 10
 
