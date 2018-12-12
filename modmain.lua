@@ -9,7 +9,7 @@ PrefabFiles = {
 	"sendi_rapier_wood", 
 	"sendi_armor_02", --센디의 여름용 갑옷
 	"sendi_rapier_ignia",--이그니아 레이피어 SENDI_RAPIER_IGNIA		
-	--nanacap
+  "sendi_oven", -- 센디 오븐
 }
 
 --캐릭터 아이템의 이름을 지정합니다. 
@@ -91,6 +91,12 @@ Assets = {
 	--------이그니아 레이피어
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_ignia.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_ignia.xml"),
+	--------센디오븐
+	Asset("ANIM", "anim/sendi_oven.zip"),
+	Asset("ANIM", "anim/sendi_oven_open.zip"),
+	Asset("ANIM", "anim/sendi_oven_fire.zip"),
+	Asset("ANIM", "anim/sendi_oven_fire_cold.zip"),
+	Asset("ATLAS", "images/inventoryimages/sendi_oven.xml"),
 
 }
 
@@ -147,13 +153,20 @@ local Recipe = GLOBAL.Recipe
 	-- 센디 아머 [임의 추가] 
 	GLOBAL.STRINGS.NAMES.SENDI_RAPIER_IGNIA = "이그니아 레이피어" -- STRINGS.NAMES : 지정할 이름 
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_IGNIA = "이그니아의 힘을 실채화 시킨 레이피어야! 조금 과격한가?" --DESCRIBE : 말하게 하는 명령어		
+	--센디 오븐
+	GLOBAL.STRINGS.NAMES.MUSHA_OVEN = "센디의 오븐" -- STRINGS.NAMES : 지정할 이름 
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUSHA_OVEN = "한번에 구워 버리는거야! 여러번 구우면 귀찮잖아?" --DESCRIBE : 말하게 하는 명령어		
 	
+	
+--------------------레시피시작
+
 	
 local sendipack = GLOBAL.Recipe("sendipack", {Ingredient("gears", 2), Ingredient("bedroll_furry", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendipack.xml", "sendipack.tex")
 STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다. [냉장고]"
 				-- nil, nil, nil, nil, "sendicraft" 여기서 "sendicraft"는 센디의 전용탭을 뜻한다.
 
+-----------------------------------센디 백팩
 --이름, 재료, 탭, 기술 수준, 설치자, min_spacing, nounlock, 제작 시 주는 갯수, [ 재료란 builder_tag, atlas, image, testfn, product]
 local sendisedmask = GLOBAL.Recipe("sendisedmask", 
 { Ingredient("cutstone", 4), Ingredient("marble", 4)}, 
@@ -162,7 +175,7 @@ RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/invent
 STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
 -- SURVIVAL[생존] DRESS[ 드레스 ]
 
--- AddRecipe 
+----------------------------------센디 마스크 
 
 AddRecipe("sendi_rapier_wood", 
 {Ingredient("spear", 1), Ingredient("log", 8), Ingredient("rope", 2)}, 
@@ -204,6 +217,13 @@ AddRecipe("sendi_rapier_ignia",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
 STRINGS.RECIPE_DESC.sendi_rapier_ignia = "불타는 레이피어 입니다.[불꽃지속딜]"
 ---------------------------------- 이그니아 레이피어
+
+local sendi_oven = AddRecipe("sendi_oven", { glowdust3, GLOBAL.Ingredient("rocks", 10), GLOBAL.Ingredient("froglegs", 5), GLOBAL.Ingredient("purplegem", 1) }, RECIPETABS.MUSHA, TECH.SCIENCE_TWO, "sendi_oven_placer" ) 
+sendi_oven.atlas = "images/inventoryimages/sendi_oven.xml"
+sendi_oven.tagneeded = false
+sendi_oven.builder_tag ="sendi"
+
+---------------------------------- 센디 오븐
 		
 		
 ---센디 아이템 명령 탬플릿
