@@ -13,12 +13,9 @@ PrefabFiles = {
 	--------레이피어-----------
 	"sendi_armor_01", --센디의 니트 갑옷
 	"sendi_armor_02", --센디의 여름용 갑옷
-<<<<<<< HEAD
 	---------갑옷----------
-=======
 	"sendi_rapier_ignia",--이그니아 레이피어 SENDI_RAPIER_IGNIA		
-  "sendi_oven", -- 센디 오븐
->>>>>>> ef6f25387000b1b00e39a839b7997fcc87decb80
+	"sendi_oven", -- 센디 오븐
 }
 
 --캐릭터 아이템의 이름을 지정합니다. 
@@ -161,14 +158,10 @@ local Recipe = GLOBAL.Recipe
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_02 = "기존의 갑옷의 갑옷보다 조금더 튼튼하고 효율적으로 만들었어!" --DESCRIBE : 말하게 하는 명령어
 	-- 센디 아머 [임의 추가] 
 	GLOBAL.STRINGS.NAMES.SENDI_RAPIER_IGNIA = "이그니아 레이피어" -- STRINGS.NAMES : 지정할 이름 
-<<<<<<< HEAD
-	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_IGNIA = "내 친구, 이그니아의 힘을 실채화 시킨 레이피어야! 조금 과격한가?" --DESCRIBE : 말하게 하는 명령어		
-=======
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_IGNIA = "이그니아의 힘을 실채화 시킨 레이피어야! 조금 과격한가?" --DESCRIBE : 말하게 하는 명령어		
 	--센디 오븐
 	GLOBAL.STRINGS.NAMES.MUSHA_OVEN = "센디의 오븐" -- STRINGS.NAMES : 지정할 이름 
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUSHA_OVEN = "한번에 구워 버리는거야! 여러번 구우면 귀찮잖아?" --DESCRIBE : 말하게 하는 명령어		
->>>>>>> ef6f25387000b1b00e39a839b7997fcc87decb80
 	
 	
 --------------------레시피시작
@@ -189,12 +182,6 @@ local sendisedmask = GLOBAL.Recipe("sendisedmask",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendisedmask.xml", "sendisedmask.tex")	
 STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
 -- SURVIVAL[생존] DRESS[ 드레스 ]
-
-<<<<<<< HEAD
----------------------------------- 센디의 눈물 마스크
-=======
-----------------------------------센디 마스크 
->>>>>>> ef6f25387000b1b00e39a839b7997fcc87decb80
 
 AddRecipe("sendi_rapier_wood", 
 {Ingredient("spear", 1), Ingredient("log", 8), Ingredient("rope", 2)}, 
@@ -236,8 +223,6 @@ AddRecipe("sendi_rapier_ignia",
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
 STRINGS.RECIPE_DESC.sendi_rapier_ignia = "불타는 레이피어 입니다.[불꽃지속딜]"
 ---------------------------------- 이그니아 레이피어
-<<<<<<< HEAD
-=======
 
 local sendi_oven = AddRecipe("sendi_oven", { glowdust3, GLOBAL.Ingredient("rocks", 10), GLOBAL.Ingredient("froglegs", 5), GLOBAL.Ingredient("purplegem", 1) }, RECIPETABS.MUSHA, TECH.SCIENCE_TWO, "sendi_oven_placer" ) 
 sendi_oven.atlas = "images/inventoryimages/sendi_oven.xml"
@@ -245,10 +230,6 @@ sendi_oven.tagneeded = false
 sendi_oven.builder_tag ="sendi"
 
 ---------------------------------- 센디 오븐
-		
-		
----센디 아이템 명령 탬플릿
->>>>>>> ef6f25387000b1b00e39a839b7997fcc87decb80
 
 
 
