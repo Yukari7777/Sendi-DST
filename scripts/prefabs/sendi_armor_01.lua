@@ -55,24 +55,16 @@ local function fn()
 	inst:AddComponent("insulator")
     inst.components.insulator:SetInsulation(200)
 	--보온률 400
-
-	
 	
 	local function sanityability(inst)
-	inst.components.equippable.dapperness = 1
-	
-    MakeHauntableLaunch(inst)
-	
-	
-	
-
-	--정신력을 회복 합니다.
-	
-end
+		inst.components.equippable.dapperness = 1
+		MakeHauntableLaunch(inst)
+		--정신력을 회복 합니다.
+	end
 	
     return inst
 	
 	
 end
 
-return Prefab("common/inventory/sendi_armor_01", fn, assets)
+return Prefab("common/inventory/sendi_armor", fn, assets)

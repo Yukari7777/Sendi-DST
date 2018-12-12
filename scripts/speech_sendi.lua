@@ -1,4 +1,3 @@
-
 return {
 
 	ACTIONFAIL =
@@ -413,13 +412,11 @@ return {
             GHOST = "%s의 모험에는 내 도움이 필요해보여",
             FIRESTARTER = "%s의 불꽃놀이가 시작되었어!",
         },
-
-        BOOK_BIRDS = "이게 바로 온 세상의 새들의 말을 적은 책이야",
+    BOOK_BIRDS = "이게 바로 온 세상의 새들의 말을 적은 책이야",
         BOOK_TENTACLES = "왕지렁이를 키우는 108가지 방법",
         BOOK_GARDENING = "이 책을 읽어주면 식물들이 좋아해",
         BOOK_SLEEP = "아주 지루한 책이야",
         BOOK_BRIMSTONE = "위험한 느낌이 드는 책이야",
-
 		GLOMMER = "깜찍한 날개 좀 봐! 게다가 날기까지 해!",
         GLOMMERFLOWER =
         {
@@ -512,7 +509,7 @@ return {
 		
 		BEEQUEEN = "혼자서 덤비라구 비겁한 벌!",
 		BEEQUEENHIVE = 
-		{
+    {
 			GENERIC = "이 벌통에는 꿀이 어마어마하게 있을 것 같아",
 			GROWING = "이 벌집은 지금 손 대면 안될 것 같아",
 		},
@@ -1057,7 +1054,7 @@ SLURPER = "검정색 팩맨!",
 			HELD = "부웅부웅부우우웅",
 		},
 		BEEFALO =
-		{
+    {
 			FOLLOWER = "얘는 왜 날 따라오는거지?",
 			GENERIC = "크고 묵직하고 더럽고 느려보여",
 			NAKED = "다리가 이렇게 가늘 줄은 몰랐어!",
@@ -1079,7 +1076,7 @@ SLURPER = "검정색 팩맨!",
 			PICKED = "언제쯤 열매가 다시 열리는걸까?",
 		},
 		BIRDCAGE =
-		{
+    {
 			GENERIC = "새를 위한 집이 준비되었어",
 			OCCUPIED = "이 새는 밖에서 밥을 먹을 수 없으니까 내가 밥을 줘야해",
 			SLEEPING = "새가 자는 동안엔 이 집이 새를 지켜줄거야",
@@ -1115,7 +1112,7 @@ SLURPER = "검정색 팩맨!",
 		BUTTERFLYMUFFIN = "버터머핀이라는게 나비가 꽃혀있는 머핀이었어?",
 		BUTTERFLYWINGS = "나비 몸통이 없어졌어",
 		CAMPFIRE =
-		{
+    {
 			EMBERS = "사용하고 싶으면 태울만한걸 넣어야해",
 			GENERIC = "나에게 따뜻한 온기를 나눠줘",
 			HIGH = "불꽃이 하늘로 치솟고있어!",
@@ -1217,7 +1214,7 @@ SLURPER = "검정색 팩맨!",
 			GENERIC = "비를 피할 수 있고, 땔감도 되고, 재료도 돼",
 		},
 		EVERGREEN_SPARSE =
-		{
+    {
 			BURNING = "쉽게 불이 붙고, 쉽게 불이 번져",
 			BURNT = "목탄 덩어리야",
 			CHOPPED = "나무가 밑둥만 남아서 이제 더 이상 크지 않을거야",
@@ -1274,7 +1271,7 @@ SLURPER = "검정색 팩맨!",
 		GOLDENSHOVEL = "이걸로 땅을 파서 이거보다 값진게 나올까?",
 		GOLDNUGGET = "난 금덩이를 유용하게 사용할 줄 알아. 원래 세계로 돌아갈때 꼭 다섯뭉치는 챙겨둬야지!",
 		GRASS =
-		{
+    {
 			BARREN = "비료가 필요해보여",
 			WITHERED = "이대로 놔두면 말라 죽을지도 몰라",
 			BURNING = "불이야!",
@@ -1793,4 +1790,14 @@ SLURPER = "검정색 팩맨!",
 	{
 		TALLBIRDEGG_CRACKED = "알도 고기야",
     },
+
+	RAPIER = {
+		"햣!",
+		"세이얏!",
+		"햣!",
+		"이그니아런!",
+		"세이얏!",
+		"햣!",
+		"세이얏!",
+	},
 }
