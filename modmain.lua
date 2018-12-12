@@ -173,7 +173,7 @@ STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다. [냉장고]"
 				-- nil, nil, nil, nil, "sendicraft" 여기서 "sendicraft"는 센디의 전용탭을 뜻한다.
 				
 -----------------------------------센디의 책가방
-
+-- 내 목숨을 아이어에
 -----------------------------------센디 백팩
 --이름, 재료, 탭, 기술 수준, 설치자, min_spacing, nounlock, 제작 시 주는 갯수, [ 재료란 builder_tag, atlas, image, testfn, product]
 local sendisedmask = GLOBAL.Recipe("sendisedmask", 
