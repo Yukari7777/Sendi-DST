@@ -58,7 +58,7 @@ local rapier_server = State {
 	onenter = function(inst)
 		OnStartSkillGeneral(inst)
 		inst.sg:SetTimeout(11 * FRAMES)
-		inst.AnimState:PlayAnimation("whip_pre")
+		inst.AnimState:PlayAnimation("whip_pre") -- YUKARI : TODO. 커스텀 애니메이션. 프레임 수 7
         inst.AnimState:PushAnimation("whip", false)
 
         inst.sg.statemem.angle = inst.Transform:GetRotation() 
