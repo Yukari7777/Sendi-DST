@@ -210,8 +210,8 @@ return {
     ANNOUNCE_LIGHTNING_DAMAGE_AVOIDED = "난 빛보다 빨라!",
         BATTLECRY =
         {
-                GENERIC = "저 녀석을 불로 태워버리는거야!",
-                PIG = "돼지 주제! 태워줄테다!!",
+                GENERIC = "저 녀석을 불로 태워버리는거야\n조금 뜨거울걸?!",
+                PIG = "돼지 주제! 태워 줄테다!!",
                 PREY = "넌 오늘 내 사냥감이야!",
                 SPIDER = "거미 따위 징그러울 뿐이야!",
                 SPIDER_WARRIOR = "노란색 거미네? 이 세계의 호랑거미는 예쁘지 않은걸?",

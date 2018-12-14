@@ -176,7 +176,7 @@ local master_postinit = function(inst)
 	
 	inst.components.combat.damagemultiplier = 0.6
 	-- Damage multiplier (optional) 데미지를 나타냅니다.
-	
+
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.0) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
 	--허기 주기를 나타냅니다.
 	

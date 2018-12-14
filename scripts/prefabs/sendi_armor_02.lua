@@ -54,8 +54,7 @@ local function fn()
 	inst.components.equippable.dapperness = 0.25 --초당 정신력 회복 
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
-    inst.components.equippable.walkspeedmult = TUNING.CANE_SPEED_MULT
-	--이동속도 : 케인
+    inst.components.equippable.walkspeedmult = 1.25 --이동속도 : 케인
 	
 	inst:AddComponent("armor")
 	inst.components.armor:InitIndestructible(0.8) -- YUKARI : 무한 내구도
