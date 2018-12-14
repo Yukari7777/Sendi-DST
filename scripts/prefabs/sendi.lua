@@ -123,11 +123,16 @@ end
 local function RegisterKeyEvent(inst)
 	-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
 	-- And SG utils will handle both cases, I think?
-	TheInput:AddKeyDownHandler(_G["KEY_R"], function()
+	local modname = KnownModIndex:GetModActualName("[DST]Sendi")
+
+	local RapierKey = GetModConfigData("skill_1", modname) or "KEY_V"
+	TheInput:AddKeyDownHandler(_G[RapierKey], function()
 		if KeyCheckCommon(inst) then
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 
+
+	print(RapierKey)
 end
 
 local common_postinit = function(inst) 

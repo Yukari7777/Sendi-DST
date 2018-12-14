@@ -13,7 +13,8 @@ PrefabFiles = {
 	--------레이피어-----------
 	"sendi_armor_01", --센디의 니트 갑옷
 	"sendi_armor_02", --센디의 여름용 갑옷
-  "sendi_rapier_ignia",--이그니아 레이피어 SENDI_RAPIER_IGNIA		
+	"sendi_rapier_ignia",--이그니아 레이피어 SENDI_RAPIER_IGNIA		
+
 	"sendi_oven", -- 센디 오븐
 }
 
@@ -28,13 +29,6 @@ GLOBAL.STRINGS.NAMES.SENDI_ARMOR_02 = "센디의 라이프아머"
 GLOBAL.STRINGS.NAMES.SENDI_RAPIER_IGNIA = "이그니아 레이피어"
 
 --캐릭터 아이템의 이름을 지정합니다. 끝 
-
-
-local start_inv = {
--- 맞춤시작 인벤토리 시작 
-"sendipack"
-}
-
 
 Assets = {
     Asset( "IMAGE", "images/saveslot_portraits/sendi.tex" ),
@@ -109,6 +103,7 @@ AddMinimapAtlas("images/map_icons/sendi.xml")
 
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
+local Language =  GetModConfigData("language")
 
 local containers = GLOBAL.require("containers")
 local oldwidgetsetup = containers.widgetsetup
@@ -165,7 +160,6 @@ local Recipe = GLOBAL.Recipe
 	
 --------------------레시피시작
 
-	
 local sendipack = GLOBAL.Recipe("sendipack", {Ingredient("gears", 2), Ingredient("bedroll_furry", 2)}, 
 RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendipack.xml", "sendipack.tex")
 STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다. [냉장고]"
@@ -230,11 +224,26 @@ sendi_oven.builder_tag ="sendi"
 
 ---------------------------------- 센디 오븐
 
+local _SUFFIX = ""
+if Language == "AUTO" then
+	local KnownModIndex = GLOBAL.KnownModIndex
+	for _, moddir in ipairs(KnownModIndex:GetModsToLoad()) do
+		local modname = KnownModIndex:GetModInfo(moddir).name
+		if modname == "한글 모드 서버 버전" or modname == "한글 모드 클라이언트 버전" then 
+			_SUFFIX = "" -- 한국어
+--		elseif modname == "Chinese modname Pack" or modname == "Chinese Plus" then
+--			_SUFFIX = "_ch"
+--		elseif modname == "Russian modname Pack" or modname == "Russification Pack for DST" or modname == "Russian For Mods (Client)" then
+--			_SUFFIX = "_ru"
+		else
+			_SUFFIX = "_en"
+		end 
+	end 
+else
+	_SUFFIX = Language
+end
+STRINGS.CHARACTERS.SENDI = require "speech_sendi".._SUFFIX 
 
-
-
--- Custom speech strings
-STRINGS.CHARACTERS.SENDI = require "speech_sendi" -- 캐릭터의 대사집을 지정합니다
 
 -- The character's name as appears in-game 
 STRINGS.NAMES.SENDI = "sendi"

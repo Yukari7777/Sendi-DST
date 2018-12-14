@@ -28,6 +28,18 @@ for i = 1, #Keys do RapierKey[i] = { description = ""..Keys[i].."", data = "KEY_
 
 configuration_options = {
 	{
+		name = "language",
+		label = "Language",
+		hover = "Set Language",
+		options = {
+			{ description = "Auto", data = "AUTO" },
+			{ description = "Korean", data = "" },
+			{ description = "English", data = "_en" },
+		},
+		default = "AUTO",
+	},
+ 
+	{
 		name = "skill_1",
 		label = "Ignia Run Key",
 		hover = "Set Skill Ignia Run's Keybind",

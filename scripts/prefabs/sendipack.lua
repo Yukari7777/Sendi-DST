@@ -5,12 +5,10 @@ local assets =
 
     Asset("ATLAS", "images/inventoryimages/sendipack.xml"),
     Asset("IMAGE", "images/inventoryimages/sendipack.tex")
-
 }
 
-local prefabs = 
-{
-"sendi",
+local prefabs = {
+	"sendi",
 }
 
 
@@ -47,7 +45,7 @@ local function fn(Sim)
     inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
    
-   MakeInventoryPhysics(inst)
+	MakeInventoryPhysics(inst)
     
     inst.AnimState:SetBank("backpack1")
     inst.AnimState:SetBuild("swap_sendipack")
@@ -55,8 +53,6 @@ local function fn(Sim)
 
     inst.MiniMapEntity:SetIcon("backpack.png")
     inst:AddTag("backpack")
-
-
 
     inst.foleysound = "dontstarve/movement/foley/backpack"
 
@@ -94,31 +90,27 @@ local function fn(Sim)
 	--inst.components.equippable.equipslot = EQUIPSLOTS.BODY
 	-- 가방을 떨어뜨리게 하지 않습니다.
 	
-	    inst:AddComponent("equippable")
-		inst.components.equippable.keepondeath = false
-		inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-		-- 가방을 떨어뜨리게 합니다.
+	inst:AddComponent("equippable")
+	inst.components.equippable.keepondeath = false
+	inst.components.equippable.equipslot = EQUIPSLOTS.BODY
+	-- 가방을 떨어뜨리게 합니다.
    
-if EQUIPSLOTS.PACK then
-      inst.components.equippable.equipslot = EQUIPSLOTS.PACK
-   elseif EQUIPSLOTS.BACK then
-      inst.components.equippable.equipslot = EQUIPSLOTS.BACK
-   else
-      inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-   end
+	if EQUIPSLOTS.PACK then
+		inst.components.equippable.equipslot = EQUIPSLOTS.PACK
+	elseif EQUIPSLOTS.BACK then
+		inst.components.equippable.equipslot = EQUIPSLOTS.BACK
+	else
+		inst.components.equippable.equipslot = EQUIPSLOTS.BODY
+	end
    
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable.walkspeedmult = 1.0
 
-    
-   if not inst.components.sendispecific then
-    inst:AddComponent("sendispecific")
-end
-
-   inst.components.sendispecific:SetOwner("sendi")
-   inst.components.sendispecific:SetStorable(true)
-   inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야! 너무 예뻐!", "이건, 하얀 가방인가? 귀여운데?") 
+	inst:AddComponent("sendispecific")
+	inst.components.sendispecific:SetOwner("sendi")
+	inst.components.sendispecific:SetStorable(true)
+	inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야! 너무 예뻐!", "이건, 하얀 가방인가? 귀여운데?") 
 
    
    MakeHauntableLaunchAndDropFirstItem(inst)
