@@ -21,7 +21,7 @@ local function fn(Sim)
 
     inst.AnimState:SetBank("chiminea_fire")
     inst.AnimState:SetBuild("sendi_oven_fire")
-	inst.AnimState:SetBloomEffectHandle( "shaders/anim.ksh" )
+	inst.AnimState:SetBloomEffectHandle( "shaders/anim.ksh")
     inst.AnimState:SetRayTestOnBB(true)
     inst.AnimState:SetFinalOffset(-1)
 	
@@ -39,8 +39,7 @@ local function fn(Sim)
     inst.components.heater.heatfn = GetHeatFn
 
     inst:AddComponent("firefx")
-    inst.components.firefx.levels =
-    {
+    inst.components.firefx.levels = {
         {anim="level1", sound="dontstarve/common/campfire", radius=2, intensity=.8, falloff=.33, colour = {255/255,255/255,192/255}, soundintensity=.1},
         {anim="level2", sound="dontstarve/common/campfire", radius=3, intensity=.8, falloff=.33, colour = {255/255,255/255,192/255}, soundintensity=.3},
         {anim="level3", sound="dontstarve/common/campfire", radius=4, intensity=.8, falloff=.33, colour = {255/255,255/255,192/255}, soundintensity=.6},

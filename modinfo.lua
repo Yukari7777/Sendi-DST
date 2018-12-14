@@ -1,7 +1,7 @@
 name = "[DST]Sendi"
 author = "doftksxk@naver.com"
 version = "1.3.4" 
-description = "[DST] Sendi :)~~~\n\nWhen [R] key is pressed\n[IGNIA RUN] is activated.\n\n\n\n\n[DST]센디 :)~~\n\n[R]키 입력시 [이그니아 런] 이 발동합니다.\n\n\n\n\nVersion : "..version.." "
+description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia Run].\n\n\n[DST]센디 :)~~\n\n[V]키 입력시 [이그니아 런] 이 발동합니다.\n\n\n\n\nVersion : "..version.." "
 forumthread = ""
 api_version = 10
 
@@ -28,9 +28,23 @@ for i = 1, #Keys do RapierKey[i] = { description = ""..Keys[i].."", data = "KEY_
 
 configuration_options = {
 	{
+		name = "language",
+		label = "언어(Language)",
+		hover = "언어설정\nSet Language",
+		options = {
+			{ description = "자동(Auto)", data = "AUTO" },
+			{ description = "한국어", data = "" },
+			{ description = "English", data = "_en" },
+			--{ description = "中文", data = "_ch" },
+			--{ description = "русский", data = "_ru" },
+		},
+		default = "AUTO",
+	},
+ 
+	{
 		name = "skill_1",
 		label = "Ignia Run Key",
-		hover = "Set Skill Ignia Run's Keybind",
+		hover = "어떤 키로 [이그니아 런]을 사용할지 설정합니다.\nSet [Ignia Run] Keybind",
 		options = RapierKey,
 		default = "KEY_V",
 	},

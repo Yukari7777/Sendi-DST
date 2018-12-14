@@ -21,102 +21,105 @@ local function cooked(inst)
 
 	if not inst.on_cold then
 		for i = 1, container:GetNumSlots() do
-	        local item = container:GetItemInSlot(i)
-	     	if item then 
-	     		local replacement = nil 
+			local item = container:GetItemInSlot(i)
+			if item then 
+				local replacement = nil 
 				if item.components.cookable or item.prefab == "log" then 
-				inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel") 
-						local fx = SpawnPrefab("collapse_small")
+					inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel") 
+					local fx = SpawnPrefab("collapse_small")
 					local pos = Vector3(inst.Transform:GetWorldPosition())
 					fx.Transform:SetScale(0.5, 0.5, 0.5)
-				fx.Transform:SetPosition(pos:Get())
+					fx.Transform:SetPosition(pos:Get())
 	
-        local fx2 = SpawnPrefab("small_puff")
-        fx2.entity:SetParent(inst.entity)
-	    fx2.Transform:SetPosition(0, 3, 0)
-		
+					local fx2 = SpawnPrefab("small_puff")
+					fx2.entity:SetParent(inst.entity)
+					fx2.Transform:SetPosition(0, 3, 0)
 				end
 				
-		     	if item.components.cookable then 
-		     		replacement = item.components.cookable:GetProduct()
-		     	elseif item.prefab == "log" then 
-		     		replacement = "charcoal"
+				if item.components.cookable then 
+					replacement = item.components.cookable:GetProduct()
+				elseif item.prefab == "log" then 
+					replacement = "charcoal"
 					
-		     	elseif item.components.burnable and not item.prefab == "log" then 
-		     		replacement = "ash"				
-		     	end  
-		     	if replacement then 
-	     			local stacksize = 1 
-	     			if item.components.stackable then 
-	     				stacksize = item.components.stackable:StackSize()
-	     			end 
-	     			local newprefab = SpawnPrefab(replacement)
-	     			if newprefab.components.stackable then 
-	     				newprefab.components.stackable:SetStackSize(stacksize)
-	     			end 
-	     			container:RemoveItemBySlot(i)
-	     			item:Remove()
-	     			container:GiveItem(newprefab, i)
-	     		end 
-		     end 
+				elseif item.components.burnable and not item.prefab == "log" then 
+					replacement = "ash"				
+				end  
+
+				if replacement then 
+					local stacksize = 1 
+					if item.components.stackable then 
+						stacksize = item.components.stackable:StackSize()
+					end 
+
+					local newprefab = SpawnPrefab(replacement)
+					if newprefab.components.stackable then 
+						newprefab.components.stackable:SetStackSize(stacksize)
+					end 
+					container:RemoveItemBySlot(i)
+					item:Remove()
+					container:GiveItem(newprefab, i)
+				end 
+			end 
 		end 
 		return false 
 	end 
+
 	if inst.on_cold then
 		for i = 1, container:GetNumSlots() do
-	        local item = container:GetItemInSlot(i)
-	     	if item then 
-	     		local replacement = nil 
+			local item = container:GetItemInSlot(i)
+			if item then 
+				local replacement = nil 
 				if item.prefab == "watermelon" or item.prefab == "butter" or item.prefab == "cave_banana" then 
-				inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter") 
-						local fx = SpawnPrefab("collapse_small")
+					inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter") 
+					local fx = SpawnPrefab("collapse_small")
 					local pos = Vector3(inst.Transform:GetWorldPosition())
 					fx.Transform:SetScale(0.5, 0.5, 0.5)
-				fx.Transform:SetPosition(pos:Get())
+					fx.Transform:SetPosition(pos:Get())
 				end
 				
-		     	if item.prefab == "watermelon" then 
-		     		replacement = "watermelonicle"
+				if item.prefab == "watermelon" then 
+					replacement = "watermelonicle"
 				elseif item.prefab == "butter" then 
-		     		replacement = "icecream"
+					replacement = "icecream"
 				elseif item.prefab == "cave_banana" then 
-		     		replacement = "bananapop"	
-						     	end  
-		     	if replacement then 
-	     			local stacksize = 1 
-	     			if item.components.stackable then 
-	     				stacksize = item.components.stackable:StackSize()
-	     			end 
-	     			local newprefab = SpawnPrefab(replacement)
-	     			if newprefab.components.stackable then 
-	     				newprefab.components.stackable:SetStackSize(stacksize)
-	     			end 
-	     			container:RemoveItemBySlot(i)
-	     			item:Remove()
-	     			container:GiveItem(newprefab, i)
-	     		end 
-		     end 
+					replacement = "bananapop"	
+				end  
+
+				if replacement then 
+					local stacksize = 1 
+					if item.components.stackable then 
+						stacksize = item.components.stackable:StackSize()
+					end 
+					local newprefab = SpawnPrefab(replacement)
+					if newprefab.components.stackable then 
+						newprefab.components.stackable:SetStackSize(stacksize)
+					end 
+					container:RemoveItemBySlot(i)
+					item:Remove()
+					container:GiveItem(newprefab, i)
+				end 
+			end 
 		end 
 		return false 
 	end 
-	end
+end
 	
 local function onopen(inst) 
-if not inst.burning then
-inst.AnimState:SetBuild("sendi_oven_open")
-end
-inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
+	if not inst.burning then
+		inst.AnimState:SetBuild("sendi_oven_open")
+	end
+		inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
 	--inst.SoundEmitter:PlaySound("dontstarve/common/craftable/icebox_open")
 end 
 
 local function onclose(inst) 
-if inst.burning then
-cooked(inst)
-end
-if not inst.burning then
-inst.AnimState:SetBuild("sendi_oven")
-end
-inst.SoundEmitter:PlaySound("dontstarve/common/icebox_close")
+	if inst.burning then
+		cooked(inst)
+	end
+	if not inst.burning then
+		inst.AnimState:SetBuild("sendi_oven")
+	end
+	inst.SoundEmitter:PlaySound("dontstarve/common/icebox_close")
 	--inst.SoundEmitter:PlaySound("dontstarve/common/craftable/icebox_close")		
 end 
 
@@ -133,8 +136,8 @@ local function OnHaunt(inst, haunter)
     if math.random() <= TUNING.HAUNT_CHANCE_RARE and
         inst.components.fueled ~= nil and
         not inst.components.fueled:IsEmpty() then
-        inst.components.fueled:DoDelta(TUNING.MED_FUEL)
-        inst.components.hauntable.hauntvalue = TUNING.HAUNT_SMALL
+			inst.components.fueled:DoDelta(TUNING.MED_FUEL)
+			inst.components.hauntable.hauntvalue = TUNING.HAUNT_SMALL
         return true
     end
     return false
@@ -147,40 +150,49 @@ local function onhit(inst, worker)
 end
 
 local function onignite(inst)
-inst.burning = true
-inst.AnimState:SetBuild("sendi_oven_open")
+	inst.burning = true
+	inst.AnimState:SetBuild("sendi_oven_open")
     if not inst.components.cooker then
         inst:AddComponent("cooker")
     end
 end
 
 local function on_fire(inst, data)
-if not inst.on_fire and inst.components.burnable:IsBurning() then
-	inst.components.burnable:Extinguish() inst:RemoveComponent("burnable") end
+	if not inst.on_fire and inst.components.burnable:IsBurning() then
+		inst.components.burnable:Extinguish() 
+		inst:RemoveComponent("burnable") 
+	end
+
 	if not inst.components.burnable then
 		inst:AddComponent("burnable")
-		end
-inst.on_fire = true
-inst.on_cold = false
-inst:RemoveTag("fridge")
-inst.components.talker:Say("[[Warm Fire]]\nOven-(On)")
-inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
+	end
+
+	inst.on_fire = true
+	inst.on_cold = false
+	inst:RemoveTag("fridge")
+	inst.components.talker:Say("[[Warm Fire]]\nOven-(On)")
+	inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
 end
 local function on_cold(inst, data)
-if not inst.on_cold and inst.components.burnable:IsBurning() then
-	inst.components.burnable:Extinguish() inst:RemoveComponent("burnable") end
+	if not inst.on_cold and inst.components.burnable:IsBurning() then
+		inst.components.burnable:Extinguish() 
+		inst:RemoveComponent("burnable") 
+	end
+
 	if not inst.components.burnable then
-		inst:AddComponent("burnable") end
-inst.on_cold = true
-inst.on_fire = false
-inst:AddTag("fridge")
-inst.components.talker:Say("[[Cold Fire]]\nCooler Box-(On)")
-inst.components.burnable:AddBurnFX("sendi_ovenfire_cold", Vector3(0,0,0) )
+		inst:AddComponent("burnable") 
+	end
+
+	inst.on_cold = true
+	inst.on_fire = false
+	inst:AddTag("fridge")
+	inst.components.talker:Say("[[Cold Fire]]\nCooler Box-(On)")
+	inst.components.burnable:AddBurnFX("sendi_ovenfire_cold", Vector3(0,0,0) )
 end
 
 local function onextinguish(inst)
-inst.burning = false
-inst.AnimState:SetBuild("sendi_oven")
+	inst.burning = false
+	inst.AnimState:SetBuild("sendi_oven")
     if inst.components.cooker then
         inst:RemoveComponent("cooker")
     end
@@ -203,7 +215,7 @@ local function fn(Sim)
 
     inst:AddTag("campfire")
     inst:AddTag("structure")
-   inst:AddTag("wildfireprotected")
+	inst:AddTag("wildfireprotected")
    
     inst.AnimState:SetBank("chiminea")
     inst.AnimState:SetBuild("sendi_oven")
@@ -215,23 +227,19 @@ local function fn(Sim)
     --inst.components.burnable:SetFXLevel(2)
 	
 	if not inst.on_cold then
-    inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
+	 inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
 	elseif inst.on_cold then
-	inst.components.burnable:AddBurnFX("sendi_ovenfire_cold", Vector3(0,0,0) )
-		end
+		inst.components.burnable:AddBurnFX("sendi_ovenfire_cold", Vector3(0,0,0) )
+	end
    
-	
-	
     inst:ListenForEvent("onextinguish", onextinguish)
     inst:ListenForEvent("onignite", onignite)
 		
-		
-		--if inst.DLC or inst.DLC2 then
 	inst:AddComponent("machine")
     inst.components.machine.turnonfn = on_cold
     inst.components.machine.turnofffn = on_fire
     inst.components.machine.cooldowntime = 0	
-		--end
+
 	inst:AddComponent("talker")
     inst.components.talker.fontsize = 30
     inst.components.talker.font = TALKINGFONT
@@ -239,7 +247,7 @@ local function fn(Sim)
     inst.components.talker.offset = Vector3(0,-500,0)
     inst.components.talker.symbol = "swap_object"
 
-	   inst.entity:SetPristine()
+	inst.entity:SetPristine()
 
    	if not TheWorld.ismastersim then
 		inst:DoTaskInTime(0, function()
@@ -269,12 +277,12 @@ local function fn(Sim)
     
     inst.components.fueled:SetSections(5)
     inst.components.fueled.bonusmult = 5
-    inst.components.fueled.ontakefuelfn = 
-	function() inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel")  
-	local fx2 = SpawnPrefab("small_puff")
+    inst.components.fueled.ontakefuelfn = function() 
+		inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel")  
+		local fx2 = SpawnPrefab("small_puff")
         fx2.entity:SetParent(inst.entity)
 	    fx2.Transform:SetPosition(0, 3, 0)
-		end
+	end
     inst.components.fueled.rate = 1
 
     inst.components.fueled:SetUpdateFn( function()
@@ -290,9 +298,7 @@ local function fn(Sim)
             if not inst.components.burnable:IsBurning() then
                 inst.components.burnable:Ignite()
             end
-            
             inst.components.burnable:SetFXLevel(section, inst.components.fueled:GetSectionPercent())
-            
         end
     end)
     inst.components.fueled:InitializeFuelLevel(TUNING.FIREPIT_FUEL_START)    
@@ -304,7 +310,6 @@ local function fn(Sim)
     inst.components.hauntable:SetOnHauntFn(OnHaunt)
 
     -----------------------------   
-    -----------------------------
     
     inst:AddComponent("inspectable")
     inst.components.inspectable.getstatus = function(inst)
@@ -317,7 +322,7 @@ local function fn(Sim)
         end
     end
     
-    inst:ListenForEvent( "onbuilt", function()
+    inst:ListenForEvent("onbuilt",function()
         inst.AnimState:PlayAnimation("place")
         inst.AnimState:PushAnimation("idle",false)
         inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel")
