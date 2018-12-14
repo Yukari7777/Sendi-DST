@@ -1,17 +1,13 @@
 local MakePlayerCharacter = require "prefabs/player_common"
 
-
 local assets = {
-    Asset("SCRIPT", "scripts/prefabs/player_common.lua"),
-}
 
+}
 
 local prefabs = {
 --외부에있는것을 불러옴
 
-
 }
-
 
 local start_inv = {
 -- 맞춤시작 인벤토리 시작 
@@ -44,8 +40,6 @@ end
 --MH 모드옵션 불러오기
 --local modoption = GetModConfigData("modoption")
 --MH 모드옵션 불러오기
-
-
 
 ------------------------------/아래/-미쉘의  허기불꽃 시스템-/아래/--------------------------------
 local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코드를 좀더 명확하게 재작성
@@ -116,34 +110,14 @@ local function OverrideOnRemoveEntity(inst)
 	end
 end
 
-local function KeyCheckCommon(inst)
-	return inst == ThePlayer and TheFrontEnd:GetActiveScreen() ~= nil and TheFrontEnd:GetActiveScreen().name == "HUD"
-end
-
-local function RegisterKeyEvent(inst)
-	-- If do Buffered Action when MovementPrediction is off, the client's inst.sg and locomotor will be removed.
-	-- And SG utils will handle both cases, I think?
-	local modname = KnownModIndex:GetModActualName("[DST]Sendi")
-
-	local RapierKey = GetModConfigData("skill_1", modname) or "KEY_V"
-	TheInput:AddKeyDownHandler(_G[RapierKey], function()
-		if KeyCheckCommon(inst) then
-			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
-		end
-	end) 
-end
-
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 
 	inst.MiniMapEntity:SetIcon( "sendi.tex" )
 	-- 위커바컴의 책을 제조합니다.
 	inst:AddTag("bookbuilder")
 	inst:AddTag("reader")
-	--MH
 	inst:AddTag("sendicraft")
-	--MH
 	-- 사용가능 레시피를 추가 합니다.
-	inst:DoTaskInTime(0, RegisterKeyEvent)
 
 	inst:ListenForEvent("setowner", SendiOnSetOwner)
 
@@ -158,6 +132,7 @@ local master_postinit = function(inst)
 	
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
+	inst.starting_inventory = start_inv
 
 	inst:AddComponent("reader")
 	inst:AddComponent("sendiskill")
@@ -172,7 +147,6 @@ local master_postinit = function(inst)
 	inst.components.hunger:SetMax(120) -- 배고팡
 	inst.components.sanity:SetMax(180) -- 정신
 	-- 최대피, 허기, 체력을 표시합니다.
-
 
 	inst.components.health.fire_damage_scale = 0.1
 	--불꽃 데미지를 지정합니다
@@ -193,4 +167,4 @@ local master_postinit = function(inst)
    
 end
 
-return MakePlayerCharacter("sendi", prefabs, assets, common_postinit, master_postinit, start_inv)
+return MakePlayerCharacter("sendi", prefabs, assets, common_postinit, master_postinit)

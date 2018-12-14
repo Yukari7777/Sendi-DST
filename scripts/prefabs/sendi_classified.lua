@@ -5,7 +5,6 @@ local function SetDirty(netvar, val)
 end
 
 local function OnEntityReplicated(inst)	
-	print("OnEntityReplicated")	
     inst._parent = inst.entity:GetParent()
     if inst._parent == nil then
         print("Unable to initialize classified data for player Sendi")
@@ -18,12 +17,27 @@ local function OnRapier(parent)
 	parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS.RAPIER))
 end
 
+local function KeyCheckCommon(parent)
+	return parent == ThePlayer and TheFrontEnd:GetActiveScreen() ~= nil and TheFrontEnd:GetActiveScreen().name == "HUD"
+end
+
+local function RegisterKeyEvent(classified)
+	local modname = KnownModIndex:GetModActualName("[DST]Sendi")
+
+	local RapierKey = GetModConfigData("skill_1", modname) or "KEY_V"
+	TheInput:AddKeyDownHandler(_G[RapierKey], function()
+		if KeyCheckCommon(classified._parent) then
+			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
+		end
+	end) 
+end
+
 local function RegisterNetListeners(inst)
 	if TheWorld.ismastersim then
 		inst._parent = inst.entity:GetParent()
 		inst:ListenForEvent("onrapier", OnRapier, inst._parent)
 	else
-		
+		RegisterKeyEvent(inst)
 	end
 end
 
