@@ -7,9 +7,8 @@ local assets = {
 
 
 local prefabs = {
---센디의 제작ㄹ목록을 추가합니다
-	"sendipack",
-	"sendisedmask",
+--외부에있는것을 불러옴
+
 
 }
 
@@ -21,7 +20,7 @@ local start_inv = {
 
 local function onbecamehuman(inst)
 -- 인물이 인간에게서 부활 할때
-   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.4)
+   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.2)
    -- 유령이 아닌경우 속도 설정.
 end
 
@@ -49,50 +48,32 @@ end
 
 
 ------------------------------/아래/-미쉘의  허기불꽃 시스템-/아래/--------------------------------
-local function sendi_light(inst, data)
---M지역 함수 설정 :  허기불꽃
-
-
-if not inst:HasTag("playerghost") then
---MH 플레이어가 유령이 아니라면 * 아래 적용시 위에 주석 
-		--if not inst:HasTag("playerghost") and modoption == "3" then
-		--MH 플레이어가 유령이아니라면, MH 모드옵션 불러오기 * 위에 사용시 아래 주석
-		
-		
-local Light = inst.entity:AddLight()
--- MH 지역변수 설정 - Ligh=inst.entity:AddLight()
-	if (TheWorld.state.isnight or TheWorld:HasTag("cave")) and not TheWorld.state.isfullmoon then
-	--M(월드가 밤 또는 동굴) 이고, 보름달이 아니라면
-		if inst.components.hunger:GetPercent() <= .47 then
-		--M포만도가 80% 이하라면
-			Light:Enable(false)
-			--M빛 해제
-			 inst.components.health:StartRegen(0.2, 1)
-			--체력리젠
-			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1)
-			--M포만도 감소속도를 윌슨의 1배로 설정(기본값)
-		elseif inst.components.hunger:GetPercent() > .47 then
-		--M혹은 포만도가 80% 초과라면
-			inst.entity:AddLight()
-			--M엔티티에게 빛 추가
-			inst.Light:SetRadius(0.4)
-			--M범위 반경 설정
-			inst.Light:SetFalloff(1)
-			--M빛의 감퇴량 설정
-			inst.Light:SetIntensity(0.5)
-			--M빛의 강도 설정
-			inst.Light:SetColour(255, 255, 20/255, 25, 255)
-			--M빛의 색 설정
-			inst.Light:Enable(true)
-			--Minst.Light:Enable값을 true로 설정?
-			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 2)
-			--M포만도 감소량 증폭
-		end
+local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코드를 좀더 명확하게 재작성
+	if not inst:HasTag("playerghost") then 	--MH 모드 옵션 불러와서 세팅(할 예정)
+		local Light = inst.Light or inst.entity:AddLight()  -- YUKARI : inst에 이미 Light가 있으면 불필요하게 추가하지 않게 하기위해서 이렇게 작성
+															 -- AddLight는 한번만 사용해도 됩니다.
+		if (TheWorld.state.isnight or TheWorld:HasTag("cave")) and not TheWorld.state.isfullmoon then
+			if inst.components.hunger.current > 80 then
+				inst.Light:SetRadius(1.1)
+				inst.Light:SetFalloff(1.2)
+				inst.Light:SetIntensity(.5)
+				inst.Light:SetColour(255, 255, 20/255, 25, 255)
+				inst.Light:Enable(true) -- YUKARI : Light를 끄거나 키는데에 사용.
+				inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 3)
+			else
+				Light:Enable(false)
+				
+				inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE)
+			end
+			-- inst.components.health:StartRegen(0.2, 1) 
+			-- YUKARI : 기본 체력재생량 수치에 따르면, 기본 체력 재생주기는 0.6초 인데 센디를 플레이하면서 한번이라도 밤이 되면 체력 재생주기가 영구적으로 1초로 변하고 
+			--          이 상태에선 낮과 밤에 상관없이 체력재생이 되는 오류가 있었습니다. 이제 밤에는 올바르게 체력 재생이 되지 않습니다.
+			--          문제가 있다면 코드를 이전으로 되돌려주세요.
+			inst.components.health.regen.amount = 0
 		else
-		Light:Enable(false)
-		--MLight:Enable를 false로 설정?
-		inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1)
-		--M포만도 감소량 기본값
+			Light:Enable(false)
+			inst.components.health.regen.amount = 0.2
+			inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE)
 		end
 	end
 end
@@ -171,32 +152,16 @@ end
 local master_postinit = function(inst)
 	inst.sendi_classified = SpawnPrefab("sendi_classified")
 	inst:AddChild(inst.sendi_classified)
-    --inst.sendi_classified.entity:SetParent(inst.entity)
+	
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 
 	inst:AddComponent("reader")
 	inst:AddComponent("sendiskill")
-	--------MH 혼돈의카오스 패시브 시작 
-	  --local function MishellTrig1(inst, data)
-	--if not inst:HasTag("playerghost") then
-	 -- if inst.components.health:GetPercent() >= .5 then
-	 --    inst.components.health:DoDelta(-10)
-	 -- else
-	 --    inst.components.health:DoDelta(10)
-	 -- end
-	-- end
-	--end
-	----------------MH 혼돈의카오스 패시브 종료 
-	-- Uncomment if "wathgrithr"(Wigfrid) or "webber" voice is used
-	--inst.talker_path_override = "dontstarve_DLC001/characters/"
+
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 	inst:WatchWorldState("phase", sendi_light)
 	inst:ListenForEvent("hungerdelta", sendi_light)
-			-- 트리거
-			--MH 혼돈 마침
-			---inst:ListenForEvent("hungerdelta", MishellTrig1)
-			--HJ 혼돈 마침
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 
 	-- Stats   
@@ -206,17 +171,19 @@ local master_postinit = function(inst)
 	-- 최대피, 허기, 체력을 표시합니다.
 
 
-	inst.components.health.fire_damage_scale = 0.5
-	inst.components.combat.damagemultiplier = 0.85
+	inst.components.health.fire_damage_scale = 0.1
+	--불꽃 데미지를 지정합니다
+	
+	inst.components.combat.damagemultiplier = 0.6
 	-- Damage multiplier (optional) 데미지를 나타냅니다.
-	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.5)
+	
+	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.0) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
 	--허기 주기를 나타냅니다.
+	
 	inst.components.combat.min_attack_period = 0.01
 	--0.?초마다 때리는걸 의미합니다.
+	
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
-
-	-- 배고파지는 속도
-	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
 
 	inst.OnLoad = onload
 	inst.OnNewSpawn = onload
@@ -224,4 +191,3 @@ local master_postinit = function(inst)
 end
 
 return MakePlayerCharacter("sendi", prefabs, assets, common_postinit, master_postinit, start_inv)
-
