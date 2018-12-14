@@ -131,8 +131,6 @@ local function RegisterKeyEvent(inst)
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 
-
-	print(RapierKey)
 end
 
 local common_postinit = function(inst) 

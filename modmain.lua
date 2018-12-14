@@ -217,14 +217,14 @@ RECIPETABS.SURVIVAL, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/invent
 STRINGS.RECIPE_DESC.sendi_rapier_ignia = "불타는 레이피어 입니다.[불꽃지속딜]"
 ---------------------------------- 이그니아 레이피어
 
-local sendi_oven = AddRecipe("sendi_oven", { glowdust3, GLOBAL.Ingredient("rocks", 10), GLOBAL.Ingredient("froglegs", 5), GLOBAL.Ingredient("purplegem", 1) }, RECIPETABS.MUSHA, TECH.SCIENCE_TWO, "sendi_oven_placer" ) 
+local sendi_oven = AddRecipe("sendi_oven", { glowdust3, Ingredient("rocks", 10), Ingredient("froglegs", 5), Ingredient("purplegem", 1) }, RECIPETABS.SURVIVAL, TECH.SCIENCE_TWO, "sendi_oven_placer" ) 
 sendi_oven.atlas = "images/inventoryimages/sendi_oven.xml"
 sendi_oven.tagneeded = false
 sendi_oven.builder_tag ="sendi"
 
 ---------------------------------- 센디 오븐
 
-local _SUFFIX = ""
+local _SUFFIX = "_en"
 if Language == "AUTO" then
 	local KnownModIndex = GLOBAL.KnownModIndex
 	for _, moddir in ipairs(KnownModIndex:GetModsToLoad()) do
@@ -235,15 +235,12 @@ if Language == "AUTO" then
 --			_SUFFIX = "_ch"
 --		elseif modname == "Russian modname Pack" or modname == "Russification Pack for DST" or modname == "Russian For Mods (Client)" then
 --			_SUFFIX = "_ru"
-		else
-			_SUFFIX = "_en"
 		end 
 	end 
 else
 	_SUFFIX = Language
 end
-STRINGS.CHARACTERS.SENDI = require "speech_sendi".._SUFFIX 
-
+STRINGS.CHARACTERS.SENDI = require("speech_sendi".._SUFFIX )
 
 -- The character's name as appears in-game 
 STRINGS.NAMES.SENDI = "sendi"
