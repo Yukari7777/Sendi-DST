@@ -1,4 +1,5 @@
 PrefabFiles = {
+--센디 전용 아이템등을 추가
 	"sendi_classified",
 	"sendi",
 	"sendi_none",
@@ -180,12 +181,12 @@ AddRecipe("sendi_rapier_ignia",
 {sendirapier, Ingredient("nightsword", 1), Ingredient("redgem", 12)}, 
 SENDITAB, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
 STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "불타는 레이피어 입니다.[불꽃지속딜]" 
--- STRINGS.RECIPE_DESC.sendi_rapier_ignia <<<<<<<<<<<<<<<<<<<<<<<< 안됩니다. 대문자로 써주세요.
+
 ---------------------------------- 이그니아 레이피어
 AddRecipe("sendi_oven", 
-{Ingredient("rocks", 10), Ingredient("froglegs", 5), Ingredient("purplegem", 1) }, 
+{Ingredient("boards", 10), Ingredient("cutstone", 10), Ingredient("purplegem", 1) }, 
 SENDITAB, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_oven.xml", "sendi_oven.tex" ) 
-STRINGS.RECIPE_DESC.SENDI_OVEN = "센디의오븐입니다다다다다다다다다다다다다다다다다다다다다다다다다" --적절한 어그로(수정바람)
+STRINGS.RECIPE_DESC.SENDI_OVEN = "센디의 오븐입니다.(뜨겁거나 차가운 불)" 
 ---------------------------------- 센디 오븐
 
 STRINGS.NAMES.SENDI = "sendi"
