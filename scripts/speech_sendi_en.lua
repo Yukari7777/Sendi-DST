@@ -2418,4 +2418,14 @@ return {
     {
         TALLBIRDEGG_CRACKED = "Ugh. Crunchy.",
     },
+
+	RAPIER = {
+		"Heiya!",
+		"Seiya!",
+		"Heiya!",
+		"Ignia Run!",
+		"Seiya!",
+		"Heiya!",
+		"Seiya!",
+	},
 }

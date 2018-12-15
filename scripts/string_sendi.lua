@@ -33,7 +33,16 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_02 = "기존의 갑옷의 갑옷
 STRINGS.NAMES.SENDI_OVEN = "센디의 오븐"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "한번에 구워 버리는거야! 여러번 구우면 귀찮잖아?"
 
+--------레시피 관련
 STRINGS.SENDITABNAME = "센디탭"
+STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다.[냉장고]"
+STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
+STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
+STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
+STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "머플러가 귀엽습니다.[보온+이속]" 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "보석과 날개가 돋보입니다[보+냉+이속]" 
+STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "활활 타오르고 있어요![불꽃지속딜]" 
+STRINGS.RECIPE_DESC.SENDI_OVEN = "이것만 있으면 당신도 요리왕![뜨겁거나 차가움]" 
 
 if _SUFFIX == "_en" then ------------------------------------------------------영어 대사 시작
 
@@ -66,6 +75,14 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_02 = "I made it a bit more durab
 STRINGS.NAMES.SENDI_OVEN = "Sendi Oven"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "Bake it all at once! It's annoying to bake it many times, right?"
 
-STRINGS.SENDITABNAME = "SENDITAB"
+STRINGS.SENDITABNAME = "Sendi Tab"
+STRINGS.RECIPE_DESC.SENDIPACK = "Sendi's white school bag."
+STRINGS.RECIPE_DESC.SENDISEDMASK = "A mask with a sad story."
+STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "Sendi's Rapier for practice"
+STRINGS.RECIPE_DESC.SENDI_RAPIER = "Sendi's Rapier"
+STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "Keep it warm and get boosted!" 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "Upgraded Life armor" 
+STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "It's flamming!" 
+STRINGS.RECIPE_DESC.SENDI_OVEN = "Sendi's oven with endothermic" 
 
 end
