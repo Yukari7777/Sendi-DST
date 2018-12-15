@@ -2,19 +2,49 @@ local assets =
 {
     Asset("ANIM", "anim/sendipack.zip"),
     Asset("ANIM", "anim/swap_sendipack.zip"),
+	Asset("ANIM", "anim/ui_backpack_2x4.zip"),
 
     Asset("ATLAS", "images/inventoryimages/sendipack.xml"),
     Asset("IMAGE", "images/inventoryimages/sendipack.tex")
 }
 
-local prefabs = {
-	"sendi",
+local containers = require "containers"	
+local slotpos = {}
+for y = 0, 3 do
+    table.insert(slotpos, Vector3(-162, -75 * y + 114, 0))
+    table.insert(slotpos, Vector3(-162 + 75, -75 * y + 114, 0))
+end
+
+local sendipack = {
+	widget = {
+        slotpos = slotpos,
+        animbank = "ui_backpack_2x4",
+        animbuild = "ui_backpack_2x4",
+        pos = Vector3(-5, -70, 0),
+    },
+    issidewidget = true,
+    type = "pack",
 }
 
+local _widgetsetup = containers.widgetsetup
+function containers.widgetsetup(container, prefab, data, ...)
+	if container.inst.prefab == "sendipack" or prefab == "sendipack" then
+		data = sendipack
+		
+		for k,v in pairs(sendipack) do
+			container[k] = v
+		end
+		container:SetNumSlots(container.widget.slotpos ~= nil and #container.widget.slotpos or 0)
+		return
+	else
+		return _widgetsetup(container, prefab, data, ...)
+	end
+end
 
 local function onequip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_body", "swap_sendipack", "sendipack")
     owner.AnimState:OverrideSymbol("swap_body", "swap_sendipack", "swap_body")
+
     if inst.components.container ~= nil then
         inst.components.container:Open(owner)
     end
@@ -24,7 +54,7 @@ local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
     owner.AnimState:ClearOverrideSymbol("sendipack")
     if inst.components.container ~= nil then
-    inst.components.container:Close(owner)
+		inst.components.container:Close(owner)
     end
 end
 
@@ -63,7 +93,6 @@ local function fn(Sim)
     inst.entity:SetPristine()
 
     inst:AddComponent("sendispecific")
-
     inst:AddComponent("inspectable")
 
     --inst:AddComponent("insulator")
@@ -74,7 +103,7 @@ local function fn(Sim)
 	-- 냉장고 기능을 추가합니다.
 	
     inst:AddComponent("container")
-    inst.components.container:WidgetSetup("backpack")
+    inst.components.container:WidgetSetup("sendipack", sendipack)
 	-- 센디의 가방 크기 : backpack[일반 가방], krampus_sack[크람푸스 가방]
 
     inst:AddComponent("inventoryitem")
@@ -85,11 +114,6 @@ local function fn(Sim)
     inst.components.container.onopenfn = onopen
     inst.components.container.onclosefn = onclose
     
-    --inst:AddComponent("equippable")
-    --inst.components.equippable.keepondeath = true
-	--inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-	-- 가방을 떨어뜨리게 하지 않습니다.
-	
 	inst:AddComponent("equippable")
 	inst.components.equippable.keepondeath = false
 	inst.components.equippable.equipslot = EQUIPSLOTS.BODY
@@ -111,7 +135,6 @@ local function fn(Sim)
 	inst.components.sendispecific:SetOwner("sendi")
 	inst.components.sendispecific:SetStorable(true)
 	inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야! 너무 예뻐!", "이건, 하얀 가방인가? 귀여운데?") 
-
    
    MakeHauntableLaunchAndDropFirstItem(inst)
     

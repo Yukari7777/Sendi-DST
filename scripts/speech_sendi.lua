@@ -50,7 +50,7 @@ return {
             DEAD = "받을 손이 없어서 줄 수 없어",
             SLEEPING = "몰래 가방에 넣는거는 하면 안돼",
             BUSY = "지금은 받을 수 없는 모양이야",
-            ABIGAILHEART = "이렇게 하는 것 보다 재대로 된 방법이  있을거야",
+            ABIGAILHEART = "이렇게 하는 것 보다 재대로 된 방법이 있을거야",
             GHOSTHEART = "아무일도 잃어나지 않는걸?",
             NOTGEM = "아무일도 잃어나지 않는걸?",
             WRONGGEM = "아무일도 잃어나지 않는걸?",
