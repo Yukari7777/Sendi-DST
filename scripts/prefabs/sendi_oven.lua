@@ -3,20 +3,74 @@ require "prefabutil"
 local assets =
 {
 	Asset("ANIM", "anim/sendi_oven.zip"),
-	Asset("ANIM", "anim/ui_chest_3x3.zip"),
+	Asset("ANIM", "anim/ui_chester_shadow_3x4.zip"),
 }
 
-local prefabs =
-{
+local prefabs = {
     "sendi_ovenfire",
 	"sendi_ovenfire_cold",
     "collapse_small",
-}    
+}
+
+local containers = require "containers"	
+local slotpos = {}
+--for y = 4, 0, -1 do
+--	for x = 0, 3 do
+--		table.insert(slotpos, Vector3(60*x-60*2+30, 60*y-60*2+2, 0))
+--	end
+--end
+for y = 2.5, -0.5, -1 do
+    for x = 0, 2 do
+        table.insert(slotpos, Vector3(75 * x - 75 * 2 + 75, 75 * y - 75 * 2 + 75, 0))
+    end
+end
+
+local sendi_oven = {
+    widget = {
+        slotpos = slotpos,
+		animbank = "ui_chester_shadow_3x4",
+		animbuild = "ui_chester_shadow_3x4",
+        pos = Vector3(0, 180, 0),
+        side_align_tip = 160,
+    },
+    type = "chest",
+}
+local containers = require "containers"	
+local slotpos = {}
+for y = 0, 3 do
+    table.insert(slotpos, Vector3(-162, -75 * y + 114, 0))
+    table.insert(slotpos, Vector3(-162 + 75, -75 * y + 114, 0))
+end
+
+local sendipack = {
+	widget = {
+        slotpos = slotpos,
+        animbank = "ui_backpack_2x4",
+        animbuild = "ui_backpack_2x4",
+        pos = Vector3(-5, -70, 0),
+    },
+    issidewidget = true,
+    type = "pack",
+}
 
 
+local _widgetsetup = containers.widgetsetup
+function containers.widgetsetup(container, prefab, data, ...)
+	if container.inst.prefab == "sendi_oven" or prefab == "sendi_oven" then
+		data = sendi_oven
+		
+		for k,v in pairs(sendi_oven) do
+			container[k] = v
+		end
+		container:SetNumSlots(container.widget.slotpos ~= nil and #container.widget.slotpos or 0)
+		return
+	else
+		return _widgetsetup(container, prefab, data, ...)
+	end
+end
 
 local function cooked(inst)
-
+	
 	local container = inst.components.container
 
 	if not inst.on_cold then
@@ -108,7 +162,7 @@ local function onopen(inst)
 	if not inst.burning then
 		inst.AnimState:SetBuild("sendi_oven_open")
 	end
-		inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
+	inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
 	--inst.SoundEmitter:PlaySound("dontstarve/common/craftable/icebox_open")
 end 
 
@@ -227,7 +281,7 @@ local function fn(Sim)
     --inst.components.burnable:SetFXLevel(2)
 	
 	if not inst.on_cold then
-	 inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
+		inst.components.burnable:AddBurnFX("sendi_ovenfire", Vector3(0,0,0) )
 	elseif inst.on_cold then
 		inst.components.burnable:AddBurnFX("sendi_ovenfire_cold", Vector3(0,0,0) )
 	end
@@ -236,28 +290,25 @@ local function fn(Sim)
     inst:ListenForEvent("onignite", onignite)
 		
 	inst:AddComponent("machine")
-    inst.components.machine.turnonfn = on_cold
-    inst.components.machine.turnofffn = on_fire
+    inst.components.machine.turnonfn = on_fire
+    inst.components.machine.turnofffn = on_cold
     inst.components.machine.cooldowntime = 0	
 
 	inst:AddComponent("talker")
     inst.components.talker.fontsize = 30
     inst.components.talker.font = TALKINGFONT
     inst.components.talker.colour = Vector3(1, 1, 1, 1)
-    inst.components.talker.offset = Vector3(0,-500,0)
+    inst.components.talker.offset = Vector3(0, -500, 0)
     inst.components.talker.symbol = "swap_object"
 
 	inst.entity:SetPristine()
 
    	if not TheWorld.ismastersim then
-		inst:DoTaskInTime(0, function()
-			inst.replica.container:WidgetSetup("chest_yamche5")
-		end)
 		return inst
 	end
 	-------------------------
  	inst:AddComponent("container")  
-    inst.components.container:WidgetSetup("chest_yamche5")
+    inst.components.container:WidgetSetup("sendi_oven", sendi_oven)
    
     inst.components.container.onopenfn = onopen
     inst.components.container.onclosefn = onclose

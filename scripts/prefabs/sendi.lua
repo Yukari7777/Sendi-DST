@@ -1,11 +1,10 @@
 local MakePlayerCharacter = require "prefabs/player_common"
 
 local assets = {
-
+	
 }
 
 local prefabs = {
---외부에있는것을 불러옴
 
 }
 
@@ -117,7 +116,7 @@ local common_postinit = function(inst)
 	inst:AddTag("bookbuilder")
 	inst:AddTag("reader")
 	inst:AddTag("sendicraft")
-	-- 사용가능 레시피를 추가 합니다.
+	-- 센디 제작 태그를 추가합니다
 
 	inst:ListenForEvent("setowner", SendiOnSetOwner)
 
@@ -150,15 +149,10 @@ local master_postinit = function(inst)
 
 	inst.components.health.fire_damage_scale = 0.1
 	--불꽃 데미지를 지정합니다
-	
-	inst.components.combat.damagemultiplier = 0.6
-	-- Damage multiplier (optional) 데미지를 나타냅니다.
-
-	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE * 1.0) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
+	inst.components.combat.damagemultiplier = 0.75 -- YUKARI : 데미지 계수 0.75로 설정
+	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
 	--허기 주기를 나타냅니다.
-	
 	inst.components.combat.min_attack_period = 0.01
-	--0.?초마다 때리는걸 의미합니다.
 	
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
 
