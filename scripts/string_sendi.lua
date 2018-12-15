@@ -40,7 +40,7 @@ if _SUFFIX == "_en" then ------------------------------------------------------ì
 STRINGS.CHARACTER_TITLES.sendi = "Sendi"
 STRINGS.CHARACTER_NAMES.sendi = "Sendi"
 STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*Fast but weak, gives mercy to enemy.\n*Emits glimmering by draining belly.\n*Regen health when sunlight exists."
-STRINGS.CHARACTER_QUOTES.sendi = "\"My journey would never stop until I get back to my world!\""
+STRINGS.CHARACTER_QUOTES.sendi = "\"My journey would never stop \nuntil I get back to my world!\""
 
 STRINGS.NAMES.SENDISEDMASK = "Sendi's tear mask"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "It has.. its own stories."
