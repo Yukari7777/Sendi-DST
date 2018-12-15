@@ -46,7 +46,7 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 		local Light = inst.Light or inst.entity:AddLight()  -- YUKARI : inst에 이미 Light가 있으면 불필요하게 추가하지 않게 하기위해서 이렇게 작성
 															 -- AddLight는 한번만 사용해도 됩니다.
 		if (TheWorld.state.isnight or TheWorld:HasTag("cave")) and not TheWorld.state.isfullmoon then
-			if inst.components.hunger.current > 80 then
+			if inst.components.hunger.current > 50 then --허기수치가 n 초과일때
 				inst.Light:SetRadius(1.1)
 				inst.Light:SetFalloff(1.2)
 				inst.Light:SetIntensity(.5)
@@ -112,11 +112,11 @@ end
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 
 	inst.MiniMapEntity:SetIcon( "sendi.tex" )
-	-- 위커바컴의 책을 제조합니다.
-	inst:AddTag("bookbuilder")
+	
+	inst:AddTag("bookbuilder")-- 위커바컴의 책을 제조합니다.
 	inst:AddTag("reader")
-	inst:AddTag("sendicraft")
-	-- 센디 제작 태그를 추가합니다
+	inst:AddTag("sendicraft")-- 센디 제작 태그를 추가합니다
+	
 
 	inst:ListenForEvent("setowner", SendiOnSetOwner)
 
@@ -150,8 +150,10 @@ local master_postinit = function(inst)
 	inst.components.health.fire_damage_scale = 0.1
 	--불꽃 데미지를 지정합니다
 	inst.components.combat.damagemultiplier = 0.75 -- YUKARI : 데미지 계수 0.75로 설정
+	
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
-	--허기 주기를 나타냅니다.
+	
+	
 	inst.components.combat.min_attack_period = 0.01
 	
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
