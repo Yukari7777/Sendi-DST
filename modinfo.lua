@@ -1,7 +1,7 @@
 name = "[DST]Sendi"
 author = "doftksxk@naver.com"
-version = "1.3.4" 
-description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia Run].\n\n\n[DST]센디 :)~~\n\n[V]키 입력시 [이그니아 런] 이 발동합니다.\n\n\n\n\nVersion : "..version.." "
+version = "1.4.1" 
+description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia Run].\n\n Skin Change [P] \n\n\n\n\n\n\n\nVersion : "..version.." "
 forumthread = ""
 api_version = 10
 

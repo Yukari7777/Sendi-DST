@@ -129,6 +129,7 @@ function ChangeSkin(inst)
 	inst:ChangeSkin()
 end
 AddModRPCHandler("sendi", "skin", ChangeSkin)
+--센디스킨
 
 STRINGS.NAMES.SENDI = "sendi"
 AddModCharacter("sendi", "FEMALE")
