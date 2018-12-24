@@ -128,7 +128,6 @@ local function SetSkinBuild(inst)
 		end
 	end
 	local isequip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) ~= nil
-	print("sendi_skin_"..skins[index]..(isequip and "e" or ""))
 	inst.AnimState:SetBuild("sendi_skin_"..skins[index]..(isequip and "e" or ""))
 end
 
