@@ -86,7 +86,6 @@ Assets = {
 	Asset("ANIM", "anim/sendi_oven_fire.zip"),
 	Asset("ANIM", "anim/sendi_oven_fire_cold.zip"),
 	Asset("ATLAS", "images/inventoryimages/sendi_oven.xml"),
-
 }
 AddMinimapAtlas("images/map_icons/sendi.xml")
 
@@ -125,6 +124,11 @@ function Cookable:GetProduct()
     end 
     return prefab
 end 
+
+function ChangeSkin(inst)
+	inst:ChangeSkin()
+end
+AddModRPCHandler("sendi", "skin", ChangeSkin)
 
 STRINGS.NAMES.SENDI = "sendi"
 AddModCharacter("sendi", "FEMALE")

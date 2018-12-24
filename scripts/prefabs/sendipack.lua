@@ -92,7 +92,6 @@ local function fn(Sim)
 
     inst.entity:SetPristine()
 
-    inst:AddComponent("sendispecific")
     inst:AddComponent("inspectable")
 
     --inst:AddComponent("insulator")
@@ -104,7 +103,6 @@ local function fn(Sim)
 	
     inst:AddComponent("container")
     inst.components.container:WidgetSetup("sendipack", sendipack)
-	-- 센디의 가방 크기 : backpack[일반 가방], krampus_sack[크람푸스 가방]
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.keepondeath = true

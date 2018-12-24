@@ -25,6 +25,8 @@ local Keys = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "
 local RapierKey = {}
 for i = 1, #Keys do RapierKey[i] = { description = ""..Keys[i].."", data = "KEY_"..Keys[i] } end
 
+local SkinKey = {}
+for i = 1, #Keys do SkinKey[i] = { description = ""..Keys[i].."", data = "KEY_"..Keys[i] } end
 
 configuration_options = {
 	{
@@ -47,5 +49,12 @@ configuration_options = {
 		hover = "어떤 키로 [이그니아 런]을 사용할지 설정합니다.\nSet [Ignia Run] Keybind",
 		options = RapierKey,
 		default = "KEY_V",
+	},
+	{
+		name = "skin",
+		label = "Skin Change Key",
+		hover = "어떤 키로 스케릭터 스킨을 바꿀지 설정합니다.\nSet which key to change charater's outfit.",
+		options = SkinKey,
+		default = "KEY_P",
 	},
 }
