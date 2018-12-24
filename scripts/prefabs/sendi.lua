@@ -1,6 +1,12 @@
 local MakePlayerCharacter = require "prefabs/player_common"
 
 local assets = {
+	--------센디스킨
+	Asset("ANIM", "anim/sendi_skin_longtail.zip"),
+	Asset("ANIM", "anim/sendi_skin_christmas.zip"),
+	Asset("ANIM", "anim/sendi_skin_christmase.zip"),
+	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),
+	Asset("ANIM", "anim/sendi_skin_christmas_be.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
 	
 }
 
@@ -109,10 +115,44 @@ local function OverrideOnRemoveEntity(inst)
 	end
 end
 
+local skins = {-- "sendi_skin_" 뒤에 나오는 이름
+	"DEFAULT", "longtail", "christmas", "christmas_b"
+}
+
+local function SetSkinBuild(inst)
+	local noequiplist = {"DEFAULT", "longtail"} -- 장비 낄때 버전의 스킨 빌드가 없을경우 추가
+	local index = inst.skinindex
+	for k, v in pairs(noequiplist) do
+		if skins[index] == v then
+			return
+		end
+	end
+	local isequip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) ~= nil
+	print("sendi_skin_"..skins[index]..(isequip and "e" or ""))
+	inst.AnimState:SetBuild("sendi_skin_"..skins[index]..(isequip and "e" or ""))
+end
+
+local function DoChangeSkin(inst)
+	inst.skinindex = inst.skinindex >= #skins and 1 or inst.skinindex + 1
+	local index = inst.skinindex
+	if index == 1 then
+		inst.AnimState:SetBuild("sendi")
+	else
+		inst.AnimState:SetBuild("sendi_skin_"..skins[index])
+		SetSkinBuild(inst)
+	end
+end
+
+local function OnEquip(inst, data) 
+	if data.eslot == EQUIPSLOTS.BODY then
+		SetSkinBuild(inst)
+	end
+end
+
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 
 	inst.MiniMapEntity:SetIcon( "sendi.tex" )
-	
+
 	inst:AddTag("bookbuilder")-- 위커바컴의 책을 제조합니다.
 	inst:AddTag("reader")
 	inst:AddTag("sendicraft")-- 센디 제작 태그를 추가합니다
@@ -128,7 +168,8 @@ end
 local master_postinit = function(inst)
 	inst.sendi_classified = SpawnPrefab("sendi_classified")
 	inst:AddChild(inst.sendi_classified)
-	
+	inst.skinindex = 1
+
 	inst.soundsname = "willow"
 	-- 이 캐릭터의 사운드 윌로우로 설정함.
 	inst.starting_inventory = start_inv
@@ -148,18 +189,18 @@ local master_postinit = function(inst)
 	-- 최대피, 허기, 체력을 표시합니다.
 
 	inst.components.health.fire_damage_scale = 0.1
-	--불꽃 데미지를 지정합니다
 	inst.components.combat.damagemultiplier = 0.75 -- YUKARI : 데미지 계수 0.75로 설정
-	
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
 	
 	
 	inst.components.combat.min_attack_period = 0.01
-	
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
 
 	inst.OnLoad = onload
 	inst.OnNewSpawn = onload
+	inst.ChangeSkin = DoChangeSkin
+	inst:ListenForEvent("equip", OnEquip )
+	inst:ListenForEvent("unequip", OnEquip )
    
 end
 

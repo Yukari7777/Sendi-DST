@@ -30,6 +30,13 @@ local function RegisterKeyEvent(classified)
 			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 		end
 	end) 
+
+	local SkinKey = GetModConfigData("skin", modname) or "KEY_P"
+	TheInput:AddKeyDownHandler(_G[SkinKey], function()
+		if KeyCheckCommon(classified._parent) then
+			SendModRPCToServer(MOD_RPC["sendi"]["skin"]) 
+		end
+	end) 
 end
 
 local function RegisterNetListeners(inst)
