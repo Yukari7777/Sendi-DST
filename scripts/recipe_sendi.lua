@@ -51,3 +51,21 @@ AddRecipe("sendi_oven",
 {Ingredient("boards", 10), Ingredient("cutstone", 10), Ingredient("purplegem", 1) }, 
 SENDITAB, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_oven.xml", "sendi_oven.tex" ) 
 ---------------------------------- 센디 오븐
+
+--			local mangotea =
+--		{
+--		name = "mangotea",
+--		--test = function(cooker, names, tags) return tags.tea and tags.tea >=2 and (names.mango or names.grilled_mango or names.dried_mango) and (names.mango or names.grilled_mango or names.dried_mango)>=2 and not tags.dairy and not tags.meat and not tags.egg and not tags.inedible end,
+--		test = function(cooker, names, tags) return tags.tea and tags.tea >=2 and (names.mango or names.grilled_mango or names.dried_mango) and (names.mango or names.grilled_mango or names.dried_mango)>=2 and not tags.dairy and not tags.meat and not tags.egg and not tags.inedible end,
+--		priority = 100,
+--		weight = 1,
+--		foodtype = "VEGGIE",
+--		health = 3,
+--		hunger = 50,
+--		sanity = 20,
+--		perishtime = TUNING.PERISH_FAST,
+--		stacksize = 2,
+--		cooktime = 1.25,
+--		}
+
+--------------음식 레시피

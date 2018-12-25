@@ -41,13 +41,12 @@ STRINGS.NAMES.SENDIPACK = "센디의 책가방"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIPACK = "귀여운 가방이에요. 냉장고 기능도 겸비!\n과학은 정말 대단해요~"
 --센디가방
 
---------------센디-----------------------------
---센디 오븐
+--------------센디 가방등-----------------------------
 STRINGS.NAMES.SENDI_OVEN = "센디의 오븐"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "한번에 구워버리는거에요! 여러번 구우면 귀찮잖아요?"
+--센디 오븐
 --------------오브젝트--------------------------
 
---------레시피 추가 [장비 관련도 묶음순]
 STRINGS.SENDITABNAME = "센디탭"
 STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다.[냉장고]"
 STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
@@ -57,6 +56,19 @@ STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "활활 타오르고 있어요![불꽃지속딜]" 
 STRINGS.RECIPE_DESC.SENDI_OVEN = "이것만있으면 당신도 요리왕![오븐/냉장고]" 
+--------레시피 추가 [장비 관련도 묶음순]----------------------------
+
+
+
+--GLOBAL.STRINGS.NAMES.MANGOTEA= "따끈따끈 코코아"
+--GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.MANGOTEA = "달콤하고 부드러운 코코아!"
+--GLOBAL.STRINGS.CHARACTERS.GREY.DESCRIBE.MANGOTEA = "달콤한 맛이 입 안을 가득 매우고 있어!."
+--GLOBAL.STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.MANGOTEA = "달콤한 맛이 입 안을 가득 매우고 있어!"
+--GLOBAL.STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.MANGOTEA = "달콤한 맛이 입 안을 가득 매우고 있어!."
+
+--------------음식들-----------------------------
+
+
 
 if _SUFFIX == "_en" then ------------------------------------------------------영어 대사 시작
 
