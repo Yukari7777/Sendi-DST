@@ -1,0 +1,4 @@
+TUNING.SENDI = {
+	SKILL_RAPIER_DAMAGE_1 = 10, -- 돌진할 때 데미지
+	SKILL_RAPIER_DAMAGE_2 = 15, -- 터질 때 데미지
+}

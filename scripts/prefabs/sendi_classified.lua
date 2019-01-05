@@ -29,7 +29,11 @@ local function RegisterKeyEvent(classified)
 	local RapierKey = GetModConfigData("skill_1", modname) or "KEY_V"
 	TheInput:AddKeyDownHandler(_G[RapierKey], function()
 		if KeyCheckCommon(parent) then
-			SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
+			if TheInput:IsKeyDown(KEY_SHIFT) then
+				SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
+			else
+				
+			end
 		end
 	end) 
 

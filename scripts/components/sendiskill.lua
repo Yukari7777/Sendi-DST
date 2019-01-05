@@ -1,3 +1,5 @@
+local STUNING = TUNING.SENDI
+
 local SendiSkill = Class(function(self, inst)
     self.inst = inst
 
@@ -16,7 +18,6 @@ local function DoRapierCharge(inst)
 	if charge then
 		local VELOCITY = 0.3
 		local RADIUS = 2
-		local DAMAGE = 10 -- 데미지 1
 
 		local fx = SpawnPrefab("firesplash_fx")
 		fx.Transform:SetScale(0.4, 0.4, 0.4)
@@ -28,11 +29,11 @@ local function DoRapierCharge(inst)
 		local playerpos = inst:GetPosition()
 		local ents = TheSim:FindEntities(playerpos.x + math.sin(angle), 0, playerpos.z + math.cos(angle), RADIUS, nil, { "INLIMBO" })
 		for k,v in pairs(ents) do 
-			if v.components.health and not v:HasTag("companion") and v ~= inst and (TheNet:GetPVPEnabled() or not v:HasTag("player")) then
+			if v.components.health ~= nil and _G.IsPreemptiveEnemy(inst, v) then
 				local targetpos = v:GetPosition()
 				v.Transform:SetPosition(targetpos.x + (math.sin(angle) * VELOCITY) , 0, targetpos.z + (math.cos(angle) * VELOCITY))
 				if not v:HasTag("damagetaken") then
-					v.components.combat:GetAttacked(inst, DAMAGE)
+					v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_1)
 					v:AddTag("damagetaken")
 					v:DoTaskInTime(15 * FRAMES, function()
 						v:RemoveTag("damagetaken")
@@ -63,10 +64,10 @@ function SendiSkill:Explode(inst)
 	fx.Transform:SetScale(1.4, 1.4, 1.4)
 	fx.Transform:SetPosition(x, y, z)
 
-	local ents = TheSim:FindEntities(x, y, z, 5, nil, { "INLIMBO" })
+	local ents = TheSim:FindEntities(x, y, z, 5, { "_combat" })
 	for k,v in pairs(ents) do 
-		if v.components.health and not v:HasTag("companion") and v ~= inst and (TheNet:GetPVPEnabled() or not v:HasTag("player")) then
-			v.components.combat:GetAttacked(inst, 15) -- 데미지2
+		if v.components.health ~= nil and _G.IsPreemptiveEnemy(inst, v) then
+			v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_2) -- 데미지2
 		end
 	end
 end
