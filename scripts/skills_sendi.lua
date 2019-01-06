@@ -80,12 +80,13 @@ end
 
 local function AddSkill(skillname, SgS, SgC)
 	-- This is Ctor to make key-press-to-action.
-	-- Does Anyone want to use this function, don't forget to rename ModRPCHandler's namespace and copy nullfn.
-	local upperskillname = string.upper(skillname)
+	-- Does Anyone want to use this function, feel free to use it
+	-- and don't forget to rename ModRPCHandler's namespace and copy nullfn.
+	local upperskillname = skillname:upper()
 
 	AddAction(upperskillname, skillname, nullfn)
 	AddModRPCHandler("sendi", skillname, function(inst) 
-		inst:PushEvent("on"..skillname) 
+		inst:PushEvent("on"..skillname) -- See sendi_classified how to excute actions via PushEvent.
 	end)
 
 	AddStategraphState("wilson", SgS) -- Client Stategraph
@@ -95,7 +96,7 @@ local function AddSkill(skillname, SgS, SgC)
 end
 
 --------------------------------------------------------------------------------------------------------------------
-local rapier_server = State { 
+local rapier_SgS = State { 
 	name = "rapier",
 	tags = { "busy", "doing", "skill", "pausepredict", "aoe", "nointerrupt", "nomorph"},
 
@@ -128,19 +129,17 @@ local rapier_server = State {
     },
 	
 	ontimeout = function(inst)
-		inst.Physics:Stop()
-        inst.Physics:SetMotorVel(0, 0, 0)
-		inst.components.sendiskill:OnFinishRapier(inst)
+		inst.components.sendiskill:OnFinishCharge(inst)
 		OnFinishSkillGeneral(inst)
 	end,
 	
 	onexit = function(inst)	
-		inst.components.sendiskill:OnFinishRapier(inst)
+		inst.components.sendiskill:OnFinishCharge(inst)
 		OnFinishSkillGeneral(inst)
 	end,
 }
 
-local rapier_client = State {
+local rapier_SgC = State {
 	name = "rapier",
 	tags = { "doing", "attack", "skill" },
 
@@ -170,4 +169,79 @@ local rapier_client = State {
 	end,
 }
 
-AddSkill("rapier", rapier_server, rapier_client)
+AddSkill("rapier", rapier_SgS, rapier_SgC)
+
+
+local igniarun_SgS = State { 
+	name = "igniarun",
+	tags = { "busy", "doing", "skill", "pausepredict", "nomorph" },
+
+	onenter = function(inst)
+		OnStartSkillGeneral(inst, true)
+		inst.sg:SetTimeout(13 * FRAMES)
+        inst.AnimState:PlayAnimation("jumpout")
+
+		inst.components.sendiskill:OnStartIgniaRun(inst)
+	end,
+
+	timeline =
+	{
+		TimeEvent(6 * FRAMES, function(inst)
+			inst.components.health:SetInvincible(false)
+		end),
+		TimeEvent(13 * FRAMES, function(inst)
+			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
+		end),
+		
+	},
+	
+	events = {
+        EventHandler("animover", function(inst)
+			if inst.AnimState:AnimDone() then
+				inst.sg:GoToState("idle", true)
+			end
+		end),
+    },
+	
+	ontimeout = function(inst)
+		inst.components.sendiskill:OnFinishCharge(inst)
+		OnFinishSkillGeneral(inst)
+	end,
+	
+	onexit = function(inst)	
+		inst.components.sendiskill:OnFinishCharge(inst)
+		OnFinishSkillGeneral(inst)
+	end,
+}
+
+local igniarun_SgC = State {
+	name = "igniarun",
+	tags = { "doing", "skill" },
+
+	onenter = function(inst)
+		inst.components.locomotor:Stop()
+        inst.components.locomotor:Clear()
+		inst.entity:FlattenMovementPrediction()
+		inst.AnimState:PlayAnimation("jumpout")
+
+		inst:PerformPreviewBufferedAction()
+		inst.sg:SetTimeout(11 * FRAMES)
+	end,
+	
+	onupdate = function(inst)
+		if inst.bufferedaction == nil then
+			inst.sg:GoToState("idle", true)
+		end
+	end,
+
+	ontimeout = function(inst)
+		inst:ClearBufferedAction()
+		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
+	end,
+	
+	onexit = function(inst)	
+		inst.entity:SetIsPredictingMovement(true)
+	end,
+}
+
+AddSkill("igniarun", igniarun_SgS, igniarun_SgC)

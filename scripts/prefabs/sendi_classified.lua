@@ -13,10 +13,6 @@ local function OnEntityReplicated(inst)
     end
 end
 
-local function OnRapier(parent)
-	parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS.RAPIER))
-end
-
 local function KeyCheckCommon(parent)
 	return parent == ThePlayer and TheFrontEnd:GetActiveScreen() ~= nil and TheFrontEnd:GetActiveScreen().name == "HUD"
 end
@@ -32,7 +28,7 @@ local function RegisterKeyEvent(classified)
 			if TheInput:IsKeyDown(KEY_SHIFT) then
 				SendModRPCToServer(MOD_RPC["sendi"]["rapier"]) 
 			else
-				
+				SendModRPCToServer(MOD_RPC["sendi"]["igniarun"]) 
 			end
 		end
 	end) 
@@ -45,10 +41,21 @@ local function RegisterKeyEvent(classified)
 	end) 
 end
 
+local SKILLS = { "rapier", "igniarun" }
+local SKILLFN = {}
+for k, v in pairs(SKILLS) do
+	table.insert(SKILLFN, function(parent)
+		parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS[v:upper()]))
+	end)
+end
+
 local function RegisterNetListeners(inst)
 	if TheWorld.ismastersim then
 		inst._parent = inst.entity:GetParent()
-		inst:ListenForEvent("onrapier", OnRapier, inst._parent)
+
+		for i = 1, #SKILLS do
+			inst:ListenForEvent("on"..SKILLS[i], SKILLFN[i], inst._parent)
+		end
 	else
 		
 	end
@@ -63,8 +70,8 @@ local function fn()
     inst.entity:Hide()
     inst:AddTag("CLASSIFIED")
 
-	inst.rapier = net_bool(inst.GUID, "onrapier", "onrapierdirty")
-	inst.rapier:set(false)
+	inst.rapier = net_event(inst.GUID, "onrapier")
+	inst.igniarun = net_event(inst.GUID, "onigniarun")
 
 	--Delay net listeners until after initial values are deserialized
     inst:DoTaskInTime(0, RegisterNetListeners)
