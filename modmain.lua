@@ -107,6 +107,8 @@ local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local Language =  GetModConfigData("language")
 
+modimport "scripts/tunings_sendi.lua" -- 튜닝 파일 로드
+
 GLOBAL.SENDI_LANGUAGE_SUFFIX = "_en" -- 언어 설정관련
 if Language == "AUTO" then
 	local KnownModIndex = GLOBAL.KnownModIndex
@@ -114,9 +116,9 @@ if Language == "AUTO" then
 		local modname = KnownModIndex:GetModInfo(moddir).name
 		if modname == "한글 모드 서버 버전" or modname == "한글 모드 클라이언트 버전" then 
 			GLOBAL.SENDI_LANGUAGE_SUFFIX = "" -- 한국어
---		elseif modname == "Chinese modname Pack" or modname == "Chinese Plus" then
+--		elseif modname == "Chinese Language Pack" or modname == "Chinese Plus" then
 --			GLOBAL.SENDI_LANGUAGE_SUFFIX = "_ch"
---		elseif modname == "Russian modname Pack" or modname == "Russification Pack for DST" or modname == "Russian For Mods (Client)" then
+--		elseif modname == "Russian Language Pack" or modname == "Russification Pack for DST" or modname == "Russian For Mods (Client)" then
 --			GLOBAL.SENDI_LANGUAGE_SUFFIX = "_ru"
 		end 
 	end 
@@ -124,7 +126,7 @@ else
 	GLOBAL.SENDI_LANGUAGE_SUFFIX = Language
 end
 STRINGS.CHARACTERS.SENDI = require("speech_sendi"..GLOBAL.SENDI_LANGUAGE_SUFFIX ) -- 대사 파일 로드
-modimport "scripts/string_sendi.lua" -- 언어 파일 로드
+modimport "scripts/strings_sendi.lua" -- 언어 파일 로드
 
 local Cookable = require "components/cookable"  -- sendi_oven 관련
 function Cookable:GetProduct()
@@ -147,5 +149,5 @@ AddModRPCHandler("sendi", "skin", ChangeSkin)
 STRINGS.NAMES.SENDI = "sendi"
 AddModCharacter("sendi", "FEMALE")
 
-modimport "scripts/action_sendi.lua"
-modimport "scripts/recipe_sendi.lua"
+modimport "scripts/skills_sendi.lua"
+modimport "scripts/recipes_sendi.lua"

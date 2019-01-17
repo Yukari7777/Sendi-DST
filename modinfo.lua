@@ -16,6 +16,11 @@ all_clients_require_mod = true
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
+folder_name = folder_name or "workshop-"
+if not folder_name:find("workshop-") then
+    name = name.." - Test"
+end
+
 server_filter_tags = {
 	"character",
 }

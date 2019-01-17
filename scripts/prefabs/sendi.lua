@@ -7,7 +7,6 @@ local assets = {
 	Asset("ANIM", "anim/sendi_skin_christmase.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmas_be.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
-	
 }
 
 local prefabs = {
@@ -18,6 +17,43 @@ local start_inv = {
 -- 맞춤시작 인벤토리 시작 
 	"sendipack"
 }
+
+local function SendiOnSetOwner(inst)
+	if TheWorld.ismastersim then
+        inst.sendi_classified.Network:SetClassifiedTarget(inst)
+    end
+end
+
+local function AttachClassified(inst, classified)
+	inst.sendi_classified = classified
+    inst.ondetachsendiclassified = function() inst:DetachSendiClassified() end
+    inst:ListenForEvent("onremove", inst.ondetachsendiclassified, classified)
+end
+
+local function DetachClassified(inst)
+	inst.sendi_classified = nil
+    inst.ondetachsendiclassified = nil
+end
+
+local function OverrideOnRemoveEntity(inst)
+	inst.OnRemoveSendi = inst.OnRemoveEntity
+	function inst.OnRemoveEntity(inst)
+		if inst.jointask ~= nil then
+			inst.jointask:Cancel()
+		end
+
+		if inst.sendi_classified ~= nil then
+			if TheWorld.ismastersim then
+				inst.sendi_classified:Remove()
+				inst.sendi_classified = nil
+			else
+				inst:RemoveEventCallback("onremove", inst.ondetachsendiclassified, inst.sendi_classified)
+				inst:DetachSendiClassified()
+			end
+		end
+		return inst:OnRemoveSendi()
+	end
+end
 
 local function onbecamehuman(inst)
 -- 인물이 인간에게서 부활 할때
@@ -78,55 +114,22 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
-local function SendiOnSetOwner(inst)
-	if TheWorld.ismastersim then
-        inst.sendi_classified.Network:SetClassifiedTarget(inst)
-    end
-end
-
-local function AttachClassified(inst, classified)
-	inst.sendi_classified = classified
-    inst.ondetachsendiclassified = function() inst:DetachSendiClassified() end
-    inst:ListenForEvent("onremove", inst.ondetachsendiclassified, classified)
-end
-
-local function DetachClassified(inst)
-	inst.sendi_classified = nil
-    inst.ondetachsendiclassified = nil
-end
-
-local function OverrideOnRemoveEntity(inst)
-	inst.OnRemoveSendi = inst.OnRemoveEntity
-	function inst.OnRemoveEntity(inst)
-		if inst.jointask ~= nil then
-			inst.jointask:Cancel()
-		end
-
-		if inst.sendi_classified ~= nil then
-			if TheWorld.ismastersim then
-				inst.sendi_classified:Remove()
-				inst.sendi_classified = nil
-			else
-				inst:RemoveEventCallback("onremove", inst.ondetachsendiclassified, inst.sendi_classified)
-				inst:DetachSendiClassified()
-			end
-		end
-		return inst:OnRemoveSendi()
-	end
-end
-
-local skins = {-- "sendi_skin_" 뒤에 나오는 이름
+local skins = { -- "sendi_skin_" 뒤에 나오는 이름
 	"DEFAULT", "longtail", "christmas", "christmas_b"
 }
 
+local noequiplist = { -- 장비 낄때 버전의 스킨 빌드가 없을경우 추가
+	"DEFAULT", "longtail"
+} 
+
 local function SetSkinBuild(inst)
-	local noequiplist = {"DEFAULT", "longtail"} -- 장비 낄때 버전의 스킨 빌드가 없을경우 추가
 	local index = inst.skinindex
 	for k, v in pairs(noequiplist) do
 		if skins[index] == v then
 			return
 		end
 	end
+
 	local isequip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) ~= nil
 	inst.AnimState:SetBuild("sendi_skin_"..skins[index]..(isequip and "e" or ""))
 end

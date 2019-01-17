@@ -1840,7 +1840,7 @@ return {
 		TALLBIRDEGG_CRACKED = "알도 고기에요",
     },
 
-	RAPIER = {
+	SKILL_RAPIER = {
 		"햣!",
 		"세이얏!",
 		"햣!",
@@ -1848,5 +1848,10 @@ return {
 		"세이얏!",
 		"햣!",
 		"세이얏!",
+	},
+
+	SKILL_IGNIARUN = {
+		"이그니아런 대사",
+		"이그니아런 대사",
 	},
 }
