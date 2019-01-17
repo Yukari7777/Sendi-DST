@@ -86,8 +86,10 @@ local function fn()
 		--유통기한
    
     inst:AddComponent("weapon")
-	inst.components.weapon:SetDamage(30)
-		--무기로 설정. 아래는 피해 설정
+	inst.components.weapon:SetDamage(25)
+	--무기로 설정. 아래는 피해 설정
+	inst.components.weapon:SetRange(1.2)
+	--공격범위
     inst.OnLoad = OnLoad
 
     -------

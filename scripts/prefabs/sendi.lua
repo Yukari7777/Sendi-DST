@@ -6,7 +6,11 @@ local assets = {
 	Asset("ANIM", "anim/sendi_skin_christmas.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmase.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas_be.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
+	Asset("ANIM", "anim/sendi_skin_christmas_be.zip"),
+	Asset("ANIM", "anim/sendi_skin_ignia.zip"),
+--	Asset("ANIM", "anim/sendi_skin_ignias.zip"), <- 아기쥐 : 적용이안됩니다.
+	
+	-- 스.킨파일이 추가됐을때마다 전부 추가해주세요	
 }
 
 local prefabs = {
@@ -15,7 +19,10 @@ local prefabs = {
 
 local start_inv = {
 -- 맞춤시작 인벤토리 시작 
-	"sendipack"
+	"sendipack",
+	"spear",
+	"rope",
+	"rope"
 }
 
 local function SendiOnSetOwner(inst)
@@ -114,13 +121,16 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
-local skins = { -- "sendi_skin_" 뒤에 나오는 이름
-	"DEFAULT", "longtail", "christmas", "christmas_b"
+local skins = { -- "sendi_skin_" [스킨] 뒤에 나오는 이름
+	"DEFAULT", "longtail", "christmas", "christmas_b", "ignia"
 }
 
-local noequiplist = { -- 장비 낄때 버전의 스킨 빌드가 없을경우 추가
-	"DEFAULT", "longtail"
+local noequiplist = { -- [스킨] 장비 낄때 버전의 스.킨 빌드가 없을경우 추가
+	"DEFAULT", "longtail", "ignia"
 } 
+
+----------스킨 입력
+--센디스킨 이그니아s 가 적용이안됩니다. 위에 두곳에 이름을넣었음에도요 ㅠㅠㅠ 왜이럴까요..? p로 바꾸면 투명으로나오더군요..흐앍.. 
 
 local function SetSkinBuild(inst)
 	local index = inst.skinindex
@@ -150,6 +160,9 @@ local function OnEquip(inst, data)
 		SetSkinBuild(inst)
 	end
 end
+
+----------스킨 끝
+
 
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 
