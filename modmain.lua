@@ -8,15 +8,19 @@ PrefabFiles = {
 	--------기타---------
 	"sendisedmask",
 	--------모자----------
-	"sendi_rapier", -- SENDI_RAPIER
-	"sendi_rapier_wood", 
-	"sendi_rapier_ignia", --이그니아 레이피어 SENDI_RAPIER_IGNIA	
+	"sendi_rapier_wood", --우드 레이피어
+	"sendi_rapier", --레이피어
+	"sendi_rapier_ignia", --이그니아레이피어
 	--------레이피어-----------
 	"sendi_armor_01", --센디의 니트 갑옷
 	"sendi_armor_02", --센디의 여름용 갑옷
-
+	--------갑옷--------------
 	"sendi_oven", -- 센디 오븐
 	"sendi_ovenfire_fx", -- 센디 오븐의 불꽃이펙트
+	-------오브젝트[오븐]-------
+	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
+	
+	--------음식------------
 }
 
 Assets = {
@@ -55,6 +59,7 @@ Assets = {
 	
 	Asset( "IMAGE", "images/inventoryimages/senditab.tex" ),
 	Asset( "ATLAS", "images/inventoryimages/senditab.xml" ),
+	
 	-----------아이템을 추가 합니다. 
 	Asset( "IMAGE", "images/inventoryimages/sendipack.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendipack.xml"),
@@ -67,25 +72,33 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendi_armor_01.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_01.xml"),
 	-------센디의 니트갑옷 [임의 지정]
+	Asset( "IMAGE", "images/inventoryimages/sendi_armor_02.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_armor_02.xml"),
+	--------라이프 아머
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
+	--------연습용 목재 레이피어
 	
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier.xml"),
 	--------센디의 레이피어
 	
-	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
-	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
-	--------연습용 목재 레이피어
-	Asset( "IMAGE", "images/inventoryimages/sendi_armor_02.tex"),
-	Asset( "ATLAS", "images/inventoryimages/sendi_armor_02.xml"),
-	--------이그니아 레이피어
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_ignia.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_ignia.xml"),
-	--------센디오븐
+	--------이그니아 레이피어
+
 	Asset("ANIM", "anim/sendi_oven.zip"),
 	Asset("ANIM", "anim/sendi_oven_open.zip"),
 	Asset("ANIM", "anim/sendi_oven_fire.zip"),
 	Asset("ANIM", "anim/sendi_oven_fire_cold.zip"),
 	Asset("ATLAS", "images/inventoryimages/sendi_oven.xml"),
+	--------센디오븐
+	
+	--Asset( "IMAGE", "images/inventoryimages/mangotea.tex"),
+	--Asset( "ATLAS", "images/inventoryimages/mangotea.xml"),
+	--------코코아
+	
 }
 AddMinimapAtlas("images/map_icons/sendi.xml")
 
@@ -131,6 +144,7 @@ function ChangeSkin(inst)
 	inst:ChangeSkin()
 end
 AddModRPCHandler("sendi", "skin", ChangeSkin)
+--센디스킨
 
 STRINGS.NAMES.SENDI = "sendi"
 AddModCharacter("sendi", "FEMALE")

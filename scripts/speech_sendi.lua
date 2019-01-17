@@ -4,7 +4,7 @@ return {
 	{
         REPAIR =
         {
-            WRONGPIECE = "이게 아닌 모양이에요",
+            WRONGPIECE = "으음.. 이게 아닌 모양이에요",
         },
         BUILD =
         {
@@ -19,7 +19,7 @@ return {
 		},
 		STORE =
 		{
-			GENERIC = "너무 무거워요.",
+			GENERIC = "너무...무거워요!",
 			NOTALLOWED = "앗.. 이제 손대면 안돼요.",
 			INUSE = "제 차례는 아직이에요.",
 		},
@@ -40,9 +40,9 @@ return {
 		},
         COOK =
         {
-            GENERIC = "전 음식은 요리해서 먹는걸요 좋아요. 특히 꿀햄이 최고에요!",
+            GENERIC = "전 음식은 요리해서 먹는걸 좋아해요./n특히 꿀햄이 최고라고 생각해요!",
             INUSE = "내가 생각하는 그 요리일까요?.",
-            TOOFAR = "전 음식은 조리해서 먹는걸요 좋아해요",
+            TOOFAR = "전 음식은 조리해서 먹는걸 좋아해요",
         },
 		GIVE =
         {
@@ -50,7 +50,7 @@ return {
             DEAD = "받을 손이 없어요서 줄 수 없어요.",
             SLEEPING = "몰래 가방에 넣는거는 하면 안돼요~",
             BUSY = "지금은 받을 수 없는 모양이에요.",
-            ABIGAILHEART = "이렇게 하는 것 보다 재대로 된 방법이 있을거에요!",
+            ABIGAILHEART = "이렇게 하는것 보다/n재대로 된 방법이 있을거에요!",
             GHOSTHEART = "아무일도 일어나지 않네요",
             NOTGEM = "아무일도 일어나지 않네요",
             WRONGGEM = "아무일도 일어나지 않네요",
@@ -168,10 +168,10 @@ return {
 	ANNOUNCE_WET = "아아- 머리가 망가졌어요!",
 	ANNOUNCE_WETTER = "옷하고 신발이 모두 축축해요",
 	ANNOUNCE_SOAKED = "물에 젖은 가방이 너무 무거워요! 쉬고싶어요!",
-	ANNOUNCE_HOUNDS = "위험한 소리가 들려요. 강아지들이 가까히 왔나봐요!",
+	ANNOUNCE_HOUNDS = "위험한 소리가 들려요. 강아지들이 가까이 왔나봐요!",
 	--ANNOUNCE_HUNGRY = "Musha needs meats. Anyone?",
 	ANNOUNCE_HUNGRY = "꼬르르... 달달한게 먹고싶어요",
-	ANNOUNCE_HUNT_BEAST_NEARBY = "제가 사냥감을 찾았어! 정말 커요!",
+	ANNOUNCE_HUNT_BEAST_NEARBY = "제가 사냥감을 찾았어요! 정말 커요!",
 	ANNOUNCE_HUNT_LOST_TRAIL = "전 발자국을 잃어버렸어요",
 	ANNOUNCE_HUNT_LOST_TRAIL_SPRING = "진흙이 발자국을 지웠어. 전 진흙이 싫어요",
 	ANNOUNCE_ACCOMPLISHMENT= "저와 모험은 언제나 함께에요!",
@@ -190,7 +190,7 @@ return {
 	ANNOUNCE_WORMHOLE = "으으.. 멀미나고 기분나쁘고 더러워요!",
 	ANNOUNCE_TRAP_WENT_OFF = "아! 함정을 보충해야겠어요",
 	ANNOUNCE_CRAFTING_FAIL = "어라? 만든게 작동하지 않아요",
-    ANNOUNCE_QUAKE = "동굴이 배탈났어!",
+    ANNOUNCE_QUAKE = "동굴이 배탈났어요!",
     ANNOUNCE_NODANGERSLEEP = "전 이상한 소리를 들었어요!\n전 안전을 확인 해야해요",
     ANNOUNCE_NOHUNGERSLEEP = "전 너무 배고파!\n 전 먼저 뭔가 먹어야해요!",
     ANNOUNCE_FREEDOM = "프리덤! 아무것도 저를 막을 수 없어요!",
@@ -812,7 +812,7 @@ return {
 		RAINHAT = "전 물을 마시는건 좋아하지만\n머리에 붓는게 마시는건 아니잖아요?",
 		RESEARCHLAB =
 		{
-			GENERIC = "생존기술을 배울 수 있는 기계라고 해요",
+			GENERIC = "지식의 정수가 담겨있는게 분명해요!/n과학은 역시 대단해!",
 			BURNT = "선생님이 타버린거에요?",
 		},
 		RESEARCHLAB2 =
@@ -969,7 +969,7 @@ return {
 		TELEBASE =
 		{
 			VALID = "하늘이 아니라 땅이 움직이는 것 같아요",
-			GEMS = "이제 작동하려나?",
+			GEMS = "작동 조건은 충족된거 같죠?",
 		},
 		GEMSOCKET =
 		{
@@ -1037,7 +1037,7 @@ return {
 		STALAGMITE_LOW="이 돌은 쓸만할 것 같아요",
 		STALAGMITE_MED="돌이 하늘로 자라는 것 같아요.\n잠깐, 나 전에도 이 말 한 것 같아요.",
 		STALAGMITE_TALL="돌이 하늘로 자라고 있었나봐요",
-		STALAGMITE_TALL_FULL="돌이 나무처럼 크게 자랐어! 그리고 안쪽에 뭔가 있어요!",
+		STALAGMITE_TALL_FULL="돌이 나무처럼 크게 자랐어요! 그리고 안쪽에 뭔가 있어요!",
 		STALAGMITE_TALL_LOW="이 돌은 쓸만할 것 같아요",
 		STALAGMITE_TALL_MED="돌이 하늘로 자라는 것 같아요.\n잠깐, 제 전에도 이 말 한 것 같아요.",
 
@@ -1310,7 +1310,7 @@ return {
 		},
 		FROGGLEBUNWICH = "바삭한 다리로 만든 샌드위치에요",
 		FROGLEGS = "몸통엔 뭐가 들었을지 모르니까.. 다리는 닭고기 맛이나서 맛있어요!",
-		FROGLEGS_COOKED = "잘 구워졌나?",
+		FROGLEGS_COOKED = "어디 어디, 잘 구워졌을까요?",
 		FRUITMEDLEY = "과일을 잔뜩 섞은거에요",
 		GEARS = "메탈 기어!",
 		GHOST = "오, 오컬트라도... 지.. 지지 않을거니까!",
@@ -1414,7 +1414,7 @@ return {
 		KNIGHT = "박치기 하는 말 동상... 말박이?",
 		KOALEFANT_SUMMER = "..! 빨간 코끼리에요!! 너무너무 귀여워요!",
 		KOALEFANT_WINTER = "아앗! 이 시기에만 볼수있는 파란 코끼리에요! 더 더 귀여워요!",
-		KRAMPUS = "악마가 나타났어!",
+		KRAMPUS = "악마가 나타났어요!",
 		KRAMPUS_SACK = "산타의 선물꾸러미가 이것보다 클까?",
 		LAVAE = "이 불덩이는 저를 좋아하는건지 싫어하는건지 모르겠어요",
 		LEIF = "나무 거인이에요!",
@@ -1595,7 +1595,7 @@ return {
 		SANITYROCK =
 		{
 			ACTIVE = "이게 열리려면 무슨 조건이 필요한 모양이에요",
-			INACTIVE = "열렸어!",
+			INACTIVE = "열렸어요!",
 		},
 		SAPLING =
 		{
@@ -1677,7 +1677,7 @@ return {
 		{
 			GENERIC = "이 새는 정말 귀여워요! 하지만, 뭔가.. 뒤가 근질거려요",
 			HUNGRY = "아직도 이 새의 밥은 제가 챙겨줘야해요",
-			STARVING = "으으응! 배가 고픈거구나? 조금만 기다려줘요~",
+			STARVING = "으으응! 배가 고픈거군요? 조금만 기다려줘요~",
 		},
 		TELEPORTATO_BASE =
 		{
@@ -1711,7 +1711,7 @@ return {
 		TRINKET_4 = "꼬마 요정이 있다면 이렇게 생겼을까요?",
 		TRINKET_5 = "이 신발의 주인은 엄청전 모험을 했었을거에요!", 
 		TRINKET_6 = "와이어로 암살하는 108가지 방법? 저에겐 필요없어요",
-		TRINKET_7 = "전 이걸 어떻게 쓰는지 깨달았어! 전혀 쓸모없네!",
+		TRINKET_7 = "전 이걸 어떻게 쓰는지 깨달았어요! 사용이고 자시고 쓸모없는 물건이에요!",
 		TRINKET_8 = "뭔가를 막는데 쓰는것 같아요. 자국이 있으나까 알 수 있어요",
 		TRINKET_9 = "색이 너무 제각각이라 어디에 붙여야할지 모르겠네요!",
 	--adds 3 start
@@ -1814,7 +1814,7 @@ return {
 		WALL_RUINS = "이걸 부수고 들어올려면 시간이 오래걸릴거에요",--0
 		WALL_RUINS_ITEM = "시간을 벌어준다면 이건 낭비가 아니에요",
 		WALL_WOOD_ITEM = "통나무를 순식간에 부수고 들어올 순 없을거에요",
-		WALRUS = "저게 쏠 틈을 주면 안돼요!",
+		WALRUS = "저녀석이 쏠 틈을 주면 안돼요!",
 		WALRUSHAT = "완벽하게 멋져요",
 		WALRUS_CAMP =
 		{
@@ -1831,7 +1831,7 @@ return {
 			GENERIC = "징그럽지만.. 어디론가 이어져 있어요.",
 			OPEN = "이거 안전한거 맞지? 전 매우 의심스러운데",
 		},
-		ACCOMPLISHMENT_SHRINE = "엄청전 사치품이에요. 정말로",
+		ACCOMPLISHMENT_SHRINE = "엄청난 사치품이에요. 정말로",
 	},
 	DESCRIBE_TOODARK = "아무것도 보이지 않아요! 정말로 위험해요!",
 	DESCRIBE_SMOLDERING = "으아아아앙그아아아아!!",
@@ -1843,15 +1843,41 @@ return {
 	SKILL_RAPIER = {
 		"햣!",
 		"세이얏!",
-		"햣!",
+		"세이얏!",
 		"이그니아런!",
 		"세이얏!",
 		"햣!",
 		"세이얏!",
+		"뜨거울거에요!",
+		"햣!",
+		"뜨거울거에요!",
+		"햣!",
+		"뜨거울거에요!",
+		"햡!",
+		"당신은 절 막을수 없어요!",
+		"하앗!",
 	},
 
 	SKILL_IGNIARUN = {
-		"이그니아런 대사",
-		"이그니아런 대사",
+		"점프!",
+		"",
+		"너무높아!",
+		"점프!",
+		"",
+		"간닷!",
+		"",
+		"벌처럼 날아서~",
+		"",
+		"벌처럼 날아서~",
+		"",
+		"나비처럼 쏘는거에요!",
+		"너무높아!",
+		"벌처럼 날아서~",
+		"",
+		"나비처럼 쏘는거에요!",
+		"",
+		"",
+		"토끼처럼 가볍게!",
+		
 	},
 }
