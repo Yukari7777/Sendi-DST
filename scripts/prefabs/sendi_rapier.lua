@@ -61,8 +61,6 @@ local function fn()
  
     MakeInventoryPhysics(inst)
 
-
-   
     inst.AnimState:SetBank("sendi_rapier")
     inst.AnimState:SetBuild("sendi_rapier")
     inst.AnimState:PlayAnimation("idle")
@@ -72,11 +70,11 @@ local function fn()
     inst:AddTag("pointy") 
 	-- 태그 설정, 이 두 태그는 없어도 됨(실행 확인)
 
-    inst.entity:SetPristine()
-
     if not TheWorld.ismastersim then
         return inst
     end
+
+	inst.entity:SetPristine()
 
     --inst:AddComponent("perishable")
   --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)

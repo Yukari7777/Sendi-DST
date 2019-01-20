@@ -4,9 +4,7 @@ local assets = {
 	--------센디스킨
 	Asset("ANIM", "anim/sendi_skin_longtail.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmas.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmase.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas_be.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
+	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
 }
 
 local prefabs = {
@@ -118,31 +116,33 @@ local skins = { -- "sendi_skin_" 뒤에 나오는 이름
 	"DEFAULT", "longtail", "christmas", "christmas_b"
 }
 
-local noequiplist = { -- 장비 낄때 버전의 스킨 빌드가 없을경우 추가
-	"DEFAULT", "longtail"
-} 
-
 local function SetSkinBuild(inst)
 	local index = inst.skinindex
-	for k, v in pairs(noequiplist) do
-		if skins[index] == v then
-			return
-		end
-	end
 
-	local isequip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) ~= nil
-	inst.AnimState:SetBuild("sendi_skin_"..skins[index]..(isequip and "e" or ""))
-end
-
-local function DoChangeSkin(inst)
-	inst.skinindex = inst.skinindex >= #skins and 1 or inst.skinindex + 1
-	local index = inst.skinindex
 	if index == 1 then
 		inst.AnimState:SetBuild("sendi")
 	else
+		local OverrideSkin =_G.SendiForceOverrideSkin
 		inst.AnimState:SetBuild("sendi_skin_"..skins[index])
-		SetSkinBuild(inst)
+
+		if OverrideSkin == 2 then
+			inst.AnimState:ClearOverrideSymbol("swap_body")
+		elseif OverrideSkin == 3 and not inst.components.inventory:EquipHasTag("sendis") then
+			inst.AnimState:ClearOverrideSymbol("swap_body")
+		end
+
+		if inst.components.inventory:EquipHasTag("sleevefix") then
+			inst.AnimState:OverrideSymbol("arm_upper", "sendi", "arm_upper")
+		else
+			inst.AnimState:ClearOverrideSymbol("arm_upper")
+		end
 	end
+end
+
+local function OnChangeSkin(inst)
+	inst.skinindex = inst.skinindex >= #skins and 1 or inst.skinindex + 1
+	SetSkinBuild(inst)
+	-- TODO : 감정표현 추가
 end
 
 local function OnEquip(inst, data) 
@@ -194,13 +194,12 @@ local master_postinit = function(inst)
 	inst.components.combat.damagemultiplier = 0.75 -- YUKARI : 데미지 계수 0.75로 설정
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
 	
-	
 	inst.components.combat.min_attack_period = 0.01
 	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
 
 	inst.OnLoad = onload
 	inst.OnNewSpawn = onload
-	inst.ChangeSkin = DoChangeSkin
+	inst.ChangeSkin = OnChangeSkin
 	inst:ListenForEvent("equip", OnEquip )
 	inst:ListenForEvent("unequip", OnEquip )
    

@@ -42,7 +42,6 @@ function containers.widgetsetup(container, prefab, data, ...)
 end
 
 local function onequip(inst, owner) 
-    owner.AnimState:OverrideSymbol("swap_body", "swap_sendipack", "sendipack")
     owner.AnimState:OverrideSymbol("swap_body", "swap_sendipack", "swap_body")
 
     if inst.components.container ~= nil then
@@ -52,7 +51,6 @@ end
 
 local function onunequip(inst, owner) 
     owner.AnimState:ClearOverrideSymbol("swap_body")
-    owner.AnimState:ClearOverrideSymbol("sendipack")
     if inst.components.container ~= nil then
 		inst.components.container:Close(owner)
     end
@@ -83,6 +81,8 @@ local function fn(Sim)
 
     inst.MiniMapEntity:SetIcon("backpack.png")
     inst:AddTag("backpack")
+    inst:AddTag("sleevefix")
+    inst:AddTag("sendis")
 
     inst.foleysound = "dontstarve/movement/foley/backpack"
 
@@ -134,7 +134,7 @@ local function fn(Sim)
 	inst.components.sendispecific:SetStorable(true)
 	inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야! 너무 예뻐!", "이건, 하얀 가방인가? 귀여운데?") 
    
-   MakeHauntableLaunchAndDropFirstItem(inst)
+	MakeHauntableLaunchAndDropFirstItem(inst)
     
     return inst
 end

@@ -301,11 +301,11 @@ local function fn(Sim)
     inst.components.talker.offset = Vector3(0, -500, 0)
     inst.components.talker.symbol = "swap_object"
 
-	inst.entity:SetPristine()
-
    	if not TheWorld.ismastersim then
 		return inst
 	end
+
+	inst.entity:SetPristine()
 	-------------------------
  	inst:AddComponent("container")  
     inst.components.container:WidgetSetup("sendi_oven", sendi_oven)

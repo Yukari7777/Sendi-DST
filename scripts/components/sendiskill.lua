@@ -1,6 +1,6 @@
 local STUNING = TUNING.SENDI
 
-local SendiSkill = Class(function(self, inst)
+local sendiskill = Class(function(self, inst)
     self.inst = inst
 
 	self.shouldcharge = false
@@ -57,11 +57,11 @@ local function DoRapierCharge(inst)
 	end
 end
 
-function SendiSkill:IsCharging()
+function sendiskill:IsCharging()
 	return self.shouldcharge
 end
 
-function SendiSkill:OnStartRapier(inst, angle)
+function sendiskill:OnStartRapier(inst, angle)
 	if inst.SkillTask == nil then 
 		self.angle = angle
 		inst.SkillTask = inst:DoPeriodicTask(0, DoRapierCharge) -- 0초마다 반복 = 1프레임(0.033초)마다 반복
@@ -69,7 +69,7 @@ function SendiSkill:OnStartRapier(inst, angle)
 	end
 end
 
-function SendiSkill:Explode(inst)
+function sendiskill:Explode(inst)
 	self.shouldcharge = true
 	if inst.components.hunger ~= nil then
 		inst.components.hunger:DoDelta(- STUNING.SKILL_RAPIER_HUNGERCOST)
@@ -89,7 +89,7 @@ function SendiSkill:Explode(inst)
 	end
 end
 
-function SendiSkill:OnFinishCharge(inst)
+function sendiskill:OnFinishCharge(inst)
 	inst.Physics:Stop()
     inst.Physics:SetMotorVel(0, 0, 0)
 	ValidatePosition(inst)
@@ -111,7 +111,7 @@ local function DoIgniaRunCharge(inst)
 	self.tickafterskill = self.tickafterskill + 1
 end
 
-function SendiSkill:OnStartIgniaRun(inst)
+function sendiskill:OnStartIgniaRun(inst)
 	if inst.SkillTask == nil then 
 		self.angle = inst.Transform:GetRotation()
 		self.shouldcharge = true
@@ -123,9 +123,8 @@ function SendiSkill:OnStartIgniaRun(inst)
 			inst.components.hunger:DoDelta(-STUNING.SKILL_IGNIARUN_HUNGERCOST, nil, true)
 		end
 
-		SpawnPrefab("small_puff").Transform:SetPosition(inst.Transform:GetWorldPosition())
-		
+		SpawnPrefab("explode_small").Transform:SetPosition(inst.Transform:GetWorldPosition())
 	end
 end
 
-return SendiSkill
+return sendiskill

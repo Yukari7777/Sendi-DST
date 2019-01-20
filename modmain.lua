@@ -106,6 +106,7 @@ AddMinimapAtlas("images/map_icons/sendi.xml")
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local Language =  GetModConfigData("language")
+GLOBAL.SendiForceOverrideSkin = GetModConfigData("skinoverride")
 
 modimport "scripts/tunings_sendi.lua" -- 튜닝 파일 로드
 
@@ -131,7 +132,7 @@ modimport "scripts/strings_sendi.lua" -- 언어 파일 로드
 local Cookable = require "components/cookable"  -- sendi_oven 관련
 function Cookable:GetProduct()
     local prefab = nil 
-    if self.product then 
+    if self.product ~= nil then 
         prefab = self.product
         if type(self.product) == "function" then
             prefab = self.product(self.inst)
@@ -147,7 +148,6 @@ AddModRPCHandler("sendi", "skin", ChangeSkin)
 --센디스킨
 
 STRINGS.NAMES.SENDI = "sendi"
-AddModCharacter("sendi", "FEMALE")
-
 modimport "scripts/skills_sendi.lua"
 modimport "scripts/recipes_sendi.lua"
+AddModCharacter("sendi", "FEMALE")
