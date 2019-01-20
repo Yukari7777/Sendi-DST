@@ -9,7 +9,7 @@ local assets = {
 	Asset("ANIM", "anim/sendi_skin_ignias.zip"), --ver.이그니아 금발
 	
 	--스킨파일이 추가됐을때마다 전부 추가해주세요
-	--------센디스킨
+	
 	}
 
 local prefabs = {
@@ -120,11 +120,13 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
+
+
 local skins = { -- "sendi_skin_" [스킨] 뒤에 나오는 이름
 	"DEFAULT", "longtail", "christmas", "christmas_b", "ignia", "ignias"
 }
 
-local function SetSkinBuild(inst)
+local function SetSkinBuild(inst) -- YUKARI 센디 스킨옵션 관련 
 	local index = inst.skinindex
 
 	if index == 1 then

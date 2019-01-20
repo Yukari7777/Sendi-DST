@@ -27,8 +27,8 @@ local function fn()
     inst.AnimState:SetBuild("sendi_armor_01")
     inst.AnimState:PlayAnimation("anim")
 
-	inst:AddTag("sleevefix")
-	inst:AddTag("sendis")
+	inst:AddTag("sleevefix")-- YUKARI 센디 스킨옵션 관련 
+	inst:AddTag("sendis")-- YUKARI 센디 스킨옵션 관련 
 
     if not TheWorld.ismastersim then
         return inst
@@ -48,7 +48,7 @@ local function fn()
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
-	
+
 	inst:AddComponent("armor")
 	inst.components.armor:InitCondition(1000, 0.55)   
 	--내구도,방여력

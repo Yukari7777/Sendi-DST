@@ -36,8 +36,8 @@ local function fn()
     inst.AnimState:SetBuild("sendi_armor_02")
     inst.AnimState:PlayAnimation("anim")
 	
-	inst:AddTag("sleevefix")
-	inst:AddTag("sendis")
+	inst:AddTag("sleevefix") -- YUKARI 센디 스킨옵션 관련 
+	inst:AddTag("sendis")-- YUKARI 센디 스킨옵션 관련 
 
     if not TheWorld.ismastersim then
         return inst
