@@ -1,11 +1,14 @@
 local MakePlayerCharacter = require "prefabs/player_common"
 
 local assets = {
-	--------센디스킨
 	Asset("ANIM", "anim/sendi_skin_longtail.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"), 
-	Asset("ANIM", "anim/sendi_skin_ignia.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
+	--------센디스킨
+	Asset("ANIM", "anim/sendi_skin_christmas.zip"), -- 크리스마스 사이드테일
+	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),  --크리스마스 롱테일 
+	Asset("ANIM", "anim/sendi_skin_ignia.zip"), --ver.이그니아 
+	
+	--스킨파일이 추가됐을때마다 전부 추가해주세요
+	--------센디스킨
 	}
 
 local prefabs = {

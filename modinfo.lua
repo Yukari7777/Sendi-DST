@@ -64,9 +64,9 @@ configuration_options = {
 		label = "Skin Overriding",
 		hover = "스킨을 장비위에 강제로 적용할지 여부를 설정합니다.\nSet whether to force override the character's skin over equipment.",
 		options = {
-			{ description = "No", data = 1 },
-			{ description = "Only Sendi Items", data = 2 },
-			{ description = "Yes", data = 3 },
+			{ description = "Normal Skin", data = 1 },
+			{ description = "No Armor Skin ", data = 2 },
+			{ description = "Only Sendi Items Skin", data = 3 },
 		},
 		default = 1,
 	},
