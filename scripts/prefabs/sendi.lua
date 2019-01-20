@@ -6,6 +6,7 @@ local assets = {
 	Asset("ANIM", "anim/sendi_skin_christmas.zip"), -- 크리스마스 사이드테일
 	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"),  --크리스마스 롱테일 
 	Asset("ANIM", "anim/sendi_skin_ignia.zip"), --ver.이그니아 
+	Asset("ANIM", "anim/sendi_skin_ignias.zip"), --ver.이그니아 금발
 	
 	--스킨파일이 추가됐을때마다 전부 추가해주세요
 	--------센디스킨
@@ -120,7 +121,7 @@ end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
 local skins = { -- "sendi_skin_" [스킨] 뒤에 나오는 이름
-	"DEFAULT", "longtail", "christmas", "christmas_b", "ignia"
+	"DEFAULT", "longtail", "christmas", "christmas_b", "ignia", "ignias"
 }
 
 local function SetSkinBuild(inst)
