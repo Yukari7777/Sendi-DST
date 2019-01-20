@@ -51,19 +51,12 @@ end
 local function fn()
 
     local inst = CreateEntity()
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+	inst.entity:AddNetwork()
 
-   
-   local inst = CreateEntity()
-    local trans = inst.entity:AddTransform()
-    local anim = inst.entity:AddAnimState()
-   -- 아기쥐 추가   
-   
-    inst.entity:AddNetwork()
- 
     MakeInventoryPhysics(inst)
 
-
-   
     inst.AnimState:SetBank("sendi_rapier_wood")
     inst.AnimState:SetBuild("sendi_rapier_wood")
     inst.AnimState:PlayAnimation("idle")
@@ -73,11 +66,11 @@ local function fn()
     inst:AddTag("pointy") 
 	-- 태그 설정, 이 두 태그는 없어도 됨(실행 확인)
 
-    inst.entity:SetPristine()
-
     if not TheWorld.ismastersim then
         return inst
     end
+
+	inst.entity:SetPristine()
 
     --inst:AddComponent("perishable")
   --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)

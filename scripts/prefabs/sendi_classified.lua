@@ -45,7 +45,11 @@ local SKILLS = { "rapier", "igniarun" }
 local SKILLFN = {}
 for k, v in pairs(SKILLS) do
 	table.insert(SKILLFN, function(parent)
-		parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS[v:upper()]))
+		if parent.components.hunger ~= nil and not parent.components.hunger:IsStarving() then
+			parent.components.playercontroller:DoAction(BufferedAction(parent, nil, ACTIONS[v:upper()]))
+		else
+			parent.components.talker:Say(GetString(parent.prefab, "DESCRIBE_LOW_HUNGER"))
+		end
 	end)
 end
 

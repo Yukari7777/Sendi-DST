@@ -36,12 +36,14 @@ local function fn()
     inst.AnimState:SetBuild("sendi_armor_02")
     inst.AnimState:PlayAnimation("anim")
 	
-    --inst.AnimState:SetMultColour(1, 1, 1, 0.6)
-
+	inst:AddTag("sleevefix")
+	inst:AddTag("sendis")
 
     if not TheWorld.ismastersim then
         return inst
     end
+
+	inst.entity:SetPristine()
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")

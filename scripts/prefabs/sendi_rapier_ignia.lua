@@ -156,37 +156,32 @@ local function fn()
     inst:AddTag("pointy") 
 	-- 태그 설정, 이 두 태그는 없어도 됨(실행 확인)
 
-    inst.entity:SetPristine()
-
     if not TheWorld.ismastersim then
         return inst
     end
+
+	inst.entity:SetPristine()
 
    
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(55) 
    -- 무기로 설정. 아래는 피해 설정
-	inst.components.weapon:SetRange(1.2)
-	--공격범위
-   
+	inst.components.weapon:SetRange(1.2) --공격범위
+	inst.components.weapon:SetOnAttack(onattack)--MH불꽃데미지 
+	
     inst:AddComponent("inspectable")
 	--조사 가능하도록 설정
 	
     inst:AddComponent("inventoryitem")
-   inst.components.inventoryitem.imagename = "sendi_rapier_ignia"
+	inst.components.inventoryitem.imagename = "sendi_rapier_ignia"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_ignia.xml"
    --인벤토리 아이템으로 설정됨
    
-    MakeHauntableLaunchAndPerish(inst)
-   
-   
-
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
-	--장착 가능하도록, 장착밑 해제시의 위의 두 펑션을 작동
-	
-	inst.components.weapon:SetOnAttack(onattack)--MH불꽃데미지 
+
+	MakeHauntableLaunchAndPerish(inst)
 
 	inst.OnLoad = OnLoad
 	--YUKARI : OnLoad, OnSave, OnPreLoad 함수들은 마지막에 입력해주세요. 

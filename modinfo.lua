@@ -16,7 +16,7 @@ all_clients_require_mod = true
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
-folder_name = folder_name or "workshop-"
+folder_name = folder_name or ""
 if not folder_name:find("workshop-") then
     name = name.." - Test"
 end
@@ -27,11 +27,8 @@ server_filter_tags = {
 
 local Keys = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "PERIOD", "SLASH", "SEMICOLON", "TILDE", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "INSERT", "DELETE", "HOME", "END", "PAGEUP", "PAGEDOWN", "MINUS", "EQUALS", "BACKSPACE", "CAPSLOCK", "SCROLLOCK", "BACKSLASH"}
 
-local RapierKey = {}
-for i = 1, #Keys do RapierKey[i] = { description = ""..Keys[i].."", data = "KEY_"..Keys[i] } end
-
-local SkinKey = {}
-for i = 1, #Keys do SkinKey[i] = { description = ""..Keys[i].."", data = "KEY_"..Keys[i] } end
+local KeyOptions = {}
+for i = 1, #Keys do KeyOptions[i] = { description = ""..Keys[i].."", data = "KEY_"..Keys[i] } end
 
 configuration_options = {
 	{
@@ -52,14 +49,25 @@ configuration_options = {
 		name = "skill_1",
 		label = "Ignia Run Key",
 		hover = "어떤 키로 [이그니아 런]을 사용할지 설정합니다.\nSet [Ignia Run] Keybind",
-		options = RapierKey,
+		options = KeyOptions,
 		default = "KEY_V",
 	},
 	{
 		name = "skin",
 		label = "Skin Change Key",
-		hover = "어떤 키로 스케릭터 스킨을 바꿀지 설정합니다.\nSet which key to change charater's outfit.",
-		options = SkinKey,
+		hover = "어떤 키로 스케릭터 스킨을 바꿀지 설정합니다.\nSet which key to change charater's skin.",
+		options = KeyOptions,
 		default = "KEY_P",
+	},
+	{
+		name = "skinoverride",
+		label = "Skin Overriding",
+		hover = "스킨을 장비위에 강제로 적용할지 여부를 설정합니다.\nSet whether to force override the character's skin over equipment.",
+		options = {
+			{ description = "No", data = 1 },
+			{ description = "Only Sendi Items", data = 2 },
+			{ description = "Yes", data = 3 },
+		},
+		default = 1,
 	},
 }
