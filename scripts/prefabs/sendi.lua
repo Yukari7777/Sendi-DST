@@ -13,7 +13,10 @@ local prefabs = {
 
 local start_inv = {
 -- 맞춤시작 인벤토리 시작 
-	"sendipack"
+	"sendipack",
+	"spear",
+	"rope",
+	"rope"
 }
 
 local function SendiOnSetOwner(inst)
@@ -112,8 +115,8 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 end
 ----------------------------/ 위 /미쉘의  허기불꽃 시스템 / 위 /---------------------------------
 
-local skins = { -- "sendi_skin_" 뒤에 나오는 이름
-	"DEFAULT", "longtail", "christmas", "christmas_b"
+local skins = { -- "sendi_skin_" [스킨] 뒤에 나오는 이름
+	"DEFAULT", "longtail", "christmas", "christmas_b", "ignia"
 }
 
 local function SetSkinBuild(inst)
@@ -150,6 +153,9 @@ local function OnEquip(inst, data)
 		SetSkinBuild(inst)
 	end
 end
+
+----------스킨 끝
+
 
 local common_postinit = function(inst) 
 	--센디의 커스텀레시피를 추가합니다. 

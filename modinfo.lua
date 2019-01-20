@@ -1,7 +1,7 @@
 name = "[DST]Sendi"
 author = "doftksxk@naver.com"
-version = "1.4.1" 
-description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia Run].\n\n Skin Change [P] \n\n\n\n\n\n\n\nVersion : "..version.." "
+version = "1.4.4" 
+description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia jump].\n\nPress [Shift + V] to cast [Ignia Run].\n\nSkin Change [P] \n\n\n\n\n\n\n\nVersion : "..version.." "
 forumthread = ""
 api_version = 10
 
