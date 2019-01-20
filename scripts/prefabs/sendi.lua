@@ -4,8 +4,9 @@ local assets = {
 	--------센디스킨
 	Asset("ANIM", "anim/sendi_skin_longtail.zip"),
 	Asset("ANIM", "anim/sendi_skin_christmas.zip"),
-	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
-}
+	Asset("ANIM", "anim/sendi_skin_christmas_b.zip"), 
+	Asset("ANIM", "anim/sendi_skin_ignia.zip"), -- 스킨파일이 추가됐을때마다 전부 추가해주세요
+	}
 
 local prefabs = {
 
