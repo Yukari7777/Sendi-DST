@@ -64,7 +64,6 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendipack.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendipack.xml"),
 	------- 센디의 책가방
-
 	Asset( "IMAGE", "images/inventoryimages/sendisedmask.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendisedmask.xml"),
 	------- 센디의 눈물 마스크 
@@ -77,26 +76,21 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendi_armor_02.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_02.xml"),
 	--------라이프 아머
-	
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
 	--------연습용 목재 레이피어
-	
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier.xml"),
 	--------센디의 레이피어
-	
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_ignia.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_ignia.xml"),
 	--------이그니아 레이피어
-
 	Asset("ANIM", "anim/sendi_oven.zip"),
 	Asset("ANIM", "anim/sendi_oven_open.zip"),
 	Asset("ANIM", "anim/sendi_oven_fire.zip"),
 	Asset("ANIM", "anim/sendi_oven_fire_cold.zip"),
 	Asset("ATLAS", "images/inventoryimages/sendi_oven.xml"),
 	--------센디오븐
-	
 	--Asset( "IMAGE", "images/inventoryimages/mangotea.tex"),
 	--Asset( "ATLAS", "images/inventoryimages/mangotea.xml"),
 	--------코코아

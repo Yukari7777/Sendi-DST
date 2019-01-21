@@ -9,8 +9,8 @@ STRINGS.CHARACTER_NAMES.sendi = "센디"
 STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*빠르지만, 데미지와 체력이 약합니다!\n*허기를 소모하여 몸에 희미한 빛을 냅니다.\n*낮과 저녁 동안 체력을 빠르게 회복합니다!"
 STRINGS.CHARACTER_QUOTES.sendi = "\"원래 세계로 돌아갈 때까지\n저의 여행은 멈추지 않을 거예요!\""
 
-STRINGS.NAMES.sendisedmask = "센디의 눈물 마스크"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendisedmask = "이 마스크엔.. 많은 사연이 있어요."
+STRINGS.NAMES.SENDISEDMASK = "센디의 눈물 마스크"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "이 마스크엔.. 많은 사연이 있어요."
 --센디 마스크
 STRINGS.NAMES.SENDI_HAT_CROWN = "군주의 왕관"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_CROWN = "친구들과 함깨라면 이세상은 무서울것이 없어요!"
@@ -39,7 +39,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "한번에 구워 버리는거�
 --------레시피 추가
 STRINGS.SENDITABNAME = "센디탭"
 STRINGS.RECIPE_DESC.SENDIPACK = "냉장 기능이 달린 가방입니다."
-STRINGS.RECIPE_DESC.sendisedmask = "슬픈 사연이 담긴 마스크.[방수 25%]"
+STRINGS.RECIPE_DESC.SENDISEDMASK = "슬픈 사연이 담긴 마스크.[방수 25%]"
 STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "수인들이 당신을 따릅니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
@@ -55,8 +55,8 @@ STRINGS.CHARACTER_NAMES.sendi = "Sendi"
 STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*Fast but weak, gives mercy to enemy.\n*Emits glimmering by draining belly.\n*Regen health when sunlight exists."
 STRINGS.CHARACTER_QUOTES.sendi = "\"My journey would never stop \nuntil I get back to my world!\""
 
-STRINGS.NAMES.sendisedmask = "Sendi's tear mask"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendisedmask = "It has.. its own stories."
+STRINGS.NAMES.SENDISEDMASK = "Sendi's tear mask"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "It has.. its own stories."
 -- 센디 마스크
 STRINGS.NAMES.SENDI_HAT_CROWN = "Monarch Crown"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_CROWN = "I'm not scared anymore with my friends!"
@@ -84,7 +84,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "Bake it all at once! It's anno
 
 STRINGS.SENDITABNAME = "Sendi Tab"
 STRINGS.RECIPE_DESC.SENDIPACK = "Sendi's white school bag."
-STRINGS.RECIPE_DESC.sendisedmask = "A mask with a sad story."
+STRINGS.RECIPE_DESC.SENDISEDMASK = "A mask with a sad story."
 STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "Pig and friend."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "Sendi's Rapier for practice"
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "Sendi's Rapier"
