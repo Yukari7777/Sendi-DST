@@ -2430,29 +2430,29 @@ return {
 	},
 
 	SKILL_IGNIARUN = {
-		"점프!",
+		"jump!",
 		"",
-		"너무높아!",
-		"점프!",
+		"Too high.!",
+		"jump!",
 		"",
 		"간닷!",
 		"",
-		"벌처럼 날아서~",
+		"I fly like a bee ~",
 		"",
-		"벌처럼 날아서~",
+		"I fly like a bee ~",
 		"",
-		"나비처럼 쏘는거에요!",
-		"너무높아!",
-		"벌처럼 날아서~",
+		"It shoots like a butterfly!",
+		"Too high.!",
+		"I fly like a bee ~",
 		"",
-		"나비처럼 쏘는거에요!",
+		"It shoots like a butterfly!",
 		"",
 		"",
-		"토끼처럼 가볍게!",
+		"Light as a rabbit!",
 		
 	},
 
 	DESCRIBE_LOW_HUNGER = {
-		"배고파서 스킬을 못쓸 때 대사"
+		"I'm hungry and I can not even get a fever."
 	},
 }

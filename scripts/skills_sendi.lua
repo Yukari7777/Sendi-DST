@@ -27,7 +27,7 @@ local function ForceStopHeavyLifting(inst)
     end
 end
 
-local SKILL_RADIUS_DEFAULT = 6
+local SKILL_RADIUS_DEFAULT = 12
 local function GetPositionToClosestEnemy(inst, range)
 	local x, y, z = inst.Transform:GetWorldPosition()
 	local ents = TheSim:FindEntities(x, y, z, range or SKILL_RADIUS_DEFAULT, { "_combat" } ) -- See entityreplica.lua (for _combat tag usage)

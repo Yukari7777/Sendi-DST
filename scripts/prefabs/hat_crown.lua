@@ -35,7 +35,7 @@ local function pigqueen_update( inst )  --돼지 팔로워
 		
         for k,v in pairs(owner.components.leader.followers) do
             if k:HasTag("pig") and k.components.follower then
-                k.components.follower:AddLoyaltyTime(0.30)
+                k.components.follower:AddLoyaltyTime(30)
             end
         end	
     else
@@ -49,7 +49,7 @@ local function pigqueen_update( inst )  --돼지 팔로워
         end
         for k,v in pairs(inst.components.leader.followers) do
             if k:HasTag("pig") and k.components.follower then
-                k.components.follower:AddLoyaltyTime(180)
+                k.components.follower:AddLoyaltyTime(30)
             end
         end
 

@@ -78,23 +78,6 @@ local function fn(Sim)
 	inst:AddComponent("waterproofer")
     inst.components.waterproofer:SetEffectiveness(0.25)
 	-- 방수율을 뜻합니다 (0.방수율)
-	
-	--inst:AddComponent("insulator")
-    --inst.components.insulator:SetInsulation(100)
-	-- 보온율을 뜻합니다. 보온율은 100단위 입니다.
-	
-			--시원함을 설정 18.12.05
-		--inst:AddComponent("insulator")
-        --inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
-		--시원함을 설정. 18.12.05
-	
-	--수리 12.05 .. 모드오류도 없지만 실패 ㅠㅠ 
-	--inst:AddComponent("repairable")
-	--inst.components.repairable.repairmaterial = MATERIALS.ROCKS 	--돌
-	--inst.components.repairable.repairmaterial = MATERIALS.FLINT 	--부싯돌
-	--inst.components.repairable.repairmaterial = MATERIALS.STINGER 	--벌침
-	--inst.components.repairable.announcecanfix = false
-	-- 수리 12.05
 
 	inst:AddComponent("sendispecific")
 	inst.components.sendispecific:SetOwner("sendi")

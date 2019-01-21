@@ -20,7 +20,6 @@ PrefabFiles = {
 	"sendi_ovenfire_fx", -- 센디 오븐의 불꽃이펙트
 	-------오브젝트[오븐]-------
 	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
-	
 	--------음식------------
 }
 
