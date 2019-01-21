@@ -19,12 +19,12 @@ SENDITAB, TECH.SCIENCE_ONE, nil, nil, nil, nil, "sendicraft", "images/inventoryi
 local sendisedmask = Ingredient( "sendisedmask", 1) 
 sendisedmask.atlas ="images/inventoryimages/sendisedmask.xml"
 ---------------------------------- 센디 마스크
-AddRecipe("hat_crown", 
+AddRecipe("sendi_hat_crown", 
 {Ingredient("goldnugget", 50), Ingredient("pigskin", 20), Ingredient("trunk_winter", 3)}, 
-SENDITAB, TECH.SCIENCE_ONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/hat_crown.xml", "hat_crown.tex")	
+SENDITAB, TECH.SCIENCE_ONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_hat_crown.xml", "sendi_hat_crown.tex")	
 
-local MonarchCrown = Ingredient( "hat_crown", 1) 
-MonarchCrown.atlas ="images/inventoryimages/hat_crown.xml"
+local MonarchCrown = Ingredient( "sendi_hat_crown", 1) 
+MonarchCrown.atlas ="images/inventoryimages/sendi_hat_crown.xml"
 ---------------------------------- 군주의 크라운
 AddRecipe("sendi_armor_01", 
 {Ingredient("silk", 6), Ingredient("rabbit", 1), Ingredient("heatrock", 1)}, 

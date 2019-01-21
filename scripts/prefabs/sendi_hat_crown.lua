@@ -1,14 +1,14 @@
 local assets={  
-    Asset("ANIM", "anim/hat_crown.zip"),
-    Asset("ANIM", "anim/hat_crown_swap.zip"), 
+    Asset("ANIM", "anim/sendi_hat_crown.zip"),
+    Asset("ANIM", "anim/sendi_hat_crown_swap.zip"), 
 
-    Asset("ATLAS", "images/inventoryimages/hat_crown.xml"),
-    Asset("IMAGE", "images/inventoryimages/hat_crown.tex"),
+    Asset("ATLAS", "images/inventoryimages/sendi_hat_crown.xml"),
+    Asset("IMAGE", "images/inventoryimages/sendi_hat_crown.tex"),
 }
 
 local prefabs = { }
 
-local function hat_crown_disable(inst)
+local function sendi_hat_crown_disable(inst)
     if inst.updatetask ~= nil then
         inst.updatetask:Cancel()
         inst.updatetask = nil
@@ -33,19 +33,19 @@ local function pigqueen_update( inst )  --돼지 팔로워
     end	
 end
 
-local function hat_crown_enable(inst) --돼지 팔로워 
+local function sendi_hat_crown_enable(inst) --돼지 팔로워 
     inst.updatetask = inst:DoPeriodicTask(1, pigqueen_update, 1)
 end
 
 local function OnEquip(inst, owner) 
-    owner.AnimState:OverrideSymbol("swap_hat", "hat_crown_swap", "swap_hat")
-	owner.AnimState:OverrideSymbol("swap_hat", "hat_crown", "swap_hat")
+    owner.AnimState:OverrideSymbol("swap_hat", "sendi_hat_crown_swap", "swap_hat")
+	owner.AnimState:OverrideSymbol("swap_hat", "sendi_hat_crown", "swap_hat")
     owner.AnimState:Show("HAT")
     owner.AnimState:Hide("HAT_HAIR")
     owner.AnimState:Hide("HAIR_NOHAT")
     owner.AnimState:Show("HAIR")
 
-	hat_crown_enable(inst)	
+	sendi_hat_crown_enable(inst)	
 end
 
 local function OnUnequip(inst, owner) 
@@ -54,7 +54,7 @@ local function OnUnequip(inst, owner)
     owner.AnimState:Show("HAIR_NOHAT")
     owner.AnimState:Show("HAIR")
 
-	hat_crown_disable(inst)
+	sendi_hat_crown_disable(inst)
 end
 
 local function fn()
@@ -66,8 +66,8 @@ local function fn()
 
 	MakeInventoryPhysics(inst)
     
-    inst.AnimState:SetBank("hat_crown")
-    inst.AnimState:SetBuild("hat_crown")
+    inst.AnimState:SetBank("sendi_hat_crown")
+    inst.AnimState:SetBuild("sendi_hat_crown")
     inst.AnimState:PlayAnimation("idle")
 
 	inst:AddTag("hat")
@@ -79,7 +79,7 @@ local function fn()
 	inst.entity:SetPristine() -- YUKARI : 이거 꼭 있는지 확인!
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/hat_crown.xml"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_hat_crown.xml"
     
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
@@ -88,8 +88,8 @@ local function fn()
 
 	inst:AddComponent("waterproofer") --방수
     inst.components.waterproofer:SetEffectiveness(0.25)
-	
+    inst:AddComponent("inspectable") --조사 가능하도록 설정
     return inst
 end
 
-return  Prefab("hat_crown", fn, assets, prefabs)
+return  Prefab("sendi_hat_crown", fn, assets, prefabs)

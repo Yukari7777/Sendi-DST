@@ -12,8 +12,8 @@ STRINGS.CHARACTER_QUOTES.sendi = "\"원래 세계로 돌아갈 때까지\n저의
 STRINGS.NAMES.sendisedmask = "센디의 눈물 마스크"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendisedmask = "이 마스크엔.. 많은 사연이 있어요."
 --센디 마스크
-STRINGS.NAMES.HAT_CROWN = "군주의 왕관"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.HAT_CROWN = "친구들과 함깨라면 이세상에서 무서울것은 없어요!"
+STRINGS.NAMES.SENDI_HAT_CROWN = "군주의 왕관"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_CROWN = "친구들과 함깨라면 이세상은 무서울것이 없어요!"
 --군주의 왕관
 STRINGS.NAMES.SENDI_ARMOR_01 = "센디의 니트갑옷"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "이 머플러, 사실은 내 옷이에요!" 
@@ -38,15 +38,15 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "한번에 구워 버리는거�
 
 --------레시피 추가
 STRINGS.SENDITABNAME = "센디탭"
-STRINGS.RECIPE_DESC.SENDIPACK = "센디의 하얀 가방 입니다.[냉장고]"
+STRINGS.RECIPE_DESC.SENDIPACK = "냉장 기능이 달린 가방입니다."
 STRINGS.RECIPE_DESC.sendisedmask = "슬픈 사연이 담긴 마스크.[방수 25%]"
-STRINGS.RECIPE_DESC.HAT_CROWN = "돼지들이 당신을 따릅니다."
+STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "수인들이 당신을 따릅니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
-STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "머플러가 귀엽습니다.[이속+보온돌]" 
-STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "보석과 날개가 돋보입니다[이속+보온돌]" 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "따뜻하고, 몸이 가벼워집니다." 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "더욱 따뜻하고, 가벼워집니다." 
 STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "활활 타오르고 있어요![불꽃지속딜]" 
-STRINGS.RECIPE_DESC.SENDI_OVEN = "이것만있으면 당신도 요리왕![오븐+냉장고]" 
+STRINGS.RECIPE_DESC.SENDI_OVEN = "불꽃의 마법사. 우클릭 변경[오븐+냉장고]" 
 
 if _SUFFIX == "_en" then ------------------------------------------------------영어 대사 시작
 
@@ -58,8 +58,8 @@ STRINGS.CHARACTER_QUOTES.sendi = "\"My journey would never stop \nuntil I get ba
 STRINGS.NAMES.sendisedmask = "Sendi's tear mask"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendisedmask = "It has.. its own stories."
 -- 센디 마스크
-STRINGS.NAMES.HAT_CROWN = "Monarch Crown"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.HAT_CROWN = "I'm not scared anymore with my friends!"
+STRINGS.NAMES.SENDI_HAT_CROWN = "Monarch Crown"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_CROWN = "I'm not scared anymore with my friends!"
 -- 군주의 왕관
 STRINGS.NAMES.SENDI_ARMOR_01 = "Sendi's knit armor"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "This muffler, was actually mine!" 
@@ -85,7 +85,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "Bake it all at once! It's anno
 STRINGS.SENDITABNAME = "Sendi Tab"
 STRINGS.RECIPE_DESC.SENDIPACK = "Sendi's white school bag."
 STRINGS.RECIPE_DESC.sendisedmask = "A mask with a sad story."
-STRINGS.RECIPE_DESC.HAT_CROWN = "Pig and friend."
+STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "Pig and friend."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "Sendi's Rapier for practice"
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "Sendi's Rapier"
 STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "Keep it warm and get boosted!" 
