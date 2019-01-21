@@ -6,107 +6,77 @@ local assets={
     Asset("IMAGE", "images/inventoryimages/hat_crown.tex"),
 }
 
-local prefabs = 
-{
-}
+local prefabs = { }
 
 local function hat_crown_disable(inst)
-    if inst.updatetask then
+    if inst.updatetask ~= nil then
         inst.updatetask:Cancel()
         inst.updatetask = nil
     end
-
 end
 
-local banddt = 1
-
 local function pigqueen_update( inst )  --돼지 팔로워 
-    local owner = inst.components.inventoryitem and inst.components.inventoryitem.owner
-	
-    if owner and owner.components.leader then
-        local x,y,z = owner.Transform:GetWorldPosition()
-        local ents = TheSim:FindEntities(x,y,z, TUNING.ONEMANBAND_RANGE, {"pig"}, {'werepig'})
-        for k,v in pairs(ents) do
-            if v.components.follower and not v.components.follower.leader  and not owner.components.leader:IsFollower(v) and owner.components.leader.numfollowers < 10 then
-                owner.components.leader:AddFollower(v)
+    local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner ~= nil and inst.components.inventoryitem.owner.components.leader ~= nil and inst.components.inventoryitem.owner
 
-            end
+    local x,y,z = owner.Transform:GetWorldPosition()
+    local ents = TheSim:FindEntities(x,y,z, TUNING.ONEMANBAND_RANGE, { "pig" }, { "werepig" })
+    for k,v in pairs(ents) do
+        if v.components.follower ~= nil and not v.components.follower.leader ~= nil and not owner.components.leader:IsFollower(v) and owner.components.leader.numfollowers < 10 then
+            owner.components.leader:AddFollower(v)
         end
-		
-        for k,v in pairs(owner.components.leader.followers) do
-            if k:HasTag("pig") and k.components.follower then
-                k.components.follower:AddLoyaltyTime(30)
-            end
-        end	
-    else
-        local x,y,z = inst.Transform:GetWorldPosition()
-        local ents = TheSim:FindEntities(x,y,z, TUNING.ONEMANBAND_RANGE, {"pig"}, {'werepig'})
-        for k,v in pairs(ents) do
-            if v.components.follower and not v.components.follower.leader  and not inst.components.leader:IsFollower(v) and inst.components.leader.numfollowers < 10 then
-                inst.components.leader:AddFollower(v)
-
-            end
-        end
-        for k,v in pairs(inst.components.leader.followers) do
-            if k:HasTag("pig") and k.components.follower then
-                k.components.follower:AddLoyaltyTime(30)
-            end
-        end
-
     end
+		
+    for k,v in pairs(owner.components.leader.followers) do
+        if k:HasTag("pig") and k.components.follower ~= nil then
+            k.components.follower:AddLoyaltyTime(30)
+        end
+    end	
 end
 
 local function hat_crown_enable(inst) --돼지 팔로워 
-    inst.updatetask = inst:DoPeriodicTask(banddt, pigqueen_update, 1)
+    inst.updatetask = inst:DoPeriodicTask(1, pigqueen_update, 1)
 end
 
 local function OnEquip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_hat", "hat_crown_swap", "swap_hat")
 	owner.AnimState:OverrideSymbol("swap_hat", "hat_crown", "swap_hat")
-        owner.AnimState:Show("HAT")
-        owner.AnimState:Hide("HAT_HAIR")
-        owner.AnimState:Hide("HAIR_NOHAT")
-        owner.AnimState:Show("HAIR")
+    owner.AnimState:Show("HAT")
+    owner.AnimState:Hide("HAT_HAIR")
+    owner.AnimState:Hide("HAIR_NOHAT")
+    owner.AnimState:Show("HAIR")
 
-		hat_crown_enable(inst)	
-	
-		inst.isWeared = true
-		inst.isDropped = false
-
-	
+	hat_crown_enable(inst)	
 end
 
 local function OnUnequip(inst, owner) 
-        owner.AnimState:Hide("HAT")
-        owner.AnimState:Hide("HAT_HAIR")
-        owner.AnimState:Show("HAIR_NOHAT")
-        owner.AnimState:Show("HAIR")
-		hat_crown_disable(inst)
-		inst.isWeared = false
-		inst.isDropped = false
+    owner.AnimState:Hide("HAT")
+    owner.AnimState:Hide("HAT_HAIR")
+    owner.AnimState:Show("HAIR_NOHAT")
+    owner.AnimState:Show("HAIR")
 
-	end
-	
-	
+	hat_crown_disable(inst)
+end
 
-local function fn(Sim)
+local function fn()
 
     local inst = CreateEntity()
-    local trans = inst.entity:AddTransform()
-    local anim = inst.entity:AddAnimState()
-    MakeInventoryPhysics(inst)
+    inst.entity:AddTransform()
+	inst.entity:AddAnimState()
 	inst.entity:AddNetwork()      
-	
-	inst:AddTag("hat")
+
+	MakeInventoryPhysics(inst)
     
-    anim:SetBank("hat_crown")
-    anim:SetBuild("hat_crown")
-    anim:PlayAnimation("idle")
+    inst.AnimState:SetBank("hat_crown")
+    inst.AnimState:SetBuild("hat_crown")
+    inst.AnimState:PlayAnimation("idle")
+
+	inst:AddTag("hat")
 	
 	if not TheWorld.ismastersim then
         return inst
     end
-    
+
+	inst.entity:SetPristine() -- YUKARI : 이거 꼭 있는지 확인!
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/hat_crown.xml"
@@ -115,8 +85,6 @@ local function fn(Sim)
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-
-	inst.components.inventoryitem.keepondeath = true
 
 	inst:AddComponent("waterproofer") --방수
     inst.components.waterproofer:SetEffectiveness(0.25)
