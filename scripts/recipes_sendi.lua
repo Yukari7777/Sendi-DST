@@ -20,7 +20,7 @@ local sendisedmask = Ingredient( "sendisedmask", 1)
 sendisedmask.atlas ="images/inventoryimages/sendisedmask.xml"
 ---------------------------------- 센디 마스크
 AddRecipe("sendi_hat_crown", 
-{Ingredient("goldnugget", 50), Ingredient("pigskin", 20), Ingredient("trunk_winter", 3)}, 
+{Ingredient("goldnugget", 40), Ingredient("pigskin", 40), Ingredient("carrot", 40)}, 
 SENDITAB, TECH.SCIENCE_ONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_hat_crown.xml", "sendi_hat_crown.tex")	
 
 local MonarchCrown = Ingredient( "sendi_hat_crown", 1) 
