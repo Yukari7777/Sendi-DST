@@ -6,7 +6,8 @@ PrefabFiles = {
 	--------캐릭터요소---------
 	"sendipack", 
 	--------기타---------
-	"sendisedmask",
+	"sendisedmask", --센디마스크
+	"hat_crown", -- 군주의 왕관
 	--------모자----------
 	"sendi_rapier_wood", --우드 레이피어
 	"sendi_rapier", --레이피어
@@ -68,7 +69,9 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendisedmask.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendisedmask.xml"),
 	------- 센디의 눈물 마스크 
-	
+	Asset( "IMAGE", "images/inventoryimages/hat_crown.tex"),
+	Asset( "ATLAS", "images/inventoryimages/hat_crown.xml"),
+	------- 군주의 왕관 	
 	Asset( "IMAGE", "images/inventoryimages/sendi_armor_01.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_01.xml"),
 	-------센디의 니트갑옷 [임의 지정]

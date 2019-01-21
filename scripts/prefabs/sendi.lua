@@ -149,7 +149,7 @@ local function SetSkinBuild(inst) -- YUKARI 센디 스킨옵션 관련
 	end
 end
 
-local function OnChangeSkin(inst)
+local function OnChangeSkin(inst) -- YUKARI 스킨관련
 	inst.skinindex = inst.skinindex >= #skins and 1 or inst.skinindex + 1
 	SetSkinBuild(inst)
 	-- TODO : 감정표현 추가
