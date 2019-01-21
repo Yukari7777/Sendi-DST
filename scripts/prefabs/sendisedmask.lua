@@ -40,51 +40,42 @@ end
 local function fn(Sim)
     local inst = CreateEntity()
     inst.entity:AddTransform()
-    inst.entity:AddAnimState()
-	inst.entity:AddNetwork()
-	
-    MakeInventoryPhysics(inst)
+	inst.entity:AddAnimState()
+	inst.entity:AddNetwork()      
+
+	MakeInventoryPhysics(inst)
+    
+    inst.AnimState:SetBank("sendisedmask")
+    inst.AnimState:SetBuild("sendisedmask")
+    inst.AnimState:PlayAnimation("anim")
 
 	inst:AddTag("hat")
-    
-    anim:SetBank("beehat")-- "sendisedmask"에서 수정함.
-    anim:SetBuild("sendisedmask")-- "sendisedmask"에서 수정함.
-    anim:PlayAnimation("anim")
-
+	
 	if not TheWorld.ismastersim then
         return inst
     end
-    
-	inst.entity:SetPristine()
+
+	inst.entity:SetPristine() -- YUKARI : 이거 꼭 있는지 확인!
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/sendisedmask.xml"
-
-	inst:AddComponent("inspectable")
-	
-    --inst:AddComponent("armor")
-	--inst.components.armor:InitCondition(TUNING.ARMORMARBLE, TUNING.ARMORWOOD_ABSORPTION)    
-	--방어율 수치 : 나무 갑옷 여기서 TUNING.ARMORWOOD_ABSORPTION를 0.9로 바꿔주면 90%의 방어율을 가진다. 
-
-    inst:AddComponent("armor")
-	inst.components.armor:InitCondition(1000, 0.45)    
-	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
-	
+    
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-	
-	inst:AddComponent("waterproofer")
+
+	inst:AddComponent("waterproofer") --방수
     inst.components.waterproofer:SetEffectiveness(0.25)
 	-- 방수율을 뜻합니다 (0.방수율)
-
-	inst:AddComponent("sendispecific")
-	inst.components.sendispecific:SetOwner("sendi")
-	inst.components.sendispecific:SetStorable(true)
+	
+	inst:AddComponent("armor")
+	inst.components.armor:InitCondition(1000, 0.45)    
+	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
+	
+    inst:AddComponent("inspectable") --조사 가능하도록 설정
 	
     return inst
 end
-
 
 return  Prefab("sendisedmask", fn, assets, prefabs)
