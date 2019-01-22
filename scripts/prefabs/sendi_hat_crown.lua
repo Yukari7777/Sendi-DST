@@ -28,7 +28,7 @@ local function pigqueen_update( inst )  --돼지 팔로워
 		
     for k,v in pairs(owner.components.leader.followers) do
         if k:HasTag("pig") and k.components.follower ~= nil then
-            k.components.follower:AddLoyaltyTime(2)
+            k.components.follower:AddLoyaltyTime(1.5)
         end
     end	
 end
