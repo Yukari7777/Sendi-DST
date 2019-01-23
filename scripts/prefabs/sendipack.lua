@@ -132,9 +132,10 @@ local function fn(Sim)
 	inst:AddComponent("sendispecific")
 	inst.components.sendispecific:SetOwner("sendi")
 	inst.components.sendispecific:SetStorable(true)
-	inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야! 너무 예뻐!", "이건, 하얀 가방인가? 귀여운데?") 
+	inst.components.sendispecific:SetComment("이건 센디가 가지고 다니는 가방이야.", "이건.. 하얀 가방인가? 귀여운데?") 
    
 	MakeHauntableLaunchAndDropFirstItem(inst)
+		inst.components.inventoryitem.keepondeath = true --죽어도 떨어뜨리지 않음.
     
     return inst
 end

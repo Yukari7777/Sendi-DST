@@ -1,3 +1,5 @@
+--토끼수인이 고기를 들어도 공격하지않게만들려면  해당 장비 루아의 OnEquip에 [owner:RemoveTag("ignoreMeat")] OnUnequip에  [owner:RemoveTag("ignoreMeat")] 를 추가하세요.
+
 PrefabFiles = {
 --센디 전용 아이템등을 추가
 	"sendi_classified",
@@ -136,6 +138,50 @@ function Cookable:GetProduct()
     end 
     return prefab
 end 
+
+-- 미트무시 , 옮기지 말아주세요.
+		local function is_meat(item)
+			return item.components.edible ~= nil  and item.components.edible.foodtype == GLOBAL.FOODTYPE.MEAT 
+		end
+
+		local function myBunnymanRetargetFn(inst)
+			return GLOBAL.FindEntity(inst, TUNING.PIG_TARGET_DIST,  
+				function(guy)
+					return inst.components.combat:CanTarget(guy)
+						and (
+							guy:HasTag("monster") or (
+								not guy:HasTag("ignoreMeat") and    --우선순위를 몬스터 상태인지를 판단 후, 고기 라벨이 무시되는 여부를 판단해, 공격하지 않는 상태로 만듭니다.
+								guy.components.inventory ~= nil and 
+								guy:IsNear(inst, TUNING.BUNNYMAN_SEE_MEAT_DIST) and
+								guy.components.inventory:FindItem(is_meat) ~= nil
+							)
+						)
+				end,
+				{ "_combat", "_health" },
+				nil,
+				{ "monster", "player" })
+		end
+
+		local function myBunnyBattlecry(combatcmp, target)
+			local strtbl =
+				target ~= nil and
+				not target:HasTag("ignoreMeat") and --- 고기라벨을 무시하고 공격이 없는지를 결정하는 조건을 추가합니다.
+				target.components.inventory ~= nil and
+				target.components.inventory:FindItem(is_meat) ~= nil and
+				"RABBIT_MEAT_BATTLECRY" or
+				"RABBIT_BATTLECRY"
+			return strtbl, math.random(#STRINGS[strtbl])
+		end
+
+		AddPrefabPostInit("bunnyman", function(inst)    -- api를 통해 토끼의 인식 적 기능을 다시 작성하십시오.
+			if GLOBAL.TheWorld.ismastersim then
+				inst.components.combat:SetRetargetFunction(3, myBunnymanRetargetFn)
+				inst.components.combat.GetBattleCryString = myBunnyBattlecry
+			end
+		end)
+
+
+--미트무시, 옮기지말아주세요.
 
 function ChangeSkin(inst)
 	inst:ChangeSkin()

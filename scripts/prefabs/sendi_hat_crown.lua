@@ -44,8 +44,13 @@ local function OnEquip(inst, owner)
     owner.AnimState:Hide("HAT_HAIR")
     owner.AnimState:Hide("HAIR_NOHAT")
     owner.AnimState:Show("HAIR")
-
+	
 	sendi_hat_crown_enable(inst)	
+	owner:AddTag("ignoreMeat") --고기옵션 
+	
+	inst.isWeared = true
+	inst.isDropped = false	
+	
 end
 
 local function OnUnequip(inst, owner) 
@@ -53,9 +58,14 @@ local function OnUnequip(inst, owner)
     owner.AnimState:Hide("HAT_HAIR")
     owner.AnimState:Show("HAIR_NOHAT")
     owner.AnimState:Show("HAIR")
-
+	
 	sendi_hat_crown_disable(inst)
+	owner:RemoveTag("ignoreMeat") --고기 옵션
+	
+	inst.isWeared = false
+	inst.isDropped = false
 end
+
 
 local function fn()
 
@@ -89,7 +99,11 @@ local function fn()
 	inst:AddComponent("waterproofer") --방수
     inst.components.waterproofer:SetEffectiveness(0.25)
     inst:AddComponent("inspectable") --조사 가능하도록 설정
+	
+	inst.components.inventoryitem.keepondeath = true --죽어도 떨어뜨리지 않음.
+	
     return inst
 end
+
 
 return  Prefab("sendi_hat_crown", fn, assets, prefabs)

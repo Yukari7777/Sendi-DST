@@ -7,15 +7,15 @@ local assets={
 	
 }
 
-local prefabs = 
-{
-}
+local prefabs = {}
 
 
 local function OnEquip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_hat", "sendisedmask_swap", "swap_hat")
 	owner.AnimState:OverrideSymbol("swap_hat", "sendisedmask", "swap_hat")
-									--덧씌울 애니메이션인 뱅크명 / build[sendisedmask_swap] 위에서 언급한 부품들 / build가 들어있는 폴더명
+									
+								--{{ 덧씌울 애니메이션인 뱅크명 / build[sendisedmask_swap] 위에서 언급한 부품들 / build가 들어있는 폴더명, [스프라이터에서 animations 위에있는 이름.]
+								
     owner.AnimState:Show("HAT")
     owner.AnimState:Hide("HAT_HAIR")
     owner.AnimState:Hide("HAIR_NOHAT")
@@ -47,7 +47,7 @@ local function fn(Sim)
     
     inst.AnimState:SetBank("sendisedmask")
     inst.AnimState:SetBuild("sendisedmask")
-    inst.AnimState:PlayAnimation("anim")
+    inst.AnimState:PlayAnimation("idle")
 
 	inst:AddTag("hat")
 	
@@ -74,6 +74,7 @@ local function fn(Sim)
 	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
 	
     inst:AddComponent("inspectable") --조사 가능하도록 설정
+	inst.components.inventoryitem.keepondeath = true--죽어도 떨어뜨리지않음
 	
     return inst
 end
