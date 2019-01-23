@@ -1,7 +1,7 @@
 name = "[DST]Sendi"
 author = "doftksxk@naver.com"
-version = "1.4.8" 
-description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia jump].\n\nPress [Shift + V] to cast [Ignia Run].\n\nSkin Change [P] \n\n\n\n\n\n\n\nVersion : "..version.." "
+version = "1.4.9" 
+description = "[DST] Sendi :)~~~\n\nPress [V] to cast [Ignia jump].\n\nPress [Shift + V] to cast [Ignia Run].\n\nSkin Change [P] \n---------------------------------------------\n I have a fix for the 'Monarch Crown' option! \n Please refer to the web page for update information! \n---------------------------------------------\n '군주의 왕관'에 추가옵션을 추가했어요! \n 업데이트 정보가 궁금하시다면, 스팀페이지 참고!\n---------------------------------------------\n Version : "..version.." "
 forumthread = ""
 api_version = 10
 
