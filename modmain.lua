@@ -183,6 +183,12 @@ end
 
 --미트무시, 옮기지말아주세요.
 
+--원숭이 모자 무시
+
+
+--원숭이 모자 무시
+
+
 function ChangeSkin(inst)
 	inst:ChangeSkin()
 end
