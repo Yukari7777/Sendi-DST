@@ -83,7 +83,7 @@ local function fn()
    --유통기한
    
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(45)
+    inst.components.weapon:SetDamage(55)
    -- 무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2)
 	--공격범위
@@ -100,13 +100,11 @@ local function fn()
 	-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
   
    
-    inst:AddComponent("inspectable")
-	--조사 가능하도록 설정
+    inst:AddComponent("inspectable") --조사 가능하도록 설정
 	
-    inst:AddComponent("inventoryitem")
-   inst.components.inventoryitem.imagename = "sendi_rapier"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier.xml"
-   --인벤토리 아이템으로 설정됨
+	inst:AddComponent("inventoryitem")--인벤토리 아이템으로 설정됨
+	inst.components.inventoryitem.imagename = "sendi_rapier"
+	inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier.xml" --인벤토리 아이템으로 설정됨
    
     MakeHauntableLaunchAndPerish(inst)
    
@@ -114,8 +112,7 @@ local function fn()
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
-    inst.components.equippable:SetOnUnequip(onunequip)
-	--장착 가능하도록, 장착밑 해제시의 위의 두 펑션을 작동
+    inst.components.equippable:SetOnUnequip(onunequip) --장착 가능하도록, 장착밑 해제시의 위의 두 펑션을 작동
 	
     return inst
 end

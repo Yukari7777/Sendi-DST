@@ -66,11 +66,13 @@ local function fn(Sim)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
 	inst:AddComponent("waterproofer") --방수
-    inst.components.waterproofer:SetEffectiveness(0.25)
+    inst.components.waterproofer:SetEffectiveness(0.80)
+	inst.components.equippable.dapperness = -1
+	
 	-- 방수율을 뜻합니다 (0.방수율)
 	
 	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(1000, 0.45)    
+	inst.components.armor:InitCondition(5500, 0.9)    
 	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
 	
     inst:AddComponent("inspectable") --조사 가능하도록 설정

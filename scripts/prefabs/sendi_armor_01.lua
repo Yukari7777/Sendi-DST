@@ -44,19 +44,16 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-	inst.components.equippable.dapperness = 0.1 -- 초당 정신 회복 
+	inst.components.equippable.dapperness = 0.2-- 초당 정신 회복 
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
 
 	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(1000, 0.55)   
-	--내구도,방여력
+	inst.components.armor:InitCondition(2000, 0.55)   --내구도,방여력
 	
-	inst:AddComponent("insulator")
+	inst:AddComponent("insulator")--보온율
     inst.components.insulator:SetInsulation(200)
-	--보온률
-	
 
 	
     return inst

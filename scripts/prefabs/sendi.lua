@@ -63,12 +63,12 @@ end
 
 local function onbecamehuman(inst)
 -- 인물이 인간에게서 부활 할때
-   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.2)
+   inst.components.locomotor:SetExternalSpeedMultiplier(inst, "sendi_speed_mod", 1.1)
    -- 유령이 아닌경우 속도 설정.
 end
 
 local function onbecameghost(inst)
-   inst.components.locomotor:RemoveExternalSpeedMultiplier(inst, "sendi_speed_mod")
+   inst.components.locomotor:RemoveExternalSpeedMultiplier(inst, "sendi_speed_mod", 2.0)
    -- 귀신이 될때 속도 수정자 제거
 end
 
@@ -106,10 +106,6 @@ local function sendi_light(inst, data) --YUKARI : 주석의 의미에 맞게 코
 				
 				inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE)
 			end
-			-- inst.components.health:StartRegen(0.2, 1) 
-			-- YUKARI : 기본 체력재생량 수치에 따르면, 기본 체력 재생주기는 0.6초 인데 센디를 플레이하면서 한번이라도 밤이 되면 체력 재생주기가 영구적으로 1초로 변하고 
-			--          이 상태에선 낮과 밤에 상관없이 체력재생이 되는 오류가 있었습니다. 이제 밤에는 올바르게 체력 재생이 되지 않습니다.
-			--          문제가 있다면 코드를 이전으로 되돌려주세요.
 			inst.components.health.regen.amount = 0
 		else
 			Light:Enable(false)
@@ -198,18 +194,17 @@ local master_postinit = function(inst)
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 
 	-- Stats   
-	inst.components.health:SetMaxHealth(90) -- 피
-	inst.components.hunger:SetMax(120) -- 배고팡
-	inst.components.sanity:SetMax(180) -- 정신
-	-- 최대피, 허기, 체력을 표시합니다.
+	inst.components.health:SetMaxHealth(130) -- 피
+	inst.components.hunger:SetMax(170) -- 배고팡
+	inst.components.sanity:SetMax(90) -- 정신
+	-- 최대피, 허기, 정신을 표시합니다.
 
-	inst.components.health.fire_damage_scale = 0.1
-	inst.components.combat.damagemultiplier = 0.75 -- YUKARI : 데미지 계수 0.75로 설정
-	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE) --YUKARI : 2.5배로 설정하시고선 아랫줄에서 다시 1.0배로 줄이셨습니다.
+	inst.components.health.fire_damage_scale = 0.01 --불딜
+	inst.components.combat.damagemultiplier = 1 -- 데미지 계수 0.75로 설정
+	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE)
 	
-	inst.components.combat.min_attack_period = 0.01
-	inst.components.health:StartRegen(0.3, 0.6) --체력을 회복합니다
-
+	inst.components.combat.min_attack_period = 0.15--공격속도 
+	inst.components.health:StartRegen(0.3, 0.6)  --피리젠
 	inst.OnLoad = onload
 	inst.OnNewSpawn = onload
 	inst.ChangeSkin = OnChangeSkin

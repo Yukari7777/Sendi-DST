@@ -45,7 +45,7 @@ local function DoRapierCharge(inst)
 			if v.components.health ~= nil and _G.IsPreemptiveEnemy(inst, v) then
 				local targetpos = v:GetPosition()
 				v.Transform:SetPosition(targetpos.x + (math.sin(angle) * VELOCITY) , 0, targetpos.z + (math.cos(angle) * VELOCITY))
-				if not v:HasTag("damagetaken") then
+				if not v:HasTag("damagetaken") then --µ¥¹ÌÁö2
 					v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_1)
 					v:AddTag("damagetaken")
 					v:DoTaskInTime(15 * FRAMES, function()

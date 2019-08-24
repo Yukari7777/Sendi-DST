@@ -10,6 +10,8 @@ PrefabFiles = {
 	--------기타---------
 	"sendisedmask", --센디마스크
 	"sendi_hat_crown", -- 군주의 왕관
+	"sendi_hat_goggles", -- 프랜드 고글
+	"sendi_hat_spider", -- 스파이더 헬멧
 	--------모자----------
 	"sendi_rapier_wood", --우드 레이피어
 	"sendi_rapier", --레이피어
@@ -20,6 +22,8 @@ PrefabFiles = {
 	--------갑옷--------------
 	"sendi_oven", -- 센디 오븐
 	"sendi_ovenfire_fx", -- 센디 오븐의 불꽃이펙트
+	"sendiobject_hut", -- 센디 오두막
+	"sendiobject_warehouse", -- 센디 창고
 	-------오브젝트[오븐]-------
 	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
 	--------음식------------
@@ -71,7 +75,13 @@ Assets = {
 	------- 센디의 눈물 마스크 
 	Asset( "IMAGE", "images/inventoryimages/sendi_hat_crown.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_hat_crown.xml"),
-	------- 군주의 왕관 	
+	------- 프랜드 폭시 헬멧
+	Asset( "IMAGE", "images/inventoryimages/sendi_hat_goggles.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_hat_goggles.xml"),
+	------- 군주의 고글	
+	Asset( "IMAGE", "images/inventoryimages/sendi_hat_spider.tex"),
+	Asset( "ATLAS", "images/inventoryimages/sendi_hat_spider.xml"),
+	------- 스파이더 헬멧
 	Asset( "IMAGE", "images/inventoryimages/sendi_armor_01.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_01.xml"),
 	-------센디의 니트갑옷 [임의 지정]
@@ -93,6 +103,14 @@ Assets = {
 	Asset("ANIM", "anim/sendi_oven_fire_cold.zip"),
 	Asset("ATLAS", "images/inventoryimages/sendi_oven.xml"),
 	--------센디오븐
+	Asset( "IMAGE", "images/inventoryimages/sendiobject_hut.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendiobject_hut.xml"),
+	--------센디의 오두막
+	Asset( "IMAGE", "images/inventoryimages/sendiobject_warehouse.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendiobject_warehouse.xml"),
+	--------센디의 창고
+
+	
 	--Asset( "IMAGE", "images/inventoryimages/mangotea.tex"),
 	--Asset( "ATLAS", "images/inventoryimages/mangotea.xml"),
 	--------코코아

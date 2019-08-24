@@ -14,7 +14,7 @@ local assets ={
 }
 
 local prefabs = {
-	"firesplash_fx", --YUKARI : 이펙트 같은 외부 파일들을 로드해야할땐 반드시 prefabs 어규먼트를 넣어주세요.
+	"firesplash_fx", --YK : 이펙트 같은 외부 파일들을 로드해야할땐 반드시 prefabs 어규먼트를 넣어주세요.
 }
 
 local function UpdateDamage(inst)
@@ -50,10 +50,10 @@ local function onunequip(inst, owner)
    -- end
 end
 
-local DEFAULTBURNTIME = 3 
-local BURNDAMAGE = 6 -- 데미지
-local BURNADDTIME = 2
-local BURNPERIOD = 1
+local DEFAULTBURNTIME = 9
+local BURNDAMAGE = 3 -- 데미지
+local BURNADDTIME = 9 --지속시간
+local BURNPERIOD = 0.2 --도트데미지 간격
 
 local function Enlight(thing)
 	print(thing)
@@ -68,7 +68,7 @@ local function Enlight(thing)
 	end)
 end
 
-local function onattack(inst, attacker, target)
+local function onattack(inst, attacker, target)--파이어 관련 코딩
 	local fx = SpawnPrefab("firesplash_fx")
 	fx.Transform:SetScale(0.5, 0.5, 0.5)
 	fx.Transform:SetPosition(target:GetPosition():Get())
@@ -133,7 +133,7 @@ end
 local function fn()
 
 	local inst = CreateEntity()  
-	-- local trans = inst.entity:AddTransform() <<<<<<<<<< YUKARI : 이거와 같은 경우에, trans라는 변수가 더이상 쓰이지 않을것 같을땐 변수로 할당하지 않는 습관을 들여주세요.(메모리 낭비됨)
+	-- local trans = inst.entity:AddTransform() <<<<<<<<<< YK : 이거와 같은 경우에, trans라는 변수가 더이상 쓰이지 않을것 같을땐 변수로 할당하지 않는 습관을 들여주세요.(메모리 낭비됨)
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
     inst.entity:AddNetwork()
@@ -149,13 +149,11 @@ local function fn()
 
     inst.AnimState:SetBank("sendi_rapier_ignia")
     inst.AnimState:SetBuild("sendi_rapier_ignia")
-    inst.AnimState:PlayAnimation("idle")
-   --떨군 이미지추가 
+    inst.AnimState:PlayAnimation("idle") --떨군 이미지추가 
    
-    inst:AddTag("sharp") 
+    inst:AddTag("sharp") -- 태그 설정, 이 두 태그는 없어도 됨(실행 확인)
     inst:AddTag("pointy") 
-	-- 태그 설정, 이 두 태그는 없어도 됨(실행 확인)
-
+	
     if not TheWorld.ismastersim then
         return inst
     end
@@ -164,29 +162,27 @@ local function fn()
 
    
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(55) 
-   -- 무기로 설정. 아래는 피해 설정
+    inst.components.weapon:SetDamage(65) 
+	-- 무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2) --공격범위
-	inst.components.weapon:SetOnAttack(onattack)--MH불꽃데미지 
+	inst.components.weapon:SetOnAttack(onattack)--YK불꽃데미지 
 	
-    inst:AddComponent("inspectable")
-	--조사 가능하도록 설정
+    inst:AddComponent("inspectable") --조사 가능하도록 설정
 	
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.imagename = "sendi_rapier_ignia"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_ignia.xml"
-   --인벤토리 아이템으로 설정됨
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/sendi_rapier_ignia.xml" --인벤토리 아이템으로 설정됨
    
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
 
 	MakeHauntableLaunchAndPerish(inst)
-
+	
 	inst.OnLoad = OnLoad
-	--YUKARI : OnLoad, OnSave, OnPreLoad 함수들은 마지막에 입력해주세요. 
-
+	--YK : OnLoad, OnSave, OnPreLoad 함수들은 마지막에 입력해주세요. 
+	inst.components.inventoryitem.keepondeath = true
     return inst
 end
 
-return Prefab("sendi_rapier_ignia", fn, assets, prefabs) --YUKARI : prefab 어규먼트
+return Prefab("sendi_rapier_ignia", fn, assets, prefabs) --YK : prefab 어규먼트

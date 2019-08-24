@@ -104,7 +104,7 @@ local rapier_SgS = State {
 		OnStartSkillGeneral(inst, true)
 		local x, y, z = GetPositionToClosestEnemy(inst)
 		if x ~= nil then inst:ForceFacePoint(x, y, z) end
-		inst.sg:SetTimeout(11 * FRAMES)
+		inst.sg:SetTimeout(12 * FRAMES)
 		inst.AnimState:PlayAnimation("whip_pre") -- YUKARI : TODO. 커스텀 애니메이션. 프레임 수 7
         inst.AnimState:PushAnimation("whip", false)
 
@@ -186,7 +186,7 @@ local igniarun_SgS = State {
 
 	timeline =
 	{
-		TimeEvent(6 * FRAMES, function(inst)
+		TimeEvent(9 * FRAMES, function(inst) --점프무적
 			inst.components.health:SetInvincible(false)
 		end),
 		TimeEvent(13 * FRAMES, function(inst)
