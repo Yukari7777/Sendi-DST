@@ -1,16 +1,50 @@
 require "prefabutil"
 
-local assets =
-{
+local assets = {
 	Asset("ANIM", "anim/sendiobject_warehouse.zip"),
 	Asset("ANIM", "anim/sendi_ui_chest_4x4.zip"),
 	Asset("ATLAS", "images/inventoryimages/sendiobject_warehouse.xml"),
 }
 
-local prefabs =
-{
+local prefabs = {
 	"collapse_small"
 }
+
+local containers = require "containers"	
+containers.MAXITEMSLOTS = math.max(containers.MAXITEMSLOTS, 16)
+local slotpos = {}
+for y = 2.5, -0.5, -1 do
+    for x = 0, 3 do
+        table.insert(slotpos, Vector3(75 * x - 93 * 2 + 75, 75 * y - 75 * 2 + 75, 0))
+    end
+end
+print("#slotpos", #slotpos)
+
+local sendiobject_warehouse = {
+    widget = {
+        slotpos = slotpos,
+		animbank = "sendi_ui_chest_4x4",
+		animbuild = "sendi_ui_chest_4x4",
+        pos = Vector3(0, 180, 0),
+        side_align_tip = 160,
+    },
+    type = "chest",
+}
+
+local _widgetsetup = containers.widgetsetup
+function containers.widgetsetup(container, prefab, data, ...)
+	if container.inst.prefab == "sendiobject_warehouse" or prefab == "sendiobject_warehouse" then
+		data = sendiobject_warehouse
+		
+		for k,v in pairs(sendiobject_warehouse) do
+			container[k] = v
+		end
+		container:SetNumSlots(container.widget.slotpos ~= nil and #container.widget.slotpos or 0)
+		return
+	else
+		return _widgetsetup(container, prefab, data, ...)
+	end
+end
 
 local function onopen(inst) 
 	if not inst:HasTag("burnt") then
@@ -97,6 +131,8 @@ local function fn()
 	inst.entity:AddSoundEmitter()
 	inst.entity:AddMiniMapEntity()
 	inst.entity:AddNetwork()
+
+	MakeObstaclePhysics(inst, .8)
 	
 	inst.MiniMapEntity:SetIcon("sendiobject_warehouse.tex")
 	
@@ -118,7 +154,7 @@ local function fn()
 
 	inst:AddComponent("inspectable")
 	inst:AddComponent("container")
-	inst.components.container:WidgetSetup("sendiobject_warehouse")
+	inst.components.container:WidgetSetup("sendiobject_warehouse", sendiobject_warehouse)
 	inst.components.container.onopenfn = onopen
 	inst.components.container.onclosefn = onclose
 

@@ -110,7 +110,7 @@ Assets = {
 	Asset( "ATLAS", "images/inventoryimages/sendiobject_warehouse.xml"),
 	--------센디의 창고
 
-	
+	Asset("ANIM", "anim/sendi_ui_chest_4x4.zip"),
 	--Asset( "IMAGE", "images/inventoryimages/mangotea.tex"),
 	--Asset( "ATLAS", "images/inventoryimages/mangotea.xml"),
 	--------코코아

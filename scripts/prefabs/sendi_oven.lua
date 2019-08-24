@@ -14,11 +14,6 @@ local prefabs = {
 
 local containers = require "containers"	
 local slotpos = {}
---for y = 4, 0, -1 do
---	for x = 0, 3 do
---		table.insert(slotpos, Vector3(60*x-60*2+30, 60*y-60*2+2, 0))
---	end
---end
 for y = 2.5, -0.5, -1 do
     for x = 0, 2 do
         table.insert(slotpos, Vector3(75 * x - 75 * 2 + 75, 75 * y - 75 * 2 + 75, 0))
@@ -35,24 +30,6 @@ local sendi_oven = {
     },
     type = "chest",
 }
-local containers = require "containers"	
-local slotpos = {}
-for y = 0, 3 do
-    table.insert(slotpos, Vector3(-162, -75 * y + 114, 0))
-    table.insert(slotpos, Vector3(-162 + 75, -75 * y + 114, 0))
-end
-
-local sendipack = {
-	widget = {
-        slotpos = slotpos,
-        animbank = "ui_backpack_2x4",
-        animbuild = "ui_backpack_2x4",
-        pos = Vector3(-5, -70, 0),
-    },
-    issidewidget = true,
-    type = "pack",
-}
-
 
 local _widgetsetup = containers.widgetsetup
 function containers.widgetsetup(container, prefab, data, ...)
