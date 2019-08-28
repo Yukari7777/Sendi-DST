@@ -247,7 +247,9 @@ local function fn()
 	inst:ListenForEvent("onbuilt", onbuilt)
 	
 	MakeHauntableWork(inst)
-
+	
+	inst:ListenForEvent("burntup", onhammered) --태워버린다.
+	MakeMediumBurnable(inst, nil, nil, true)--태워버린다.
     return inst
 end
 

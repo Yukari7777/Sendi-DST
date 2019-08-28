@@ -55,27 +55,61 @@ local function cooked(inst)
 			local item = container:GetItemInSlot(i)
 			if item then 
 				local replacement = nil 
-				if item.components.cookable or item.prefab == "log" then 
+				
+				if item.components.cookable or
+				item.prefab == "spoiled_food" or
+				item.prefab == "sendi_food_cocoa_cup" or 
+				item.prefab == "sendi_food_wolfsteak" or
+				item.prefab == "log" then  --붕괴 애니메이션
 					inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel") 
 					local fx = SpawnPrefab("collapse_small")
 					local pos = Vector3(inst.Transform:GetWorldPosition())
 					fx.Transform:SetScale(0.5, 0.5, 0.5)
 					fx.Transform:SetPosition(pos:Get())
 	
-					local fx2 = SpawnPrefab("small_puff")
+					local fx2 = SpawnPrefab("emote_fx")
 					fx2.entity:SetParent(inst.entity)
 					fx2.Transform:SetPosition(0, 3, 0)
 				end
 				
+				------------------------------------------------------------------------------------------------
+
 				if item.components.cookable then 
 					replacement = item.components.cookable:GetProduct()
-				elseif item.prefab == "log" then 
-					replacement = "charcoal"
-					
-				elseif item.components.burnable and not item.prefab == "log" then 
-					replacement = "ash"				
-				end  
+				elseif item.prefab == "log" then  --나무를 넣으면
+					replacement = "charcoal" --숯이나옴
 
+				elseif item.prefab == "spoiled_food" then -- 스테이크를 넣으면
+					replacement = "aos_seed" --	
+					
+				elseif item.prefab == "sendi_food_cocoa_cup" then -- 컵을 넣으면
+					replacement = "sendi_food_cocoa" 
+			
+				elseif item.prefab == "sendi_food_wolfsteak" then -- 스테이크를 넣으면
+					replacement = "sendi_food_wolfsteak_cooked" --		
+				
+				--------------------------------------------------------------------------------------------------
+				
+				
+				elseif item.components.burnable and not item.prefab == "log" then  ---불이 꺼졌는데 나무를 넣는다면
+					replacement = "ash"	--변화가 일어나지않음.
+					
+				elseif item.components.burnable and not item.prefab == "spoiled_food" then 
+					replacement = "ash"	
+					
+				elseif item.components.burnable and not item.prefab == "sendi_food_cocoa_cup" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_wolfsteak" then 
+					replacement = "ash"							
+
+					
+				end  
+				
+				
+				--------------------------------------------------------------------------------------------------
+				
+				
 				if replacement then 
 					local stacksize = 1 
 					if item.components.stackable then 

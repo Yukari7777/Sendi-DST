@@ -80,7 +80,7 @@ local function fn(Sim)
 	-- 방수율을 뜻합니다 (0.방수율)
 	
 	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(4000, 0.7)    
+	inst.components.armor:InitCondition(6000, 0.7)    
 	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
 	
 	inst:AddComponent("insulator")--보온율

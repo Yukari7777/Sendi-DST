@@ -2,106 +2,209 @@ local Ingredient = GLOBAL.Ingredient
 local RECIPETABS = GLOBAL.RECIPETABS
 local TECH = GLOBAL.TECH
 local Recipe = GLOBAL.Recipe
+CHARACTER_INGREDIENT = GLOBAL.CHARACTER_INGREDIENT
 
-local SENDITAB = AddRecipeTab(GLOBAL.STRINGS.SENDITABNAME, 777, "images/inventoryimages/senditab.xml", "senditab.tex", "sendicraft") 
--- Àü¿ë ·¹½ÃÇÇÅÇÀ» Ãß°¡.
+local SENDITAB = AddRecipeTab(GLOBAL.STRINGS.SENDITABNAME, 777, "images/inventoryimages/senditab.xml", "senditab.tex", "sendi") 
+local sendiaos_seed = Ingredient("aos_seed", 1)
+-- ì „ìš© ë ˆì‹œí”¼íƒ­ì„ ì¶”ê°€.
+
+--ì¼ë°˜ì˜¤ë¸Œì íŠ¸
+----------------ìŒì‹---------------
+
+AddRecipe("sendi_food_cocoapowder", --ì½”ì½”ì•„ íŒŒìš°ë” sendi_food_cocoapowder   
+{Ingredient("berries_cooked", 2)}, 
+RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_cocoapowder.xml", "sendi_food_cocoapowder.tex")
+
+local sendi_food_cocoapowder = Ingredient("sendi_food_cocoapowder", 2) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+sendi_food_cocoapowder.atlas = "images/inventoryimages/sendi_food_cocoapowder.xml"
+
+
+AddRecipe("sendi_food_cocoa_cup", --ì¡°ë¦¬ ë˜ê¸°ì „ì˜ ì»µ
+{sendi_food_cocoapowder, Ingredient("ice", 1)}, 
+RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_cocoa_cup.xml", "sendi_food_cocoa_cup.tex")
+
+local sendi_food_cocoa_cup = Ingredient("sendi_food_cocoa_cup", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+sendi_food_cocoa_cup.atlas = "images/inventoryimages/sendi_food_cocoa_cup.xml"
+
+AddRecipe("sendi_food_wolfsteak", --ìŠ¤í…Œì´í¬
+{aos_seed, sendi_food_cocoapowder, Ingredient("cookedmonstermeat", 2)}, 
+RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_wolfsteak.xml", "sendi_food_wolfsteak.tex")
+
+local sendi_food_wolfsteak = Ingredient("sendi_food_wolfsteak", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+sendi_food_wolfsteak.atlas = "images/inventoryimages/sendi_food_wolfsteak.xml"
+
+
+
+
+-----------------ìŒì‹---------------
+AddRecipe("aos_seed", --í¬ë¦¬ì—ì´ì‹œë“œ   
+{Ingredient(CHARACTER_INGREDIENT.SANITY, 20)}, 
+SENDITAB, TECH.NONE, nil, nil, nil, 2, "sendi", "images/inventoryimages/aos_seed.xml", "aos_seed.tex")
+
+local aos_seed = Ingredient("aos_seed", 1)
+local aos_seed2 = Ingredient("aos_seed", 2)
+local aos_seed10 = Ingredient("aos_seed", 10)
+local aos_seed20 = Ingredient("aos_seed", 20)
+local aos_seed50 = Ingredient("aos_seed", 50)
+local aos_seed100 = Ingredient("aos_seed", 100)
+local aos_seed150 = Ingredient("aos_seed", 150)
+local aos_seed200 = Ingredient("aos_seed", 200)
+local aos_seed250 = Ingredient("aos_seed", 200)
+
+for k, v in pairs({aos_seed, aos_seed2, aos_seed10, aos_seed20, aos_seed50, aos_seed100, aos_seed150, aos_seed200}) do 
+    v.atlas = "images/inventoryimages/aos_seed.xml"
+end
+
+-----------------------------
+
+AddRecipe("aos_seed_black", --í¬ë¦¬ì—ì´ì‹œë“œ ë¸”ë™
+{Ingredient("nightmarefuel", 6)}, 
+RECIPETABS.MAGIC, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_black.xml", "aos_seed_black.tex")
+local aos_seed_black = Ingredient("aos_seed_black", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+aos_seed_black.atlas = "images/inventoryimages/aos_seed_black.xml"
+local aos_seed_black10 = Ingredient("aos_seed_black", 10) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+aos_seed_black.atlas = "images/inventoryimages/aos_seed_black.xml"
+
+
+AddRecipe("aos_seed_purple", --í¬ë¦¬ì—ì´ì‹œë“œ í¼í”Œ
+{Ingredient("silk", 3), Ingredient("spidergland", 3)}, 
+RECIPETABS.MAGIC, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_purple.xml", "aos_seed_purple.tex")
+
+local aos_seed_purple = Ingredient("aos_seed_purple", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
+aos_seed_purple.atlas = "images/inventoryimages/aos_seed_purple.xml"
+
+---------------------------------------------
+
+AddRecipe("sendicampfire",--ëª¨ë‹¥ë¶ˆ
+{aos_seed2}, 
+SENDITAB, TECH.NONE, "campfire_placer", nil, nil, nil, "sendi", nil, nil, nil, "campfire") 
+
+
+
+AddRecipe("senditorch", --íšƒë¶ˆ 
+{aos_seed}, --twigs
+SENDITAB, TECH.NONE, nil, nil, nil, nil, "sendi", nil, nil, nil, "torch" ) 
+
+AddRecipe("charcoal", --ëª©íƒ„ 
+{Ingredient("log", 2), aos_seed},  --ì²´ë ¥ HEALTH/ ì •ì‹  SANITY / log   
+SENDITAB, TECH.NONE, nil, nil, nil, nil, "sendi" ) 
+
+AddRecipe("twigs", --ë‚˜ë¬´ê°€ì§€ 
+{Ingredient("log", 1), Ingredient(CHARACTER_INGREDIENT.SANITY, 10)},  --ì²´ë ¥ HEALTH/ ì •ì‹  SANITY / í—ˆê¸°
+SENDITAB, TECH.NONE, nil, nil, nil, 2, "sendi" ) 
+
+----
+
+
+
+
 
 AddRecipe("sendipack", 
-{Ingredient("gears", 2), Ingredient("bedroll_furry", 2), Ingredient("purplegem", 1)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendipack.xml", "sendipack.tex")
--- "sendicraft"´Â Àü¿ëÅÂ±× ¶æÇÑ´Ù. YUKARI : Àü¿ëÅÇx, Àü¿ëÅÂ±×(ÀÌ ÅÂ±×°¡ ÀÖ´Â»ç¶÷¸¸ Á¦ÀÛ°¡´É)
--- ÀÌ¸§, Àç·á, ÅÇ, ±â¼ú ¼öÁØ, ¼³Ä¡ÀÚ, min_spacing, nounlock, Á¦ÀÛ ½Ã ÁÖ´Â °¹¼ö, [ Àç·á¶õ builder_tag, atlas, image, testfn, product]
------------------------------------¼¾µğ ¹éÆÑ
-
-
-
-
+{Ingredient("gears", 2), Ingredient("bedroll_furry", 2), aos_seed100}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendipack.xml", "sendipack.tex")
+-- "sendi" ì „ìš©íƒœê·¸(ì´ íƒœê·¸ê°€ ìˆëŠ”ì‚¬ëŒë§Œ ì œì‘ê°€ëŠ¥)
+-- ì´ë¦„, ì¬ë£Œ, íƒ­, ê¸°ìˆ  ìˆ˜ì¤€, ì„¤ì¹˜ì, min_spacing, nounlock, ì œì‘ ì‹œ ì£¼ëŠ” ê°¯ìˆ˜, [ ì¬ë£Œë€ builder_tag, atlas, image, testfn, product]
+-----------------------------------ì„¼ë”” ë°±íŒ©
 AddRecipe("sendisedmask", 
-{Ingredient("cutstone", 20), Ingredient("marble", 20), Ingredient("nightmarefuel", 20)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendisedmask.xml", "sendisedmask.tex")	
+{Ingredient("cutstone", 20), Ingredient("marble", 20), aos_seed100}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendisedmask.xml", "sendisedmask.tex")   
 
 local sendisedmask = Ingredient( "sendisedmask", 1) 
 sendisedmask.atlas ="images/inventoryimages/sendisedmask.xml"
----------------------------------- ¼¾µğ ¸¶½ºÅ©
+---------------------------------- ì„¼ë”” ë§ˆìŠ¤í¬
 AddRecipe("sendi_hat_crown", 
-{Ingredient("goldnugget", 40), Ingredient("pigskin", 40), Ingredient("carrot", 40)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_hat_crown.xml", "sendi_hat_crown.tex")	
+{aos_seed50, Ingredient("pigskin", 40), aos_seed_black10}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_hat_crown.xml", "sendi_hat_crown.tex")   
 
 local MonarchCrown = Ingredient( "sendi_hat_crown", 1) 
 MonarchCrown.atlas ="images/inventoryimages/sendi_hat_crown.xml"
----------------------------------- ÇÁ·£µå Çï¸ä
-AddRecipe("sendi_hat_goggles", 
-{MonarchCrown, Ingredient("dragon_scales", 1), Ingredient("deserthat", 1)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_hat_goggles.xml", "sendi_hat_goggles.tex")	
-
-local frandgoggles = Ingredient( "sendi_hat_goggles", 1) 
-frandgoggles.atlas ="images/inventoryimages/sendi_hat_goggles.xml"
-
----------------------------------- ÇÁ·£µå °í±Û
+---------------------------------- í”„ëœë“œ í—¬ë©§
 AddRecipe("sendi_hat_spider", 
-{MonarchCrown, Ingredient("spiderhat", 1), Ingredient("nightmarefuel", 20)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_hat_spider.xml", "sendi_hat_spider.tex")	
+{Ingredient("spidereggsack", 3),Ingredient("spiderhat", 1), aos_seed50}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_hat_spider.xml", "sendi_hat_spider.tex")   
 
 local sendihatspider = Ingredient( "sendi_hat_spider", 1) 
 sendihatspider.atlas ="images/inventoryimages/sendi_hat_spider.xml"
 
----------------------------------- ½ºÆÄÀÌ´õ Çï¸ä
+---------------------------------- ìŠ¤íŒŒì´ë” í—¬ë©§
 
+AddRecipe("sendi_hat_goggles", 
+{MonarchCrown, Ingredient("dragon_scales", 2), sendihatspider}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_hat_goggles.xml", "sendi_hat_goggles.tex")   
+
+local frandgoggles = Ingredient( "sendi_hat_goggles", 1) 
+frandgoggles.atlas ="images/inventoryimages/sendi_hat_goggles.xml"
+
+---------------------------------- í”„ëœë“œ ê³ ê¸€
 
 
 
 AddRecipe("sendi_armor_01", 
-{Ingredient("silk", 6), Ingredient("rabbit", 1), Ingredient("heatrock", 1)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
+{Ingredient("silk", 6), Ingredient("rabbit", 1), aos_seed50}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_armor_01.xml", "sendi_armor_01.tex")
 
 local sendiarmor = Ingredient( "sendi_armor_01", 1) 
 sendiarmor.atlas ="images/inventoryimages/sendi_armor_01.xml"
----------------------------------- ¸ÓÇÃ·¯ ¾Æ¸Ó
+---------------------------------- ë¨¸í”ŒëŸ¬ ì•„ë¨¸
 AddRecipe("sendi_armor_02", 
-{sendiarmor, Ingredient("bluegem", 10), Ingredient("deerclops_eyeball", 2)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_armor_02.xml", "sendi_armor_02.tex")
+{sendiarmor, Ingredient("greengem", 6), Ingredient("deerclops_eyeball", 2)}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_armor_02.xml", "sendi_armor_02.tex")
 
 local lifearmor = Ingredient( "sendi_armor_02", 1) 
 lifearmor.atlas ="images/inventoryimages/sendi_armor_02.xml"
----------------------------------- ¶óÀÌÇÁ¾Æ¸Ó
+---------------------------------- ë¼ì´í”„ì•„ë¨¸
 
 
+-- AddRecipe("sendi_amulet", 
+-- {Ingredient("silk", 6), Ingredient("rabbit", 1), Ingredient("heatrock", 1)}, 
+-- SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_amulet.xml", "sendi_amulet.tex")
+
+-- local sendiarmor = Ingredient( "sendi_amulet", 1) 
+-- sendiarmor.atlas ="images/inventoryimages/sendi_amulet.xml"
+---------------------------------- ì•„ë®¬ë › sendi_amulet    
 
 
 
 AddRecipe("sendi_rapier_wood", 
 {Ingredient("spear", 1), Ingredient("log", 20), Ingredient("rope", 2)}, 
-SENDITAB, TECH.NONE, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_wood.xml", "sendi_rapier_wood.tex")
+SENDITAB, TECH.NONE, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_rapier_wood.xml", "sendi_rapier_wood.tex")
 
 local sendirapierwood = Ingredient( "sendi_rapier_wood", 1)  
 sendirapierwood.atlas = "images/inventoryimages/sendi_rapier_wood.xml"
----------------------------------- ¸ñÀç ·¹ÀÌÇÇ¾î 
+---------------------------------- ëª©ì¬ ë ˆì´í”¼ì–´ 
 AddRecipe("sendi_rapier", 
-{sendirapierwood, Ingredient("tentaclespike", 1), Ingredient("goldnugget", 20)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
+{sendirapierwood, Ingredient("tentaclespike", 1), aos_seed100}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_rapier.xml", "sendi_rapier.tex")
 
-local sendirapier = Ingredient( "sendi_rapier", 1) -- YUKARI : ¾î¶² ¸ğµå¾ÆÀÌÅÛÀÌ Àç·á·Î µé¾î°¡¾ß ÇÒ°æ¿ì ÀÌ·¸°Ô Ãß°¡ÇØ¾ßÇÔ.
+local sendirapier = Ingredient( "sendi_rapier", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
 sendirapier.atlas = "images/inventoryimages/sendi_rapier.xml"
-----------------------------------  ¼¾µğ·¹ÀÌÇÇ¾î 
+----------------------------------  ì„¼ë””ë ˆì´í”¼ì–´ 
 AddRecipe("sendi_rapier_ignia", 
-{sendirapier, Ingredient("redgem", 10), Ingredient("dragon_scales", 2)}, 
-SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
+{sendirapier, aos_seed200, Ingredient("dragon_scales", 2)}, 
+SENDITAB, TECH.SCIENCE_TWO, nil, nil, nil, nil, "sendi", "images/inventoryimages/sendi_rapier_ignia.xml", "sendi_rapier_ignia.tex")
 
-local igniarapier = Ingredient( "sendi_rapier_ignia", 1) -- YUKARI : ¾î¶² ¸ğµå¾ÆÀÌÅÛÀÌ Àç·á·Î µé¾î°¡¾ß ÇÒ°æ¿ì ÀÌ·¸°Ô Ãß°¡ÇØ¾ßÇÔ.
+local igniarapier = Ingredient( "sendi_rapier_ignia", 1) -- YUKARI : ì–´ë–¤ ëª¨ë“œì•„ì´í…œì´ ì¬ë£Œë¡œ ë“¤ì–´ê°€ì•¼ í• ê²½ìš° ì´ë ‡ê²Œ ì¶”ê°€í•´ì•¼í•¨.
 igniarapier.atlas = "images/inventoryimages/sendi_rapier_ignia.xml"
----------------------------------- ÀÌ±×´Ï¾Æ ·¹ÀÌÇÇ¾î
+---------------------------------- ì´ê·¸ë‹ˆì•„ ë ˆì´í”¼ì–´
+
+
+
+
+
 
 AddRecipe("sendi_oven", 
-{Ingredient("boards", 10), Ingredient("cutstone", 10), Ingredient("purplegem", 1)}, 
-SENDITAB, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendicraft", "images/inventoryimages/sendi_oven.xml", "sendi_oven.tex" ) 
----------------------------------- ¼¾µğ ¿Àºì
+{Ingredient("boards", 10), Ingredient("cutstone", 10), aos_seed50}, 
+RECIPETABS.TOWN, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendi", "images/inventoryimages/sendi_oven.xml", "sendi_oven.tex" ) 
+---------------------------------- ì„¼ë”” ì˜¤ë¸
 
 AddRecipe("sendiobject_hut", 
-{Ingredient("log", 40), Ingredient("rope", 5), Ingredient("boards", 5)}, 
-SENDITAB, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendicraft", "images/inventoryimages/sendiobject_hut.xml", "sendiobject_hut.tex" ) 
----------------------------------- ¼¾µğ ¿ÀµÎ¸·
+{Ingredient("wall_wood_item", 80), Ingredient("hammer", 1), aos_seed100}, 
+RECIPETABS.TOWN, TECH.SCIENCE_TWO, "sendiobject_hut_placer", nil, nil, nil, "sendi", "images/inventoryimages/sendiobject_hut.xml", "sendiobject_hut.tex" ) 
+---------------------------------- ì„¼ë”” ì˜¤ë‘ë§‰
 AddRecipe("sendiobject_warehouse", 
-{Ingredient("log", 40), Ingredient("rope", 5), Ingredient("boards", 5)}, 
-SENDITAB, TECH.SCIENCE_TWO, "sendi_oven_placer", nil, nil, nil, "sendicraft", "images/inventoryimages/sendiobject_hut.xml", "sendiobject_hut.tex" ) 
----------------------------------- ¼¾µğ Ã¢°í
+{Ingredient("wall_stone_item", 18), Ingredient("hammer", 1), aos_seed50}, 
+RECIPETABS.TOWN, TECH.SCIENCE_TWO, "sendiobject_warehouse_placer", nil, nil, nil, "sendi", "images/inventoryimages/sendiobject_warehouse.xml", "sendiobject_warehouse.tex" ) 
 
+---------------------------------- ì„¼ë”” ì°½ê³ 
+
+--ì¼ë°˜ ì†Œëª¨í’ˆ

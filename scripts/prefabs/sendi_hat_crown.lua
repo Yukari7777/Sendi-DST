@@ -97,13 +97,13 @@ local function fn()
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
 	inst:AddComponent("armor") --내구도, 방어도 설정
-	inst.components.armor:InitCondition(3000, 0.7)
+	inst.components.armor:InitCondition(6000, 0.7)
 	
 	inst:AddComponent("insulator")--보온율
 	inst.components.insulator:SetInsulation(240)
 	
 	----주요 옵션
-	inst.components.equippable.dapperness = 0.2 --정신력 오라
+	inst.components.equippable.dapperness = 0.1 --정신력 오라
 	inst.components.equippable.walkspeedmult = 1.1 --이동속도 : 케인
 	
 	inst:AddComponent("waterproofer") --방수

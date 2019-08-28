@@ -19,6 +19,8 @@ PrefabFiles = {
 	--------레이피어-----------
 	"sendi_armor_01", --센디의 니트 갑옷
 	"sendi_armor_02", --센디의 여름용 갑옷
+
+	--"sendi_amulet",	--sendi_amulet
 	--------갑옷--------------
 	"sendi_oven", -- 센디 오븐
 	"sendi_ovenfire_fx", -- 센디 오븐의 불꽃이펙트
@@ -26,6 +28,21 @@ PrefabFiles = {
 	"sendiobject_warehouse", -- 센디 창고
 	-------오브젝트[오븐]-------
 	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
+	"aos_seed",
+	"aos_seed_purple",	
+	"aos_seed_black",	
+	
+	"aos_seed_boss_black",
+	"aos_seed_boss_orange",
+	"aos_seed_boss_red",
+	"aos_seed_boss_sky",
+	"aos_seed_boss_white",
+	
+	"aos_seed_middle",
+	-------시드---------------
+	
+	"sendi_food",
+	
 	--------음식------------
 }
 
@@ -87,7 +104,12 @@ Assets = {
 	-------센디의 니트갑옷 [임의 지정]
 	Asset( "IMAGE", "images/inventoryimages/sendi_armor_02.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_armor_02.xml"),
-	--------라이프 아머
+	--------라이프 아머    
+	
+	-- Asset( "IMAGE", "images/inventoryimages/sendi_amulet.tex"),
+	-- Asset( "ATLAS", "images/inventoryimages/sendi_amulet.xml"),	
+	
+	
 	Asset( "IMAGE", "images/inventoryimages/sendi_rapier_wood.tex"),
 	Asset( "ATLAS", "images/inventoryimages/sendi_rapier_wood.xml"),
 	--------연습용 목재 레이피어
@@ -109,19 +131,69 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendiobject_warehouse.tex"), 
 	Asset( "ATLAS", "images/inventoryimages/sendiobject_warehouse.xml"),
 	--------센디의 창고
-
+	Asset("ANIM", "anim/csmana.zip"),
 	Asset("ANIM", "anim/sendi_ui_chest_4x4.zip"),
-	--Asset( "IMAGE", "images/inventoryimages/mangotea.tex"),
-	--Asset( "ATLAS", "images/inventoryimages/mangotea.xml"),
-	--------코코아
+	--------------------- ui
+	Asset( "IMAGE", "images/inventoryimages/aos_seed.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed.xml"),
 	
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_purple.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_purple.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_black.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_black.xml"),
+	--------------------- 제작시드
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_black.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_black.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_orange.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_orange.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_red.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_red.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_sky.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_sky.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_white.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_white.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_middle.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_middle.xml"),
+	--------------------- 드롭시드
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_cocoapowder.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_cocoapowder.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_cocoa_cup.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_cocoa_cup.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_cocoa.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_cocoa.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_wolfsteak.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_wolfsteak.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_wolfsteak_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_wolfsteak_cooked.xml"),	
+	--------------------- 전용 음식    
 }
 AddMinimapAtlas("images/map_icons/sendi.xml")
 
----------------- 라이브러리, 함수 오버라이드 (건들지 마세요)
+---------------- 라이브러리, 함수 오버라이드
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local Language =  GetModConfigData("language")
+--
+local Ingredient = GLOBAL.Ingredient
+local RECIPETABS = GLOBAL.RECIPETABS
+local TECH = GLOBAL.TECH
+local resolvefilepath = GLOBAL.resolvefilepath
+local Recipe = GLOBAL.Recipe
+require "util"
+
+local containers = require("containers")
+local IsServer = GLOBAL.TheNet:GetIsServer()
+--
 GLOBAL.SendiForceOverrideSkin = GetModConfigData("skinoverride")
 
 modimport "scripts/tunings_sendi.lua" -- 튜닝 파일 로드
@@ -199,13 +271,7 @@ end
 		end)
 
 
---미트무시, 옮기지말아주세요.
-
---원숭이 모자 무시
-
-
---원숭이 모자 무시
-
+--미트무시
 
 function ChangeSkin(inst)
 	inst:ChangeSkin()
@@ -214,6 +280,7 @@ AddModRPCHandler("sendi", "skin", ChangeSkin)
 --센디스킨
 
 STRINGS.NAMES.SENDI = "sendi"
+modimport "scripts/sendimana_init.lua"
 modimport "scripts/skills_sendi.lua"
 modimport "scripts/recipes_sendi.lua"
 AddModCharacter("sendi", "FEMALE")

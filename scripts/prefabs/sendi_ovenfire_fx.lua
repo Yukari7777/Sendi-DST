@@ -1,7 +1,7 @@
 function MakeOvenfireFx(suffix)
 	local fname = "sendi_ovenfire"..suffix
 	local build = "sendi_oven_fire"..suffix
-	local iscold = suffix == "_cold"									-- Â÷°¡¿î ¹öÀüÀÌ¸é
+	local iscold = suffix == "_cold"									-- ì°¨ê°€ìš´ ë²„ì „ì´ë©´
 
 	local assets = {
 		Asset("ANIM", "anim/"..build..".zip"),
@@ -10,13 +10,13 @@ function MakeOvenfireFx(suffix)
 
 	local sound = iscold and "dontstarve_DLC001/common/coldfire" or "dontstarve/common/campfire"
 	local lightColour = iscold and {0, 183 / 255, 1} or {255/255,255/255,192/255}
-	local heats = { 70, 85, 100, 115 }									-- µûµíÇÑ ¿­ °ª
-	local colds = { -10, -20, -30, -40 }								-- Â÷°¡¿î ¿­ °ª
+	local heats = { 70, 85, 100, 115 }									-- ë”°ë“¯í•œ ì—´ ê°’
+	local colds = { -10, -20, -30, -40 }								-- ì°¨ê°€ìš´ ì—´ ê°’
 
 	local function GetHeatFn(inst)
-		return iscold and (colds[inst.components.firefx.level] or -20)  -- Â÷°¡¿î ¹öÀüÀÌ¸é Â÷°¡¿î ¿­ °ªÀ» ¼¼ÆÃ
-		or (heats[inst.components.firefx.level] or 20)					-- µûµíÇÑ ¹öÀüÀÌ¸é ¹İ´ë·Î
-		or 0															-- ÀÌÂÊÀ¸·Î´Â ¿Ã °æ¿ì°¡ ¾øÁö¸¸ È¤½Ã³ª Æ¨±æ±îºÁ Ãß°¡
+		return iscold and (colds[inst.components.firefx.level] or -20)  -- ì°¨ê°€ìš´ ë²„ì „ì´ë©´ ì°¨ê°€ìš´ ì—´ ê°’ì„ ì„¸íŒ…
+		or (heats[inst.components.firefx.level] or 20)					-- ë”°ë“¯í•œ ë²„ì „ì´ë©´ ë°˜ëŒ€ë¡œ
+		or 0															-- ì´ìª½ìœ¼ë¡œëŠ” ì˜¬ ê²½ìš°ê°€ ì—†ì§€ë§Œ í˜¹ì‹œë‚˜ íŠ•ê¸¸ê¹Œë´ ì¶”ê°€
 	end
 
 	local function fn()

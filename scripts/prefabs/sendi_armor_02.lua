@@ -71,7 +71,7 @@ local function fn()
 	
 	--주요 능력치
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
-	inst.components.equippable.dapperness = 0.4 --초당 정신력 회복 
+	--inst.components.equippable.dapperness = 0.4 --초당 정신력 회복 
 	
 	inst:AddComponent("armor")
 	inst.components.armor:InitIndestructible(0.65) -- YUKARI : 무한 내구도

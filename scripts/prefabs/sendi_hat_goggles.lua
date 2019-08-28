@@ -70,6 +70,11 @@ local function OnEquip(inst, owner)
 		owner:AddTag("insect")--태그부여
 		owner:AddTag("houndfriend")--태그부여
 		owner:AddTag("spiderwhisperer") 
+		
+ 		owner:AddTag("insect")--태그부여
+		owner:AddTag("houndfriend")--태그부여
+		owner:AddTag("spiderwhisperer") --거미들과 친구가 되어버린다!
+		owner:AddTag(UPGRADETYPES.SPIDER.."_upgradeuser")	
 	inst.isWeared = true
 	inst.isDropped = false	
 	
@@ -86,6 +91,11 @@ local function OnUnequip(inst, owner)
 		owner:RemoveTag("insect")--태그부여 삭제
 		owner:RemoveTag("houndfriend")--태그부여	삭제
 		owner:RemoveTag("spiderwhisperer") 
+		
+		owner:RemoveTag("spiderwhisperer") --거미들과 친구가 되어버린다!
+		owner:RemoveTag(UPGRADETYPES.SPIDER.."_upgradeuser")
+		
+		
 	inst.isWeared = false
 	inst.isDropped = false
 end
@@ -133,17 +143,25 @@ local function fn()
     inst.components.waterproofer:SetEffectiveness(0.80)
 	
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
-	inst.components.equippable.dapperness = 0.4 --정신력
+	inst.components.equippable.dapperness = 0.2 --정신력
 	
     inst:AddComponent("inspectable") --조사 가능하도록 설정
 
 	inst.components.inventoryitem.keepondeath = true --죽어도 떨어뜨리지 않음.
 	
+			if TheNet:GetServerGameMode() == "quagmire" then --거미들과 친구가 되어버린다!
+			inst:AddTag("fastpicker")
+			inst:AddTag("quagmire_farmhand")
+			inst:AddTag("quagmire_shopper")
+		return inst
+		
+	end
 	
 	MakeHauntableLaunch(inst)
 
 	ChangeInsulation(inst, TheWorld.state.temperature) 
 	inst:WatchWorldState("temperature", ChangeInsulation) --YUKARI : 기온에 따라 바뀌게 함수 개선
+
 
 	
     return inst

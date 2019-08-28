@@ -11,12 +11,12 @@ local EQUIPSLOTS = GLOBAL.EQUIPSLOTS
 local FRAMES = GLOBAL.FRAMES
 
 GLOBAL.IsPreemptiveEnemy = function(inst, target)
-	-- Æ®¸®°¡µå¸¦ Á¦¿ÜÇÑ ¸ó½ºÅÍ
-	-- PVP°¡ ÄÑÁ®ÀÖÀ»°æ¿ì ÇÃ·¹ÀÌ¾î ¾Æ´Ò°æ¿ì Á¦¿Ü
-	-- Ä£±¸°¡ Á¦¿Ü
-	-- ÀÚ±âÀÚ½ÅÀÌ Á¦¿Ü
-	-- ³¯ °ø°İÇÏ·Á ÇÏ´Â(Å¸°ÙÀ¸·Î »ïÀº) °æ¿ì ¹«Á¶°Ç
-	return (target:HasTag("monster") or (target:HasTag("epic") and not tarzget:HasTag("leif"))) and not (target:HasTag("companion") and (TheNet:GetPtargetPEnabled() or not target:HasTag("player"))) or (target.components.combat ~= nil and target.components.combat.target == inst) and target ~= inst
+   -- íŠ¸ë¦¬ê°€ë“œë¥¼ ì œì™¸í•œ ëª¬ìŠ¤í„°
+   -- PVPê°€ ì¼œì ¸ìˆì„ê²½ìš° í”Œë ˆì´ì–´ ì•„ë‹ê²½ìš° ì œì™¸
+   -- ì¹œêµ¬ê°€ ì œì™¸
+   -- ìê¸°ìì‹ ì´ ì œì™¸
+   -- ë‚  ê³µê²©í•˜ë ¤ í•˜ëŠ”(íƒ€ê²Ÿìœ¼ë¡œ ì‚¼ì€) ê²½ìš° ë¬´ì¡°ê±´
+   return (target:HasTag("monster") or (target:HasTag("epic") and not tarzget:HasTag("leif"))) and not (target:HasTag("companion") and (TheNet:GetPtargetPEnabled() or not target:HasTag("player"))) or (target.components.combat ~= nil and target.components.combat.target == inst) and target ~= inst
 end
 
 local IsPreemptiveEnemy = GLOBAL.IsPreemptiveEnemy
@@ -29,219 +29,219 @@ end
 
 local SKILL_RADIUS_DEFAULT = 12
 local function GetPositionToClosestEnemy(inst, range)
-	local x, y, z = inst.Transform:GetWorldPosition()
-	local ents = TheSim:FindEntities(x, y, z, range or SKILL_RADIUS_DEFAULT, { "_combat" } ) -- See entityreplica.lua (for _combat tag usage)
-	local target, tx, ty, tz
+   local x, y, z = inst.Transform:GetWorldPosition()
+   local ents = TheSim:FindEntities(x, y, z, range or SKILL_RADIUS_DEFAULT, { "_combat" } ) -- See entityreplica.lua (for _combat tag usage)
+   local target, tx, ty, tz
 
-	for k, v in pairs(ents) do
-		-- Àû Å¸°Ù¼ø¼­
-		-- 1) °¡Àå °¡±î¿î º¸½º(´Ü, Æ®¸®°¡µå Á¦¿Ü)
-		-- 2) ³ª¸¦ Å¸°ÙÇÑ Àû.
-		-- 3) ¼±°ø ÇÒ¸¸ÇÑ Àû
-		if v:HasTag("epic") and not v:HasTag("leif") then
-			target = v; break
-		elseif v ~= inst and v.components.combat ~= nil and v.components.combat.target == inst then
-			target = v; break
-		elseif IsPreemptiveEnemy(inst, v) then
-			target = v; break
-		end
-	end
+   for k, v in pairs(ents) do
+      -- ì  íƒ€ê²Ÿìˆœì„œ
+      -- 1) ê°€ì¥ ê°€ê¹Œìš´ ë³´ìŠ¤(ë‹¨, íŠ¸ë¦¬ê°€ë“œ ì œì™¸)
+      -- 2) ë‚˜ë¥¼ íƒ€ê²Ÿí•œ ì .
+      -- 3) ì„ ê³µ í• ë§Œí•œ ì 
+      if v:HasTag("epic") and not v:HasTag("leif") then
+         target = v; break
+      elseif v ~= inst and v.components.combat ~= nil and v.components.combat.target == inst then
+         target = v; break
+      elseif IsPreemptiveEnemy(inst, v) then
+         target = v; break
+      end
+   end
 
-	if target ~= nil then
-		tx, ty, tz = target.Transform:GetWorldPosition()
-	end
+   if target ~= nil then
+      tx, ty, tz = target.Transform:GetWorldPosition()
+   end
 
-	return tx, ty, tz
+   return tx, ty, tz
 end
 
 local function OnStartSkillGeneral(inst, shouldstop)
-	inst:AddTag("inskill")
-	inst.components.locomotor:Stop()
-	inst.components.locomotor:Clear()
+   inst:AddTag("inskill")
+   inst.components.locomotor:Stop()
+   inst.components.locomotor:Clear()
     inst:ClearBufferedAction()
-	ForceStopHeavyLifting(inst)
-	if shouldstop and inst.components.playercontroller ~= nil then
-		inst.components.playercontroller:RemotePausePrediction()
-		inst.components.playercontroller:Enable(false)
-	end
-	inst:PerformBufferedAction()
+   ForceStopHeavyLifting(inst)
+   if shouldstop and inst.components.playercontroller ~= nil then
+      inst.components.playercontroller:RemotePausePrediction()
+      inst.components.playercontroller:Enable(false)
+   end
+   inst:PerformBufferedAction()
 end
 
 local function OnFinishSkillGeneral(inst)
-	inst:RemoveTag("inskill")
-	if inst.components.playercontroller ~= nil then	
-		inst.components.playercontroller:Enable(true)
-	end
+   inst:RemoveTag("inskill")
+   if inst.components.playercontroller ~= nil then   
+      inst.components.playercontroller:Enable(true)
+   end
 end
 
 local function nullfn()  -- AddAction's third argument type must be function. And I won't use action.fn at all.
-	return true 
+   return true 
 end
 
 local function AddSkill(skillname, SgS, SgC)
-	-- This is Ctor to make key-press-to-action.
-	-- Does Anyone want to use this function, feel free to use it
-	-- and don't forget to rename ModRPCHandler's namespace and copy nullfn.
-	local upperskillname = skillname:upper()
+   -- This is Ctor to make key-press-to-action.
+   -- Does Anyone want to use this function, feel free to use it
+   -- and don't forget to rename ModRPCHandler's namespace and copy nullfn.
+   local upperskillname = skillname:upper()
 
-	AddAction(upperskillname, skillname, nullfn)
-	AddModRPCHandler("sendi", skillname, function(inst) 
-		inst:PushEvent("on"..skillname) -- See sendi_classified how to excute actions via PushEvent.
-	end)
+   AddAction(upperskillname, skillname, nullfn)
+   AddModRPCHandler("sendi", skillname, function(inst) 
+      inst:PushEvent("on"..skillname) -- See sendi_classified how to excute actions via PushEvent.
+   end)
 
-	AddStategraphState("wilson", SgS) -- Client Stategraph
-	AddStategraphState("wilson_client", SgC) -- Server Stategraph
-	AddStategraphActionHandler("wilson", ActionHandler(ACTIONS[upperskillname], skillname))
-	AddStategraphActionHandler("wilson_client", ActionHandler(ACTIONS[upperskillname], skillname))
+   AddStategraphState("wilson", SgS) -- Client Stategraph
+   AddStategraphState("wilson_client", SgC) -- Server Stategraph
+   AddStategraphActionHandler("wilson", ActionHandler(ACTIONS[upperskillname], skillname))
+   AddStategraphActionHandler("wilson_client", ActionHandler(ACTIONS[upperskillname], skillname))
 end
 
 --------------------------------------------------------------------------------------------------------------------
 local rapier_SgS = State { 
-	name = "rapier",
-	tags = { "busy", "doing", "skill", "pausepredict", "aoe", "nointerrupt", "nomorph"},
+   name = "rapier",
+   tags = { "busy", "doing", "skill", "pausepredict", "aoe", "nointerrupt", "nomorph"},
 
-	onenter = function(inst)
-		OnStartSkillGeneral(inst, true)
-		local x, y, z = GetPositionToClosestEnemy(inst)
-		if x ~= nil then inst:ForceFacePoint(x, y, z) end
-		inst.sg:SetTimeout(12 * FRAMES)
-		inst.AnimState:PlayAnimation("whip_pre") -- YUKARI : TODO. Ä¿½ºÅÒ ¾Ö´Ï¸ŞÀÌ¼Ç. ÇÁ·¹ÀÓ ¼ö 7
+   onenter = function(inst)
+      OnStartSkillGeneral(inst, true)
+      local x, y, z = GetPositionToClosestEnemy(inst)
+      if x ~= nil then inst:ForceFacePoint(x, y, z) end
+      inst.sg:SetTimeout(12 * FRAMES)
+      inst.AnimState:PlayAnimation("whip_pre") -- YUKARI : TODO. ì»¤ìŠ¤í…€ ì• ë‹ˆë©”ì´ì…˜. í”„ë ˆì„ ìˆ˜ 7
         inst.AnimState:PushAnimation("whip", false)
 
-        inst.sg.statemem.angle = inst.Transform:GetRotation() -- °¡±îÀÌ¿¡ ÀûÀÌ ÀÖÀ»°æ¿ì Àû¿¡°Ô, ¾øÀ¸¸é ¹Ù¶óº¸´ø ¹æÇâÀ¸·Î µ¹Áø
-		inst.components.sendiskill:OnStartRapier(inst, inst.sg.statemem.angle)
-	end,
+        inst.sg.statemem.angle = inst.Transform:GetRotation() -- ê°€ê¹Œì´ì— ì ì´ ìˆì„ê²½ìš° ì ì—ê²Œ, ì—†ìœ¼ë©´ ë°”ë¼ë³´ë˜ ë°©í–¥ìœ¼ë¡œ ëŒì§„
+      inst.components.sendiskill:OnStartRapier(inst, inst.sg.statemem.angle)
+   end,
 
-	timeline =
-	{
-		TimeEvent(4 * FRAMES, function(inst)
-			inst.components.sendiskill:Explode(inst)
-			inst.SoundEmitter:PlaySound("dontstarve/creatures/leif/swipe") -- Á»´õ ³¯Ä«·Ó°Ô Âî¸£´Â ¼Ò¸® °°Àº°Å ¾ø³ª?
-		end),
-	},
-	
-	events = {
+   timeline =
+   {
+      TimeEvent(4 * FRAMES, function(inst)
+         inst.components.sendiskill:Explode(inst)
+         inst.SoundEmitter:PlaySound("dontstarve/creatures/leif/swipe") -- ì¢€ë” ë‚ ì¹´ë¡­ê²Œ ì°Œë¥´ëŠ” ì†Œë¦¬ ê°™ì€ê±° ì—†ë‚˜?
+      end),
+   },
+   
+   events = {
         EventHandler("animover", function(inst)
-			if inst.AnimState:AnimDone() then
-				inst.sg:GoToState("idle", true)
-			end
-		end),
+         if inst.AnimState:AnimDone() then
+            inst.sg:GoToState("idle", true)
+         end
+      end),
     },
-	
-	ontimeout = function(inst)
-		inst.components.sendiskill:OnFinishCharge(inst)
-		OnFinishSkillGeneral(inst)
-	end,
-	
-	onexit = function(inst)	
-		inst.components.sendiskill:OnFinishCharge(inst)
-		OnFinishSkillGeneral(inst)
-	end,
+   
+   ontimeout = function(inst)
+      inst.components.sendiskill:OnFinishCharge(inst)
+      OnFinishSkillGeneral(inst)
+   end,
+   
+   onexit = function(inst)   
+      inst.components.sendiskill:OnFinishCharge(inst)
+      OnFinishSkillGeneral(inst)
+   end,
 }
 
 local rapier_SgC = State {
-	name = "rapier",
-	tags = { "doing", "attack", "skill" },
+   name = "rapier",
+   tags = { "doing", "attack", "skill" },
 
-	onenter = function(inst)
-		inst.components.locomotor:Stop()
+   onenter = function(inst)
+      inst.components.locomotor:Stop()
         inst.components.locomotor:Clear()
-		inst.entity:FlattenMovementPrediction()
-		inst.AnimState:PlayAnimation("whip_pre")
-		inst.AnimState:PushAnimation("whip", false)
-		inst:PerformPreviewBufferedAction()
-		inst.sg:SetTimeout(11 * FRAMES)
-	end,
-	
-	onupdate = function(inst)
-		if inst.bufferedaction == nil then
-			inst.sg:GoToState("idle", true)
-		end
-	end,
+      inst.entity:FlattenMovementPrediction()
+      inst.AnimState:PlayAnimation("whip_pre")
+      inst.AnimState:PushAnimation("whip", false)
+      inst:PerformPreviewBufferedAction()
+      inst.sg:SetTimeout(11 * FRAMES)
+   end,
+   
+   onupdate = function(inst)
+      if inst.bufferedaction == nil then
+         inst.sg:GoToState("idle", true)
+      end
+   end,
 
-	ontimeout = function(inst)
-		inst:ClearBufferedAction()
-		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
-	end,
-	
-	onexit = function(inst)	
-		inst.entity:SetIsPredictingMovement(true)
-	end,
+   ontimeout = function(inst)
+      inst:ClearBufferedAction()
+      inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
+   end,
+   
+   onexit = function(inst)   
+      inst.entity:SetIsPredictingMovement(true)
+   end,
 }
 
 AddSkill("rapier", rapier_SgS, rapier_SgC)
 
 
 local igniarun_SgS = State { 
-	name = "igniarun",
-	tags = { "busy", "doing", "skill", "pausepredict", "nomorph" },
+   name = "igniarun",
+   tags = { "busy", "doing", "skill", "pausepredict", "nomorph" },
 
-	onenter = function(inst)
-		OnStartSkillGeneral(inst, true)
-		inst.sg:SetTimeout(13 * FRAMES)
+   onenter = function(inst)
+      OnStartSkillGeneral(inst, true)
+      inst.sg:SetTimeout(13 * FRAMES)
         inst.AnimState:PlayAnimation("jumpout")
 
-		inst.components.sendiskill:OnStartIgniaRun(inst)
-	end,
+      inst.components.sendiskill:OnStartIgniaRun(inst)
+   end,
 
-	timeline =
-	{
-		TimeEvent(9 * FRAMES, function(inst) --Á¡ÇÁ¹«Àû
-			inst.components.health:SetInvincible(false)
-		end),
-		TimeEvent(13 * FRAMES, function(inst)
-			inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
-		end),
-		
-	},
-	
-	events = {
+   timeline =
+   {
+      TimeEvent(9 * FRAMES, function(inst) --ì í”„ë¬´ì 
+         inst.components.health:SetInvincible(false)
+      end),
+      TimeEvent(13 * FRAMES, function(inst)
+         inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
+      end),
+      
+   },
+   
+   events = {
         EventHandler("animover", function(inst)
-			if inst.AnimState:AnimDone() then
-				inst.sg:GoToState("idle", true)
-			end
-		end),
+         if inst.AnimState:AnimDone() then
+            inst.sg:GoToState("idle", true)
+         end
+      end),
     },
-	
-	ontimeout = function(inst)
-		inst.components.sendiskill:OnFinishCharge(inst)
-		OnFinishSkillGeneral(inst)
-	end,
-	
-	onexit = function(inst)	
-		inst.components.sendiskill:OnFinishCharge(inst)
-		OnFinishSkillGeneral(inst)
-	end,
+   
+   ontimeout = function(inst)
+      inst.components.sendiskill:OnFinishCharge(inst)
+      OnFinishSkillGeneral(inst)
+   end,
+   
+   onexit = function(inst)   
+      inst.components.sendiskill:OnFinishCharge(inst)
+      OnFinishSkillGeneral(inst)
+   end,
 }
 
 local igniarun_SgC = State {
-	name = "igniarun",
-	tags = { "doing", "skill" },
+   name = "igniarun",
+   tags = { "doing", "skill" },
 
-	onenter = function(inst)
-		inst.components.locomotor:Stop()
+   onenter = function(inst)
+      inst.components.locomotor:Stop()
         inst.components.locomotor:Clear()
-		inst.entity:FlattenMovementPrediction()
-		inst.AnimState:PlayAnimation("jumpout")
+      inst.entity:FlattenMovementPrediction()
+      inst.AnimState:PlayAnimation("jumpout")
 
-		inst:PerformPreviewBufferedAction()
-		inst.sg:SetTimeout(11 * FRAMES)
-	end,
-	
-	onupdate = function(inst)
-		if inst.bufferedaction == nil then
-			inst.sg:GoToState("idle", true)
-		end
-	end,
+      inst:PerformPreviewBufferedAction()
+      inst.sg:SetTimeout(11 * FRAMES)
+   end,
+   
+   onupdate = function(inst)
+      if inst.bufferedaction == nil then
+         inst.sg:GoToState("idle", true)
+      end
+   end,
 
-	ontimeout = function(inst)
-		inst:ClearBufferedAction()
-		inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
-	end,
-	
-	onexit = function(inst)	
-		inst.entity:SetIsPredictingMovement(true)
-	end,
+   ontimeout = function(inst)
+      inst:ClearBufferedAction()
+      inst.sg:GoToState("idle", inst.entity:FlattenMovementPrediction() and "noanim" or nil)
+   end,
+   
+   onexit = function(inst)   
+      inst.entity:SetIsPredictingMovement(true)
+   end,
 }
 
 AddSkill("igniarun", igniarun_SgS, igniarun_SgC)

@@ -45,8 +45,8 @@ local function DoRapierCharge(inst)
 			if v.components.health ~= nil and _G.IsPreemptiveEnemy(inst, v) then
 				local targetpos = v:GetPosition()
 				v.Transform:SetPosition(targetpos.x + (math.sin(angle) * VELOCITY) , 0, targetpos.z + (math.cos(angle) * VELOCITY))
-				if not v:HasTag("damagetaken") then --µ¥¹ÌÁö2
-					v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_1)
+				if not v:HasTag("damagetaken") then
+					v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_1) -- ë°ë¯¸ì§€1
 					v:AddTag("damagetaken")
 					v:DoTaskInTime(15 * FRAMES, function()
 						v:RemoveTag("damagetaken")
@@ -64,7 +64,7 @@ end
 function sendiskill:OnStartRapier(inst, angle)
 	if inst.SkillTask == nil then 
 		self.angle = angle
-		inst.SkillTask = inst:DoPeriodicTask(0, DoRapierCharge) -- 0ÃÊ¸¶´Ù ¹İº¹ = 1ÇÁ·¹ÀÓ(0.033ÃÊ)¸¶´Ù ¹İº¹
+		inst.SkillTask = inst:DoPeriodicTask(0, DoRapierCharge)  -- 0ì´ˆë§ˆë‹¤ ë°˜ë³µ = 1í”„ë ˆì„(0.033ì´ˆ)ë§ˆë‹¤ ë°˜ë³µ
 		inst.components.talker:Say(GetString(inst.prefab, "SKILL_RAPIER"))
 	end
 end
@@ -84,7 +84,7 @@ function sendiskill:Explode(inst)
 	local ents = TheSim:FindEntities(x, y, z, 5, { "_combat" })
 	for k,v in pairs(ents) do 
 		if v.components.health ~= nil and _G.IsPreemptiveEnemy(inst, v) then
-			v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_2) -- µ¥¹ÌÁö2
+			v.components.combat:GetAttacked(inst, STUNING.SKILL_RAPIER_DAMAGE_2) -- ë°ë¯¸ì§€2
 		end
 	end
 end

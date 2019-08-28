@@ -10,6 +10,11 @@ local function OnEntityReplicated(inst)
         print("Unable to initialize classified data for player Sendi")
     else
 		inst._parent:AttachSendiClassified(inst)
+		for i, v in ipairs({ "sendimana" }) do
+            if inst._parent.replica[v] ~= nil then
+                inst._parent.replica[v]:AttachClassified(inst)
+            end
+        end
     end
 end
 
@@ -73,6 +78,10 @@ local function fn()
     inst.entity:AddNetwork()
     inst.entity:Hide()
     inst:AddTag("CLASSIFIED")
+
+	inst.maxsendimana = net_ushortint(inst.GUID, "maxsendimana")
+	inst.currentsendimana = net_ushortint(inst.GUID, "currentsendimana")
+	inst.sendimanaratescale = net_ushortint(inst.GUID, "sendimanaratescale")
 
 	inst.rapier = net_event(inst.GUID, "onrapier")
 	inst.igniarun = net_event(inst.GUID, "onigniarun")
