@@ -175,6 +175,8 @@ Assets = {
 	
 	Asset( "IMAGE", "images/inventoryimages/sendi_food_wolfsteak_cooked.tex"), 
 	Asset( "ATLAS", "images/inventoryimages/sendi_food_wolfsteak_cooked.xml"),	
+
+	Asset( "ATLAS", "images/inventoryimages/sendi_icon_iced.xml"),	
 	--------------------- 전용 음식    
 }
 AddMinimapAtlas("images/map_icons/sendi.xml")

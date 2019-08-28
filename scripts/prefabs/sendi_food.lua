@@ -5,6 +5,8 @@ local food = {
         hunger = 100, -- 허기
         sanity = 100, -- 정신력
         perishtime = 5000, -- 유통 기간
+
+        -- 기타옵션
         cooktime = .5, --요리시간 (미트볼 0.75)
         tags = { "testest", "cattoy" }, --붙일 태그들
         floater = {"small", nil, nil}, --바다에 뜨는 성질 설정
@@ -12,14 +14,13 @@ local food = {
         temperatureduration = TUNING.FOOD_TEMP_LONG, -- TUNING.FOOD_TEMP_BRIEF 짧음 | TUNING.FOOD_TEMP_AVERAGE 중간 | TUNING.FOOD_TEMP_LONG 길음
         rotten = "seeds", -- 썩으면 변할 물건 (썩은 것으로 변하게 할거면 안적어도 됨)
         stacksize = 1, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM(40)
-        
-        ----------------- 기타 옵션
+        asset = "cocoa_cup", -- 에셋파일 경로
         oneatenfn = function(inst, eater) --실행 함수
             eater.components.talker:Say("마싯다.")
         end,
     },
 
-    cocoa_powder = {
+    cocoapowder = {
         foodtype = FOODTYPE.VEGGIE,
         health = 2,
         hunger = 5,
@@ -62,10 +63,11 @@ local food = {
         sanity = 25,
         perishtime = 2700,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "preparedfood"},
+        tags = {"caffeine", "cattoy", "ovencold", "preparedfood"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
         temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
+        asset = "cocoa", -- 기본 코코아(sendi_food_cocoa) 이미지를 사용
     },
 
     wolfsteak = {
@@ -75,7 +77,7 @@ local food = {
         sanity = 0,
         perishtime = 1440,
         tags = {"preparedfood", "monstermeat"},
-        rotten = "sendi_food_wolfstaek_cooked",
+        rotten = "sendi_food_wolfsteak_cooked",
         floater = {"small", nil, nil},
     },
 
@@ -91,18 +93,22 @@ local food = {
     }
 }
 
+for k, v in pairs(food) do 
+    v.name = k 
+end
+
 local prefabs = {
     "spoiled_food",
 }
 
 function MakeFood(data)
-    local name
-    for k, v in pairs(food) do name = k end
-    local fname = "sendi_food_"..name
+    local name = data.name
+    local pname = "sendi_food_"..name
+    local fname = "sendi_food_"..(data.asset or name)
     local atlas = "images/inventoryimages/"..fname..".xml"
 
     local assets = {
-        Asset("ANIM", fname..".zip"),
+        Asset("ANIM", "anim/"..fname..".zip"),
         Asset("ATLAS", atlas),
     }
 
@@ -158,8 +164,9 @@ function MakeFood(data)
         inst.components.perishable.onperishreplacement = data.rotten or "spoiled_food"
 
         inst:AddComponent("inventoryitem")
+        inst.components.inventoryitem.imagename = fname
         inst.components.inventoryitem.atlasname = atlas
-        
+
         inst:AddComponent("stackable")
         inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
         
@@ -168,7 +175,7 @@ function MakeFood(data)
         return inst
     end
 
-    return Prefab(fname, fn, assets, prefabs)
+    return Prefab(pname, fn, assets, prefabs)
 end
 
 local prefs = {}

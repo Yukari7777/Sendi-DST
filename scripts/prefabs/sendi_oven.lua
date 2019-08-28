@@ -80,7 +80,7 @@ local function cooked(inst)
 					replacement = "charcoal" --숯이나옴
 
 				elseif item.prefab == "spoiled_food" then -- 스테이크를 넣으면
-					replacement = "aos_seed" --	
+					replacement = "aos_seed"
 					
 				elseif item.prefab == "sendi_food_cocoa_cup" then -- 컵을 넣으면
 					replacement = "sendi_food_cocoa" 
@@ -129,7 +129,7 @@ local function cooked(inst)
 		return false 
 	end 
 
-	if inst.on_cold then
+	if inst.on_cold then ------------------찬불일떄
 		for i = 1, container:GetNumSlots() do
 			local item = container:GetItemInSlot(i)
 			if item then 
@@ -148,6 +148,8 @@ local function cooked(inst)
 					replacement = "icecream"
 				elseif item.prefab == "cave_banana" then 
 					replacement = "bananapop"	
+				elseif item.prefab == "sendi_food_cocoa" then
+					replacement = "sendi_food_cocoa_cold"
 				end  
 
 				if replacement then 
