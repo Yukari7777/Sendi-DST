@@ -13,6 +13,19 @@ local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
 end
 
+
+local function ontakefuel(inst)
+   local afterrepair = inst.components.finiteuses:GetUses() + 20
+   if afterrepair >= 200 then
+      inst.components.finiteuses:SetUses(200)
+   else
+      inst.components.finiteuses:SetUses(afterrepair)
+   end
+end
+
+--수리
+
+
 local function fn()
 
     local inst = CreateEntity()
@@ -49,6 +62,21 @@ local function fn()
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
 
+		inst:AddComponent("finiteuses") --내구도 부문 
+    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
+	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
+	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
+	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
+
+	-- ---연료
+    inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+	inst.components.fueled.accepting = true
+	inst.components.fueled:SetTakeFuelFn(ontakefuel)
+	inst.components.fueled:StopConsuming()
+	-- ---연료
+	
 	inst:AddComponent("armor")
 	inst.components.armor:InitCondition(2000, 0.55)   --내구도,방여력
 	

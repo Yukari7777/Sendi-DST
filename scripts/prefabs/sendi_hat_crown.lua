@@ -66,6 +66,16 @@ local function OnUnequip(inst, owner)
 	inst.isDropped = false
 end
 
+local function ontakefuel(inst)
+   local afterrepair = inst.components.finiteuses:GetUses() + 20
+   if afterrepair >= 200 then
+      inst.components.finiteuses:SetUses(200)
+   else
+      inst.components.finiteuses:SetUses(afterrepair)
+   end
+end
+
+--수리
 
 local function fn()
 
@@ -105,6 +115,21 @@ local function fn()
 	----주요 옵션
 	inst.components.equippable.dapperness = 0.1 --정신력 오라
 	inst.components.equippable.walkspeedmult = 1.1 --이동속도 : 케인
+	
+		inst:AddComponent("finiteuses") --내구도 부문 
+    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
+	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
+	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
+	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
+
+	-- ---연료
+    inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+	inst.components.fueled.accepting = true
+	inst.components.fueled:SetTakeFuelFn(ontakefuel)
+	inst.components.fueled:StopConsuming()
+	-- ---연료
 	
 	inst:AddComponent("waterproofer") --방수
     inst.components.waterproofer:SetEffectiveness(0.50)

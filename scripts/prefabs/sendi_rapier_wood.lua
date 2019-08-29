@@ -47,6 +47,16 @@ local function onunequip(inst, owner)
    -- end
 end
 
+local function ontakefuel(inst)
+   local afterrepair = inst.components.finiteuses:GetUses() + 20
+   if afterrepair >= 200 then
+      inst.components.finiteuses:SetUses(200)
+   else
+      inst.components.finiteuses:SetUses(afterrepair)
+   end
+end
+
+--수리
 
 local function fn()
 
@@ -72,29 +82,32 @@ local function fn()
 
 	inst.entity:SetPristine()
 
-    --inst:AddComponent("perishable")
-  --  inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
-   -- inst.components.perishable:StartPerishing()
-  --  inst.components.perishable.onperishreplacement = "spoiled_food"
-		--유통기한
-   
+
     inst:AddComponent("weapon")
 	inst.components.weapon:SetDamage(25)
 	--무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2)
 	--공격범위
+	
+	
+	inst:AddComponent("finiteuses") --내구도 부문 
+    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
+	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
+	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
+	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
+
+	-- ---연료
+    inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+	inst.components.fueled.accepting = true
+	inst.components.fueled:SetTakeFuelFn(ontakefuel)
+	inst.components.fueled:StopConsuming()
+	-- ---연료
+
+	
     inst.OnLoad = OnLoad
 
-    -------
-    --[[
-    inst:AddComponent("edible")
-    inst.components.edible.foodtype = FOODTYPE.MEAT
-    inst.components.edible.healthvalue = -TUNING.HEALING_MEDSMALL
-    inst.components.edible.hungervalue = TUNING.CALORIES_MED
-    inst.components.edible.sanityvalue = -TUNING.SANITY_MED
-    --]]
-		-- 내구도 설정. 이 구간을 지워버리면 무한 내구도가 될 것이라 추정. a는 최대 내구도, b는 제작 완료 시 내구도. 대부분 a = b.
-   
     inst:AddComponent("inspectable")
 		--조사 가능하도록 설정
 	

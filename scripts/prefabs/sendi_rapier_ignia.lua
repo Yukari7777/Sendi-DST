@@ -129,6 +129,16 @@ local function onattack(inst, attacker, target)--파이어 관련 코딩
 	end -- Yukari : 커스텀 도트데미지 함수 작성함.
 end
 
+local function ontakefuel(inst)
+   local afterrepair = inst.components.finiteuses:GetUses() + 20
+   if afterrepair >= 200 then
+      inst.components.finiteuses:SetUses(200)
+   else
+      inst.components.finiteuses:SetUses(afterrepair)
+   end
+end
+
+--수리
 
 local function fn()
 
@@ -165,6 +175,24 @@ local function fn()
     inst.components.weapon:SetDamage(65) 
 	-- 무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2) --공격범위
+	
+	
+	inst:AddComponent("finiteuses") --내구도 부문 
+    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
+	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
+	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
+	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
+
+	-- ---연료
+    inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+	inst.components.fueled.accepting = true
+	inst.components.fueled:SetTakeFuelFn(ontakefuel)
+	inst.components.fueled:StopConsuming()
+	-- ---연료
+	
+	
 	inst.components.weapon:SetOnAttack(onattack)--YK불꽃데미지 
 	
     inst:AddComponent("inspectable") --조사 가능하도록 설정

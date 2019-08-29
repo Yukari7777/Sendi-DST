@@ -119,12 +119,14 @@ STRINGS.NAMES.sendi_food_cocoa_cup = "달콤한 얼음컵"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendi_food_cocoa_cup = "컵에 재료를 담았어요. \n아직 얼음조차 녹지않았지만, 오븐에 넣으면 따뜻해질거에요!"
 STRINGS.NAMES.SENDI_FOOD_COCOA = "따뜻한 코코아" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA = "전투 후 따뜻하게 한잔~\n하루를 마무리 하기에 이것만한것이 없지요!"
+STRINGS.NAMES.SENDI_FOOD_COCOA_COLD = "시원한 코코아" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA_COLD = "얼음이 동동 떠다니는 시원한 코코아 랍니다!"
+
 
 STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK = "하운드 스테이크" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK = "윽... 역한 고기를 접시에 담았어요. \n 오븐에서 한번 더 마무리 해야겠어요."
-
-STRINGS.NAMES.sendi_food_wolfsteak_cooked = "허브를 곁들인 북쪽늑대 스테이크" 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendi_food_wolfsteak_cooked = "아직 잡내가 남아있지만, 아주 맛있어요!"
+STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK_COOKED = "허브를 곁들인 북쪽늑대 스테이크" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK_COOKED = "아직 잡내가 남아있지만, 아주 맛있어요!"
 
 
 
@@ -160,7 +162,7 @@ STRINGS.RECIPE_DESC.AOS_SEED_BLACK = "끔찍한 마력을 추출해봅시다!" -
 
 
 STRINGS.RECIPE_DESC.SENDI_FOOD_COCOAPOWDER = "달콤한 분말을 얻으세요!" --크리에이시드 aos_seed  SEED_CREESEED
-STRINGS.RECIPE_DESC.sendi_food_cocoa_cup = "컵에 재료를 넣으세요!" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_COCOA_CUP = "컵에 재료를 넣으세요!" --크리에이시드 aos_seed  SEED_CREESEED
 
 STRINGS.RECIPE_DESC.SENDI_FOOD_WOLFSTEAK = "역한고기에 마법을 부려봅시다!" --크리에이시드 aos_seed  SEED_CREESEED
 

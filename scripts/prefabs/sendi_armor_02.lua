@@ -33,6 +33,17 @@ end
 --분기점에따라 바뀌는 코드 닫기
 
 
+local function ontakefuel(inst)
+   local afterrepair = inst.components.finiteuses:GetUses() + 20
+   if afterrepair >= 200 then
+      inst.components.finiteuses:SetUses(200)
+   else
+      inst.components.finiteuses:SetUses(afterrepair)
+   end
+end
+
+--수리
+
 local function fn()
 
     local inst = CreateEntity()
@@ -71,11 +82,28 @@ local function fn()
 	
 	--주요 능력치
     inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
+	
+		inst:AddComponent("finiteuses") --내구도 부문 
+    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
+	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
+	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
+	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
+
+	-- ---연료
+    inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+	inst.components.fueled.accepting = true
+	inst.components.fueled:SetTakeFuelFn(ontakefuel)
+	inst.components.fueled:StopConsuming()
+	-- ---연료
+
+	
 	--inst.components.equippable.dapperness = 0.4 --초당 정신력 회복 
 	
 	inst:AddComponent("armor")
-	inst.components.armor:InitIndestructible(0.65) -- YUKARI : 무한 내구도
-	
+	--inst.components.armor:InitIndestructible(0.65) -- YUKARI : 무한 내구도
+	inst.components.armor:InitCondition(2000, 0.65)
 	inst:AddComponent("insulator")--보온율
     inst.components.insulator:SetInsulation(200) 
 	

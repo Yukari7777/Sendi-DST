@@ -49,9 +49,9 @@ local aos_seed50 = Ingredient("aos_seed", 50)
 local aos_seed100 = Ingredient("aos_seed", 100)
 local aos_seed150 = Ingredient("aos_seed", 150)
 local aos_seed200 = Ingredient("aos_seed", 200)
-local aos_seed250 = Ingredient("aos_seed", 200)
+local aos_seed250 = Ingredient("aos_seed", 250)
 
-for k, v in pairs({aos_seed, aos_seed2, aos_seed10, aos_seed20, aos_seed50, aos_seed100, aos_seed150, aos_seed200}) do 
+for k, v in pairs({aos_seed, aos_seed2, aos_seed10, aos_seed20, aos_seed50, aos_seed100, aos_seed150, aos_seed200, aos_seed250}) do 
     v.atlas = "images/inventoryimages/aos_seed.xml"
 end
 
@@ -59,19 +59,25 @@ end
 
 AddRecipe("aos_seed_black", --크리에이시드 블랙
 {Ingredient("nightmarefuel", 6)}, 
-RECIPETABS.MAGIC, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_black.xml", "aos_seed_black.tex")
+SENDITAB, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_black.xml", "aos_seed_black.tex")
+
 local aos_seed_black = Ingredient("aos_seed_black", 1) -- YUKARI : 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
-aos_seed_black.atlas = "images/inventoryimages/aos_seed_black.xml"
 local aos_seed_black10 = Ingredient("aos_seed_black", 10) -- YUKARI : 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
-aos_seed_black.atlas = "images/inventoryimages/aos_seed_black.xml"
+
+for k, v in pairs({aos_seed_black, aos_seed_black10}) do 
+    v.atlas = "images/inventoryimages/aos_seed_black.xml"
+end
 
 
 AddRecipe("aos_seed_purple", --크리에이시드 퍼플
 {Ingredient("silk", 3), Ingredient("spidergland", 3)}, 
-RECIPETABS.MAGIC, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_purple.xml", "aos_seed_purple.tex")
+SENDITAB, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/aos_seed_purple.xml", "aos_seed_purple.tex")
 
 local aos_seed_purple = Ingredient("aos_seed_purple", 1) -- YUKARI : 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
-aos_seed_purple.atlas = "images/inventoryimages/aos_seed_purple.xml"
+
+for k, v in pairs({aos_seed_purple}) do 
+    v.atlas = "images/inventoryimages/aos_seed_purple.xml"
+end
 
 ---------------------------------------------
 
