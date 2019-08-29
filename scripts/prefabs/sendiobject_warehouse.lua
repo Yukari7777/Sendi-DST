@@ -18,7 +18,6 @@ for y = 2.5, -0.5, -1 do
         table.insert(slotpos, Vector3(75 * x - 93 * 2 + 75, 75 * y - 75 * 2 + 75, 0))
     end
 end
-print("#slotpos", #slotpos)
 
 local sendiobject_warehouse = {
     widget = {

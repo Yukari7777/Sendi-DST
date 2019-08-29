@@ -1,5 +1,4 @@
---업그레이드 더미파일이 숨어있음.
-
+local CONST = TUNING.SENDI
 local MakePlayerCharacter = require "prefabs/player_common"
 
 local assets = {
@@ -188,6 +187,7 @@ local master_postinit = function(inst)
 	inst:AddComponent("reader")
 	inst:AddComponent("sendimana")
 	inst:AddComponent("sendiskill")
+	inst:AddComponent("sendilevel")
 
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 	inst:WatchWorldState("phase", sendi_light)
@@ -195,9 +195,9 @@ local master_postinit = function(inst)
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 
 	-- Stats   
-	inst.components.health:SetMaxHealth(130) -- 피
-	inst.components.hunger:SetMax(170) -- 배고팡
-	inst.components.sanity:SetMax(90) -- 정신
+	inst.components.health:SetMaxHealth(CONST.DEFAULT_HEALTH) -- 피
+	inst.components.hunger:SetMax(CONST.DEFAULT_HUNGER) -- 배고팡
+	inst.components.sanity:SetMax(CONST.DEFAULT_SANITY) -- 정신
 	-- 최대피, 허기, 정신을 표시합니다.
 
 	inst.components.health.fire_damage_scale = 0.01 --불딜
@@ -205,7 +205,7 @@ local master_postinit = function(inst)
 	inst.components.hunger:SetRate(TUNING.WILSON_HUNGER_RATE)
 	
 	inst.components.combat.min_attack_period = 0.15--공격속도 
-	inst.components.health:StartRegen(0.3, 0.6)  --피리젠
+	inst.components.health:StartRegen(0.3, 0.6)  --피 리젠
 	inst.OnLoad = onload
 	inst.OnNewSpawn = onload
 	inst.ChangeSkin = OnChangeSkin

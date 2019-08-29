@@ -29,16 +29,15 @@ PrefabFiles = {
 	-------오브젝트[오븐]-------
 	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
 	"aos_seed",
-	"aos_seed_purple",	
-	"aos_seed_black",	
-	
-	"aos_seed_boss_black",
-	"aos_seed_boss_orange",
-	"aos_seed_boss_red",
-	"aos_seed_boss_sky",
-	"aos_seed_boss_white",
-	
-	"aos_seed_middle",
+
+	--"aos_seed_purple",	
+	--"aos_seed_black",	
+	--"aos_seed_boss_black",
+	--"aos_seed_boss_orange",
+	--"aos_seed_boss_red",
+	--"aos_seed_boss_sky",
+	--"aos_seed_boss_white",
+	--"aos_seed_middle",
 	-------시드---------------
 	
 	"sendi_food",

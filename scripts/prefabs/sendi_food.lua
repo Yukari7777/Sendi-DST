@@ -7,15 +7,15 @@ local food = {
         perishtime = 5000, -- 유통 기간
 
         -- 기타옵션
-        cooktime = .5, --요리시간 (미트볼 0.75)
+        rotten = "seeds", -- 썩으면 변할 물건 (썩은 것으로 변하게 할거면 안적어도 됨)
         tags = { "testest", "cattoy" }, --붙일 태그들
         floater = {"small", nil, nil}, --바다에 뜨는 성질 설정
         temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
         temperatureduration = TUNING.FOOD_TEMP_LONG, -- TUNING.FOOD_TEMP_BRIEF 짧음 | TUNING.FOOD_TEMP_AVERAGE 중간 | TUNING.FOOD_TEMP_LONG 길음
-        rotten = "seeds", -- 썩으면 변할 물건 (썩은 것으로 변하게 할거면 안적어도 됨)
-        stacksize = 1, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM(40)
-        asset = "cocoa_cup", -- 에셋파일 경로
-        oneatenfn = function(inst, eater) --실행 함수
+        cooktime = .5, --요리시간 (미트볼 0.75)
+        stacksize = 1, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM (40)
+        asset = "cocoa_cup", -- 에셋파일 경로(외형 파일 이름)
+        oneatenfn = function(inst, eater) -- 먹었을 때 실행 함수
             eater.components.talker:Say("마싯다.")
         end,
     },
@@ -168,7 +168,7 @@ function MakeFood(data)
         inst.components.inventoryitem.atlasname = atlas
 
         inst:AddComponent("stackable")
-        inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+        inst.components.stackable.maxsize = data.stacksize or TUNING.STACK_SIZE_SMALLITEM
         
         MakeHauntableLaunch(inst)
         

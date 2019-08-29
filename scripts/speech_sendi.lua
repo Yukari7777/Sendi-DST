@@ -1873,6 +1873,11 @@ return {
 		TALLBIRDEGG_CRACKED = "알도 고기에요",
     },
 
+	DESCRIBE_LEVELUP = {
+		"레벨업 대사",
+		"레벨업 대사",
+		"레벨업 대사",
+	},
 
 	SKILL_RAPIER = {
 		"햣!",
