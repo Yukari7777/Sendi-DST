@@ -10,11 +10,13 @@ TUNING.SENDI = {
 	MANA_CURRENT_DEFAULT = 50,	-- 마나 수치 기본값
 	MANA_CURRENT_ONRESPAWN = 0, -- 부활했을 때 마나 수치
 
+	MANA_RESTORE_FULL = 999999, -- 마나를 모두 채워줄 때의 수치
+
 	SKILL_RAPIER_DAMAGE_1 = 20, -- 돌진할 때 데미지
 	SKILL_RAPIER_DAMAGE_2 = 55, -- 터질 때 데미지
-	SKILL_RAPIER_HUNGERCOST = 15, -- 이그니아 런 배고픔 코스트
+	SKILL_RAPIER_MANACOST = 15, -- 이그니아 런 배고픔 코스트
 
-	SKILL_IGNIARUN_HUNGERCOST = 2, -- 이그니아 점프 배고픔 코스트
+	SKILL_IGNIARUN_MANACOST = 2, -- 이그니아 점프 배고픔 코스트
 
 	ARMOR1_CONDITION = 1000, -- 센디 아머1 내구도 
 	ARMOR1_EFFICIENCY = 0.50, -- 방어율

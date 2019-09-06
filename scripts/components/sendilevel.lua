@@ -16,18 +16,17 @@ end
 
 function SendiLevel:AddExp(amount)
 	if self.level < 30 then
-	if amount >= self:GetMaxExp() then
-	--amount[얻은경험치]가 맥스 경험치보다 같거나 크다면 
-        local leftover = amount - (self:GetMaxExp() - self.exp)
-      --남은 경험치 - (맥스최대경험치 - 가진경험치)
-        self:LevelUp()
-      --레벨업
-        return self:AddExp(leftover)
-      --리턴 exp
-    end
-
+        if amount >= self:GetMaxExp() then
+        --amount[얻은경험치]가 맥스 경험치보다 같거나 크다면 
+            local leftover = amount - (self:GetMaxExp() - self.exp)
+        --남은 경험치 - (맥스최대경험치 - 가진경험치)
+            self:LevelUp()
+        --레벨업
+            return self:AddExp(leftover)
+        --리턴 exp
+        end
 	else
-	amount = 0
+	    amount = 0
 	end
 	
     self.exp = self.exp + amount

@@ -16,7 +16,7 @@ GLOBAL.IsPreemptiveEnemy = function(inst, target)
    -- 친구가 제외
    -- 자기자신이 제외
    -- 날 공격하려 하는(타겟으로 삼은) 경우 무조건
-   return (target:HasTag("monster") or (target:HasTag("epic") and not tarzget:HasTag("leif"))) and not (target:HasTag("companion") and (TheNet:GetPtargetPEnabled() or not target:HasTag("player"))) or (target.components.combat ~= nil and target.components.combat.target == inst) and target ~= inst
+   return (target:HasTag("monster") or (target:HasTag("epic") and not target:HasTag("leif"))) and not (target:HasTag("companion") and (TheNet:GetPtargetPEnabled() or not target:HasTag("player"))) or (target.components.combat ~= nil and target.components.combat.target == inst) and target ~= inst
 end
 
 local IsPreemptiveEnemy = GLOBAL.IsPreemptiveEnemy
@@ -78,8 +78,8 @@ local function nullfn()  -- AddAction's third argument type must be function. An
    return true 
 end
 
-local function AddSkill(skillname, SgS, SgC)
-   -- This is Ctor to make key-press-to-action.
+local function AddSkill(skillname, SgS, SgC, manacost)
+   -- This is a constructor to make key-press-to-action.
    -- Does Anyone want to use this function, feel free to use it
    -- and don't forget to rename ModRPCHandler's namespace and copy nullfn.
    local upperskillname = skillname:upper()

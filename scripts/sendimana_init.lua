@@ -80,4 +80,4 @@ local function StatusDisplaysInit(self)
 	end
 end
 
---AddClassPostConstruct("widgets/statusdisplays", StatusDisplaysInit)
+AddClassPostConstruct("widgets/statusdisplays", StatusDisplaysInit)

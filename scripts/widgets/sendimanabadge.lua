@@ -63,7 +63,6 @@ function SendiManaBadge:OnUpdate(dt)
 		self:SetPercent(self.owner.replica.sendimana:GetPercent(), self.owner.replica.sendimana:Max())
 	end
 
-	self.num:SetString("0")
 end
 
 return SendiManaBadge

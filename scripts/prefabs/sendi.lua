@@ -189,8 +189,6 @@ local common_postinit = function(inst)
 	inst:AddTag("bookbuilder")-- 위커바컴의 책을 제조합니다.
 	inst:AddTag("reader")
 	
-	
-	
 	inst:ListenForEvent("setowner", SendiOnSetOwner)
   
 	OverrideOnRemoveEntity(inst)
@@ -213,7 +211,7 @@ local master_postinit = function(inst)
 	inst:AddComponent("sendiskill")
 	inst:AddComponent("sendilevel")
 	
-	inst:ListenForEvent("oneat", eatunfinishedfoodfn)--음식대사 
+	inst:ListenForEvent("oneat", eatunfinishedfoodfn) -- 먹었을 때
 	
 	
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------

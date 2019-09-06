@@ -364,6 +364,32 @@ function TESTFUNCAAA(inst)
    print (inst.name)
 end
 
+local mammalia = {"pigman", "bunnyman", "deerclops", "bearger" } -- 포유류인 경우 리스트
+
+local function AddChanceLoot(inst, loots)
+	if inst.components.health ~= nil and inst.components.lootdropper ~= nil then
+		for i = 1, #loots, 2 do
+			inst.components.lootdropper:AddChanceLoot(loots[i], loots[i+1])
+		end
+
+		if table.contains(mammalia, inst.prefab) then
+			for i = 0, 2 do
+				if inst.components.health.maxhealth >= 1000 * i then
+					inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+				end
+			end
+		end
+	end
+end
+
+AddPrefabPostInit("deerclops",  --[[대상 몬스터 스폰명]] function(inst)
+	AddChanceLoot(inst, {"aos_seed_boss_white", 0.5, "aos_seed_boss_sky", 1}) -- (아이템 스폰명), (수량) 순으로 적으면 됨
+end)
+
+AddPrefabPostInit("dragonfly", function(inst)
+	AddChanceLoot(inst, {"aos_seed_boss_red", 1, "aos_seed_boss_white", 0.5, "aos_seed_boss_sky", 0.5})
+end)
+--[[
 AddPrefabPostInitAny(function(inst)
    if inst.components.health and inst.components.lootdropper and inst.components.health.maxhealth <= 900000 then
       --inst:ListenForEvent("death", TESTFUNCAAA) --몬스터를잡으면 이름이뜸
@@ -377,7 +403,7 @@ AddPrefabPostInitAny(function(inst)
 	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
 	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
 	  
-      elseif inst.name == STRINGS.NAMES.DEERCLOPS then
+      elseif inst.name == STRINGS.NAMES.DRAGONFLY then
       inst.components.lootdropper:AddChanceLoot("aos_seed_boss_red", 1) --용파리 
 	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
       elseif inst.name == STRINGS.NAMES.BEARGER then
@@ -633,7 +659,7 @@ AddPrefabPostInitAny(function(inst)
       
       end
 end)
-
+]]--
 
 --드롭 exp
 function ChangeSkin(inst)

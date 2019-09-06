@@ -214,9 +214,7 @@ local function cooked(inst)
 				item.prefab == "butter" or 
 				item.prefab == "cave_banana" or
 				item.prefab == "sendi_food_cocoa" or
-				item.prefab == "sendi_food_pudding_light_berrybanana" or
-				then 
-				
+				item.prefab == "sendi_food_pudding_light_berrybanana" then 
 					inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter") 
 					local fx = SpawnPrefab("collapse_small")
 					local pos = Vector3(inst.Transform:GetWorldPosition())
@@ -414,7 +412,7 @@ local function fn(Sim)
 	inst:AddTag("wildfireprotected")
     inst:AddTag("oven")--오븐태그
 	
-    inst.AnimState:SetBank("chiminea")
+    inst.AnimState:SetBank("sendi_oven")
     inst.AnimState:SetBuild("sendi_oven")
     inst.AnimState:PlayAnimation("idle", false)    
     inst.MiniMapEntity:SetIcon( "sendi_oven.tex" )

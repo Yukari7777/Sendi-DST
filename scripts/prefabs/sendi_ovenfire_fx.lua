@@ -28,7 +28,7 @@ function MakeOvenfireFx(suffix)
 		inst.entity:AddLight()
 		inst.entity:AddNetwork()
 
-		inst.AnimState:SetBank("chiminea_fire")
+		inst.AnimState:SetBank("sendi_oven_fire")
 		inst.AnimState:SetBuild(build)
 		inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
 		inst.AnimState:SetRayTestOnBB(true)

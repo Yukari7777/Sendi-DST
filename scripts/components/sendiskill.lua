@@ -71,8 +71,8 @@ end
 
 function sendiskill:Explode(inst)
 	self.shouldcharge = true
-	if inst.components.hunger ~= nil then
-		inst.components.hunger:DoDelta(- STUNING.SKILL_RAPIER_HUNGERCOST)
+	if inst.components.sendimana ~= nil then
+		inst.components.sendimana:DoDelta(- STUNING.SKILL_RAPIER_MANACOST )
 	end
 
 	local x, y, z = inst.Transform:GetWorldPosition()
@@ -119,8 +119,8 @@ function sendiskill:OnStartIgniaRun(inst)
 		inst.components.talker:Say(GetString(inst.prefab, "SKILL_IGNIARUN"))
 		inst.components.health:SetInvincible(true)
 
-		if inst.components.hunger ~= nil then
-			inst.components.hunger:DoDelta(-STUNING.SKILL_IGNIARUN_HUNGERCOST, nil, true)
+		if inst.components.sendimana ~= nil then
+			inst.components.sendimana:DoDelta( -STUNING.SKILL_IGNIARUN_MANACOST )
 		end
 
 		SpawnPrefab("explode_small").Transform:SetPosition(inst.Transform:GetWorldPosition())

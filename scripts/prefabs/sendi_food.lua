@@ -1,19 +1,23 @@
+local CONST = TUNING.SENDI
 local food = {
     test = { -- 템 이름
         foodtype = FOODTYPE.MEAT, -- FOODTYPE.MEAT 고기 | FOODTYPE.VEGGIE 야채 | FOODTYPE.GOODIES 물건
         health = 100, -- 체력
         hunger = 100, -- 허기
         sanity = 100, -- 정신력
+        mana = CONST.MANA_RESTORE_FULL, -- 마나(기본 마나 회복 규칙을 무시)
         perishtime = 5000, -- 유통 기간
 
         -- 기타옵션
         rotten = "seeds", -- 썩으면 변할 물건 (썩은 것으로 변하게 할거면 안적어도 됨)
-        tags = { "testest", "cattoy" }, --붙일 태그들
+        tags = { "testest", "cattoy", "nobait" }, --붙일 태그들 | nobait 태그 : 넣었을경우 미끼가 아니게 됨.
         floater = {"small", nil, nil}, --바다에 뜨는 성질 설정
         temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
         temperatureduration = TUNING.FOOD_TEMP_LONG, -- TUNING.FOOD_TEMP_BRIEF 짧음 | TUNING.FOOD_TEMP_AVERAGE 중간 | TUNING.FOOD_TEMP_LONG 길음
         cooktime = .5, --요리시간 (미트볼 0.75)
         stacksize = 1, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM (40)
+        fuelvalue = 90, -- 불 넣었을때 불 타는 양 (통나무 = 7.5, 풀떼기 = 7.5)
+        fertlizermult = 1, -- 비료 수치(ㄸ을 기준으로 비율, 썩은것 = 0.25ㄸ, 구아노 = 1.5ㄸ )
         asset = "cocoa_cup", -- 에셋파일 경로(외형 파일 이름)
         oneatenfn = function(inst, eater) -- 먹었을 때 실행 함수
             eater.components.talker:Say("마싯다.")
@@ -490,9 +494,7 @@ function MakeFood(data)
         inst.entity:AddTransform()
         inst.entity:AddAnimState()
         inst.entity:AddNetwork()
-		
-		inst:AddComponent("fuel")
-		inst.components.fuel.fuelvalue = 15
+
         MakeInventoryPhysics(inst)
 
         if data.tags ~= nil then
@@ -517,9 +519,24 @@ function MakeFood(data)
             return inst
         end
 
-        inst:AddComponent("bait")
+        if not inst:HasTag("nobait") then
+          inst:AddComponent("bait")
+        end
+
         inst:AddComponent("inspectable")
         inst:AddComponent("tradable")
+
+        if data.fuelvalue ~= nil then
+          inst:AddComponent("fuel")
+          inst.components.fuel.fuelvalue = data.fuelvalue
+        end
+
+        if data.fertlizermult ~= nil then
+          inst:AddComponent("fertilizer")
+          inst.components.fertilizer.fertilizervalue = TUNING.POOP_FERTILIZE * data.fertlizermult
+          inst.components.fertilizer.soil_cycles = TUNING.POOP_SOILCYCLES * data.fertlizermult
+          inst.components.fertilizer.withered_cycles = TUNING.POOP_WITHEREDCYCLES * data.fertlizermult
+        end
 
         inst:AddComponent("edible")
         inst.components.edible.healthvalue = data.health
