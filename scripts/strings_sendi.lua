@@ -72,15 +72,15 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIOBJECT_WAREHOUSE = "많은 물건이 �
 STRINGS.NAMES.AOS_SEED = "크리에이시드" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED = "순수한 마력이 느껴져요!"
 
-STRINGS.NAMES.AOS_SEED_PURPLE = "오염된 시드" --SEED_CREESEED
+STRINGS.NAMES.AOS_SEED_PURPLE = "오염된 시드 결정" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_PURPLE = "오염이 꽤 진행되긴 했지만\n시간이 지나면 원래모습을 되찾을거에요."
 
-STRINGS.NAMES.AOS_SEED_BLACK = "매우 오염된 시드" --SEED_CREESEED
+STRINGS.NAMES.AOS_SEED_BLACK = "매우 오염된 시드 결정" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BLACK = "윽..! 너무나도 끔찍한 마력이에요!\n ...시간이 지나면 괜찮아지겠죠..?"
 
 
 
-STRINGS.NAMES.AOS_SEED_BOSS_BLACK = "마기의 시드 결정" --SEED_CREESEED
+STRINGS.NAMES.AOS_SEED_BOSS_BLACK = "심연의 시드 결정" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_BLACK = "이렇게 순수한 마기는 처음이에요.\n 이정도 농도임에도 전혀 위해가 되지 안하니.."
 
 STRINGS.NAMES.AOS_SEED_BOSS_ORANGE = "태양의 시드 결정" --SEED_CREESEED
@@ -94,6 +94,15 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_SKY = "순수한 얼음의 마
 
 STRINGS.NAMES.AOS_SEED_BOSS_WHITE = "탐욕의 시드 결정" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_WHITE = "이렇게 탐욕스러운 마력은 처음이에요.\n...이대로 두다간 저까지 위험해질거에요."
+
+STRINGS.NAMES.AOS_SEED_BOSS_AUTUMN = "풍요의 시드 결정" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_AUTUMN = "따뜻하고 부드러운 마력이 가득해요."
+
+STRINGS.NAMES.AOS_SEED_BOSS_GREEN = "생명의 시드 결정" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_GREEN = "그리운 생명의 마력이 느껴져요."
+
+STRINGS.NAMES.AOS_SEED_BOSS_YELLOW = "행복의 시드 결정" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_YELLOW = "무엇이든 해낼수 있을것만 같은 기분이에요!"
 
 STRINGS.NAMES.AOS_SEED_MIDDLE = "거대한 시드 조각" --SEED_CREESEED
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_MIDDLE = "방대한 마력이 느껴져요!"
@@ -115,144 +124,326 @@ STRINGS.RECIPE_DESC.TWIGS = "짠, 통나무를 조각냈어요!"
 STRINGS.NAMES.SENDI_FOOD_COCOAPOWDER = "마법의 가루" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOAPOWDER = "킁 킁, 아주아주 달콤해요!"
 
-STRINGS.NAMES.sendi_food_cocoa_cup = "달콤한 얼음컵" 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendi_food_cocoa_cup = "컵에 재료를 담았어요. \n아직 얼음조차 녹지않았지만, 오븐에 넣으면 따뜻해질거에요!"
+STRINGS.NAMES.SENDI_FOOD_RICEWHEAT = "벼리밀" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICEWHEAT = "풀들을 잘 살펴보니 찾을 수 있었어요!"
+
+STRINGS.NAMES.SENDI_FOOD_MILK_STRONG = "튼튼 밀크" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_MILK_STRONG = "몸에 좋은 우유에요, 다양한 제빵에 사용돼요!"
+  --재료
+  
+  
+STRINGS.NAMES.SENDI_FOOD_COCOA_CUP = "달콤한 얼음컵" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA_CUP = "컵에 재료를 담았어요. \n아직 얼음조차 녹지않았지만, 오븐에 넣으면 따뜻해질거에요!"
 STRINGS.NAMES.SENDI_FOOD_COCOA = "따뜻한 코코아" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA = "전투 후 따뜻하게 한잔~\n하루를 마무리 하기에 이것만한것이 없지요!"
 STRINGS.NAMES.SENDI_FOOD_COCOA_COLD = "시원한 코코아" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA_COLD = "얼음이 동동 떠다니는 시원한 코코아 랍니다!"
-
 
 STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK = "하운드 스테이크" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK = "윽... 역한 고기를 접시에 담았어요. \n 오븐에서 한번 더 마무리 해야겠어요."
 STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK_COOKED = "허브를 곁들인 북쪽늑대 스테이크" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK_COOKED = "아직 잡내가 남아있지만, 아주 맛있어요!"
 
+STRINGS.NAMES.SENDI_FOOD_BREAD = "빵" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD = "가장 기본적인 식사에요.\n 하지만 이것만먹으면 심심하죠?"
+STRINGS.NAMES.SENDI_FOOD_SALAD_BANANA = "이끼바나 샐러드" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_SALAD_BANANA = "신선한 야채와 바나나의 만남!"
+STRINGS.NAMES.SENDI_FOOD_JUICE_LIGHT_BERRY = "빛나는 푸른 주스" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_JUICE_LIGHT_BERRY = "급한대로, 양손에 쥐고 꼭 짜봤어요!"
+
+STRINGS.NAMES.SENDI_FOOD_PIE_LIGHT_BERRY = "푸른파이 반죽" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_LIGHT_BERRY = "얼른 맛있게 구워졌으면 좋겠어요!"
+STRINGS.NAMES.SENDI_FOOD_PIE_LIGHT_BERRY_COOKED = "빛나는 베리파이" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_LIGHT_BERRY_COOKED = "불로 구워내니 달콤해졌어요!\n이건 얼마든지 먹을수 있어요!"
+
+STRINGS.NAMES.SENDI_FOOD_CAKE_BANANA = "바나나 반죽" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CAKE_BANANA = "얼른 맛있게 구워졌으면 좋겠어요!"
+STRINGS.NAMES.SENDI_FOOD_CAKE_BANANA_COOKED = "바나나 롤케익" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CAKE_BANANA_COOKED = "아주아주 달콤하고 부드러운 간식이죠!"
+
+STRINGS.NAMES.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "파란 푸딩" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "조금 식혔다 먹으면 맛있을거에요!"
+STRINGS.NAMES.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA_COOKED = "베리나 푸딩" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA_COOKED = "냉장고에 차게 식혔더니, 맛있는 푸딩이 되었어요!"
+
+STRINGS.NAMES.SENDI_FOOD_RICE_EEL = "장어와 밥" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_EEL = "밥을 짓다보니 장어가 조금 식어버렸네요..\n 얼른 데워봐요!"
+STRINGS.NAMES.SENDI_FOOD_RICE_EEL_COOKED = "장어 덮밥" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_EEL_COOKED = "장어의 힘이 불끈 불끈이에요!"
+
+--3차음식[지상]
+STRINGS.NAMES.SENDI_FOOD_BREAD_SAUSAGE = "소세지 빵" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_SAUSAGE = "맛있는 소시지를 빵에 끼웠어요!"
+
+STRINGS.NAMES.SENDI_FOOD_BREAD_MUFFIN = "머핀 반죽" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_MUFFIN = "머핀의 반죽이에요. 오븐에서 마무리 해야돼요."
+STRINGS.NAMES.SENDI_FOOD_BREAD_MUFFIN_COOKED = "버터 풀- 머핀" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_MUFFIN_COOKED = "건강에좋은 나비 머핀이에요! \n 데코는 초콜릿이랍니다."
+
+STRINGS.NAMES.SENDI_FOOD_RICE_TUNA = "재료를 담은 그릇" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_TUNA = "생선이 아직 익지않았어요 \n 오븐에서 마무리해야해요!"
+STRINGS.NAMES.SENDI_FOOD_RICE_TUNA_COOKED = "참치 비빔밥" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_TUNA_COOKED = "몸에좋고 맛도 좋답니다!"
+
+STRINGS.NAMES.SENDI_FOOD_BREAD_BUT = "식빵 반죽" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT = "식빵 반죽이에요. \n 어서 오븐에서 마무리해요!"
+STRINGS.NAMES.SENDI_FOOD_BREAD_BUT_COOKED = "견과류 식빵" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT_COOKED = "견과류를 듬뿍 넣었어요. 건강에 좋고 맛있답니다!"
+--5차음식
+
+STRINGS.NAMES.SENDI_FOOD_CHICKEN = "하얗게 숨은 닭고기" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CHICKEN = "튀김옷을 입혔어요!\n 앗, 생고기니까, 날로먹으면 큰일나요!"
+STRINGS.NAMES.SENDI_FOOD_CHICKEN_COOKED = "쳐도른 치킨" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CHICKEN_COOKED = "올리브와~ 치킨이 만나 \n 기분이 좋아~"
+
+STRINGS.NAMES.SENDI_FOOD_PIE_BERRY = "베리 듬뿍 반죽" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_BERRY = "베리를 아낌없이 얹은 파이에요!\n 오븐에 넣어서 마무리 해볼까요?"
+STRINGS.NAMES.SENDI_FOOD_PIE_BERRY_COOKED = "감동파이" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_BERRY_COOKED = "베리가 듬뿍 올려져있어요! 어떤 맛이 날까요?"
+
+STRINGS.NAMES.SENDI_FOOD_DUMPLING = "속보이는 만두피" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT = "쟈근 만두피에 속을 아낌없이!\n 아아, 먹음직스럽지만 날로먹으면 안돼요!"
+STRINGS.NAMES.SENDI_FOOD_DUMPLING_COOKED = "통통 만두" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_DUMPLING_COOKED = "쫄깃 쫄깃~ 야들 야들! 맛있는 만두에요!"
+
+
+
 
 
 --일반오브젝트 제작대사 설정
-
-
-
---------레시피 추가
 STRINGS.SENDITABNAME = "센디탭"
-STRINGS.RECIPE_DESC.SENDIPACK = "냉장고 기능이 달린 가방입니다."
-
+--모자
 STRINGS.RECIPE_DESC.SENDISEDMASK = "아픈건 싫어 [높은방어율,우산]"
 STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "우린 모두 친구![고기무시]"
 STRINGS.RECIPE_DESC.SENDI_HAT_GOGGLES = "사막도 두렵지않아요!"
 STRINGS.RECIPE_DESC.SENDI_HAT_SPIDER = "거미 심리학(거미와 친구가됩니다)"
-
+--무기
 STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "센디의 연습용 레이피어 입니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "센디의 레이피어 입니다."
 STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "활활 타오르고 있어요![불꽃지속딜]" 
-
+--갑옷
 STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "따뜻하고, 몸이 가벼워집니다." 
 STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "더욱 따뜻하고, 가벼워집니다." 
-
+--악세사리
+STRINGS.RECIPE_DESC.SENDIPACK = "냉장고 기능이 달린 가방입니다."
 STRINGS.RECIPE_DESC.SENDI_AMULET = "목걸이 입니다." 
-
+--오브젝트제작
 STRINGS.RECIPE_DESC.SENDI_OVEN = "불꽃의 마법사. 우클릭 변경[오븐+냉장고]" 
 STRINGS.RECIPE_DESC.SENDIOBJECT_HUT = "아난님의 저택을 재연해봤습니다!." --SENDIOBJECT_HUT
 STRINGS.RECIPE_DESC.SENDIOBJECT_WAREHOUSE = "많은 물건을 보관하세요![냉장고]" --SENDIOBJECT_HUT
-
+--시드제작
 STRINGS.RECIPE_DESC.AOS_SEED = "마력을 실채화 해봅시다!" --크리에이시드 aos_seed  SEED_CREESEED
 STRINGS.RECIPE_DESC.AOS_SEED_PURPLE = "오염된 마력을 추출해봅시다!" --크리에이시드 aos_seed  SEED_CREESEED
 STRINGS.RECIPE_DESC.AOS_SEED_BLACK = "끔찍한 마력을 추출해봅시다!" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.AOS_SEED_MIDDLE = "작은 조각들을 모아볼까요?"
+STRINGS.RECIPE_DESC.AOS_SEED_BOSS_YELLOW = "드디어 때가 되었어요!" 
 
-
+--1차음식
 STRINGS.RECIPE_DESC.SENDI_FOOD_COCOAPOWDER = "달콤한 분말을 얻으세요!" --크리에이시드 aos_seed  SEED_CREESEED
-STRINGS.RECIPE_DESC.SENDI_FOOD_COCOA_CUP = "컵에 재료를 넣으세요!" --크리에이시드 aos_seed  SEED_CREESEED
-
-STRINGS.RECIPE_DESC.SENDI_FOOD_WOLFSTEAK = "역한고기에 마법을 부려봅시다!" --크리에이시드 aos_seed  SEED_CREESEED
-
-
-
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICEWHEAT = "고기만으론 버틸 수 없어!" --크리에이시드 aos_seed  SEED_CREESEED
+--2차음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_COCOA_CUP = "컵에 재료를 넣으세요![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_WOLFSTEAK = "접시 위에서 마법을 부려봅시다![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD = "약소한 한끼로 최적이죠![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_SALAD_BANANA = "접시위서 먹음직스럽게!![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_JUICE_LIGHT_BERRY = "어서 착즙해볼까요?[exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_PIE_LIGHT_BERRY = "반죽 후 오븐에서 구워주세요![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_CAKE_BANANA = "반죽 후 오븐에서 식혀주세요![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "반죽후 오븐에서 구워주세요![exp]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICE_EEL = "손질 후 오븐에서 데워주세요![exp]"
+--3차 음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_SAUSAGE = "한끼 식사로 최고에요![exp]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_MUFFIN = "반죽 후 오븐에서 구워주세요![exp]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_BUT = "반죽 후 오븐에서 구워주세요![exp]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICE_TUNA = "손질 후 오븐에서 데워주세요![exp]"
+--5차 음식 
+STRINGS.RECIPE_DESC.SENDI_FOOD_CHICKEN = "입히고, 오븐에서 구워주세요[EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_PIE_BERRY = "반죽 후 오븐에서 구워주세요![EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_DUMPLING = "빚어서 오븐에서 구워주세요![EXP]"
 if _SUFFIX == "_en" then ------------------------------------------------------영어 대사 시작
 
 STRINGS.CHARACTER_TITLES.sendi = "Sendi"
 STRINGS.CHARACTER_NAMES.sendi = "Sendi"
-STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*Fast but weak, gives mercy to enemy.\n*Emits glimmering by draining belly.\n*Regen health when sunlight exists."
-STRINGS.CHARACTER_QUOTES.sendi = "\"My journey would never stop \nuntil I get back to my world!\""
+STRINGS.CHARACTER_DESCRIPTIONS.sendi = "*Fast but weak, gives mercy to enemy.\n*Emits a glow when her hunger is high.\n*Regen health when daytime."
+STRINGS.CHARACTER_QUOTES.sendi = "\"My journey will never stop \n until I get back to my world!\""
 
-STRINGS.NAMES.SENDISEDMASK = "Sendi's tear mask"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "It has.. its own stories."
+STRINGS.NAMES.SENDISEDMASK = "Sendi's Tear Mask"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDISEDMASK = "It has.. it's own stories."
 -- 센디 마스크
-STRINGS.NAMES.SENDI_HAT_CROWN = "Frand Foxy Helmet"
+STRINGS.NAMES.SENDI_HAT_CROWN = "Grand Fox Helmet"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_CROWN = "I'm not scared anymore with my friends!"
 -- 프랜드 폭시 헬멧
-STRINGS.NAMES.SENDI_HAT_GOGGLES = "monarch's helmet"
+STRINGS.NAMES.SENDI_HAT_GOGGLES = "Monarch's helmet"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_GOGGLES = "All right, I'm ready now."
 --프랜드 고글
-STRINGS.NAMES.SENDI_HAT_SPIDER = "Spider Catkun Helmet"
+STRINGS.NAMES.SENDI_HAT_SPIDER = "Spider Catcoon Helmet"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_HAT_SPIDER = "This is a cat. Cats, cats."
 --스파이더 캣쿤 헬멧
 
-STRINGS.NAMES.SENDI_ARMOR_01 = "Sendi's knit armor"
+STRINGS.NAMES.SENDI_ARMOR_01 = "Sendi's Knit Armor"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_01 = "This muffler, was actually mine!" 
 --센디 아머
-STRINGS.NAMES.SENDI_RAPIER = "Sendi Rapier"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER = "It's like my favorite Rapier! Quite pretty, isn't ya?"
+STRINGS.NAMES.SENDI_RAPIER = "Sendi's Rapier"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER = "It's like my favorite Rapier! Quite pretty, isn't it?"
 --센디 레이피어
 STRINGS.NAMES.SENDI_RAPIER_WOOD = "Wooden Rapier"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_WOOD = "I made what I used to practice which is.. Practical!"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_WOOD = "I made what I used to practice with, which is.. Practical!"
 --센디 연습용 목재 레이피어
-STRINGS.NAMES.SENDI_RAPIER_IGNIA = "Ignia Rapier"
+STRINGS.NAMES.SENDI_RAPIER_IGNIA = "Ignia's Rapier"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_RAPIER_IGNIA = "It's Rapier which has realized the power of Ignia! Is it a bit violent?"
 --센디 이그니아 레이피어
-STRINGS.NAMES.SENDIPACK = "Sendi's school bag"
+STRINGS.NAMES.SENDIPACK = "Sendi's School Bag"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIPACK = "Cute Bag, it even cools stuff! Science is brilliant!"
 --센디팩
-STRINGS.NAMES.SENDI_ARMOR_02 = "Sendi's Life armor"
+STRINGS.NAMES.SENDI_ARMOR_02 = "Sendi's Life Armor"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_ARMOR_02 = "I made it a bit more durable and efficient than the previous!"
 --센디 오븐
-STRINGS.NAMES.SENDI_OVEN = "Sendi Oven"
+STRINGS.NAMES.SENDI_OVEN = "Sendi's Oven"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_OVEN = "There's a note on it.\n Make a fire, and put in a dish with ingredients."
 --센디 오두막
-STRINGS.NAMES.SENDIOBJECT_HUT = "Everyone's cabin"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIOBJECT_HUT = "I've reenacted my old mansion."
+STRINGS.NAMES.SENDIOBJECT_HUT = "Everyone's Cabin"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIOBJECT_HUT = "I've recreated my old mansion."
 --센디 창고
-STRINGS.NAMES.SENDIOBJECT_WAREHOUSE = "Everyone's warehouse"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIOBJECT_WAREHOUSE = "I've reenacted my old mansion."
---크리에이시드
-STRINGS.NAMES.AOS_SEED = "CreeSeed"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED = "It contains my magic."
+STRINGS.NAMES.SENDIOBJECT_WAREHOUSE = "Everyone's Warehouse"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDIOBJECT_WAREHOUSE = "I've crafted a storage space."
+--Creasyid
+STRINGS.NAMES.AOS_SEED = "Creaseed" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED = "A seed of Creation, crafted of pure Mana!"
 
-STRINGS.NAMES.AOS_SEED = "크리에이시드" --SEED_CREESEED
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED = "순수한 마력이 느껴져요!"
+STRINGS.NAMES.AOS_SEED_PURPLE = "Tainted Seed" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_PURPLE = "A polluted creation seed.\n It will degrade growth slightly"
 
-STRINGS.NAMES.AOS_SEED_PURPLE = "오염된 시드" --SEED_CREESEED
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_PURPLE = "오염이 꽤 진행되긴 했지만\n시간이 지나면 원래모습을 되찾을거에요."
-
-STRINGS.NAMES.AOS_SEED_BLACK = "매우 오염된 시드" --SEED_CREESEED
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BLACK = "윽..! 너무나도 끔찍한 마력이에요!\n ...시간이 지나면 괜찮아지겠죠..?"
+STRINGS.NAMES.AOS_SEED_BLACK = "Corrupt Seed" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BLACK = "This creation seed is completely corrupt.\n It will degrade growth quite a bit."
 
 
 
-STRINGS.NAMES.CHARCOAL = "eco-friendly charcoal" 
+STRINGS.NAMES.AOS_SEED_BOSS_BLACK = "Seed Crystal of Abyss" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_BLACK = "I've never had such a pure magic.."
+
+STRINGS.NAMES.AOS_SEED_BOSS_ORANGE = "Seed Crystal of Sun" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_ORANGE = "I can feel the power of the great sun!"
+
+STRINGS.NAMES.AOS_SEED_BOSS_RED = "Seed Crystal of Flame" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_RED = "It's like Ignia's Flames."
+
+STRINGS.NAMES.AOS_SEED_BOSS_SKY = "Seed Crystal of Snow" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_SKY = "I can feel the power of pure ice!"
+
+STRINGS.NAMES.AOS_SEED_BOSS_WHITE = "Seed Crystal of Greedy" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_WHITE = "I've never seen such a greedy mana before!"
+
+STRINGS.NAMES.AOS_SEED_BOSS_AUTUMN = "Seed Crystal of Rich"  --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_AUTUMN = "It's full of warm mana!"
+
+STRINGS.NAMES.AOS_SEED_BOSS_GREEN = "Seed Crystal of Life" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_GREEN = "I can feel the power of the life I miss!"
+
+STRINGS.NAMES.AOS_SEED_BOSS_YELLOW = "Seed Crystal of Happy" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_BOSS_YELLOW = "I think I can do anything!"
+
+STRINGS.NAMES.AOS_SEED_MIDDLE = "Big Seed Fragment" --SEED_CREESEED
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.AOS_SEED_MIDDLE = "I can feel a lot of mana!"
+
+
+--음식 재료
+STRINGS.NAMES.CAMPFIRE = "Campfire" 
+STRINGS.RECIPE_DESC.CAMPFIRE = "Sweet, we've got a fire." 
+
+STRINGS.NAMES.TORCH = "Torch" 
+STRINGS.RECIPE_DESC.TORCH = "Sweet, we've got a fire." 
+
+STRINGS.NAMES.CHARCOAL = "Charcoal" 
 STRINGS.RECIPE_DESC.CHARCOAL = "Look, I burned the tree." 
 
-STRINGS.NAMES.TWIGS = "Branch" 
+STRINGS.NAMES.TWIGS = "Twigs" 
 STRINGS.RECIPE_DESC.TWIGS = "Look, I've carved a tree." 
 
---음식
-STRINGS.NAMES.SENDI_FOOD_COCOAPOWDER = "sweet powder" 
+STRINGS.NAMES.SENDI_FOOD_MILK_STRONG = "Strong Milk" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_MILK_STRONG = "I can get it from mammals."
+
+--1차음식
+STRINGS.NAMES.SENDI_FOOD_COCOAPOWDER = "Sweet Powder" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOAPOWDER = "Yum, yum, that's so sweet!"
 
-STRINGS.NAMES.sendi_food_cocoa_cup = "sweet ice cup" 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendi_food_cocoa_cup = "I put the ingredients in the cup!"
-STRINGS.NAMES.SENDI_FOOD_COCOA = "warm cocoa" 
+STRINGS.NAMES.SENDI_FOOD_RICEWHEAT = "Ricewheat" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICEWHEAT = "Looking through the grass, I could find it!"
+
+STRINGS.NAMES.SENDI_FOOD_COCOA_CUP = "Sweet Ice Cup" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA_CUP = "Sweet and Refreshing!"
+
+STRINGS.NAMES.SENDI_FOOD_COCOA = "Warm Cocoa" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_COCOA = "Have a warm drink after the battle. \n There's nothing like this to wrap up the day!"
 
 STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK = "Hound Steak" 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK = "Uh... I put the disgusting meat on a plate. \n I'll have to finish it one more time in the oven."
 
-STRINGS.NAMES.sendi_food_wolfsteak_cooked = "Northern Wolf Steak with Herbs"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.sendi_food_wolfsteak_cooked = "There's still some weed left, but it's very delicious!"
+STRINGS.NAMES.SENDI_FOOD_WOLFSTEAK_COOKED = "Northern Wolf Steak with Herbs"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_WOLFSTEAK_COOKED = "There's still some weed left, but it's very delicious!"
 
+--2차음식
+STRINGS.NAMES.SENDI_FOOD_BREAD = "Bread" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD = "It's the most basic meal."
+STRINGS.NAMES.SENDI_FOOD_SALAD_BANANA = "Mossbana Salad" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_SALAD_BANANA = "Meeting Fresh Vegetables with Bananas!"
+STRINGS.NAMES.SENDI_FOOD_JUICE_LIGHT_BERRY = "shining blue juice" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_JUICE_LIGHT_BERRY = "Sweet Blue juice!"
 
+STRINGS.NAMES.SENDI_FOOD_PIE_LIGHT_BERRY = "Blue Pie Dough" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_LIGHT_BERRY = "I can't wait for it to be baked! \n Let's put it in a hot fire oven!"
+STRINGS.NAMES.SENDI_FOOD_PIE_LIGHT_BERRY_COOKED = "Bright Berry Pies" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_LIGHT_BERRY_COOKED = "It's even sweeter now that it's baked!"
 
+STRINGS.NAMES.SENDI_FOOD_CAKE_BANANA = "Banana Paste" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CAKE_BANANA = "I can't wait for it to be baked! \n Let's put it in a hot fire oven!"
+STRINGS.NAMES.SENDI_FOOD_CAKE_BANANA_COOKED = "Banana Roll Cake" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CAKE_BANANA_COOKED = "What a sweet, soft snack!"
 
+STRINGS.NAMES.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "Blue Pudding" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "....Shall we cool it down a little? \n Let's put it in a cold fire oven!"
+STRINGS.NAMES.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA_COOKED = "Verina Pudding" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA_COOKED = "I cooled it down and it turned appetizing!"
+
+STRINGS.NAMES.SENDI_FOOD_RICE_EEL = "Eel and Rice" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_EEL = "As I cooked rice, the eel cooled a little. \n Let's put it in the oven of hot fire!"
+STRINGS.NAMES.SENDI_FOOD_RICE_EEL_COOKED = "Eel Rice" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_EEL_COOKED = "The eels are so powerful!"
+
+--3차음식[지상]
+STRINGS.NAMES.SENDI_FOOD_BREAD_SAUSAGE = "Sausage Bread" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_SAUSAGE = "I put a delicious sausage in the bread."
+
+STRINGS.NAMES.SENDI_FOOD_BREAD_MUFFIN = "Muffin Plaster" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_MUFFIN = "It's dough. We have to finish it in the oven."
+STRINGS.NAMES.SENDI_FOOD_RICE_EEL_COOKED = "Butter-Pool Muffin" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_EEL_COOKED = "It's a healthy muffin\n Deco is chocolate."
+
+STRINGS.NAMES.SENDI_FOOD_RICE_TUNA = "Ingredient Bowl" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_TUNA = "The fish is not cooked yet\n Let's finish it in the oven."
+STRINGS.NAMES.SENDI_FOOD_RICE_TUNA_COOKED = "Tuna Bibimbap" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_RICE_TUNA_COOKED = "It's healthy, It's delicious."
+
+STRINGS.NAMES.SENDI_FOOD_BREAD_BUT = "Breadcrumb Porridge" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT = "It's bread dough\n Let's wrap this up in the oven!"
+STRINGS.NAMES.SENDI_FOOD_BREAD_BUT_COOKED = "Nut Bread" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT_COOKED = "I put a lot of nuts in it."
+
+--5차음식
+
+STRINGS.NAMES.SENDI_FOOD_CHICKEN = "White Chicken" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CHICKEN = "Breaded and ready to fry\n It's still raw!"
+STRINGS.NAMES.SENDI_FOOD_CHICKEN_COOKED = "Fried Chicken" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_CHICKEN_COOKED = "So warm and flaky~ It's so Delicious~"
+
+STRINGS.NAMES.SENDI_FOOD_PIE_BERRY = "Raw Berry Pie" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_BERRY = "Berries in a crust!\n Should it go in the oven?"
+STRINGS.NAMES.SENDI_FOOD_PIE_BERRY_COOKED = "Wildberry Pie" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_PIE_BERRY_COOKED = "Chocked full of berries!\n Sweet and filling!"
+
+STRINGS.NAMES.SENDI_FOOD_DUMPLING = "Dumpling" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_BREAD_BUT = "small simple dumplings\n Tasty, but still raw!"
+STRINGS.NAMES.SENDI_FOOD_DUMPLING_COOKED = "Plump Dumpling" 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SENDI_FOOD_DUMPLING_COOKED = "plump and chewy~ The perfect dumplings!"
 
 
 --wharang_shrine
@@ -260,26 +451,43 @@ STRINGS.SENDITABNAME = "Sendi Tab"
 STRINGS.RECIPE_DESC.SENDIPACK = "Sendi's white school bag."
 STRINGS.RECIPE_DESC.SENDISEDMASK = "A mask with a sad story."
 STRINGS.RECIPE_DESC.SENDI_HAT_CROWN = "We are friend.[no meat]"
-STRINGS.RECIPE_DESC.SENDI_HAT_GOGGLES = "[I'm not afraid of the desert anymore]."
-STRINGS.RECIPE_DESC.SENDI_HAT_SPIDER = "[make friends with spiders]."
-STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "Practice rapier."
+STRINGS.RECIPE_DESC.SENDI_HAT_GOGGLES = "I'm not afraid of the desert anymore."
+STRINGS.RECIPE_DESC.SENDI_HAT_SPIDER = "I can make friends with spiders."
+STRINGS.RECIPE_DESC.SENDI_RAPIER_WOOD = "Practice Rapier."
 STRINGS.RECIPE_DESC.SENDI_RAPIER = "Sendi's Rapier"
-STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "It is warm and fast." 
-STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "Too warm and fast." 
-STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "Loop fire damage." 
-STRINGS.RECIPE_DESC.SENDI_OVEN = "Warm and cold fire"  
+STRINGS.RECIPE_DESC.SENDI_ARMOR_01 = "It keeps you warm and fast." 
+STRINGS.RECIPE_DESC.SENDI_ARMOR_02 = "It keeps you cool and fast." 
+STRINGS.RECIPE_DESC.SENDI_RAPIER_IGNIA = "Adds fire damage to every hit." 
+STRINGS.RECIPE_DESC.SENDI_OVEN = "Hot and cold fire"  
 STRINGS.RECIPE_DESC.SENDIOBJECT_HUT = "a comfortable haven" 
 STRINGS.RECIPE_DESC.SENDIOBJECT_WAREHOUSE = "a comfortable haven" 
-STRINGS.RECIPE_DESC.AOS_SEED = "Shape your mana!" --크리에이시드
-
-STRINGS.RECIPE_DESC.AOS_SEED_PURPLE = "terrible mana extraction!" --크리에이시드 aos_seed  SEED_CREESEED
-STRINGS.RECIPE_DESC.AOS_SEED_BLACK = "Extract more terrible mana!" --크리에이시드 aos_seed  SEED_CREESEED
-
-
-STRINGS.RECIPE_DESC.SENDI_FOOD_COCOAPOWDER = "Get sweet powder!" --크리에이시드 aos_seed  SEED_CREESEED
-STRINGS.RECIPE_DESC.sendi_food_cocoa_cup = "Put the ingredients in the cup.!" --크리에이시드 aos_seed  SEED_CREESEED
-
-STRINGS.RECIPE_DESC.SENDI_FOOD_WOLFSTEAK = "Witchy meat and magic!" --크리에이시드 aos_seed  SEED_CREESEED
-
+--시드제작
+STRINGS.RECIPE_DESC.AOS_SEED = "Shape your mana of creation![exp3]" --크리에이시드
+STRINGS.RECIPE_DESC.AOS_SEED_PURPLE = "A extraction of tainted mana! [exp-5]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.AOS_SEED_BLACK = "Extract corrupt mana![exp-30]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.AOS_SEED_MIDDLE = "Let's combine the seeds![exp60]"
+STRINGS.RECIPE_DESC.AOS_SEED_BOSS_YELLOW = "It's finally time.[big exp]" --크리에이시드 aos_seed_boss_red  AOS_SEED_BOSS_RED
+--음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_COCOAPOWDER = "Grinding berries into a sweet powder! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICEWHEAT = "Not just rice, not just wheat!! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_COCOA_CUP = "A rich sweet drink! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_WOLFSTEAK = "Bewitched meat using magic! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+--2차음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD = "A basic meal. [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_SALAD_BANANA = "Pleasant and refreshing. [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_JUICE_LIGHT_BERRY = "Let's get some juice! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_PIE_LIGHT_BERRY = "Best if baked in the oven! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_CAKE_BANANA = "Fuity paste, great for baking. [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_PUDDING_LIGHT_BERRYBANANA = "It's the best snack I've ever had! [EXP]" --크리에이시드 aos_seed  SEED_CREESEED
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICE_EEL = "That's it! [EXP]"
+--3차 음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_SAUSAGE = "It's good for a meal. [EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_MUFFIN = "It's a sweet snack. [EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_BREAD_BUT = "A filling porridge with nuts. [EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_RICE_TUNA = "A bowl of ingredients, just add heat. [EXP]"
+--5차 음식
+STRINGS.RECIPE_DESC.SENDI_FOOD_CHICKEN = "Raw chicken, off to the oven! [EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_PIE_BERRY = "Just needs some time in the Oven. [EXP]"
+STRINGS.RECIPE_DESC.SENDI_FOOD_DUMPLING = "Wrapped and ready to cook! [EXP]"
 
 end

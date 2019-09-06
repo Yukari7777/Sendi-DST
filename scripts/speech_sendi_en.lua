@@ -2419,7 +2419,20 @@ return {
         TALLBIRDEGG_CRACKED = "Ugh. Crunchy.",
     },
 
-	RAPIER = {
+	DESCRIBE_LEVELUP = {
+		"I feel closer to you, Ignia.",
+		"There's nothing to be afraid of now!",
+		"I've grown a little bit longer!",
+		"There's nothing to be afraid of now!",
+		"I feel closer to you, Ignia.",
+		"I feel closer to you, Ignia.",
+		"There's nothing to be afraid of now!",
+		"There's nothing to be afraid of now!",
+		"I've grown a little bit longer!",
+		"I've grown a little bit longer!",
+	},
+	
+	SKILL_RAPIER = {
 		"Heiya!",
 		"Seiya!",
 		"Heiya!",
@@ -2435,7 +2448,7 @@ return {
 		"Too high.!",
 		"jump!",
 		"",
-		"����!",
+		"",
 		"",
 		"I fly like a bee ~",
 		"",
@@ -2455,4 +2468,66 @@ return {
 	DESCRIBE_LOW_HUNGER = {
 		"I'm hungry and I can not even get a fever."
 	},
+	
+	UNFINISHED = {
+	"You actually have to cook it in the oven.",
+	"Do you have any pain in your stomachache?",
+	"It's still cold. Where's the oven?",
+	"You actually have to cook it in the oven.",
+	"Do you have any pain in your stomachache?",
+	"It's still cold. Where's the oven?",
+	"You actually have to cook it in the oven.",
+	"Do you have any pain in your stomachache?",
+	"It's still cold. Where's the oven?",
+	"You actually have to cook it in the oven.",
+	"Do you have any pain in your stomachache?",
+	"It's still cold. Where's the oven?",
+	
+	},
+	
+	SENDIFOOD = {--조리푸드 
+	"You're delicious!",
+	"There's a happy harmonie in my mouth.!",
+	"It feels like I'm getting healthier!",
+	"I melted it in my mouth.\n I want to eat more!",
+	"Wow, this is... I can eat as much as I want!",
+	"You're delicious!",
+	"There's a happy harmonie in my mouth!",
+	"It feels like I'm getting healthier!",
+	"I melted it in my mouth. \n I want to eat more!",
+	"Wow, this is... I can eat as much as I want!",
+	},
+
+	SENDISTAPLE = {--주식
+	"Puw, sometimes I want to eat something else.",
+	"Yum, yum, yum!",
+	"Now you can work hard!",
+	"Is there anything sweet??",
+	"Puw, sometimes I want to eat something else.",
+	"Now you can work hard!",
+	"Uh, I'm a little tired.",
+	"I made up my mind! Let's get rid of the hive!",
+	
+	},	
+	
+	SENDIMEAT = {--육류 
+	"The more I eat, the happier it tastes!",
+	"Bye, yam, yum! \n You're the one who writes the!", 
+	"Well, this meat used the magic condiment of the far world.",
+	"It tastes fantastic like a dream!",
+	"The more you chew, the more fantastic it tastes!",
+	"What a perfect food like this... I am so beautiful.",
+	"Yum, yum, yum, yum, yum\n This, as much as... I can eat as much as I want!",
+	"The more you eat, the more energetic you are!",
+	"The more I eat, the happier it tastes!",
+	"Bye, yam, yum! \n You're the one who writes the!", 
+	"Well, this meat used the magic condiment of the far world.",
+	"It tastes fantastic like a dream!",
+	"The more you chew, the more fantastic it tastes!",
+	"What a perfect food like this... I am so beautiful.",
+	"Yum, yum, yum, yum, yum\n This, as much as... I can eat as much as I want!",
+	"The more you eat, the more energetic you are!",
+		
+	},	
+		
 }

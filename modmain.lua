@@ -27,17 +27,7 @@ PrefabFiles = {
 	"sendiobject_hut", -- 센디 오두막
 	"sendiobject_warehouse", -- 센디 창고
 	-------오브젝트[오븐]-------
-	--"mangotea", --[mangotea] 이름[따끈따끈 코코아] : tea_cocoa
 	"aos_seed",
-
-	--"aos_seed_purple",	
-	--"aos_seed_black",	
-	--"aos_seed_boss_black",
-	--"aos_seed_boss_orange",
-	--"aos_seed_boss_red",
-	--"aos_seed_boss_sky",
-	--"aos_seed_boss_white",
-	--"aos_seed_middle",
 	-------시드---------------
 	
 	"sendi_food",
@@ -157,6 +147,15 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_white.tex"), 
 	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_white.xml"),
 		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_autumn.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_autumn.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_green.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_green.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/aos_seed_boss_yellow.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/aos_seed_boss_yellow.xml"),
+				
 	Asset( "IMAGE", "images/inventoryimages/aos_seed_middle.tex"), 
 	Asset( "ATLAS", "images/inventoryimages/aos_seed_middle.xml"),
 	--------------------- 드롭시드
@@ -175,8 +174,96 @@ Assets = {
 	Asset( "IMAGE", "images/inventoryimages/sendi_food_wolfsteak_cooked.tex"), 
 	Asset( "ATLAS", "images/inventoryimages/sendi_food_wolfsteak_cooked.xml"),	
 
-	Asset( "ATLAS", "images/inventoryimages/sendi_icon_iced.xml"),	
+	--2차 추가 음식들 
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_ricewheat.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_ricewheat.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_salad_banana.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_salad_banana.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_juice_light_berry.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_juice_light_berry.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pie_light_berry.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pie_light_berry.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pie_light_berry_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pie_light_berry_cooked.xml"),
+		
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_cake_banana.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_cake_banana.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_cake_banana_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_cake_banana_cooked.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pudding_light_berrybanana.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pudding_light_berrybanana.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pudding_light_berrybanana_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pudding_light_berrybanana_cooked.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_rice_eel.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_rice_eel.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_rice_eel_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_rice_eel_cooked.xml"),	
+	--3차 전용음식
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread_sausage.tex"), --소세지팡
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread_sausage.xml"),
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread_muffin.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread_muffin.xml"),--머핀
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread_muffin_cooked.tex"), --완성머핀
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread_muffin_cooked.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_rice_tuna.tex"), --참치밥 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_rice_tuna.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_rice_tuna_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_rice_tuna_cooked.xml"),--참치비빔
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread_but.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread_but.xml"),	--식빵
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_bread_but_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_bread_but_cooked.xml"),		--식빵완성
+	
+	--4차 전용음식
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_milk_strong.tex"), --튼튼밀크
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_milk_strong.xml"),		
+	--5차 전용음식
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_chicken.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_chicken.xml"),--치킨
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_chicken_cooked.tex"), --치킨완성
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_chicken_cooked.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pie_berry.tex"), --파이 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pie_berry.xml"),	
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_pie_berry_cooked.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_pie_berry_cooked.xml"),--파이완성
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_dumpling.tex"), 
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_dumpling.xml"),	--만두
+	
+	Asset( "IMAGE", "images/inventoryimages/sendi_food_dumpling_cooked.tex"), --만두완성
+	Asset( "ATLAS", "images/inventoryimages/sendi_food_dumpling_cooked.xml"),	
+	
 	--------------------- 전용 음식    
+	
+	
+	Asset( "ATLAS", "images/inventoryimages/sendi_icon_iced.xml"),	
+	
+	--------------------- 아이콘
+	
 }
 AddMinimapAtlas("images/map_icons/sendi.xml")
 
@@ -270,12 +357,288 @@ end
 				inst.components.combat.GetBattleCryString = myBunnyBattlecry
 			end
 		end)
-
-
 --미트무시
 
+--드롭 exp
+function TESTFUNCAAA(inst)
+   print (inst.name)
+end
+
+AddPrefabPostInitAny(function(inst)
+   if inst.components.health and inst.components.lootdropper and inst.components.health.maxhealth <= 900000 then
+      --inst:ListenForEvent("death", TESTFUNCAAA) --몬스터를잡으면 이름이뜸
+      
+      --inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+		
+      if inst.name == STRINGS.NAMES.DEERCLOPS then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_sky", 1)--디어클롭스
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.DEERCLOPS then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_red", 1) --용파리 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      elseif inst.name == STRINGS.NAMES.BEARGER then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_autumn", 1) --베어거 
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.MOOSE then
+		inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.2)
+
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_green", 1) --무스구스 
+      elseif inst.name == STRINGS.NAMES.ANTLION then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_orange", 1) --개미사자
+      elseif inst.name == STRINGS.NAMES.BEEQUEEN then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_yellow", 1) --비퀸 
+      
+	  
+      elseif inst.name == STRINGS.NAMES.STALKER_ATRIUM then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_black", 1) --퓨얼위버 
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_black", 1) --퓨얼위버 	 
+	  
+      elseif inst.name == STRINGS.NAMES.TOADSTOOL then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_black", 1) --토드스툴      
+      elseif inst.name == STRINGS.NAMES.TOADSTOOL_DARK then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_black", 1) --비참한 토드스툴
+      
+      elseif inst.name == STRINGS.NAMES.KLAUS then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 0.5)
+      inst.components.lootdropper:AddChanceLoot("aos_seed_boss_white", 1) --클라우스     
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+      
+      --중보스
+      elseif inst.name == STRINGS.NAMES.KRAMPUS then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 0.2) --크람푸스
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.MINOTAUR then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 1) --가디언
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.SPIDERQUEEN then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 1) --거미여왕  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+      elseif inst.name == STRINGS.NAMES.LEIF then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 1) --트리가드
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.DEER_RED then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 1) --사슴보석   
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.DEER_BLUE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 1) --사슴보석      
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.MOSSLING then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 0.5) --모슬링
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+      elseif inst.name == STRINGS.NAMES.LAVAE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_middle", 0.2) --용암이
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+      
+      --퍼플잼 
+      elseif inst.name == STRINGS.NAMES.BATCAVE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --박쥐집 
+	  
+      elseif inst.name == STRINGS.NAMES.GHOST then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --유령         
+      elseif inst.name == STRINGS.NAMES.SPIDERDEN then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --거미집   
+      elseif inst.name == STRINGS.NAMES.SPIDERDEN_2 then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --거미집   2
+      elseif inst.name == STRINGS.NAMES.PIGGUARD then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --미친 피그맨2  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+      elseif inst.name == STRINGS.NAMES.TENTACLE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --텐타클   
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+      elseif inst.name == STRINGS.NAMES.WORM then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --동굴지렁이  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  
+      elseif inst.name == STRINGS.NAMES.FIREHOUND then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --레드하운드    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+      elseif inst.name == STRINGS.NAMES.ICEHOUND then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_purple", 1) --블루하운드    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+      --블랙잼
+      elseif inst.name == STRINGS.NAMES.BATCAVE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --박쥐집         
+      elseif inst.name == STRINGS.NAMES.HOUNDMOUND then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --하운드마운드      
+      elseif inst.name == STRINGS.NAMES.SLURTLEHOLE then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --슬러틀마운드      
+      elseif inst.name == STRINGS.NAMES.SPIDERDEN_3 then
+      inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --거미집   
+	  elseif inst.name == STRINGS.NAMES.TERRORBEAK then 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --악몽 부리  
+	
+	  elseif inst.name == STRINGS.NAMES.WARG then 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1) --바그   	 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed_black", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+	  
+	  --일반시드
+	  elseif inst.name == STRINGS.NAMES.KOALEFANT_WINTER then --코알라펀트 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.KOALEFANT_SUMMER then --코알라펀트 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  
+	  elseif inst.name == STRINGS.NAMES.PERD then --칠면조  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.BISHIOP then --비숍  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.KNIGHT then --나이트
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.ROOK then --룩   
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.WALRUS then --맥터스크 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.BEEFALO then --비팔로 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.SPIDER_WARRIOR then --병정거미  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.CRAWLINGHORROR then --크로킹호러  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.TALLBIRD then --톨버드  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.TEENBIRD then --톨버드  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.SMALLBIRD then --톨버드  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.MONKEY then --ㅁㅇ키  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 0.7)
+	  elseif inst.name == STRINGS.NAMES.PENGUIN then --팽귄  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  elseif inst.name == STRINGS.NAMES.LIGHTNINGGOAT then --염소   
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.SPAT then --점액양    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.RABBIT then --토끼    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.CATCOON then --캣쿤    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.BAT then --박쥐    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.BUNNYMAN then --버니맨    
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.PIGMAN then --피그맨  
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.DEER then --눈없는사슴
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.DEERANTLER then --눈없는사슴
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+	  elseif inst.name == STRINGS.NAMES.HOUND then --하운드 
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 1)
+	  inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)  
+	  elseif inst.name == STRINGS.NAMES.KILLERBEE then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 0.3) --킬러비
+	  elseif inst.name == STRINGS.NAMES.BEE then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 0.3) --킬러비
+	  elseif inst.name == STRINGS.NAMES.BEEGUARD then
+	  inst.components.lootdropper:AddChanceLoot("aos_seed", 0.3) --킬러비
+	  
+      else
+      inst.components.lootdropper:AddChanceLoot("aos_seed", 1) --그외 전부 시드 1
+      end   
+      
+      end
+end)
+
+
+--드롭 exp
 function ChangeSkin(inst)
 	inst:ChangeSkin()
+	--]] -- 태그제거 
 end
 AddModRPCHandler("sendi", "skin", ChangeSkin)
 --센디스킨

@@ -1,4 +1,5 @@
 require "prefabutil"
+local TechTree = require("techtree") --레시피 더미
 
 local assets =
 {
@@ -60,6 +61,20 @@ local function cooked(inst)
 				item.prefab == "spoiled_food" or
 				item.prefab == "sendi_food_cocoa_cup" or 
 				item.prefab == "sendi_food_wolfsteak" or
+				--음식
+				item.prefab == "sendi_food_pie_light_berry" or
+				item.prefab == "sendi_food_cake_banana" or
+				item.prefab == "sendi_food_rice_eel" or
+				--2차음식
+				item.prefab == "sendi_food_bread_muffin" or
+				item.prefab == "sendi_food_rice_tuna_cooked" or
+				item.prefab == "sendi_food_bread_but" or
+				--3차음식 
+				item.prefab == "sendi_food_chicken" or
+				item.prefab == "sendi_food_pie_berry" or
+				item.prefab == "sendi_food_dumpling" or
+				--5차 
+				
 				item.prefab == "log" then  --붕괴 애니메이션
 					inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel") 
 					local fx = SpawnPrefab("collapse_small")
@@ -73,23 +88,47 @@ local function cooked(inst)
 				end
 				
 				------------------------------------------------------------------------------------------------
-
 				if item.components.cookable then 
-					replacement = item.components.cookable:GetProduct()
+				replacement = item.components.cookable:GetProduct()
+				
+				
 				elseif item.prefab == "log" then  --나무를 넣으면
 					replacement = "charcoal" --숯이나옴
-
-				elseif item.prefab == "spoiled_food" then -- 스테이크를 넣으면
-					replacement = "aos_seed"
-					
+				--1차추가음식
 				elseif item.prefab == "sendi_food_cocoa_cup" then -- 컵을 넣으면
 					replacement = "sendi_food_cocoa" 
-			
 				elseif item.prefab == "sendi_food_wolfsteak" then -- 스테이크를 넣으면
-					replacement = "sendi_food_wolfsteak_cooked" --		
+					replacement = "sendi_food_wolfsteak_cooked" 
+				-- 2차 추가 음식들	
+					
+				elseif item.prefab == "sendi_food_pie_light_berry" then -- 푸른파이반죽
+					replacement = "sendi_food_pie_light_berry_cooked" --					
+				elseif item.prefab == "sendi_food_cake_banana" then -- 바나나반죽
+					replacement = "sendi_food_cake_banana_cooked" --
+				elseif item.prefab == "sendi_food_rice_eel" then --장어와 밥
+					replacement = "sendi_food_rice_eel_cooked" --	
 				
+				--3차 추가 음식들
+				
+				elseif item.prefab == "sendi_food_bread_muffin" then --머핀
+					replacement = "sendi_food_bread_muffin_cooked" --
+				elseif item.prefab == "sendi_food_rice_tuna" then --참치비빔밥 
+					replacement = "sendi_food_rice_tuna_cooked" --
+				elseif item.prefab == "sendi_food_bread_but" then --식빵
+					replacement = "sendi_food_bread_but_cooked" --
+					
+					--5차 추가음식들
+				elseif item.prefab == "sendi_food_chicken" then --머핀
+					replacement = "sendi_food_chicken_cooked" --
+				elseif item.prefab == "sendi_food_pie_berry" then --참치비빔밥 
+					replacement = "sendi_food_pie_berry_cooked" --
+				elseif item.prefab == "sendi_food_dumpling" then --식빵
+					replacement = "sendi_food_dumpling_cooked" --	
+				
+
 				--------------------------------------------------------------------------------------------------
 				
+
 				
 				elseif item.components.burnable and not item.prefab == "log" then  ---불이 꺼졌는데 나무를 넣는다면
 					replacement = "ash"	--변화가 일어나지않음.
@@ -103,8 +142,45 @@ local function cooked(inst)
 				elseif item.components.burnable and not item.prefab == "sendi_food_wolfsteak" then 
 					replacement = "ash"							
 
+	
 					
+				
+				-- 2차 추가 음식들
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_pie_light_berry" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_cake_banana" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_rice_eel" then 
+					replacement = "ash"							
+					
+					
+				-- 3차 추가 음식들
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_bread_muffin" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_rice_tuna" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_bread_but" then 
+					replacement = "ash"		
+				--5차추가음식들
+				
+				elseif item.components.burnable and not item.prefab == "sendi_food_chicken" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_pie_berry" then 
+					replacement = "ash"		
+
+				elseif item.components.burnable and not item.prefab == "sendi_food_dumpling" then 
+					replacement = "ash"	
+				
 				end  
+				
+				
 				
 				
 				--------------------------------------------------------------------------------------------------
@@ -133,8 +209,14 @@ local function cooked(inst)
 		for i = 1, container:GetNumSlots() do
 			local item = container:GetItemInSlot(i)
 			if item then 
-				local replacement = nil 
-				if item.prefab == "watermelon" or item.prefab == "butter" or item.prefab == "cave_banana" then 
+				local replacement = nil  --애니메이션
+				if item.prefab == "watermelon" or 
+				item.prefab == "butter" or 
+				item.prefab == "cave_banana" or
+				item.prefab == "sendi_food_cocoa" or
+				item.prefab == "sendi_food_pudding_light_berrybanana" or
+				then 
+				
 					inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter") 
 					local fx = SpawnPrefab("collapse_small")
 					local pos = Vector3(inst.Transform:GetWorldPosition())
@@ -146,10 +228,15 @@ local function cooked(inst)
 					replacement = "watermelonicle"
 				elseif item.prefab == "butter" then 
 					replacement = "icecream"
-				elseif item.prefab == "cave_banana" then 
+				elseif item.prefab == "cave_banana" then  --
 					replacement = "bananapop"	
-				elseif item.prefab == "sendi_food_cocoa" then
-					replacement = "sendi_food_cocoa_cold"
+				--음식
+				elseif item.prefab == "sendi_food_cocoa" then --코코아를넣으면
+					replacement = "sendi_food_cocoa_cold"--아이스코코아~
+				elseif item.prefab == "sendi_food_pudding_light_berrybanana" then --푸른 바나나 푸딩을 넣으면
+					replacement = "sendi_food_pudding_light_berrybanana_cooked"	-- 베리나 푸딩
+				--시드변환				
+					
 				end  
 
 				if replacement then 
@@ -268,6 +355,36 @@ local function onextinguish(inst)
     end
 end
 
+--[[
+local function Add_SendiChef(inst, observer)
+	if observer:HasTag("sendi") then -- 오라를 받는 대상의 조건
+		observer:AddTag("sendichef")
+		--observer:DoTaskInTime(10, observer:AddTag("sendichef"))
+		
+		end
+		--observer:RemoveTag("sendichef")
+		--observer:DoTaskInTime(3, observer:RemoveTag("sendichef"))
+	return 0
+end
+--]]
+
+--태그제거
+
+local SENDICHEFTAGSETTER = function(inst, inrng, outrng)
+   local x, y, z = inst.Transform:GetWorldPosition()
+   local target
+   local inrange = TheSim:FindEntities(x, y, z, inrng, { "sendi" } )
+   local outrange = TheSim:FindEntities(x, y, z, outrng, { "sendi" } )
+   for k, v in pairs(outrange) do
+      v:RemoveTag("sendichef")
+   end
+   for k, v in pairs(inrange) do
+      v:AddTag("sendichef")
+   end
+end
+
+--]]
+
 local function fn(Sim)
 
    local inst = CreateEntity()
@@ -277,13 +394,26 @@ local function fn(Sim)
     inst.entity:AddSoundEmitter()
     inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
-
+	
+	--[[
+	inst.MiniMapEntity:SetIcon( "sendi_oven.tex" )--발견한 자신의 미니맵 이름 /
+	inst:AddComponent("sanityaura")
+	inst.components.sanityaura.aurafn = Add_SendiChef
+	
+	-- inst:AddComponent("prototyper")
+	-- inst.components.prototyper.trees = TechTree.Create({SENDICRAFT = 1})
+	--]]
+	
+	SENDICHEFTAGSETTER(inst, 5, 10) --태그제거 
+	--]]
+	
     MakeObstaclePhysics(inst, .3)
 
     inst:AddTag("campfire")
     inst:AddTag("structure")
 	inst:AddTag("wildfireprotected")
-   
+    inst:AddTag("oven")--오븐태그
+	
     inst.AnimState:SetBank("chiminea")
     inst.AnimState:SetBuild("sendi_oven")
     inst.AnimState:PlayAnimation("idle", false)    

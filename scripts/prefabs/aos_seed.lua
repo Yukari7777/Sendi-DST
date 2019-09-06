@@ -20,16 +20,16 @@ local seeds = {
     },
 
     [""] = {
-        health = 2,
-        hunger = 0,
-        sanity = 5,
+        health = 0,
+        hunger = 2,
+        sanity = 0,
         exp = 1,
     },
     
     middle = {
         health = 0,
-        hunger = 0,
-        sanity = 0,
+        hunger = 12,
+        sanity = 10,
         exp = 20,
     },
 
@@ -39,12 +39,14 @@ local seeds = {
         sanity = -10,
         perishtime = 480,
         rotten = "aos_seed",
+		exp = -5,
     },
 
     black = {
         health = 0,
         hunger = 0,
-        sanity = -20,
+        sanity = -10,
+		exp = -30,
 
         perishtime = 1440,
         rotten = "aos_seed",
@@ -64,39 +66,63 @@ local seeds = {
     },
 
     boss_sky = {
-        health = 0,
+        health = 500,
         hunger = 0,
-        sanity = 0,
-        tags = {"bigseed"}, -- bigseed 먹으면 바로 레벨업 하는 태그
+        sanity = 500,
+        exp = 350 -- bigseed 먹으면 바로 레벨업 하는 태그
     },
 
     boss_black = {
-        health = 0,
+        health = 500,
         hunger = 0,
-        sanity = 0,
+        sanity = 500,
         tags = {"bigseed"},
     },
 
     boss_red = {
-        health = 0,
+        health = 500,
         hunger = 0,
-        sanity = 0,
-        tags = {"bigseed"},
-    },
-
-    boss_sky = {
-        health = 0,
-        hunger = 0,
-        sanity = 0,
-        tags = {"bigseed"},
+        sanity = 500,
+        exp = 300,
     },
 
     boss_white = {
-        health = 0,
+        health = 500,
         hunger = 0,
-        sanity = 0,
+        sanity = 500,
         tags = {"bigseed"},
     },
+
+    boss_orange = {
+        health = 500,
+        hunger = 0,
+        sanity = 500,
+        exp = 250,
+    },
+
+    boss_autumn = {
+        health = 250,
+        hunger = 250,
+        sanity = 250,
+        exp = 250,
+    },
+
+    boss_green = {
+        health = 500,
+        hunger = 0,
+        sanity = 500,
+        exp = 220,
+    },
+
+    boss_yellow = {
+        health = 500,
+        hunger = 500,
+        sanity = 500,
+        exp = 300,
+    },
+
+	
+	
 
 }
 

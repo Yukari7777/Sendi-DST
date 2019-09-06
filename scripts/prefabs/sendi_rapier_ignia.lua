@@ -173,6 +173,8 @@ local function fn()
    
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(65) 
+	--inst.components.weapon:SetDamage(10000000000) --코딩용
+	
 	-- 무기로 설정. 아래는 피해 설정
 	inst.components.weapon:SetRange(1.2) --공격범위
 	

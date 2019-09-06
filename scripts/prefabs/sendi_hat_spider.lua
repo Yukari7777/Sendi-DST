@@ -1,3 +1,5 @@
+local CONST = TUNING.SENDI --이것이붙어야 방어값과 내구도를 불러온다
+
 local assets={ 
     Asset("ANIM", "anim/sendi_hat_spider.zip"),
     Asset("ANIM", "anim/sendi_hat_spider_swap.zip"), 
@@ -45,16 +47,27 @@ local function OnUnequip(inst, owner)
 	inst.isDropped = false
 end
 
-local function ontakefuel(inst)
-   local afterrepair = inst.components.finiteuses:GetUses() + 20
-   if afterrepair >= 200 then
-      inst.components.finiteuses:SetUses(200)
-   else
-      inst.components.finiteuses:SetUses(afterrepair)
-   end
+local function ontakefuel(inst)--수리 
+    local armor = inst.components.armor
+    local afterrepair = armor.condition + 200
+
+    armor:SetCondition(afterrepair >= CONST.ARMOR2_CONDITION and CONST.ARMOR2_CONDITION or afterrepair)
+    armor.absorb_percent = CONST.ARMOR2_EFFICIENCY -- 수리 하면 방어율 복원
+
+    inst:PushEvent("percentusedchange", { percent = armor:GetPercent() })
 end
 
---수리
+
+local function SetConditionTweak(self, amount)--수리
+    self.condition = math.min(amount, self.maxcondition)
+    if self.condition <= 0 then
+        self.condition = 0
+        self.absorb_percent = 0
+    end
+
+    self.inst:PushEvent("percentusedchange", { percent = self:GetPercent() })
+end
+
 
 local function fn(Sim)
     local inst = CreateEntity()
@@ -90,30 +103,23 @@ local function fn(Sim)
 	
 	-- 방수율을 뜻합니다 (0.방수율)
 	
-	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(6000, 0.7)    
-	-- 내구도와 방어구를 뜻합니다.  (내구도, 0.방어력) 
+	inst:AddComponent("fueled") --연료가 있는.
+    inst.components.fueled.fueltype = "BURNABLE"
+    inst.components.fueled:InitializeFuelLevel(10)
+    inst.components.fueled.accepting = true
+    inst.components.fueled:SetTakeFuelFn(ontakefuel)
+    inst.components.fueled:StopConsuming()
+    
+
+    inst:AddComponent("armor")--- 내구도 값
+    inst.components.armor.SetCondition = SetConditionTweak
+    inst.components.armor:InitCondition(CONST.ARMOR2_CONDITION, CONST.ARMOR2_EFFICIENCY)-- * 튜닝샌디 루아에서 가져오는값이다.
+
 	
 	inst:AddComponent("insulator")--보온율
 	inst.components.insulator:SetInsulation(240)
 	
 	inst.components.equippable.walkspeedmult = 1.2 --이동속도 : 케인
-	
-	inst:AddComponent("finiteuses") --내구도 부문 
-    inst.components.finiteuses:SetMaxUses(200)--최대 내구도 설정
-	inst.components.finiteuses:SetUses(200) -- 현재 내구도  설정
-	--inst.components.finiteuses:SetPercent(TUNING.FIRESTAFF_USES) -- 해당 아이템의 현재 내구도를 (최대 내구도 * n)으로 설정
-	inst.components.finiteuses:SetOnFinished(inst.Remove)--내구도가 다하면 fn을 실행함.
-
-	-- ---연료
-    inst:AddComponent("fueled") --연료가 있는.
-    inst.components.fueled.fueltype = "BURNABLE"
-    inst.components.fueled:InitializeFuelLevel(10)
-	inst.components.fueled.accepting = true
-	inst.components.fueled:SetTakeFuelFn(ontakefuel)
-	inst.components.fueled:StopConsuming()
-	-- ---연료
-	
 	
     inst:AddComponent("inspectable") --조사 가능하도록 설정
 	inst.components.inventoryitem.keepondeath = true--죽어도 떨어뜨리지않음
