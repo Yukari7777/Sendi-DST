@@ -303,7 +303,7 @@ else
 	GLOBAL.SENDI_LANGUAGE_SUFFIX = Language
 end
 STRINGS.CHARACTERS.SENDI = require("speech_sendi"..GLOBAL.SENDI_LANGUAGE_SUFFIX ) -- 대사 파일 로드
-modimport "scripts/strings_sendi.lua" -- 언어 파일 로드
+modimport("scripts/strings_sendi"..GLOBAL.SENDI_LANGUAGE_SUFFIX..".lua") -- 언어 파일 로드
 
 local Cookable = require "components/cookable"  -- sendi_oven 관련
 function Cookable:GetProduct()
@@ -318,76 +318,205 @@ function Cookable:GetProduct()
 end 
 
 -- 미트무시 , 옮기지 말아주세요.
-		local function is_meat(item)
-			return item.components.edible ~= nil  and item.components.edible.foodtype == GLOBAL.FOODTYPE.MEAT 
-		end
+local function is_meat(item)
+	return item.components.edible ~= nil  and item.components.edible.foodtype == GLOBAL.FOODTYPE.MEAT 
+end
 
-		local function myBunnymanRetargetFn(inst)
-			return GLOBAL.FindEntity(inst, TUNING.PIG_TARGET_DIST,  
-				function(guy)
-					return inst.components.combat:CanTarget(guy)
-						and (
-							guy:HasTag("monster") or (
-								not guy:HasTag("ignoreMeat") and    --우선순위를 몬스터 상태인지를 판단 후, 고기 라벨이 무시되는 여부를 판단해, 공격하지 않는 상태로 만듭니다.
-								guy.components.inventory ~= nil and 
-								guy:IsNear(inst, TUNING.BUNNYMAN_SEE_MEAT_DIST) and
-								guy.components.inventory:FindItem(is_meat) ~= nil
-							)
-						)
-				end,
-				{ "_combat", "_health" },
-				nil,
-				{ "monster", "player" })
-		end
+local function myBunnymanRetargetFn(inst)
+	return GLOBAL.FindEntity(inst, TUNING.PIG_TARGET_DIST,  
+		function(guy)
+			return inst.components.combat:CanTarget(guy)
+				and (
+					guy:HasTag("monster") or (
+						not guy:HasTag("ignoreMeat") and    --우선순위를 몬스터 상태인지를 판단 후, 고기 라벨이 무시되는 여부를 판단해, 공격하지 않는 상태로 만듭니다.
+						guy.components.inventory ~= nil and 
+						guy:IsNear(inst, TUNING.BUNNYMAN_SEE_MEAT_DIST) and
+						guy.components.inventory:FindItem(is_meat) ~= nil
+					)
+				)
+		end,
+		{ "_combat", "_health" },
+		nil,
+		{ "monster", "player" })
+end
 
-		local function myBunnyBattlecry(combatcmp, target)
-			local strtbl =
-				target ~= nil and
-				not target:HasTag("ignoreMeat") and --- 고기라벨을 무시하고 공격이 없는지를 결정하는 조건을 추가합니다.
-				target.components.inventory ~= nil and
-				target.components.inventory:FindItem(is_meat) ~= nil and
-				"RABBIT_MEAT_BATTLECRY" or
-				"RABBIT_BATTLECRY"
-			return strtbl, math.random(#STRINGS[strtbl])
-		end
+local function myBunnyBattlecry(combatcmp, target)
+	local strtbl =
+		target ~= nil and
+		not target:HasTag("ignoreMeat") and --- 고기라벨을 무시하고 공격이 없는지를 결정하는 조건을 추가합니다.
+		target.components.inventory ~= nil and
+		target.components.inventory:FindItem(is_meat) ~= nil and
+		"RABBIT_MEAT_BATTLECRY" or
+		"RABBIT_BATTLECRY"
+	return strtbl, math.random(#STRINGS[strtbl])
+end
 
-		AddPrefabPostInit("bunnyman", function(inst)    -- api를 통해 토끼의 인식 적 기능을 다시 작성하십시오.
-			if GLOBAL.TheWorld.ismastersim then
-				inst.components.combat:SetRetargetFunction(3, myBunnymanRetargetFn)
-				inst.components.combat.GetBattleCryString = myBunnyBattlecry
-			end
-		end)
+AddPrefabPostInit("bunnyman", function(inst)    -- api를 통해 토끼의 인식 적 기능을 다시 작성하십시오.
+	if GLOBAL.TheWorld.ismastersim then
+		inst.components.combat:SetRetargetFunction(3, myBunnymanRetargetFn)
+		inst.components.combat.GetBattleCryString = myBunnyBattlecry
+	end
+end)
 --미트무시
+
+local function ForceRecipeUpdate(inst) -- run this on client because HUD doesn't exist in server.
+	if inst._parent.HUD == nil then return end 
+	inst._parent.HUD.controls.crafttabs:UpdateRecipes()
+end
+
+local function RegisterModNetListeners(inst)
+	if GLOBAL.TheWorld and GLOBAL.TheWorld.ismastersim then
+		inst._parent = inst.entity:GetParent()
+	end
+	
+	inst:ListenForEvent("sendibuilderupdatedirty", ForceRecipeUpdate) -- Patch both client and server, because it should be synced.
+end
+
+
+AddPrefabPostInit("player_classified", function(inst)
+	inst.forcerecipeupdate = GLOBAL.net_bool(inst.GUID, "sendibuilderupdate", "sendibuilderupdatedirty")
+	inst.forcerecipeupdate:set(false)
+	
+	inst:DoTaskInTime(2 * GLOBAL.FRAMES, RegisterModNetListeners) 
+end)
+
+
+local function SayInfo(inst)
+	local str = STRINGS.LEVEL.." : "..(inst.components.sendilevel.level + 1).."\n"..STRINGS.EXP.." : "..inst.components.sendilevel.exp.." / "..inst.components.sendilevel:GetMaxExp()
+	
+	inst.components.talker:Say(str)
+end
+AddModRPCHandler("sendi", "status", SayInfo)
+
 
 --드롭 exp
 function TESTFUNCAAA(inst)
    print (inst.name)
 end
 
-local mammalia = {"pigman", "bunnyman", "deerclops", "bearger" } -- 포유류인 경우 리스트
+local mammalia = {"pigman", "bunnyman", "deerclops", "bearger", "klaus", "krampus", "minotaur", "deer_red", "deer_blue", "hound", "firehound", "icehound", "wage", "foalefant_winter", "foalefant_summer", "walrus", "beefalo", "monkey", "lightninggoat", "spat", "rabbit", "catcoon", "bat", "deer"} -- 포유류인 경우 리스트
 
 local function AddChanceLoot(inst, loots)
-	if inst.components.health ~= nil and inst.components.lootdropper ~= nil then
-		for i = 1, #loots, 2 do
-			inst.components.lootdropper:AddChanceLoot(loots[i], loots[i+1])
-		end
+   if inst.components.health ~= nil and inst.components.lootdropper ~= nil then
+      for i = 1, #loots, 2 do
+         inst.components.lootdropper:AddChanceLoot(loots[i], loots[i+1])
+      end
 
-		if table.contains(mammalia, inst.prefab) then
-			for i = 0, 2 do
-				if inst.components.health.maxhealth >= 1000 * i then
-					inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
-				end
-			end
-		end
-	end
+      if table.contains(mammalia, inst.prefab) then
+         for i = 0, 2 do
+            if inst.components.health.maxhealth >= 1000 * i then
+               inst.components.lootdropper:AddChanceLoot("sendi_food_milk_strong", 1)
+            end
+         end
+      end
+   end
 end
 
+--보스 시드 드랍
 AddPrefabPostInit("deerclops",  --[[대상 몬스터 스폰명]] function(inst)
-	AddChanceLoot(inst, {"aos_seed_boss_white", 0.5, "aos_seed_boss_sky", 1}) -- (아이템 스폰명), (수량) 순으로 적으면 됨
+   AddChanceLoot(inst, {"aos_seed_boss_white", 0.5, "aos_seed_boss_sky", 1}) -- (아이템 스폰명), (수량) 순으로 적으면 됨
 end)
-
-AddPrefabPostInit("dragonfly", function(inst)
-	AddChanceLoot(inst, {"aos_seed_boss_red", 1, "aos_seed_boss_white", 0.5, "aos_seed_boss_sky", 0.5})
+AddPrefabPostInit("dragonfly", function(inst)--드래곤파리
+   AddChanceLoot(inst, {"aos_seed_boss_red", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("bearger", function(inst)--베어거
+   AddChanceLoot(inst, {"aos_seed_boss_autumn", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("moose", function(inst)--무스구스
+   AddChanceLoot(inst, {"aos_seed_boss_green", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("moose", function(inst)--무스구스
+   AddChanceLoot(inst, {"aos_seed_boss_green", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("antlion", function(inst)--개미사자
+   AddChanceLoot(inst, {"aos_seed_boss_orange", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("beequeen", function(inst)--비-퀸
+   AddChanceLoot(inst, {"aos_seed_boss_yellow", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("stalker_atrium", function(inst)--퓨얼위버
+   AddChanceLoot(inst, {"aos_seed_boss_black", 2, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("toadstool", function(inst)--토드스툴 
+   AddChanceLoot(inst, {"aos_seed_boss_black", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("toadstool_dark", function(inst)--비참한 토드스툴  
+   AddChanceLoot(inst, {"aos_seed_boss_black", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("klaus", function(inst)--비참한 토드스툴  
+   AddChanceLoot(inst, {"aos_seed_boss_white", 1, "aos_seed_boss_white", 0.5})
+end)
+AddPrefabPostInit("klaus", function(inst)--클라우스
+   AddChanceLoot(inst, {"aos_seed_boss_white", 1, "aos_seed_boss_white", 0.5})
+end)
+--중보스 시드 드랍 
+AddPrefabPostInit("minotaur", function(inst)--미노타우르스
+   AddChanceLoot(inst, {"aos_seed_middle", 1, "aos_seed_middle", 0.5})
+end)
+AddPrefabPostInit("spiderqueen", function(inst)--거미여왕
+   AddChanceLoot(inst, {"aos_seed_middle", 1, "aos_seed_middle", 0.5})
+end)
+AddPrefabPostInit("leif", function(inst)--트리가드
+   AddChanceLoot(inst, {"aos_seed_middle", 1, "aos_seed_middle", 0.5})
+end)
+AddPrefabPostInit("deer_red", function(inst)--사슴보석
+   AddChanceLoot(inst, {"aos_seed_middle", 1, "aos_seed_middle", 0.5})
+end)
+AddPrefabPostInit("deer_blue", function(inst)--사슴보석2
+   AddChanceLoot(inst, {"aos_seed_middle", 1, "aos_seed_middle", 0.5})
+end)
+AddPrefabPostInit("mossling", function(inst)--모슬링
+   AddChanceLoot(inst, {"aos_seed_middle", 1})
+end)
+AddPrefabPostInit("lavae", function(inst)--용암이
+   AddChanceLoot(inst, {"aos_seed_middle", 0.2})
+end)
+--오염된 시드 드랍
+AddPrefabPostInit("batcave", function(inst)--박쥐집
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("ghost", function(inst)--귀신
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("spiderden", function(inst)--거미집
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("spiderden_2", function(inst)--거미집2
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("pigguard", function(inst)--미친 피그맨 
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("tentacle", function(inst)--텐타클
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("worm", function(inst)--동굴지렁이
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("firehound", function(inst)--레드하운드 
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+AddPrefabPostInit("icehound", function(inst)--블루하운드 
+   AddChanceLoot(inst, {"aos_seed_purple", 1})
+end)
+--매우 오염된 시드 드랍
+AddPrefabPostInit("batcave", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1})
+end)
+AddPrefabPostInit("houndmound", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1})
+end)
+AddPrefabPostInit("slurtlehole", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1})
+end)
+AddPrefabPostInit("spiderden_3", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1})
+end)
+AddPrefabPostInit("terrorbeak", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1})
+end)
+AddPrefabPostInit("warg", function(inst)--박쥐집 
+   AddChanceLoot(inst, {"aos_seed_black", 1, "aos_seed_black", 1, "aos_seed_black", 1, "aos_seed_black", 1})
 end)
 --[[
 AddPrefabPostInitAny(function(inst)

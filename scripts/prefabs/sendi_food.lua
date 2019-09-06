@@ -15,12 +15,12 @@ local food = {
         temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
         temperatureduration = TUNING.FOOD_TEMP_LONG, -- TUNING.FOOD_TEMP_BRIEF 짧음 | TUNING.FOOD_TEMP_AVERAGE 중간 | TUNING.FOOD_TEMP_LONG 길음
         cooktime = .5, --요리시간 (미트볼 0.75)
-        stacksize = 1, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM (40)
+        -- stacksize = 3, -- 스택 최대크기, 기본값 TUNING.STACK_SIZE_SMALLITEM (40)
         fuelvalue = 90, -- 불 넣었을때 불 타는 양 (통나무 = 7.5, 풀떼기 = 7.5)
         fertlizermult = 1, -- 비료 수치(ㄸ을 기준으로 비율, 썩은것 = 0.25ㄸ, 구아노 = 1.5ㄸ )
         asset = "cocoa_cup", -- 에셋파일 경로(외형 파일 이름)
         oneatenfn = function(inst, eater) -- 먹었을 때 실행 함수
-            eater.components.talker:Say("마싯다.")
+            --eater.components.talker:Say("마싯다.")
         end,
     },
    --프리팹
@@ -41,7 +41,7 @@ local food = {
         hunger = 3,
         sanity = -10,
         perishtime = TUNING.PERISH_SLOW,
-        tags = {"cattoy", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"cattoy", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       exp = 1,
       
@@ -53,7 +53,7 @@ local food = {
         hunger = 7,
         sanity = 0,
         perishtime = TUNING.PERISH_SLOW,
-        tags = {"cattoy", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"cattoy", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       exp = 1,
     }, --튼튼밀크 
@@ -134,7 +134,7 @@ local food = {
         hunger = 20,
         sanity = 5,
         perishtime = 3360,
-        tags = {"caffeine", "cattoy", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       exp = 2,
       
@@ -147,7 +147,7 @@ local food = {
         sanity = 0,
         perishtime = 1900,
       temperature = TUNING.COLD_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
-        tags = {"caffeine", "cattoy", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       exp = 4,
     }, --이끼 바나나 샐러드,
@@ -158,8 +158,8 @@ local food = {
         hunger = 15,
         sanity = 15,
         perishtime = 1900,
-      temperature = TUNING.COLD_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
-        tags = {"caffeine", "cattoy", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+      temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+        tags = {"caffeine", "cattoy", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       
               oneatenfn = function(inst, eater)
@@ -185,7 +185,7 @@ local food = {
         hunger = 55,
         sanity = -10,
         perishtime = 2660,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
       exp = 6,
     }, -- 조리전의 빛나는 베리 파이
@@ -196,9 +196,9 @@ local food = {
         hunger = 65,
         sanity = 30,
         perishtime = 5320,
-        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "fuel"},
         floater = {"small", nil, nil},
-        temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP      
+        temperature = TUNING.HOT_FOOD_BONUS_TEMP,
       oneatenfn = function(inst, eater)
             if eater.wormlight then
                 eater.wormlight.components.spell.lifetime = 0
@@ -221,7 +221,7 @@ local food = {
         hunger = 32,
         sanity = -10,
         perishtime = 2660,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
       exp = 4,
     }, -- 바나나 반죽
@@ -232,9 +232,9 @@ local food = {
         hunger = 42,
         sanity = 20,
         perishtime = 5320,
-        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "fuel"},
         floater = {"small", nil, nil},
-        temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+        temperature = TUNING.HOT_FOOD_BONUS_TEMP,
       exp = 8,
   }, -- 바나나 롤 케익
 
@@ -244,9 +244,9 @@ local food = {
         hunger = 32,
         sanity = -10,
         perishtime = 1440,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
-        temperature = TUNING.COLD_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP      
+        temperature = TUNING.COLD_FOOD_BONUS_TEMP,
 		exp = 2,
       
     }, -- 베리 바나나 푸딩
@@ -257,9 +257,9 @@ local food = {
         hunger = 42,
         sanity = 30,
         perishtime = 3360,
-        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "ovencold", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "cattoy", "sendifood", "preparedfood", "ovencold", "fuel"},
         floater = {"small", nil, nil},
-        temperature = TUNING.COLD_FOOD_BONUS_TEMP * 2, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP      
+        temperature = TUNING.COLD_FOOD_BONUS_TEMP * 2,
    
 		exp = 4,
     }, -- 바나나 푸딩
@@ -270,8 +270,8 @@ local food = {
         hunger = 45,
         sanity = -5,
         perishtime = 2660,   
-        temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        temperature = TUNING.HOT_FOOD_BONUS_TEMP, 
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
       exp = 6,
     }, -- 장어와 밥
@@ -281,9 +281,9 @@ local food = {
         health = 30,
         hunger = 55,
         sanity = 10,
-      temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+      temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2,
         perishtime = 5320,
-        tags = {"caffeine", "monstermeat", "sendifood", "sendimeat", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "monstermeat", "sendifood", "sendimeat", "fuel"}, 
         floater = {"small", nil, nil},
       exp = 12,
     }, -- 장어 덮밥
@@ -297,9 +297,9 @@ local food = {
         health = 10,
         hunger = 50,
         sanity = 0,
-		temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+		temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2,
         perishtime = 5320,
-        tags = {"caffeine", "monstermeat", "sendistaple", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "monstermeat", "sendistaple", "fuel"},
         floater = {"small", nil, nil},
       exp = 4,
     }, -- 소세지빵
@@ -323,9 +323,9 @@ local food = {
         health = 20,
         hunger = 50,
         sanity = 5,
-		temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+		temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2,
         perishtime = 3360,
-        tags = {"caffeine", "sendifood", "preparedfood", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "sendifood", "preparedfood", "fuel"},
         floater = {"small", nil, nil},
       exp = 5,
     }, -- 버터-풀 머핀
@@ -337,7 +337,7 @@ local food = {
         sanity = -5,
         perishtime = 2400,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
 		exp = 4,
@@ -350,9 +350,9 @@ local food = {
         health = 5,
         hunger = 62,
         sanity = 5,
-		temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
         perishtime = 6720,
-        tags = {"caffeine", "monstermeat", "sendistaple", "preparedfood", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "monstermeat", "sendistaple", "preparedfood", "fuel"},
         floater = {"small", nil, nil},
 		exp = 5,
     }, -- 호토리 식빵
@@ -362,9 +362,9 @@ local food = {
         health = 5,
         hunger = 45,
         sanity = 0,
-		temperature = TUNING.HOT_FOOD_BONUS_TEMP, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
         perishtime = 3360,
-        tags = {"caffeine", "unfinished", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "unfinished", "fuel"},
         floater = {"small", nil, nil},
 		exp = 4,
     }, -- 참치와 밥 
@@ -374,9 +374,9 @@ local food = {
         health = 20,
         hunger = 55,
         sanity = 5,
-      temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2, -- 시원한 음식에는 TUNING.COLD_FOOD_BONUS_TEMP
+      temperature = TUNING.HOT_FOOD_BONUS_TEMP * 2,
         perishtime = 6720,
-        tags = {"caffeine", "sendimeat", "preparedfood", "fuel"}, -- caffeine 태그 : 플레이어가 아닌 엔티티가 먹으면 디버프가 걸리는 이스터 에그
+        tags = {"caffeine", "sendimeat", "preparedfood", "fuel"},
         floater = {"small", nil, nil},
       exp = 8,
     }, -- 참치 비빔밥
@@ -389,7 +389,7 @@ local food = {
         sanity = -0,
         perishtime = 3360,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 3,
@@ -402,7 +402,7 @@ local food = {
         sanity = 0,
         perishtime = 6720,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "preparedfood", "sendimeat", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "preparedfood", "sendimeat", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 6,
@@ -415,7 +415,7 @@ local food = {
         sanity = -5,
         perishtime = 2660,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 2,
@@ -428,7 +428,7 @@ local food = {
         sanity = 20,
         perishtime = 5320,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "preparedfood", "sendifood", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "preparedfood", "sendifood", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 5,
@@ -441,7 +441,7 @@ local food = {
         sanity = -5,
         perishtime = 2400,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "unfinished", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "unfinished", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 3,
@@ -454,7 +454,7 @@ local food = {
         sanity = 0,
         perishtime = 5600,
         cooktime = .5,
-        tags = {"caffeine", "cattoy", "preparedfood", "sendimeat", "fuel"}, -- ovencold 태그 : 오븐에 의해 차가워진 음식
+        tags = {"caffeine", "cattoy", "preparedfood", "sendimeat", "fuel"},
         floater = {"small", nil, nil},
         temperature = TUNING.COLD_FOOD_BONUS_TEMP,
       exp = 6,
@@ -502,6 +502,7 @@ function MakeFood(data)
                 inst:AddTag(v)
             end
         end
+        inst:AddTag("sendicook")
 
         inst.AnimState:SetBank(fname)
         inst.AnimState:SetBuild(fname)
@@ -545,20 +546,25 @@ function MakeFood(data)
         inst.components.edible.foodtype = data.foodtype or FOODTYPE.GENERIC
         inst.components.edible.temperaturedelta = data.temperature or 0
         inst.components.edible.temperatureduration = data.temperatureduration or 0
-      local function OnEaten(inst, eater) 
-         if eater:HasTag("sendi") then
-            if data.exp ~= nil then
-               eater.components.sendilevel:AddExp(data.exp)
+        local function OnEaten(inst, eater) 
+            local uppername = eater.prefab == "wilson" and "GENERIC" or string.upper(eater.prefab)
+            local quote = STRINGS.CHARACTERS[uppername] ~= nil and STRINGS.CHARACTERS[uppername].ONEATSENDIFOOD[string.upper(data.name)]
+            if quote then
+                eater:DoTaskInTime(math.random(0.3, 1), eater.components.talker:Say(quote))
             end
-         end
+
+            if data.exp ~= nil and eater.components.sendilevel ~= nil then
+                eater.components.sendilevel:AddExp(data.exp)
+            end
+
+            if data.oneatenfn ~= nil then
+                data.oneatenfn(inst, eater)
+            end
+        end
+        inst.components.edible:SetOnEatenFn(OnEaten)
+        inst.sendimana = data.mana
          
-         if data.oneatenfn ~= nil then
-            data.oneatenfn(inst, eater)
-         end
-      end
-      inst.components.edible:SetOnEatenFn(OnEaten)
-         
-        inst.components.edible.cooktime = data.cooktime -- Custom variable
+        inst.components.edible.cooktime = data.cooktime
 
         inst:AddComponent("perishable")
         inst.components.perishable:SetPerishTime(data.perishtime)
@@ -570,7 +576,7 @@ function MakeFood(data)
         inst.components.inventoryitem.atlasname = atlas
 
         inst:AddComponent("stackable")
-        inst.components.stackable.maxsize = data.stacksize or TUNING.STACK_SIZE_SMALLITEM
+        inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
         
         MakeHauntableLaunch(inst)
         

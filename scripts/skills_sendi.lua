@@ -3,12 +3,13 @@ local Profile = GLOBAL.Profile
 local TimeEvent = GLOBAL.TimeEvent
 local ACTIONS = GLOBAL.ACTIONS
 local State = GLOBAL.State
-local TheWorld = GLOBAL.TheWorld
+local GetString = GLOBAL.GetString
 local BufferedAction = GLOBAL.BufferedAction
 local ActionHandler = GLOBAL.ActionHandler
 local EventHandler = GLOBAL.EventHandler
 local EQUIPSLOTS = GLOBAL.EQUIPSLOTS
 local FRAMES = GLOBAL.FRAMES
+local CONST = TUNING.SENDI
 
 GLOBAL.IsPreemptiveEnemy = function(inst, target)
    -- 트리가드를 제외한 몬스터
@@ -58,7 +59,7 @@ local function OnStartSkillGeneral(inst, shouldstop)
    inst:AddTag("inskill")
    inst.components.locomotor:Stop()
    inst.components.locomotor:Clear()
-    inst:ClearBufferedAction()
+   inst:ClearBufferedAction()
    ForceStopHeavyLifting(inst)
    if shouldstop and inst.components.playercontroller ~= nil then
       inst.components.playercontroller:RemotePausePrediction()
@@ -85,8 +86,12 @@ local function AddSkill(skillname, SgS, SgC, manacost)
    local upperskillname = skillname:upper()
 
    AddAction(upperskillname, skillname, nullfn)
-   AddModRPCHandler("sendi", skillname, function(inst) 
-      inst:PushEvent("on"..skillname) -- See sendi_classified how to excute actions via PushEvent.
+   AddModRPCHandler("sendi", skillname, function(inst)   
+      if manacost ~= nil and inst.components.sendimana ~= nil and inst.components.sendimana.current >= manacost or manacost == nil then
+         inst:PushEvent("on"..skillname) -- See sendi_classified how to excute actions via PushEvent.
+      else
+         inst.components.talker:Say(GetString(inst.prefab, "DESCRIBE_NOMANA"))
+      end
    end)
 
    AddStategraphState("wilson", SgS) -- Client Stategraph
@@ -145,7 +150,7 @@ local rapier_SgC = State {
 
    onenter = function(inst)
       inst.components.locomotor:Stop()
-        inst.components.locomotor:Clear()
+      inst.components.locomotor:Clear()
       inst.entity:FlattenMovementPrediction()
       inst.AnimState:PlayAnimation("whip_pre")
       inst.AnimState:PushAnimation("whip", false)
@@ -169,7 +174,7 @@ local rapier_SgC = State {
    end,
 }
 
-AddSkill("rapier", rapier_SgS, rapier_SgC)
+AddSkill("rapier", rapier_SgS, rapier_SgC, CONST.SKILL_RAPIER_MANACOST)
 
 
 local igniarun_SgS = State { 
@@ -220,7 +225,7 @@ local igniarun_SgC = State {
 
    onenter = function(inst)
       inst.components.locomotor:Stop()
-        inst.components.locomotor:Clear()
+      inst.components.locomotor:Clear()
       inst.entity:FlattenMovementPrediction()
       inst.AnimState:PlayAnimation("jumpout")
 
@@ -244,4 +249,4 @@ local igniarun_SgC = State {
    end,
 }
 
-AddSkill("igniarun", igniarun_SgS, igniarun_SgC)
+AddSkill("igniarun", igniarun_SgS, igniarun_SgC, CONST.SKILL_IGNIARUN_MANACOST)

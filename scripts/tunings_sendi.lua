@@ -12,6 +12,8 @@ TUNING.SENDI = {
 
 	MANA_RESTORE_FULL = 999999, -- 마나를 모두 채워줄 때의 수치
 
+	MANA_RESTORE_FROM_FOOD_MULTIPLIER = 0.5, -- 음식 먹을 때 오르는 정신력으로부터 마나가 회복되는 비율
+
 	SKILL_RAPIER_DAMAGE_1 = 20, -- 돌진할 때 데미지
 	SKILL_RAPIER_DAMAGE_2 = 55, -- 터질 때 데미지
 	SKILL_RAPIER_MANACOST = 15, -- 이그니아 런 배고픔 코스트

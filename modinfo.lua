@@ -70,4 +70,11 @@ configuration_options = {
 		},
 		default = 1,
 	},
+	{
+		name = "statuskey",
+		label = "Show Status Key",
+		hover = "무슨 키로 스탯을 보여줄지 설정합니다.",
+		options = KeyOptions,
+		default = "KEY_K",
+	},
 }

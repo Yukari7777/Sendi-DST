@@ -44,6 +44,13 @@ local function RegisterKeyEvent(classified)
 			SendModRPCToServer(MOD_RPC["sendi"]["skin"]) 
 		end
 	end) 
+
+	local StatusKey = GetModConfigData("statuskey", modname) or "KEY_K"
+	TheInput:AddKeyDownHandler(_G[StatusKey], function()
+		if KeyCheckCommon(parent) then
+			SendModRPCToServer(MOD_RPC["sendi"]["status"]) 
+		end
+	end) 
 end
 
 local SKILLS = { "rapier", "igniarun" }

@@ -23,7 +23,7 @@ end --밀크
 
 AddRecipe("sendi_food_ricewheat", --벼리밀
 {Ingredient("cutgrass", 4), Ingredient("seeds", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 2, "character", "images/inventoryimages/sendi_food_ricewheat.xml", "sendi_food_ricewheat.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 2, "sendichef", "images/inventoryimages/sendi_food_ricewheat.xml", "sendi_food_ricewheat.tex")
 
 local sendi_food_ricewheat = Ingredient("sendi_food_ricewheat", 1)
 local sendi_food_ricewheat2 = Ingredient("sendi_food_ricewheat", 2)
@@ -35,7 +35,7 @@ end
 
 AddRecipe("sendi_food_cocoapowder", --코코아 파우더 sendi_food_cocoapowder   
 {Ingredient("berries_cooked", 3)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 2, "character", "images/inventoryimages/sendi_food_cocoapowder.xml", "sendi_food_cocoapowder.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 2, "sendichef", "images/inventoryimages/sendi_food_cocoapowder.xml", "sendi_food_cocoapowder.tex")
 
 local sendi_food_cocoapowder = Ingredient("sendi_food_cocoapowder", 1)
 local sendi_food_cocoapowder2 = Ingredient("sendi_food_cocoapowder", 2)
@@ -48,14 +48,14 @@ end
 
 AddRecipe("sendi_food_cocoa_cup", --조리 되기전의 컵
 {sendi_food_cocoapowder2, sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_cocoa_cup.xml", "sendi_food_cocoa_cup.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_cocoa_cup.xml", "sendi_food_cocoa_cup.tex")
 
 local sendi_food_cocoa_cup = Ingredient("sendi_food_cocoa_cup", 1) -- YUKARI : 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
 sendi_food_cocoa_cup.atlas = "images/inventoryimages/sendi_food_cocoa_cup.xml"
 
 AddRecipe("sendi_food_wolfsteak", --스테이크
 {aos_seed, sendi_food_cocoapowder, Ingredient("cookedmonstermeat", 2), sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_wolfsteak.xml", "sendi_food_wolfsteak.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_wolfsteak.xml", "sendi_food_wolfsteak.tex")
 
 local sendi_food_wolfsteak = Ingredient("sendi_food_wolfsteak", 1) -- YUKARI : 어떤 모드아이템이 재료로 들어가야 할경우 이렇게 추가해야함.
 sendi_food_wolfsteak.atlas = "images/inventoryimages/sendi_food_wolfsteak.xml"
@@ -66,7 +66,7 @@ sendi_food_wolfsteak.atlas = "images/inventoryimages/sendi_food_wolfsteak.xml"
 
 AddRecipe("sendi_food_bread", --빵
 {sendi_food_ricewheat2, sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_bread.xml", "sendi_food_bread.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_bread.xml", "sendi_food_bread.tex")
 
 local sendi_food_bread = Ingredient("sendi_food_bread", 1)
 local sendi_food_bread2 = Ingredient("sendi_food_bread", 2)
@@ -77,57 +77,57 @@ end
 
 AddRecipe("sendi_food_salad_banana", --이끼바나나 샐러드
 {Ingredient("cutlichen", 2), Ingredient("cave_banana", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_salad_banana.xml", "sendi_food_salad_banana.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_salad_banana.xml", "sendi_food_salad_banana.tex")
 
 AddRecipe("sendi_food_juice_light_berry", --빛나는 베리 주스
 {Ingredient("lightbulb", 2), Ingredient("wormlight_lesser", 2),sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_juice_light_berry.xml", "sendi_food_juice_light_berry.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_juice_light_berry.xml", "sendi_food_juice_light_berry.tex")
 
 AddRecipe("sendi_food_pie_light_berry", --푸른파이반죽
 {Ingredient("wormlight_lesser", 2), sendi_food_ricewheat4, sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_pie_light_berry.xml", "sendi_food_pie_light_berry.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_pie_light_berry.xml", "sendi_food_pie_light_berry.tex")
 
 AddRecipe("sendi_food_cake_banana", --달콤한 바나나 반죽
 {sendi_food_ricewheat2, Ingredient("cave_banana", 1), Ingredient("bird_egg", 1)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_cake_banana.xml", "sendi_food_cake_banana.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_cake_banana.xml", "sendi_food_cake_banana.tex")
 
 AddRecipe("sendi_food_pudding_light_berrybanana", --바나나 푸딩
 {Ingredient("bird_egg", 2), sendi_food_milk_strong2}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_pudding_light_berrybanana.xml", "sendi_food_pudding_light_berrybanana.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_pudding_light_berrybanana.xml", "sendi_food_pudding_light_berrybanana.tex")
 
 AddRecipe("sendi_food_rice_eel", --장어와 밥
 {sendi_food_ricewheat2, Ingredient("eel_cooked", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_rice_eel.xml", "sendi_food_rice_eel.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_rice_eel.xml", "sendi_food_rice_eel.tex")
 
 ---3차 추가음식
 
 AddRecipe("sendi_food_bread_sausage", --소세지빵
 {sendi_food_bread, Ingredient("cookedmeat", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_bread_sausage.xml", "sendi_food_bread_sausage.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_bread_sausage.xml", "sendi_food_bread_sausage.tex")
 
 AddRecipe("sendi_food_bread_muffin", --머핀반죽
 {sendi_food_ricewheat2, Ingredient("butterflywings", 2), sendi_food_milk_strong}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_bread_muffin.xml", "sendi_food_bread_muffin.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_bread_muffin.xml", "sendi_food_bread_muffin.tex")
 
 AddRecipe("sendi_food_bread_but", --식빵반죽
 {sendi_food_bread2, Ingredient("seeds_cooked", 2), Ingredient("acorn", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_bread_but.xml", "sendi_food_bread_but.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_bread_but.xml", "sendi_food_bread_but.tex")
 
 AddRecipe("sendi_food_rice_tuna", --참치밥
 {sendi_food_ricewheat2, Ingredient("fish", 2), Ingredient("carrot", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_rice_tuna.xml", "sendi_food_rice_tuna.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_rice_tuna.xml", "sendi_food_rice_tuna.tex")
 --5차음식 
 AddRecipe("sendi_food_chicken", --치킨
 {sendi_food_ricewheat4, sendi_food_milk_strong, Ingredient("drumstick_cooked", 4)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_chicken.xml", "sendi_food_chicken.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_chicken.xml", "sendi_food_chicken.tex")
 
 AddRecipe("sendi_food_pie_berry", --파이
 {sendi_food_ricewheat4, sendi_food_milk_strong, Ingredient("berries_cooked", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_pie_berry.xml", "sendi_food_pie_berry.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_pie_berry.xml", "sendi_food_pie_berry.tex")
 
 AddRecipe("sendi_food_dumpling", --만두 
 {sendi_food_ricewheat2, Ingredient("cookedsmallmeat", 2), Ingredient("carrot", 2)}, 
-RECIPETABS.FARM, TECH.NONE, nil, nil, nil, 1, "character", "images/inventoryimages/sendi_food_dumpling.xml", "sendi_food_dumpling.tex")
+RECIPETABS.FARM, TECH.NONE, nil, nil, true, 1, "sendichef", "images/inventoryimages/sendi_food_dumpling.xml", "sendi_food_dumpling.tex")
 -----------------음식---------------
 AddRecipe("aos_seed", --크리에이시드   
 {Ingredient(CHARACTER_INGREDIENT.SANITY, 20)}, 

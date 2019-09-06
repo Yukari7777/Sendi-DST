@@ -353,35 +353,13 @@ local function onextinguish(inst)
     end
 end
 
---[[
-local function Add_SendiChef(inst, observer)
-	if observer:HasTag("sendi") then -- 오라를 받는 대상의 조건
-		observer:AddTag("sendichef")
-		--observer:DoTaskInTime(10, observer:AddTag("sendichef"))
-		
-		end
-		--observer:RemoveTag("sendichef")
-		--observer:DoTaskInTime(3, observer:RemoveTag("sendichef"))
-	return 0
-end
---]]
-
 --태그제거
 
 local SENDICHEFTAGSETTER = function(inst, inrng, outrng)
-   local x, y, z = inst.Transform:GetWorldPosition()
-   local target
-   local inrange = TheSim:FindEntities(x, y, z, inrng, { "sendi" } )
-   local outrange = TheSim:FindEntities(x, y, z, outrng, { "sendi" } )
-   for k, v in pairs(outrange) do
-      v:RemoveTag("sendichef")
-   end
-   for k, v in pairs(inrange) do
-      v:AddTag("sendichef")
-   end
+  
 end
 
---]]
+
 
 local function fn(Sim)
 
@@ -393,24 +371,12 @@ local function fn(Sim)
     inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
 	
-	--[[
-	inst.MiniMapEntity:SetIcon( "sendi_oven.tex" )--발견한 자신의 미니맵 이름 /
-	inst:AddComponent("sanityaura")
-	inst.components.sanityaura.aurafn = Add_SendiChef
-	
-	-- inst:AddComponent("prototyper")
-	-- inst.components.prototyper.trees = TechTree.Create({SENDICRAFT = 1})
-	--]]
-	
-	SENDICHEFTAGSETTER(inst, 5, 10) --태그제거 
-	--]]
-	
     MakeObstaclePhysics(inst, .3)
 
     inst:AddTag("campfire")
     inst:AddTag("structure")
 	inst:AddTag("wildfireprotected")
-    inst:AddTag("oven")--오븐태그
+	inst:AddTag("prototyper")
 	
     inst.AnimState:SetBank("sendi_oven")
     inst.AnimState:SetBuild("sendi_oven")
@@ -512,8 +478,26 @@ local function fn(Sim)
             local t = {"EMBERS","LOW","NORMAL","HIGH"}
             return t[sec]
         end
-    end
-    
+	end
+
+	inst:DoPeriodicTask(0, function()
+		local x, y, z = inst.Transform:GetWorldPosition()
+		local inrange = TheSim:FindEntities(x, y, z, 5, { "character" } )
+		local outrange = TheSim:FindEntities(x, y, z, 6, { "character" } )
+		for k, v in pairs(outrange) do
+			v:RemoveTag("sendichef")
+		end
+		for k, v in pairs(inrange) do
+			v:AddTag("sendichef")
+			
+		end
+		for k, v in pairs(outrange) do
+			if v.player_classified ~= nil then
+				v.player_classified.forcerecipeupdate:set(v:HasTag("sendichef"))
+			end
+		end
+	end)
+	
     inst:ListenForEvent("onbuilt",function()
         inst.AnimState:PlayAnimation("place")
         inst.AnimState:PushAnimation("idle",false)

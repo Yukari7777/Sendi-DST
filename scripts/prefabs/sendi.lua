@@ -163,6 +163,9 @@ local function OnEquip(inst, data)
 end
 
 local function eatunfinishedfoodfn(inst, data)
+	local mana_amount = data.food.sendimana or data.food.components.edible.sanityvalue ~= nil and data.food.components.edible.sanityvalue > 0 and data.food.components.edible.sanityvalue * CONST.MANA_RESTORE_FROM_FOOD_MULTIPLIER or CONST.INTERNAL_TYPE_ZERO -- 음식 먹을 때 오르는 정신력으로부터 마나가 회복
+	inst.components.sendimana:DoDelta(mana_amount)
+
 	if data.food:HasTag("sendistaple") then
 		data.feeder.components.talker:Say(GetString(data.feeder, "SENDISTAPLE"))
 	
@@ -174,10 +177,18 @@ local function eatunfinishedfoodfn(inst, data)
 	
 	elseif data.food:HasTag("sendimeat") then
 		data.feeder.components.talker:Say(GetString(data.feeder, "SENDIMEAT"))	
-		
-	 
    end
 end  --음식대사 
+
+local function NoEatCookPotFood(inst)
+	local _PrefersToEat = inst.components.eater.PrefersToEat
+	function inst.components.eater.PrefersToEat(self, inst)
+		if inst:HasTag("preparedfood") and not inst:HasTag("sendicook") then
+			return false
+		end
+		return _PrefersToEat(self, inst)
+	end
+end
 
 ----------스킨 끝
 
@@ -212,7 +223,7 @@ local master_postinit = function(inst)
 	inst:AddComponent("sendilevel")
 	
 	inst:ListenForEvent("oneat", eatunfinishedfoodfn) -- 먹었을 때
-	
+	NoEatCookPotFood(inst)
 	
 	--------------------------- 허기 불꽃 시스템의 마침점 ------------------------------------
 	inst:WatchWorldState("phase", sendi_light)
