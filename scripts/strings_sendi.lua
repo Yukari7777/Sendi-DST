@@ -260,7 +260,6 @@ STRINGS.RECIPE_DESC.SENDI_FOOD_CHICKEN = "입히고, 오븐에서 구워주세�
 STRINGS.RECIPE_DESC.SENDI_FOOD_PIE_BERRY = "반죽 후 오븐에서 구워주세요![EXP]"
 STRINGS.RECIPE_DESC.SENDI_FOOD_DUMPLING = "빚어서 오븐에서 구워주세요![EXP]"
 
-
 STRINGS.LEVEL = "레벨"
 STRINGS.EXP = "경험치"
 ------- 각 캐릭터들의 음식 먹었을때 대사
